@@ -1,0 +1,10 @@
+body
+{
+    position: relative;
+	background: #000000;
+	color: #999;
+	font-family: 'Raleway', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+    transition: .5s
+}
