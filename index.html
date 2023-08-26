@@ -11,7 +11,7 @@
     <div id="header">
         <div class="container">
             <nav>
-                <img src="img/Profile Picture.jpg" class="logo">
+                <img src="" class="logo">
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About</a></li>
@@ -26,37 +26,127 @@
             </div>
         </div>
     </div>
+
+    <!--about me section-->
+
     <div id="about">
         <div class="containter">
             <div class="row">
                 <div class="about-col-1">
-                    <img src="img/Profile Picture.jpg" alt="Hi">
+                    <img src="img/Profile Picture.jpg">
                 </div>
                 <div class="about-col-2">
-                    <h1>About Me</h1>
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Hardworking student with a passion for learning new technologies and helping others.
+                        <br>Detail-oriented with excellent observational, organizational and communication skills.
+                        <br>Team player willing to help, reach common goals and adapt to fit the needs of the group.
+                    </p>
+                    <p>Comfortable with the entire entering new ecosystems and hands on experience helping
+                        <br>others regardless of their technological background. Have knowledgeable experience
+                        <br>with Adobe premerie, photoshop, Xd, and animate. Done extensive work in the Unity
+                        <br>engine and is very comfortable with working in it.
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <div class="col-md-6 col-xs-11 wow fadeInRight" data-wow-delay="0.9s">
+                                <span class="text-top">Unity &AMP; C# <small>90%</small></span>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="90"
+                                        aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
+                                </div>
+                                <span>Full Stack Development<small>85%</small></span>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="85"
+                                        aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
+                                </div>
+                                <span>Virtual Reality Game Development<small>80%</small></span>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80"
+                                        aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
+                                </div>
+                                <span>MYSQL &AMP; PHP<small>70%</small></span>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70"
+                                        aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
+                                </div>
+                                <span>D3.js<small>75%</small></span>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="75"
+                                        aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
+                                </div>
+                                <span>Arduino Code & Hardware<small>65%</small></span>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="65"
+                                        aria-valuemin="0" aria-valuemax="100" style="width: 65%;"></div>
+                                </div>
+                                <span>Bootstrap<small>75%</small></span>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="75"
+                                        aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
+                                </div>
+                                <span>Xcode<small>65%</small></span>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="65"
+                                        aria-valuemin="0" aria-valuemax="100" style="width: 65%;"></div>
+                                </div>
+                                <span>Adobe Photoshop<small>85%</small></span>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="85"
+                                        aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
+                                </div>
+                                <span>Adobe XD<small>90%</small></span>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="90"
+                                        aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2021 - Current</span><br>Boise State University</li>
+                            <li><span>Pursuing Bachelor Degree</span><br>Bachelor of Science</li>
+                            <li><span>Major - G.I.M.M.</span><br>Games, Interactive Media and Mobile</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>Financial Tracker Tool Website</span><br>Hosted on Boise State University</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-
         </div>
-
+    </div>
+    <!-- Contact info-->
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title"> About Me</h1>
+        </div>
     </div>
 
+<script>
+
+    var tablinks = document.getElementsByClassName('tab-links');
+    var tabcontents = document.getElementsByClassName('tab-contents');
+
+    function opentab(tabname) {
+        for(tablink of tablinks) {
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents) {
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
+</body>
