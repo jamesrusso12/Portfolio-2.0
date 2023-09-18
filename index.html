@@ -6,13 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <script src="https://kit.fontawesome.com/bc56acafc1.js" crossorigin="anonymous"></script>
+    <!-- text rotater -->
+    <script src="bootstrap/js/jquery.simple-text-rotator.js"></script>
+    <!-- jQuery -->
+    <script src="bootstrap/js/jquery.js"></script>
 </head>
 
 <body>
     <div id="header">
         <div class="container">
             <nav>
-                <img src="" class="logo">
+                <img src="img/Logo.jpg" class="logo">
                 <ul id="sidemenu">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -23,9 +27,11 @@
                 </ul>
                 <i class="fas fa-bars" onclick="openmenu()"></i>
             </nav>
-            <div class="header-text">
-                <p>Software Architect</p>
-                <h1>Hi, I'm <span>James</span><br>Russo from Southern California</h1>
+            <div class="header-text wow fadeIn" data-wow-delay="0.9s">
+                <h1 class="rotate"><span> Developer, Unity Specialist, Designer</span></h1>
+                <h2>Dedicated, hardworking, and fast learner that is committed to producing the best
+                    <br>and most creative projects possible and completing any task assigned to me.
+                </h2>
             </div>
         </div>
     </div>
@@ -36,7 +42,7 @@
         <div class="containter">
             <div class="row">
                 <div class="about-col-1">
-                    <img src="img/Profile Picture.jpg">
+                    <img src="img/Profile Picture.jpg" style="margin-left: 8em;">
                 </div>
                 <div class="about-col-2">
                     <h1 class="sub-title">About Me</h1>
@@ -55,60 +61,112 @@
                         <p class="tab-links" onclick="opentab('experience')">Experience</p>
                     </div>
                     <div class="tab-contents active-tab" id="skills">
-                        <ul>
-                            <div class="col-md-6 col-xs-11 wow fadeInRight" data-wow-delay="0.9s">
-                                <span class="text-top">Unity &AMP; C# <small>90%</small></span>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="90"
-                                        aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
-                                </div>
-                                <span>Full Stack Development<small>85%</small></span>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="85"
-                                        aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
-                                </div>
-                                <span>Virtual Reality Game Development<small>80%</small></span>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80"
-                                        aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
-                                </div>
-                                <span>MYSQL &AMP; PHP<small>70%</small></span>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70"
-                                        aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
-                                </div>
-                                <span>D3.js<small>75%</small></span>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="75"
-                                        aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
-                                </div>
-                                <span>Arduino Code & Hardware<small>65%</small></span>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="65"
-                                        aria-valuemin="0" aria-valuemax="100" style="width: 65%;"></div>
-                                </div>
-                                <span>Bootstrap<small>75%</small></span>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="75"
-                                        aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
-                                </div>
-                                <span>Xcode<small>65%</small></span>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="65"
-                                        aria-valuemin="0" aria-valuemax="100" style="width: 65%;"></div>
-                                </div>
-                                <span>Adobe Photoshop<small>85%</small></span>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="85"
-                                        aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
-                                </div>
-                                <span>Adobe XD<small>90%</small></span>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="90"
-                                        aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
+                        <div class="container2">
+                            <div class="row">
+
+                            <div class="skill-box">
+                                <span class="title">Unity & C#</span>
+                                
+                                <div class="skill-bar">
+                                    <span class="skill-per unity">
+                                        <span class="tooltip">95%</span>
+                                    </span>
                                 </div>
                             </div>
-                        </ul>
+
+                            <div class="skill-box">
+                                <span class="title">UI/UX Design</span>
+                                
+                                <div class="skill-bar">
+                                    <span class="skill-per design">
+                                        <span class="tooltip">90%</span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="skill-box">
+                                <span class="title">Full Stack Development</span>
+
+                                <div class="skill-bar">
+                                    <span class="skill-per html">
+                                        <span class="tooltip">85%</span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="skill-box">
+                                <span class="title">VR/AR Game Development</span>
+                                
+                                <div class="skill-bar">
+                                    <span class="skill-per vr">
+                                        <span class="tooltip">80%</span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="skill-box">
+                                <span class="title">Adobe XD</span>
+                                
+                                <div class="skill-bar">
+                                    <span class="skill-per xd">
+                                        <span class="tooltip">90%</span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="skill-box">
+                                <span class="title">Adobe Photoshop</span>
+                                
+                                <div class="skill-bar">
+                                    <span class="skill-per photoshop">
+                                        <span class="tooltip">85%</span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="skill-box">
+                                <span class="title">Xcode</span>
+                                
+                                <div class="skill-bar">
+                                    <span class="skill-per xcode">
+                                        <span class="tooltip">65%</span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="skill-box">
+                                <span class="title">MYSQL & PHP</span>
+                                
+                                <div class="skill-bar">
+                                    <span class="skill-per mysql">
+                                        <span class="tooltip">75%</span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="skill-box">
+                                <span class="title">Bootstrap</span>
+                                
+                                <div class="skill-bar">
+                                    <span class="skill-per bootstrap">
+                                        <span class="tooltip">75%</span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="skill-box">
+                                <span class="title">Arduino Code & Hardware</span>
+                                
+                                <div class="skill-bar">
+                                    <span class="skill-per arduino">
+                                        <span class="tooltip">60%</span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            </div>
+                        </div>
+                        </div>
                     </div>
                     <div class="tab-contents" id="education">
                         <ul>
@@ -126,44 +184,44 @@
             </div>
         </div>
     </div>
-<!--end about-->
+    <!--end about-->
 
-<!--services-->
-<div id="services">
-    <div class="container">
-        <h1 class="sub-title">What I can do</h1>
-        <div class="services-list">
-            <div>
-                <i class="fa-solid fa-code"></i>
-                <h2>Web Design</h2>
-                <p>Lorem ipsum dolor sit amet. Eum facere iste qui quia deleniti ut
-                    <br>corporis dolorum est voluptas laudantium At repellendus quia vel ullam nihil ea Quis enim.
-                </p>
-                <a href="#">learn more</a>
-            </div>
-            <div>
-                <i class="fa-brands fa-unity"></i>
-                <h2>Unity Game Design</h2>
-                <p>Lorem ipsum dolor sit amet. Eum facere iste qui quia deleniti ut
-                    <br>corporis dolorum est voluptas laudantium At repellendus quia vel ullam nihil ea Quis enim.
-                </p>
-                <a href="#">learn more</a>
-            </div>
-            <div>
-                <i class="fa-brands fa-app-store"></i>
-                <h2>Application Design</h2>
-                <p>Lorem ipsum dolor sit amet. Eum facere iste qui quia deleniti ut
-                    <br>corporis dolorum est voluptas laudantium At repellendus quia vel ullam nihil ea Quis enim.
-                </p>
-                <a href="#">learn more</a>
-            </div>
+    <!--services-->
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">What I can do</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Web Design</h2>
+                    <p>Lorem ipsum dolor sit amet. Eum facere iste qui quia deleniti ut
+                        <br>corporis dolorum est voluptas laudantium At repellendus quia vel ullam nihil ea Quis enim.
+                    </p>
+                    <a href="#">learn more</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-unity"></i>
+                    <h2>Unity Game Design</h2>
+                    <p>Lorem ipsum dolor sit amet. Eum facere iste qui quia deleniti ut
+                        <br>corporis dolorum est voluptas laudantium At repellendus quia vel ullam nihil ea Quis enim.
+                    </p>
+                    <a href="#">learn more</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-app-store"></i>
+                    <h2>Application Design</h2>
+                    <p>Lorem ipsum dolor sit amet. Eum facere iste qui quia deleniti ut
+                        <br>corporis dolorum est voluptas laudantium At repellendus quia vel ullam nihil ea Quis enim.
+                    </p>
+                    <a href="#">learn more</a>
+                </div>
 
+            </div>
         </div>
     </div>
-</div>
-<!--end services-->
+    <!--end services-->
 
-<!--portfolio section-->
+    <!--portfolio section-->
     <div id="portfolio">
         <div class="container">
             <h1 class="sub-title">My Work</h1>
@@ -172,7 +230,8 @@
                     <img src="img/2D Unity Level 1.jpg">
                     <div class="layer">
                         <h3>Social Media App</h3>
-                        <p>The app connects you yo the talented people around the world. Download it from play store.</p>
+                        <p>The app connects you yo the talented people around the world. Download it from play store.
+                        </p>
                         <a href="#"><i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
@@ -180,7 +239,8 @@
                     <img src="img/AR Ace.jpg">
                     <div class="layer">
                         <h3>Music App</h3>
-                        <p>The app connects you yo the talented people around the world. Download it from play store.</p>
+                        <p>The app connects you yo the talented people around the world. Download it from play store.
+                        </p>
                         <a href="#"><i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
@@ -188,7 +248,8 @@
                     <img src="img/Halo-SpeedRuns.jpg">
                     <div class="layer">
                         <h3>Online Shopping App</h3>
-                        <p>The app connects you yo the talented people around the world. Download it from play store.</p>
+                        <p>The app connects you yo the talented people around the world. Download it from play store.
+                        </p>
                         <a href="#"><i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
@@ -196,7 +257,8 @@
                     <img src="img/2D Unity Level 1.jpg">
                     <div class="layer">
                         <h3>Social Media App</h3>
-                        <p>The app connects you yo the talented people around the world. Download it from play store.</p>
+                        <p>The app connects you yo the talented people around the world. Download it from play store.
+                        </p>
                         <a href="#"><i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
@@ -204,7 +266,8 @@
                     <img src="img/AR Ace.jpg">
                     <div class="layer">
                         <h3>Music App</h3>
-                        <p>The app connects you yo the talented people around the world. Download it from play store.</p>
+                        <p>The app connects you yo the talented people around the world. Download it from play store.
+                        </p>
                         <a href="#"><i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
@@ -212,7 +275,8 @@
                     <img src="img/Halo-SpeedRuns.jpg">
                     <div class="layer">
                         <h3>Online Shopping App</h3>
-                        <p>The app connects you yo the talented people around the world. Download it from play store.</p>
+                        <p>The app connects you yo the talented people around the world. Download it from play store.
+                        </p>
                         <a href="#"><i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
@@ -220,18 +284,17 @@
             <a href="#" class="btn">See more</a>
         </div>
     </div>
-<!--end portfolio-->
+    <!--end portfolio-->
 
-<!--start contact-->
+    <!--start contact-->
     <div id="contact">
         <div class="container">
             <div class="row">
                 <div class="contact-left">
                     <h1 class="sub-title">Contact Me</h1>
-                    <p><i class="fas fa-paper-plane"></i> contact@example.com</p>
-                    <p><i class="fas fa-phone-square-alt"></i> 0123456789</p>
+                    <p><i class="fas fa-paper-plane"></i> jrusso03@icloud.com</p>
+                    <p><i class="fas fa-phone-square-alt"></i> (949)397-0464</p>
                     <div class="social-icons">
-                        <a href="https://facebook.com/"><i class="fab fa-facebook"></i></a>
                         <a href=""><i class="fab fa-twitter-square"></i></a>
                         <a href=""><i class="fab fa-instagram"></i></a>
                         <a href=""><i class="fab fa-linkedin"></i></a>
@@ -249,57 +312,57 @@
                 </div>
             </div>
         </div>
-<!--end contact-->
+        <!--end contact-->
 
-    <script>
+        <script>
 
-        var tablinks = document.getElementsByClassName("tab-links");
-        var tabcontents = document.getElementsByClassName("tab-contents");
-    
-        function opentab(tabname){
-            for(tablink of tablinks){
-                tablink.classList.remove("active-link");
+            var tablinks = document.getElementsByClassName("tab-links");
+            var tabcontents = document.getElementsByClassName("tab-contents");
+
+            function opentab(tabname) {
+                for (tablink of tablinks) {
+                    tablink.classList.remove("active-link");
+                }
+                for (tabcontent of tabcontents) {
+                    tabcontent.classList.remove("active-tab");
+                }
+                event.currentTarget.classList.add("active-link");
+                document.getElementById(tabname).classList.add("active-tab");
             }
-            for(tabcontent of tabcontents){
-                tabcontent.classList.remove("active-tab");
+
+        </script>
+
+        <script>
+            var sidemeu = document.getElementById("sidemenu");
+
+            function openmenu() {
+                sidemeu.style.right = "0";
             }
-            event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab");
-        }
-    
-    </script>
+            function closemenu() {
+                sidemeu.style.right = "-200px";
+            }
+        </script>
 
-    <script>
-        var sidemeu = document.getElementById("sidemenu");
+        <script>
 
-        function openmenu() {
-            sidemeu.style.right = "0";
-        }
-        function closemenu() {
-            sidemeu.style.right = "-200px";
-        }
-    </script>
+            const scriptURL = '< add you own link here >' // add your own app script link here
+            const form = document.forms['submit-to-google-sheet']
+            const msg = document.getElementById("msg")
 
-    <script>
+            form.addEventListener('submit', e => {
+                e.preventDefault()
+                fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                    .then(response => {
+                        msg.innerHTML = "Message sent successfully"
+                        setTimeout(function () {
+                            msg.innerHTML = ""
+                        }, 5000)
+                        form.reset()
+                    })
+                    .catch(error => console.error('Error!', error.message))
+            })
 
-        const scriptURL = '< add you own link here >' // add your own app script link here
-        const form = document.forms['submit-to-google-sheet']
-        const msg = document.getElementById("msg")
-
-        form.addEventListener('submit', e => {
-            e.preventDefault()
-            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                .then(response => {
-                    msg.innerHTML = "Message sent successfully"
-                    setTimeout(function () {
-                        msg.innerHTML = ""
-                    }, 5000)
-                    form.reset()
-                })
-                .catch(error => console.error('Error!', error.message))
-        })
-
-    </script>
+        </script>
 
 
 </body>

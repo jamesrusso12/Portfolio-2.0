@@ -11,7 +11,7 @@ html {
 
 body {
     background: #00416a;
-    color: fff;
+    color: #fff;
 }
 
 /*nav menu*/
@@ -28,6 +28,131 @@ body {
     padding: 10px 10%;
 }
 
+/*----Skills Section----*/
+
+.container2 {
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+    background: black;
+    margin: 0 15px;
+    padding: 10px 20px;
+    border-radius: 7px;
+}
+
+.container2 .skill-box {
+    width: 100%;
+    margin: 25px 0;
+}
+
+.skill-box .title {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+.skill-box .skill-bar {
+    height: 8px;
+    width: 100%;
+    border-radius: 6px;
+    margin-top: 6px;
+    background: white;
+}
+
+.skill-bar .skill-per {
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 85%;
+    border-radius: 6px;
+    background: #ff004f;
+    animation: progress 0.4s ease-in-out forwards;
+    opacity: 0;
+}
+
+.skill-per.unity {
+    width: 95%;
+    animation-delay: 0.1;
+}
+
+.skill-per.vr {
+    width: 80%;
+    animation-delay: 0.2;
+}
+
+.skill-per.mysql {
+    width: 75%;
+    animation-delay: 0.3;
+}
+
+.skill-per.xcode {
+    width: 65%;
+    animation-delay: 0.4;
+}
+
+.skill-per.bootstrap {
+    width: 75%;
+    animation-delay: 0.5;
+}
+
+.skill-per.photoshop {
+    width: 85%;
+    animation-delay: 0.6;
+}
+
+.skill-per.xd {
+    width: 90%;
+    animation-delay: 0.7;
+}
+
+.skill-per.arduino {
+    width: 60%;
+    animation-delay: 0.8;
+}
+
+.skill-per.design {
+    width: 90%;
+    animation-delay: 0.8;
+}
+
+@keyframes progress {
+    0%{
+        width: 0;
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.skill-per .tooltip {
+    position: absolute;
+    right: -14px;
+    top: -28px;
+    font-size: 14px;
+    font-weight: 800;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 3px;
+    background: black;
+    z-index: 1;
+}
+
+.tooltip::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    height: 10px;
+    z-index: -1;
+    background-color: #4070f4;
+    transform: translateX(-50%) rotate(45deg);
+
+}
+
+/*----end skill bar----*/
+
 nav {
     display: flex;
     align-items: center;
@@ -36,7 +161,7 @@ nav {
 }
 
 .logo {
-    width: 140px;
+    width: 250px;
 }
 
 nav ul li {
@@ -81,6 +206,122 @@ nav ul li a:hover::after {
     color: #ff004f;
 }
 
+h1,h2,h3,h4,h5
+    {
+        color: #ffffff;
+        font-weight: bold;
+    }
+a{
+	color:inherit;
+}
+
+/* start simpletextrotator */
+.rotating {
+    display: inline-block;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform: rotateX(0) rotateY(0) rotateZ(0);
+    -moz-transform: rotateX(0) rotateY(0) rotateZ(0);
+    -ms-transform: rotateX(0) rotateY(0) rotateZ(0);
+    -o-transform: rotateX(0) rotateY(0) rotateZ(0);
+    transform: rotateX(0) rotateY(0) rotateZ(0);
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    -webkit-transform-origin-x: 50%;
+  }
+  
+  .rotating.flip {
+    position: relative;
+  }
+  
+  .rotating .front, .rotating .back {
+    left: 0;
+    top: 0;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .rotating .front {
+    position: absolute;
+    display: inline-block;
+    -webkit-transform: translate3d(0,0,1px);
+    -moz-transform: translate3d(0,0,1px);
+    -ms-transform: translate3d(0,0,1px);
+    -o-transform: translate3d(0,0,1px);
+    transform: translate3d(0,0,1px);
+  }
+  
+  .rotating.flip .front {
+    z-index: 1;
+  }
+  
+  .rotating .back {
+    display: block;
+    opacity: 0;
+  }
+  
+  .rotating.spin {
+    -webkit-transform: rotate(360deg) scale(0);
+    -moz-transform: rotate(360deg) scale(0);
+    -ms-transform: rotate(360deg) scale(0);
+    -o-transform: rotate(360deg) scale(0);
+    transform: rotate(360deg) scale(0);
+  }
+  
+  .rotating.flip .back {
+    z-index: 2;
+    display: block;
+    opacity: 1;
+    
+    -webkit-transform: rotateY(180deg) translate3d(0,0,0);
+    -moz-transform: rotateY(180deg) translate3d(0,0,0);
+    -ms-transform: rotateY(180deg) translate3d(0,0,0);
+    -o-transform: rotateY(180deg) translate3d(0,0,0);
+    transform: rotateY(180deg) translate3d(0,0,0);
+  }
+  
+  .rotating.flip.up .back {
+    -webkit-transform: rotateX(180deg) translate3d(0,0,0);
+    -moz-transform: rotateX(180deg) translate3d(0,0,0);
+    -ms-transform: rotateX(180deg) translate3d(0,0,0);
+    -o-transform: rotateX(180deg) translate3d(0,0,0);
+    transform: rotateX(180deg) translate3d(0,0,0);
+  }
+  
+  .rotating.flip.cube .front {
+    -webkit-transform: translate3d(0,0,100px) scale(0.9,0.9);
+    -moz-transform: translate3d(0,0,100px) scale(0.85,0.85);
+    -ms-transform: translate3d(0,0,100px) scale(0.85,0.85);
+    -o-transform: translate3d(0,0,100px) scale(0.85,0.85);
+    transform: translate3d(0,0,100px) scale(0.85,0.85);
+  }
+  
+  .rotating.flip.cube .back {
+    -webkit-transform: rotateY(180deg) translate3d(0,0,100px) scale(0.9,0.9);
+    -moz-transform: rotateY(180deg) translate3d(0,0,100px) scale(0.85,0.85);
+    -ms-transform: rotateY(180deg) translate3d(0,0,100px) scale(0.85,0.85);
+    -o-transform: rotateY(180deg) translate3d(0,0,100px) scale(0.85,0.85);
+    transform: rotateY(180deg) translate3d(0,0,100px) scale(0.85,0.85);
+  }
+  
+  .rotating.flip.cube.up .back {
+    -webkit-transform: rotateX(180deg) translate3d(0,0,100px) scale(0.9,0.9);
+    -moz-transform: rotateX(180deg) translate3d(0,0,100px) scale(0.85,0.85);
+    -ms-transform: rotateX(180deg) translate3d(0,0,100px) scale(0.85,0.85);
+    -o-transform: rotateX(180deg) translate3d(0,0,100px) scale(0.85,0.85);
+    transform: rotateX(180deg) translate3d(0,0,100px) scale(0.85,0.85);
+  }
+  /* end simpletextrotator */
+
 /*---about me section---*/
 
 #about {
@@ -95,12 +336,14 @@ nav ul li a:hover::after {
 }
 
 .about-col-1 {
-    flex-basis: 35%;
+    flex-basis: 30%;
+    
 }
 
 .about-col-1 img {
     width: 100%;
     border-radius: 15px;
+    
 }
 
 .about-col-2 {
