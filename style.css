@@ -10,7 +10,7 @@ html {
 }
 
 body {
-    background: #00416a;
+    background: black;
     color: #fff;
 }
 
@@ -27,131 +27,6 @@ body {
 .container {
     padding: 10px 10%;
 }
-
-/*----Skills Section----*/
-
-.container2 {
-    position: relative;
-    max-width: 500px;
-    width: 100%;
-    background: black;
-    margin: 0 15px;
-    padding: 10px 20px;
-    border-radius: 7px;
-}
-
-.container2 .skill-box {
-    width: 100%;
-    margin: 25px 0;
-}
-
-.skill-box .title {
-    display: block;
-    font-size: 14px;
-    font-weight: 600;
-    color: #333;
-}
-
-.skill-box .skill-bar {
-    height: 8px;
-    width: 100%;
-    border-radius: 6px;
-    margin-top: 6px;
-    background: white;
-}
-
-.skill-bar .skill-per {
-    position: relative;
-    display: block;
-    height: 100%;
-    width: 85%;
-    border-radius: 6px;
-    background: #ff004f;
-    animation: progress 0.4s ease-in-out forwards;
-    opacity: 0;
-}
-
-.skill-per.unity {
-    width: 95%;
-    animation-delay: 0.1;
-}
-
-.skill-per.vr {
-    width: 80%;
-    animation-delay: 0.2;
-}
-
-.skill-per.mysql {
-    width: 75%;
-    animation-delay: 0.3;
-}
-
-.skill-per.xcode {
-    width: 65%;
-    animation-delay: 0.4;
-}
-
-.skill-per.bootstrap {
-    width: 75%;
-    animation-delay: 0.5;
-}
-
-.skill-per.photoshop {
-    width: 85%;
-    animation-delay: 0.6;
-}
-
-.skill-per.xd {
-    width: 90%;
-    animation-delay: 0.7;
-}
-
-.skill-per.arduino {
-    width: 60%;
-    animation-delay: 0.8;
-}
-
-.skill-per.design {
-    width: 90%;
-    animation-delay: 0.8;
-}
-
-@keyframes progress {
-    0%{
-        width: 0;
-        opacity: 1;
-    }
-    100%{
-        opacity: 1;
-    }
-}
-
-.skill-per .tooltip {
-    position: absolute;
-    right: -14px;
-    top: -28px;
-    font-size: 14px;
-    font-weight: 800;
-    color: #fff;
-    padding: 2px 6px;
-    border-radius: 3px;
-    background: black;
-    z-index: 1;
-}
-
-.tooltip::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: -2px;
-    height: 10px;
-    z-index: -1;
-    background-color: #4070f4;
-    transform: translateX(-50%) rotate(45deg);
-
-}
-
-/*----end skill bar----*/
 
 nav {
     display: flex;
@@ -181,7 +56,7 @@ nav ul li a::after {
     content: '';
     width: 0;
     height: 3px;
-    background: #ff004f;
+    background: #D43F52;
     position: absolute;
     left: 0;
     bottom: -6px;
@@ -203,7 +78,7 @@ nav ul li a:hover::after {
 }
 
 .header-text h1 span {
-    color: #ff004f;
+    color: #D43F52;
 }
 
 h1,h2,h3,h4,h5
@@ -336,7 +211,7 @@ a{
 }
 
 .about-col-1 {
-    flex-basis: 30%;
+    flex-basis: 27%;
     
 }
 
@@ -350,39 +225,7 @@ a{
     flex-basis: 60%;
 }
 
-#about h3 {
-    font-size: 1.125em;
-    padding: 15px 0;
-    color: #D43F52;
-}
-
-#about .progress {
-    border-radius: 4px;
-    background: #ffffff;
-    height: 4px;
-}
-
-#about .progress .progress-bar-danger {
-    background: #D43F52;
-}
-
-#about .text-top {
-    padding-top: 50px;
-}
-
-#about span {
-    color: #ffffff;
-    font-weight: bold;
-    display: block;
-    padding-bottom: 6px;
-}
-
-#about small {
-    font-weight: bold;
-    float: right;
-}
-
-.sub-title {
+.sub-title {   
     font-size: 60px;
     font-weight: 600;
     color: #fff;
@@ -405,7 +248,7 @@ a{
     content: '';
     width: 0;
     height: 3px;
-    background: #ff004f;
+    background: #D43F52;
     position: absolute;
     left: 0;
     bottom: -8px;
@@ -414,7 +257,6 @@ a{
 
 .tab-links.active-link::after {
     width: 50%;
-
 }
 
 .tab-contents ul li {
@@ -423,8 +265,8 @@ a{
 }
 
 .tab-contents ul li span {
-    color: #ff004f;
-    font-size: 14px;
+    color: #D43F52;
+    font-size: 22px;
 }
 
 .tab-contents {
@@ -434,6 +276,131 @@ a{
 .tab-contents.active-tab {
     display: block;
 }
+
+/*----Skills Section----*/
+
+.container2 {
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+    background: black;
+    margin: 0 15px;
+    padding: 10px 20px;
+    border-radius: 7px;
+}
+
+.container2 .skill-box {
+    width: 100%;
+    margin: 25px 0;
+}
+
+.skill-box .title {
+    display: block;
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+}
+
+.skill-box .skill-bar {
+    height: 8px;
+    width: 100%;
+    border-radius: 6px;
+    margin-top: 6px;
+    background: white;
+}
+
+.skill-bar .skill-per {
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 85%;
+    border-radius: 6px;
+    background: #D43F52;
+    animation: progress 0.4s ease-in-out forwards;
+    opacity: 0;
+}
+
+.skill-per.unity {
+    width: 95%;
+    animation-delay: 0.1;
+}
+
+.skill-per.vr {
+    width: 80%;
+    animation-delay: 0.2;
+}
+
+.skill-per.mysql {
+    width: 75%;
+    animation-delay: 0.3;
+}
+
+.skill-per.xcode {
+    width: 65%;
+    animation-delay: 0.4;
+}
+
+.skill-per.bootstrap {
+    width: 75%;
+    animation-delay: 0.5;
+}
+
+.skill-per.photoshop {
+    width: 85%;
+    animation-delay: 0.6;
+}
+
+.skill-per.xd {
+    width: 90%;
+    animation-delay: 0.7;
+}
+
+.skill-per.arduino {
+    width: 60%;
+    animation-delay: 0.8;
+}
+
+.skill-per.design {
+    width: 90%;
+    animation-delay: 0.8;
+}
+
+@keyframes progress {
+    0%{
+        width: 0;
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.skill-per .tooltip {
+    position: absolute;
+    right: -14px;
+    top: -28px;
+    font-size: 14px;
+    font-weight: 800;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 3px;
+    background: black;
+    z-index: 1;
+}
+
+.tooltip::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    height: 10px;
+    z-index: -1;
+    background-color: #4070f4;
+    transform: translateX(-50%) rotate(45deg);
+
+}
+
+/*----end skill bar----*/
 
 /*------------------services----------------*/
 #services {
@@ -476,7 +443,7 @@ a{
 }
 
 .services-list div:hover {
-    background: #ff004f;
+    background: #D43F52;
     transform: translateY(-10px);
 }
 
@@ -528,7 +495,7 @@ a{
 
 .layer a {
     margin-top: 20px;
-    color: #ff004f;
+    color: #D43F52;
     text-decoration: none;
     font-size: 18px;
     line-height: 60px;
@@ -551,7 +518,7 @@ a{
     display: block;
     margin: 50px auto;
     width: fit-content;
-    border: 1px solid #ff004f;
+    border: 1px solid #D43F52;
     padding: 14px 50px;
     border-radius: 6px;
     text-decoration: none;
@@ -560,7 +527,7 @@ a{
 }
 
 .btn:hover {
-    background: #ff004f;
+    background: #D43F52;
 }
 
 /* ---------contact-------- */
@@ -577,7 +544,7 @@ a{
 }
 
 .contact-left p i {
-    color: #ff004f;
+    color: #D43F52;
     margin-right: 15px;
     font-size: 25px;
 }
@@ -596,13 +563,13 @@ a{
 }
 
 .social-icons a:hover {
-    color: #ff004f;
+    color: #D43F52;
     transform: translateY(-5px);
 }
 
 .btn.btn2 {
     display: inline-block;
-    background: #ff004f;
+    background: #D43F52;
 }
 
 .contact-right form {
@@ -639,11 +606,11 @@ form .btn2 {
 }
 
 .copyright i {
-    color: #ff004f;
+    color: #D43F52;
 }
 
 .copyright a {
-    color: #ff004f;
+    color: #D43F52;
     text-decoration: none;
 }
 
@@ -672,7 +639,7 @@ nav .fas {
     }
 
     nav ul {
-        background: #ff004f;
+        background: #D43F52;
         position: fixed;
         top: 0;
         right: -200px;
