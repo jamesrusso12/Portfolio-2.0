@@ -29,7 +29,7 @@
             </nav>
             <div class="header-text">
                 <h1>
-                    <p>James Russo</p>
+                    James Russo
                     <div class="wrapper">
                         <div class="words">
                             <span>Web Designer</span>
@@ -74,7 +74,7 @@
 
                     <div class="tab-contents container2" id="education">
                         <ul>
-                            <li>Boise State University
+                            <li><span>Boise State University</span>
                                 <br>Currently, I am enrolled as a student at Boise
                                 State University, where I am nearing the completion of my major. My field of study is
                                 Games Interactive Media & Mobile (G.I.M.M.), which I find to be immensely fascinating
@@ -89,7 +89,7 @@
                     </div>
                     <div class="tab-contents container2 title" id="experience">
                         <ul>
-                            <li>Financial Tracker Tool website
+                            <li><span>Financial Tracker Tool website</span>
                                 <br>Hosted on Boise State University<br>I
                                 worked on, and still currentlyactive on, a website that acts as a tool to help students
                                 manage finacials through college. This project was worked on with two others and my role
@@ -250,8 +250,13 @@
     <div id="portfolio">
         <div class="container">
             <h1 class="sub-title">My Work</h1>
+            <div class="tab-titles">
+                <p class="tab-links active-link" onclick="opentab('WebDev')">Web Development</p>
+                <p class="tab-links" onclick="opentab('Unity')">Web Development</p>
+                <p class="tab-links" onclick="opentab('ARVR')">AR/VR</p>
+            </div>
             <div class="work-list">
-                <div class="work">
+                <div class="work" id="WebDev">
                     <img src="img/2D Unity Level 1.jpg">
                     <div class="layer">
                         <h3>Social Media App</h3>
@@ -260,8 +265,8 @@
                         <a href="#"><i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
-                <div class="work">
-                    <img src="img/AR Ace.jpg">
+                <div class="work" id="WebDev">
+                    <img src="img/2D Unity Level 2.jpg">
                     <div class="layer">
                         <h3>Music App</h3>
                         <p>The app connects you yo the talented people around the world. Download it from play store.
@@ -269,8 +274,8 @@
                         <a href="#"><i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
-                <div class="work">
-                    <img src="img/Halo-SpeedRuns.jpg">
+                <div class="work" id="WebDev">
+                    <img src="img/SpeedsSuits Mobile game.jpg">
                     <div class="layer">
                         <h3>Online Shopping App</h3>
                         <p>The app connects you yo the talented people around the world. Download it from play store.
@@ -278,7 +283,7 @@
                         <a href="#"><i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
-                <div class="work">
+                <div class="work" id="WebDev">
                     <img src="img/2D Unity Level 1.jpg">
                     <div class="layer">
                         <h3>Social Media App</h3>
@@ -287,7 +292,7 @@
                         <a href="#"><i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
-                <div class="work">
+                <div class="work" id="Unity">
                     <img src="img/AR Ace.jpg">
                     <div class="layer">
                         <h3>Music App</h3>
@@ -296,7 +301,7 @@
                         <a href="#"><i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
-                <div class="work">
+                <div class="work" id="Unity">
                     <img src="img/Halo-SpeedRuns.jpg">
                     <div class="layer">
                         <h3>Online Shopping App</h3>

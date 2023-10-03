@@ -96,23 +96,20 @@ a{
 .wrapper {
     box-sizing: content-box;
     background-color: transparent;
-    height: 70px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    height: 100px;
     display: flex;
-}
-
-.words {
     overflow: hidden;
-    
 }
 
-span {
+.words>span {
+    overflow: hidden;
     display: block;
     height: 100%;
-    color: #0e6ffc;
+    color: #D43F52;
     animation: spin_words 12s infinite;
 }
+
+
 
 @keyframes spin_words {
     10%{
