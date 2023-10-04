@@ -2,27 +2,48 @@
     <title>James Russo Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="https://kit.fontawesome.com/bc56acafc1.js" crossorigin="anonymous"></script>
+    <!-- text rotater -->
+    <script src="bootstrap/js/jquery.simple-text-rotator.js"></script>
+    <!-- jQuery -->
+    <script src="bootstrap/js/jquery.js"></script>
 </head>
 
 <body>
     <div id="header">
         <div class="container">
             <nav>
-                <img src="" class="logo">
-                <ul>
+                <img src="img/Logo.jpg" class="logo">
+                <ul id="sidemenu">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
                 </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
             </nav>
             <div class="header-text">
-                <p>Software Architect</p>
-                <h1>Hi, I'm <span>James</span><br>Russo from Southern California</h1>
+                <h1>
+                    James Russo
+                    <div class="wrapper">
+                        <div class="words">
+                            <span>Web Designer</span>
+                            <span>Game Developer</span>
+                            <span>Unity Designer</span>
+                        </div>
+                    </div>
+                </h1>
+                <h4>
+                    Dedicated, hardworking, and fast learner 
+                    <br>that is committed to producing the best 
+                    <br>and most creative projects possible and 
+                    <br>completing any task assigned to me.
+                </h4>
             </div>
         </div>
     </div>
@@ -33,17 +54,16 @@
         <div class="containter">
             <div class="row">
                 <div class="about-col-1">
-                    <img src="img/Profile Picture.jpg">
+                    <img src="img/Profile Picture.jpg" style="margin-left: 8em;">
                 </div>
                 <div class="about-col-2">
                     <h1 class="sub-title">About Me</h1>
                     <p>Hardworking student with a passion for learning new technologies and helping others.
-                        <br>Detail-oriented with excellent observational, organizational and communication skills.
+                        Detail-oriented with excellent observational, organizational and communication skills.
                         <br>Team player willing to help, reach common goals and adapt to fit the needs of the group.
-                    </p>
-                    <p>Comfortable with the entire entering new ecosystems and hands on experience helping
+                        Comfortable with the entire entering new ecosystems and hands on experience helping
                         <br>others regardless of their technological background. Have knowledgeable experience
-                        <br>with Adobe premerie, photoshop, Xd, and animate. Done extensive work in the Unity
+                        with Adobe premerie, photoshop, Xd, and animate. Done extensive work in the Unity
                         <br>engine and is very comfortable with working in it.
                     </p>
                     <div class="tab-titles">
@@ -51,123 +71,328 @@
                         <p class="tab-links" onclick="opentab('education')">Education</p>
                         <p class="tab-links" onclick="opentab('experience')">Experience</p>
                     </div>
-                    <div class="tab-contents active-tab" id="skills">
+
+                    <div class="tab-contents container2" id="education">
                         <ul>
-                            <div class="col-md-6 col-xs-11 wow fadeInRight" data-wow-delay="0.9s">
-                                <span class="text-top">Unity &AMP; C# <small>90%</small></span>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="90"
-                                        aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
+                            <li><span>Boise State University</span>
+                                <br>Currently, I am enrolled as a student at Boise
+                                State University, where I am nearing the completion of my major. My field of study is
+                                Games Interactive Media & Mobile (G.I.M.M.), which I find to be immensely fascinating
+                                and engrossing. Through this program, I have been able to hone my skills in developing
+                                games using C# in the Unity engine, as well as designing and modeling 3D objects and
+                                environments. While learning HTML, CSS, and JavaScript, I was introduced to the
+                                intricacies of MYSQL and PHP databases, which proved to be a steep learning curve.
+                                However, I persevered and was ultimately able to develop compelling websites that
+                                incorporated CRUD API. My objective is to graduate with a Bachelor's degree in the fall
+                                of 2025, thereby completing my academic journey.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents container2 title" id="experience">
+                        <ul>
+                            <li><span>Financial Tracker Tool website</span>
+                                <br>Hosted on Boise State University<br>I
+                                worked on, and still currentlyactive on, a website that acts as a tool to help students
+                                manage finacials through college. This project was worked on with two others and my role
+                                was the UI/UX of the website. I worked closely with one of my group memebers so that we
+                                could bring out our best work and create the best possible tool to help students. </li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents active-tab" id="skills">
+                        <div class="container2">
+                            <div class="row">
+
+                                <div class="skill-box">
+                                    <span class="title">Unity & C#</span>
+
+                                    <div class="skill-bar">
+                                        <span class="skill-per unity">
+                                            <span class="tooltip">95%</span>
+                                        </span>
+                                    </div>
                                 </div>
-                                <span>Full Stack Development<small>85%</small></span>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="85"
-                                        aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
+
+                                <div class="skill-box">
+                                    <span class="title">UI/UX Design</span>
+
+                                    <div class="skill-bar">
+                                        <span class="skill-per design">
+                                            <span class="tooltip">90%</span>
+                                        </span>
+                                    </div>
                                 </div>
-                                <span>Virtual Reality Game Development<small>80%</small></span>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80"
-                                        aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
+
+                                <div class="skill-box">
+                                    <span class="title">Full Stack Development</span>
+
+                                    <div class="skill-bar">
+                                        <span class="skill-per html">
+                                            <span class="tooltip">85%</span>
+                                        </span>
+                                    </div>
                                 </div>
-                                <span>MYSQL &AMP; PHP<small>70%</small></span>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70"
-                                        aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
+
+                                <div class="skill-box">
+                                    <span class="title">VR/AR Game Development</span>
+
+                                    <div class="skill-bar">
+                                        <span class="skill-per vr">
+                                            <span class="tooltip">80%</span>
+                                        </span>
+                                    </div>
                                 </div>
-                                <span>D3.js<small>75%</small></span>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="75"
-                                        aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
+
+                                <div class="skill-box">
+                                    <span class="title">Adobe XD</span>
+
+                                    <div class="skill-bar">
+                                        <span class="skill-per xd">
+                                            <span class="tooltip">90%</span>
+                                        </span>
+                                    </div>
                                 </div>
-                                <span>Arduino Code & Hardware<small>65%</small></span>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="65"
-                                        aria-valuemin="0" aria-valuemax="100" style="width: 65%;"></div>
+
+                                <div class="skill-box">
+                                    <span class="title">Adobe Photoshop</span>
+
+                                    <div class="skill-bar">
+                                        <span class="skill-per photoshop">
+                                            <span class="tooltip">85%</span>
+                                        </span>
+                                    </div>
                                 </div>
-                                <span>Bootstrap<small>75%</small></span>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="75"
-                                        aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
+
+                                <div class="skill-box">
+                                    <span class="title">Xcode</span>
+
+                                    <div class="skill-bar">
+                                        <span class="skill-per xcode">
+                                            <span class="tooltip">65%</span>
+                                        </span>
+                                    </div>
                                 </div>
-                                <span>Xcode<small>65%</small></span>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="65"
-                                        aria-valuemin="0" aria-valuemax="100" style="width: 65%;"></div>
+
+                                <div class="skill-box">
+                                    <span class="title">MYSQL & PHP</span>
+
+                                    <div class="skill-bar">
+                                        <span class="skill-per mysql">
+                                            <span class="tooltip">75%</span>
+                                        </span>
+                                    </div>
                                 </div>
-                                <span>Adobe Photoshop<small>85%</small></span>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="85"
-                                        aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
+
+                                <div class="skill-box">
+                                    <span class="title">Bootstrap</span>
+
+                                    <div class="skill-bar">
+                                        <span class="skill-per bootstrap">
+                                            <span class="tooltip">75%</span>
+                                        </span>
+                                    </div>
                                 </div>
-                                <span>Adobe XD<small>90%</small></span>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="90"
-                                        aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
+
+                                <div class="skill-box">
+                                    <span class="title">Arduino Code & Hardware</span>
+
+                                    <div class="skill-bar">
+                                        <span class="skill-per arduino">
+                                            <span class="tooltip">60%</span>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="education">
-                        <ul>
-                            <li><span>2021 - Current</span><br>Boise State University</li>
-                            <li><span>Pursuing Bachelor Degree</span><br>Bachelor of Science</li>
-                            <li><span>Major - G.I.M.M.</span><br>Games, Interactive Media and Mobile</li>
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="experience">
-                        <ul>
-                            <li><span>Financial Tracker Tool Website</span><br>Hosted on Boise State University</li>
-                        </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Contact info-->
+
+    <!--end about-->
+
+    <!--services-->
     <div id="services">
         <div class="container">
             <h1 class="sub-title">What I can do</h1>
             <div class="services-list">
                 <div>
+                    <i class="fa-solid fa-code"></i>
                     <h2>Web Design</h2>
-                    <p>Lorem ipsum dolor sit amet. Eum facere iste qui quia deleniti ut 
-                    <br>corporis dolorum est voluptas laudantium At repellendus quia vel ullam nihil ea Quis enim. </p>
+                    <p>Lorem ipsum dolor sit amet. Eum facere iste qui quia deleniti ut
+                        <br>corporis dolorum est voluptas laudantium At repellendus quia vel ullam nihil ea Quis enim.
+                    </p>
                     <a href="#">learn more</a>
                 </div>
                 <div>
+                    <i class="fa-brands fa-unity"></i>
                     <h2>Unity Game Design</h2>
-                    <p>Lorem ipsum dolor sit amet. Eum facere iste qui quia deleniti ut 
-                    <br>corporis dolorum est voluptas laudantium At repellendus quia vel ullam nihil ea Quis enim. </p>
+                    <p>Lorem ipsum dolor sit amet. Eum facere iste qui quia deleniti ut
+                        <br>corporis dolorum est voluptas laudantium At repellendus quia vel ullam nihil ea Quis enim.
+                    </p>
                     <a href="#">learn more</a>
                 </div>
                 <div>
+                    <i class="fa-brands fa-app-store"></i>
                     <h2>Application Design</h2>
-                    <p>Lorem ipsum dolor sit amet. Eum facere iste qui quia deleniti ut 
-                    <br>corporis dolorum est voluptas laudantium At repellendus quia vel ullam nihil ea Quis enim. </p>
+                    <p>Lorem ipsum dolor sit amet. Eum facere iste qui quia deleniti ut
+                        <br>corporis dolorum est voluptas laudantium At repellendus quia vel ullam nihil ea Quis enim.
+                    </p>
                     <a href="#">learn more</a>
                 </div>
 
             </div>
         </div>
     </div>
+    <!--end services-->
 
-<script>
+    <!--portfolio section-->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Work</h1>
+            <div class="tab-titles">
+                <p class="tab-links active-link" onclick="opentab('WebDev')">Web Development</p>
+                <p class="tab-links" onclick="opentab('Unity')">Web Development</p>
+                <p class="tab-links" onclick="opentab('ARVR')">AR/VR</p>
+            </div>
+            <div class="work-list">
+                <div class="work" id="WebDev">
+                    <img src="img/2D Unity Level 1.jpg">
+                    <div class="layer">
+                        <h3>Social Media App</h3>
+                        <p>The app connects you yo the talented people around the world. Download it from play store.
+                        </p>
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work" id="WebDev">
+                    <img src="img/2D Unity Level 2.jpg">
+                    <div class="layer">
+                        <h3>Music App</h3>
+                        <p>The app connects you yo the talented people around the world. Download it from play store.
+                        </p>
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work" id="WebDev">
+                    <img src="img/SpeedsSuits Mobile game.jpg">
+                    <div class="layer">
+                        <h3>Online Shopping App</h3>
+                        <p>The app connects you yo the talented people around the world. Download it from play store.
+                        </p>
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work" id="WebDev">
+                    <img src="img/2D Unity Level 1.jpg">
+                    <div class="layer">
+                        <h3>Social Media App</h3>
+                        <p>The app connects you yo the talented people around the world. Download it from play store.
+                        </p>
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work" id="Unity">
+                    <img src="img/AR Ace.jpg">
+                    <div class="layer">
+                        <h3>Music App</h3>
+                        <p>The app connects you yo the talented people around the world. Download it from play store.
+                        </p>
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work" id="Unity">
+                    <img src="img/Halo-SpeedRuns.jpg">
+                    <div class="layer">
+                        <h3>Online Shopping App</h3>
+                        <p>The app connects you yo the talented people around the world. Download it from play store.
+                        </p>
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn">See more</a>
+        </div>
+    </div>
+    <!--end portfolio-->
 
-    var tablinks = document.getElementsByClassName('tab-links');
-    var tabcontents = document.getElementsByClassName('tab-contents');
+    <!--start contact-->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fas fa-paper-plane"></i> jrusso03@icloud.com</p>
+                    <p><i class="fas fa-phone-square-alt"></i> (949)397-0464</p>
+                    <div class="social-icons">
+                        <a href=""><i class="fab fa-twitter-square"></i></a>
+                        <a href=""><i class="fab fa-instagram"></i></a>
+                        <a href=""><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <a href="images/my-cv.pdf" download class="btn btn2">Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <!--end contact-->
 
-    function opentab(tabname) {
-        for(tablink of tablinks) {
-            tablink.classList.remove("active-link");
-        }
-        for(tabcontent of tabcontents) {
-            tabcontent.classList.remove("active-tab");
-        }
-        event.currentTarget.classList.add("active-link");
-        document.getElementById(tabname).classList.add("active-tab");
-    }
+        <script>
 
-</script>
+            var tablinks = document.getElementsByClassName("tab-links");
+            var tabcontents = document.getElementsByClassName("tab-contents");
+
+            function opentab(tabname) {
+                for (tablink of tablinks) {
+                    tablink.classList.remove("active-link");
+                }
+                for (tabcontent of tabcontents) {
+                    tabcontent.classList.remove("active-tab");
+                }
+                event.currentTarget.classList.add("active-link");
+                document.getElementById(tabname).classList.add("active-tab");
+            }
+
+        </script>
+
+        <script>
+            var sidemeu = document.getElementById("sidemenu");
+
+            function openmenu() {
+                sidemeu.style.right = "0";
+            }
+            function closemenu() {
+                sidemeu.style.right = "-200px";
+            }
+        </script>
+
+        <script>
+
+            const scriptURL = '< add you own link here >' // add your own app script link here
+            const form = document.forms['submit-to-google-sheet']
+            const msg = document.getElementById("msg")
+
+            form.addEventListener('submit', e => {
+                e.preventDefault()
+                fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                    .then(response => {
+                        msg.innerHTML = "Message sent successfully"
+                        setTimeout(function () {
+                            msg.innerHTML = ""
+                        }, 5000)
+                        form.reset()
+                    })
+                    .catch(error => console.error('Error!', error.message))
+            })
+
+        </script>
 
 
 </body>
