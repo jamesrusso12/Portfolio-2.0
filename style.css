@@ -469,7 +469,7 @@ a{
     background: #D43F52;
 }
 
-.my-work-description {
+#my-work-description, #about {
     padding: 80px 0;
     color: #ababab;
 }
