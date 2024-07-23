@@ -10,7 +10,7 @@
     <script src="bootstrap/js/jquery.simple-text-rotator.js"></script>
     <!-- jQuery -->
     <script src="bootstrap/js/jquery.js"></script>
-    
+
 </head>
 
 <body>
@@ -232,31 +232,38 @@
                         successfully completed. Over the years, I've honed my ability to create websites through
                         full-stack development techniques. Additionally, I've expanded my capabilities by optimizing the
                         use of tools like D3.js and MYSQL with PHP to create more captivating websites, incorporating
-                        dynamic databases. <span class="dots">...</span><span class="more-content">This expertise has empowered me to craft and personalize my own portfolio.
-                        Currently, I'm in the process of acquiring proficiency in AWS, which is enhancing my web
-                        development skills. Personally, I've always had an affinity for UI/UX design and am well-versed
-                        in both Google and Apple design practices, with a continuous drive to expand my knowledge in web
-                        design.</span>
+                        dynamic databases. <span class="dots">...</span><span class="more-content">This expertise has
+                            empowered me to craft and personalize my own portfolio.
+                            Currently, I'm in the process of acquiring proficiency in AWS, which is enhancing my web
+                            development skills. Personally, I've always had an affinity for UI/UX design and am
+                            well-versed
+                            in both Google and Apple design practices, with a continuous drive to expand my knowledge in
+                            web
+                            design.</span>
                     </p>
                     <button onclick="toggleReadMore(this)">Read more</button>
                 </div>
-    
+
                 <div>
                     <i class="fa-brands fa-unity"></i>
                     <h2>Unity Game Design</h2>
                     <p>Creating and building within Unity has been a cherished pursuit of mine, allowing me to channel
                         my creative interests effectively into game development. Leveraging my proficiency in C#, I've
                         successfully crafted a range of games, from 2D platformers to immersive VR experiences. Each
-                        project has provided valuable insights and deepened my knowledge. <span class="dots">...</span><span class="more-content">
-                        In one of my initial endeavors, I created a fully functional 2D platformer game complete with AI-driven enemies,
-                        player health and damage systems, wall-running mechanics, and more. Currently, I'm engaged in my
-                        final project, a 3D environment project where I'm designing my own models and textures,
-                        ultimately transforming it into a VR first-person shooter game. My passion for game design is
-                        unwavering, particularly when utilizing tools like Unity, C#, Maya, and Blender.</span>
+                        project has provided valuable insights and deepened my knowledge. <span
+                            class="dots">...</span><span class="more-content">
+                            In one of my initial endeavors, I created a fully functional 2D platformer game complete
+                            with AI-driven enemies,
+                            player health and damage systems, wall-running mechanics, and more. Currently, I'm engaged
+                            in my
+                            final project, a 3D environment project where I'm designing my own models and textures,
+                            ultimately transforming it into a VR first-person shooter game. My passion for game design
+                            is
+                            unwavering, particularly when utilizing tools like Unity, C#, Maya, and Blender.</span>
                     </p>
                     <button onclick="toggleReadMore(this)">Read more</button>
                 </div>
-    
+
                 <div>
                     <i class="fa-brands fa-app-store"></i>
                     <h2>Application Design</h2>
@@ -264,10 +271,10 @@
                         and game development design has provided me with a valuable perspective on approaching new
                         projects. Understanding the intricacies of game development and design has made me adaptable in
                         tackling tasks and shaping 3D models. <span class="dots">...</span><span class="more-content">
-                        This aptitude for design extends to creating engaging gameplay and level design, 
-                        focusing on enhancing accessibility and user enjoyment. I have a genuine enthusiasm 
-                        for collaborative work, thriving in team settings, and taking on diverse
-                        challenges to design projects effectively and efficiently. </span>
+                            This aptitude for design extends to creating engaging gameplay and level design,
+                            focusing on enhancing accessibility and user enjoyment. I have a genuine enthusiasm
+                            for collaborative work, thriving in team settings, and taking on diverse
+                            challenges to design projects effectively and efficiently. </span>
                     </p>
                     <button onclick="toggleReadMore(this)">Read more</button>
                 </div>
@@ -613,21 +620,21 @@
 
         <script>
             function toggleReadMore(button) {
-            var parent = button.previousElementSibling;
-            var dots = parent.querySelector(".dots");
-            var moreText = parent.querySelector(".more-content");
+                var parent = button.previousElementSibling;
+                var dots = parent.querySelector(".dots");
+                var moreText = parent.querySelector(".more-content");
 
-            if (dots.style.display === "none") {
-                dots.style.display = "inline";
-                button.innerHTML = "Read more"; 
-                moreText.style.display = "none";
-            } else {
-                dots.style.display = "none";
-                button.innerHTML = "Read less"; 
-                moreText.style.display = "inline";
+                if (dots.style.display === "none") {
+                    dots.style.display = "inline";
+                    button.innerHTML = "Read more";
+                    moreText.style.display = "none";
+                } else {
+                    dots.style.display = "none";
+                    button.innerHTML = "Read less";
+                    moreText.style.display = "inline";
+                }
             }
-            }
-            </script>
-    
+        </script>
+
 
 </body>
