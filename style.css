@@ -12,6 +12,8 @@ html {
 body {
     background: black;
     color: #fff;
+    font-family: Arial, sans-serif;
+    line-height: 1.4;
 }
 
 .content {
@@ -24,6 +26,10 @@ body {
 
 .more-content {
     display: none;
+}
+
+.dots {
+    display: inline;
 }
 
 /*nav menu*/
@@ -40,7 +46,27 @@ body {
 
 .container {
     padding: 10px 10%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
 }
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
 
 nav {
     display: flex;
@@ -171,9 +197,11 @@ a{
 }
 
 .sub-title {   
-    font-size: 60px;
+    /*font-size: 60px;*/
     font-weight: 600;
     color: #fff;
+    font-size: 2.5em;
+    margin-bottom: 20px;
 }
 
 .tab-titles {
@@ -385,6 +413,7 @@ a{
     font-weight: 300;
     border-radius: 10px;
     transition: background 0.5s, transform 0.5s;
+    margin-bottom: 40px;
 }
 
 .services-list div i {
