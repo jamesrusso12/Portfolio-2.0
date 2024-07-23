@@ -22,6 +22,10 @@ body {
     color: #ababab;
 }
 
+.more-content {
+    display: none;
+}
+
 /*nav menu*/
 #header {
     width: 100%;
