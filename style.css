@@ -277,13 +277,13 @@ a{
 
 .skill-box .title {
     display: block;
-    font-size: 20px;
-    font-weight: 800;
+    font-size: 25px;
+    font-weight: 700;
     color: white;
 }
 
 .skill-box .skill-bar {
-    height: 8px;
+    height: 10px;
     width: 100%;
     border-radius: 6px;
     margin-top: 6px;
@@ -306,45 +306,46 @@ a{
     animation-delay: 0.1;
 }
 
-.skill-per.vr {
+.skill-per.unreal {
     width: 80%;
     animation-delay: 0.2;
 }
 
-.skill-per.mysql {
-    width: 75%;
+.skill-per.frontend {
+    width: 95%;
     animation-delay: 0.3;
 }
 
-.skill-per.xcode {
-    width: 65%;
+.skill-per.vr {
+    width: 85%;
+    animation-delay: 0.8;
+}
+
+.skill-per.uiux {
+    width: 88%;
     animation-delay: 0.4;
 }
 
-.skill-per.bootstrap {
-    width: 75%;
+.skill-per.xcode {
+    width: 88%;
     animation-delay: 0.5;
 }
 
-.skill-per.photoshop {
-    width: 85%;
+.skill-per.mysql {
+    width: 65%;
     animation-delay: 0.6;
 }
 
-.skill-per.xd {
+.skill-per.development {
     width: 90%;
     animation-delay: 0.7;
 }
 
-.skill-per.arduino {
-    width: 60%;
+.skill-per.ios {
+    width: 85%;
     animation-delay: 0.8;
 }
 
-.skill-per.design {
-    width: 90%;
-    animation-delay: 0.8;
-}
 
 @keyframes progress {
     0%{
@@ -360,10 +361,10 @@ a{
     position: absolute;
     right: -14px;
     top: -28px;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 800;
     color: #fff;
-    padding: 2px 6px;
+    padding: 1px 1px;
     border-radius: 3px;
     background: black;
     z-index: 1;
