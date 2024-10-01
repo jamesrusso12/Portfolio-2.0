@@ -379,22 +379,9 @@ a{
     transform: translateX(-50%) rotate(45deg);
 
 }
-
 /*----end skill bar----*/
 
-/*------------------services----------------*/
-#services {
-    padding: 40px 0;
-}
-
-#education {
-    background: #262626;
-    padding: 40px;
-    font-size: 18px;
-    font-weight: 300;
-    border-radius: 10px;
-    transition: background 0.5s, transform 0.5s;
-}
+/*-----Experience------*/
 
 #experience {
     padding: 40px 0;
@@ -420,6 +407,21 @@ a{
     width: 100%;
     padding: 10px;
     
+}
+/*--------------end of Experience-----------*/
+
+/*------------------services----------------*/
+#services {
+    padding: 40px 0;
+}
+
+#education {
+    background: #262626;
+    padding: 40px;
+    font-size: 18px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s, transform 0.5s;
 }
 
 .services-list {
@@ -462,11 +464,11 @@ a{
     background: #D43F52;
     transform: translateY(-10px);
 }
-
 /*------------------------------------------*/
 
+
 #portfolio {
-    padding: 40px 0;
+    padding: 10px 0;
     
 }
 
