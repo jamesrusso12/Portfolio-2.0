@@ -218,8 +218,8 @@ a{
 
 .tab-links {
     margin-right: 50px;
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 30px;
+    font-weight: 600;
     cursor: pointer;
     position: relative;
     color: white;
@@ -262,11 +262,9 @@ a{
 
 .container2 {
     position: relative;
-    max-width: 800px;
+    max-width: 100%;
     width: 100%;
     background: black;
-    margin: 0 15px;
-    padding: 10px 20px;
     border-radius: 7px;
 }
 
@@ -322,7 +320,7 @@ a{
 }
 
 .skill-per.uiux {
-    width: 88%;
+    width: 80%;
     animation-delay: 0.4;
 }
 
@@ -360,8 +358,8 @@ a{
 .skill-per .tooltip {
     position: absolute;
     right: -14px;
-    top: -28px;
-    font-size: 18px;
+    top: -40px;
+    font-size: 20px;
     font-weight: 800;
     color: #fff;
     padding: 1px 1px;
@@ -400,10 +398,14 @@ a{
 
 #experience {
     background: #262626;
-    padding: 40px;
+    justify-content: center;
+    padding: 10px;
+    margin: auto;
+    max-width: 1200px;
     font-size: 18px;
     font-weight: 300;
     border-radius: 10px;
+    justify-content: center;
     transition: background 0.5s, transform 0.5s;
 }
 
