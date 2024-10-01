@@ -530,103 +530,94 @@
     </div>
     <!--end portfolio-->
 
-    <!--start contact-->
-    <div id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="contact-left">
-                    <h1 class="sub-title">Contact Me</h1>
-                    <p><i class="fas fa-paper-plane"></i> jrusso03@icloud.com</p>
-                    <p><i class="fas fa-phone-square-alt"></i> (949)397-0464</p>
-                    <div class="social-icons">
-                        <a href=""><i class="fab fa-twitter-square"></i></a>
-                        <a href="https://www.instagram.com/james_russo03/"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/in/jamesjrusso/"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                    <a href="img/Cover Letter.pdf" download class="btn btn2">Download Cover Letter</a>
+    <!-- Contact Section -->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fas fa-paper-plane"></i> jrusso03@icloud.com</p>
+                <p><i class="fas fa-phone-square-alt"></i> (949) 397-0464</p>
+                <div class="social-icons">
+                    <a href=""><i class="fab fa-twitter-square"></i></a>
+                    <a href="https://www.instagram.com/james_russo03/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/jamesjrusso/"><i class="fab fa-linkedin"></i></a>
                 </div>
-                <div class="contact-right">
-                    <form name="submit-to-google-sheet">
-                        <input type="text" name="Name" placeholder="Your Name" required>
-                        <input type="email" name="Email" placeholder="Your Email" required>
-                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                        <button type="submit" class="btn btn2">Submit</button>
-                    </form>
-                    <span id="msg"></span>
-                </div>
+                <a href="img/Cover Letter.pdf" download class="btn btn2">Download Cover Letter</a>
+            </div>
+
+            <div class="contact-right">
+                <!-- Contact Form -->
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span> <!-- Success/Failure Message -->
             </div>
         </div>
-        <!--end contact-->
+    </div>
+</div>
+<!-- End Contact Section -->
 
-        <script>
+<!-- Footer -->
+<div class="copyright">
+    <p>&copy; 2024 James Russo | All Rights Reserved</p>
+</div>
+<!-- End Footer -->
 
-            var tablinks = document.getElementsByClassName("tab-links");
-            var tabcontents = document.getElementsByClassName("tab-contents");
+<!-- JavaScript Code for Form Submission -->
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxiqg9ZZH_pLkSR8T-Dm3xc5bQ3lrGRJU0oUSl9uEg5LpT1Dbpryv3bVF5Vr-G4OJKG/exec';
+    const form = document.forms['submit-to-google-sheet'];
+    const msg = document.getElementById("msg");
 
-            function opentab(tabname) {
-                const tab = document.getElementById(tabname);
-                for (tablink of tablinks) {
-                    tablink.classList.remove("active-link");
-                }
-                for (tabcontent of tabcontents) {
-                    tabcontent.classList.remove("active-tab");
-                }
-                event.currentTarget.classList.add("active-link");
-                tab.classList.add("active-tab");
-                tab.hidden = false;
-            }
-
-        </script>
-
-        <script>
-            var sidemeu = document.getElementById("sidemenu");
-
-            function openmenu() {
-                sidemeu.style.right = "0";
-            }
-            function closemenu() {
-                sidemeu.style.right = "-200px";
-            }
-        </script>
-
-        <script>
-
-            const scriptURL = '< add you own link here >' // add your own app script link here
-            const form = document.forms['submit-to-google-sheet']
-            const msg = document.getElementById("msg")
-
-            form.addEventListener('submit', e => {
-                e.preventDefault()
-                fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                    .then(response => {
-                        msg.innerHTML = "Message sent successfully"
-                        setTimeout(function () {
-                            msg.innerHTML = ""
-                        }, 5000)
-                        form.reset()
-                    })
-                    .catch(error => console.error('Error!', error.message))
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => {
+                msg.innerHTML = "Message sent successfully!";
+                setTimeout(function () {
+                    msg.innerHTML = "";
+                }, 5000);
+                form.reset();
             })
+            .catch(error => {
+                console.error('Error!', error.message);
+                msg.innerHTML = "Failed to send message!";
+            });
+    });
+</script>
 
-        </script>
+<!-- JavaScript for Opening/Closing Side Menu -->
+<script>
+    var sidemenu = document.getElementById("sidemenu");
 
-        <script>
-            function toggleReadMore(button) {
-                var parent = button.previousElementSibling;
-                var dots = parent.querySelector(".dots");
-                var moreText = parent.querySelector(".more-content");
+    function openmenu() {
+        sidemenu.style.right = "0";
+    }
 
-                if (dots.style.display === "none") {
-                    dots.style.display = "inline";
-                    button.innerHTML = "Read more";
-                    moreText.style.display = "none";
-                } else {
-                    dots.style.display = "none";
-                    button.innerHTML = "Read less";
-                    moreText.style.display = "inline";
-                }
-            }
-        </script>
+    function closemenu() {
+        sidemenu.style.right = "-200px";
+    }
+</script>
 
+<!-- JavaScript for Read More Functionality -->
+<script>
+    function toggleReadMore(button) {
+        var parent = button.previousElementSibling;
+        var dots = parent.querySelector(".dots");
+        var moreText = parent.querySelector(".more-content");
 
-</body>
+        if (dots.style.display === "none") {
+            dots.style.display = "inline";
+            button.innerHTML = "Read more";
+            moreText.style.display = "none";
+        } else {
+            dots.style.display = "none";
+            button.innerHTML = "Read less";
+            moreText.style.display = "inline";
+        }
+    }
+</script>
