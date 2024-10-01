@@ -397,19 +397,30 @@ a{
 }
 
 #experience {
+    padding: 40px 0;
+}
+
+.experience-container {
     background: #262626;
-    justify-content: center;
-    padding: 10px;
+    padding: 20px;
     margin: auto;
     max-width: 1200px;
     font-size: 18px;
-    font-weight: 300;
     border-radius: 10px;
-    justify-content: center;
     transition: background 0.5s, transform 0.5s;
 }
 
+.experience-container span {
+    color: #D43F52;
+    font: 50px;
+}
 
+.experienceimg {
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+    
+}
 
 .services-list {
     display: grid;
