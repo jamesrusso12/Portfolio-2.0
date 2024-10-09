@@ -5,9 +5,9 @@ function toggleMenu() {
 }
 
 // Add event listeners to each portfolio item for preview functionality
-document.querySelectorAll('.portfolio-item').forEach(item => {
+document.querySelectorAll('.portfolio-item__demo').forEach(item => {
     item.addEventListener('click', function() {
-        const demoUrl = this.querySelector('.portfolio-item__wrapper').dataset.demo;
+        const demoUrl = this.closest('.portfolio-item__wrapper').dataset.demo;
         const iframeContent = document.getElementById('iframe-content');
         iframeContent.innerHTML = `
             <div class="iframe-wrapper">
@@ -18,25 +18,6 @@ document.querySelectorAll('.portfolio-item').forEach(item => {
     });
 });
 
-// Function to close the preview
-function closePreview() {
-    document.getElementById('iframe-content').style.display = 'none';
-}
-
-
-// Add event listeners to each portfolio item for preview functionality
-document.querySelectorAll('.portfolio-item').forEach(item => {
-    item.addEventListener('click', function() {
-        const demoUrl = this.querySelector('.portfolio-item__wrapper').dataset.demo;
-        const iframeContent = document.getElementById('iframe-content');
-        iframeContent.innerHTML = `
-            <div class="iframe-wrapper">
-                <iframe src="${demoUrl}" frameborder="0"></iframe>
-            </div>
-        `;
-        iframeContent.style.display = 'block';
-    });
-});
 
 // Function to close the preview
 function closePreview() {

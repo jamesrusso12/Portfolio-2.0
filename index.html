@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,8 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/bc56acafc1.js" crossorigin="anonymous"></script>
 </head>
-<body>
 
+<body>
     <!-- Header Section -->
     <div id="header">
         <div class="container">
@@ -30,7 +31,8 @@
     <section id="portfolio" class="container">
         <div class="row">
             <article class="portfolio-item">
-                <div class="portfolio-item__wrapper" data-demo="https://jenishshrestha.github.io/" data-title="Jenish Shrestha">
+                <div class="portfolio-item__wrapper" data-demo="https://jenishshrestha.github.io/"
+                    data-title="Jenish Shrestha">
                     <div class="portfolio-item__demo">
                         <img src="img/2D Unity Level 1.jpg" alt="Game Development Preview">
                         <span class="quick-view">
@@ -44,7 +46,8 @@
             </article>
 
             <article class="portfolio-item">
-                <div class="portfolio-item__wrapper" data-demo="//drishya.staging.yipl.com.np" data-title="Drishya Lounge">
+                <div class="portfolio-item__wrapper" data-demo="//drishya.staging.yipl.com.np"
+                    data-title="Drishya Lounge">
                     <div class="portfolio-item__demo">
                         <img src="img/Halo Maps CRUD API.JPG" alt="Web Development Preview">
                         <span class="quick-view">
@@ -58,9 +61,10 @@
             </article>
 
             <article class="portfolio-item">
-                <div class="portfolio-item__wrapper" data-demo="https://github.com/jamesrusso12/AppleDevelopment2" data-title="Everest Cashmere">
+                <div class="portfolio-item__wrapper" data-demo="https://github.com/jamesrusso12/AppleDevelopment2"
+                    data-title="Everest Cashmere">
                     <div class="portfolio-item__demo">
-                        <img src="img/AR Ace.jpg" alt="IOS Development Preview">
+                        <img src="img/SpeedsSuits Mobile game.jpg" alt="IOS Development Preview">
                         <span class="quick-view">
                             <span class="quick-demo">Preview</span>
                         </span>
@@ -81,34 +85,10 @@
                 <button class="preview-close" onclick="closePreview()">Close</button>
             </div>
         </div>
-        <div class="site-loading">
-            <h3>Preview Loading...</h3>
-        </div>
     </div>
 
     <!-- Scripts -->
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById("sidemenu");
-            menu.style.right = menu.style.right === "0px" ? "-200px" : "0";
-        }
-
-        document.querySelectorAll('.portfolio-item').forEach(item => {
-            item.addEventListener('click', function() {
-                const demoUrl = this.querySelector('.portfolio-item__wrapper').dataset.demo;
-                const iframeContent = document.getElementById('iframe-content');
-                iframeContent.innerHTML = `
-                    <div class="iframe-wrapper">
-                        <iframe src="${demoUrl}" frameborder="0"></iframe>
-                    </div>
-                `;
-                iframeContent.style.display = 'block';
-            });
-        });
-
-        function closePreview() {
-            document.getElementById('iframe-content').style.display = 'none';
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
+
 </html>
