@@ -131,12 +131,15 @@ nav .fas {
     opacity: 0;
     visibility: hidden;
     transition: visibility 0s, opacity 0.3s ease-in-out;
+    cursor: pointer; 
+    z-index: 1; 
 }
 
 .portfolio-item:hover .quick-view {
     visibility: visible;
     opacity: 1;
 }
+
 
 .quick-demo {
     background: rgba(255, 255, 255, 0.8);

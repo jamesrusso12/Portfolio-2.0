@@ -5,7 +5,7 @@ function toggleMenu() {
 }
 
 // Add event listeners to each portfolio item for preview functionality
-document.querySelectorAll('.portfolio-item__demo').forEach(item => {
+document.querySelectorAll('.quick-view').forEach(item => {
     item.addEventListener('click', function() {
         const demoUrl = this.closest('.portfolio-item__wrapper').dataset.demo;
         const iframeContent = document.getElementById('iframe-content');
@@ -17,6 +17,7 @@ document.querySelectorAll('.portfolio-item__demo').forEach(item => {
         iframeContent.style.display = 'block';
     });
 });
+
 
 
 // Function to close the preview
