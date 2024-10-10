@@ -13,7 +13,6 @@ body {
     line-height: 1.5;
 }
 
-/* Container */
 .container {
     width: 100%;
     max-width: 1200px;
@@ -21,7 +20,6 @@ body {
     margin: auto;
 }
 
-/* Header */
 #header {
     width: 100%;
     padding: 10px 0;
@@ -76,7 +74,6 @@ nav .fas {
     nav ul {
         display: none;
         flex-direction: column;
-        width: 100%;
         background-color: black;
         position: absolute;
         top: 60px;
@@ -84,11 +81,10 @@ nav .fas {
     }
 
     nav ul.open {
-        display: flex;
+        display: block;
     }
 }
 
-/* Portfolio Section */
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -97,12 +93,12 @@ nav .fas {
 }
 
 .portfolio-item {
+    position: relative;
     flex: 1 1 calc(33.333% - 20px);
     background-color: #1e1e1e;
     border-radius: 8px;
     padding: 10px;
     text-align: center;
-    position: relative;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -140,30 +136,100 @@ nav .fas {
     opacity: 1;
 }
 
-
 .quick-demo {
-    background: rgba(255, 255, 255, 0.8);
-    color: #000;
+    background: #fff;
+    color: #D43F52;
     padding: 8px 16px;
     font-size: 1.2rem;
-    border-radius: 4px;
+    border-radius: 10px;
+    border-color: #fff;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
+
+#iframe-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.8); /* Dim background */
+    z-index: 1000;
+}
+
+.iframe-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.iframe-wrapper iframe {
+    width: 100%;
+    height: calc(100% - 40px); /* Reserve space for buttons */
+    border: none;
+}
+
+#iframe-content iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+#iframe-button {
+    color: #D43F52;
+}
+
+.devices-wrapper {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.devices-wrapper button {
+    background: #fff;
+    color: #D43F52;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.devices-wrapper button:hover {
+    background: #fff;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+}
+
+.no-hover:hover {
+    transform: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Maintain original shadow */
+}
+
+
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
     .logo {
         width: 100px;
     }
 
     nav ul {
-        flex-direction: column;
         gap: 10px;
-        margin-top: 10px;
     }
 
     .portfolio-item {
@@ -174,9 +240,5 @@ nav .fas {
 @media (max-width: 480px) {
     .portfolio-item {
         width: 100%;
-    }
-
-    h1 {
-        font-size: 1.8rem;
     }
 }
