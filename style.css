@@ -16,12 +16,23 @@ body {
     line-height: 1.4;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+
 .content {
     font-size: 18px;
     font-weight: 300;
     border-radius: 10px;
     transition: background 0.5s, transform 0.5s;
-    color: white;/*#ababab*/
+    color: white;
+    /*#ababab*/
 }
 
 .more-content {
@@ -45,7 +56,6 @@ body {
 }
 
 .container {
-    padding: 10px 10%;
     max-width: 1200px;
     margin: auto;
     padding: 20px;
@@ -128,13 +138,17 @@ nav ul li a:hover::after {
     color: #D43F52;
 }
 
-h1,h2,h3,h4,h5
-    {
-        color: #ffffff;
-        font-weight: bold;
-    }
-a{
-	color:inherit;
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+a {
+    color: inherit;
 }
 
 /* start simpletextrotator */
@@ -157,19 +171,22 @@ a{
 
 
 @keyframes spin_words {
-    10%{
+    10% {
         transform: translateY(-105%);
     }
-    25%{
+
+    25% {
         transform: translateY(-100%);
     }
-    35%{
+
+    35% {
         transform: translateY(-205%);
     }
-    50%{
+
+    50% {
         transform: translateY(-200%);
     }
-    
+
 }
 
 /* end simpletextrotator */
@@ -179,7 +196,7 @@ a{
 #about {
     padding: 80px 0;
     color: white;
-    
+
 }
 
 .row {
@@ -191,20 +208,20 @@ a{
 
 .about-col-1 {
     flex-basis: 27%;
-    
+
 }
 
 .about-col-1 img {
     width: 100%;
     border-radius: 15px;
-    
+
 }
 
 .about-col-2 {
     flex-basis: 60%;
 }
 
-.sub-title {   
+.sub-title {
     /*font-size: 60px;*/
     font-weight: 600;
     color: #D43F52;
@@ -219,7 +236,7 @@ a{
 
 .tab-links {
     margin-right: 50px;
-    font-size: 30px;
+    font-size: 1.25rem;
     font-weight: 600;
     cursor: pointer;
     position: relative;
@@ -347,11 +364,12 @@ a{
 
 
 @keyframes progress {
-    0%{
+    0% {
         width: 0;
         opacity: 1;
     }
-    100%{
+
+    100% {
         opacity: 1;
     }
 }
@@ -380,6 +398,7 @@ a{
     transform: translateX(-50%) rotate(45deg);
 
 }
+
 /*----end skill bar----*/
 
 /*-----Experience------*/
@@ -407,8 +426,9 @@ a{
     margin: auto;
     width: 100%;
     padding: 10px;
-    
+
 }
+
 /*--------------end of Experience-----------*/
 
 /*------------------services----------------*/
@@ -465,6 +485,7 @@ a{
     background: #D43F52;
     transform: translateY(-10px);
 }
+
 /*------------------------------------------*/
 /*-----Portfolio section-----*/
 
@@ -503,8 +524,8 @@ a{
     opacity: 0;
     visibility: hidden;
     transition: visibility 0s, opacity 0.3s ease-in-out;
-    cursor: pointer; 
-    z-index: 1; 
+    cursor: pointer;
+    z-index: 1;
 }
 
 .portfolio-item:hover .quick-view {
@@ -519,7 +540,7 @@ a{
     font-size: 1.2rem;
     border-radius: 10px;
     border-color: #fff;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 #iframe-content {
@@ -531,7 +552,8 @@ a{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(0, 0, 0, 0.8); /* Dim background */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Dim background */
     z-index: 1000;
 }
 
@@ -549,7 +571,8 @@ a{
 
 .iframe-wrapper iframe {
     width: 100%;
-    height: calc(100% - 40px); /* Reserve space for buttons */
+    height: calc(100% - 40px);
+    /* Reserve space for buttons */
     border: none;
 }
 
@@ -593,8 +616,10 @@ a{
 
 .no-hover:hover {
     transform: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Maintain original shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* Maintain original shadow */
 }
+
 /*-----End Portfolio section-----*/
 
 /* ---------contact-------- */
@@ -689,6 +714,7 @@ nav .fas {
 @media only screen and (max-width: 600px) {
     #header {
         background-image: url(images/phone-background.png);
+        background-size: cover; 
     }
 
     .header-text {
@@ -789,5 +815,15 @@ nav .fas {
 @media (max-width: 480px) {
     .portfolio-item {
         width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .skill-box .title {
+        font-size: 18px;
+    }
+
+    .skill-box .tooltip {
+        font-size: 14px;
     }
 }
