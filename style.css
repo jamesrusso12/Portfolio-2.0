@@ -186,8 +186,7 @@ a {
 /*---about me section---*/
 
 #about {
-    padding: 80px 0;
-    color: white;
+    padding: 50px 0;
 
 }
 
@@ -396,7 +395,7 @@ a {
 /*-----Experience------*/
 
 #experience {
-    padding: 40px 0;
+    padding: 50px 0;
 }
 
 .experience-container {
@@ -425,12 +424,12 @@ a {
 
 /*------------------services----------------*/
 #services {
-    padding: 40px 0;
+    padding: 50px 0;
 }
 
 #education {
     background: #262626;
-    padding: 40px;
+    padding: 50px 0;
     font-size: 18px;
     font-weight: 300;
     border-radius: 10px;
@@ -481,6 +480,10 @@ a {
 /*------------------------------------------*/
 
 /*-----Portfolio section-----*/
+#portfolio {
+    padding: 50px 0;
+}
+
 .portfolio-section {
     display: flex;
     flex-wrap: wrap;
@@ -673,10 +676,29 @@ a {
     transform: translateY(-5px);
 }
 
-.btn.btn2 {
+.btn {
     display: inline-block;
-    background: #D43F52;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: transparent;  
+    text-decoration: none;
+    margin: 10px 0;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    border: 2px solid;
+    border-color: #D43F52;
 }
+
+.btn:hover {
+    background-color: #D43F52;  
+    text-decoration: none;
+    color: white;
+}
+
+.btn2 {
+    background-color: black;  
+}
+
 
 .contact-right form {
     width: 100%;
