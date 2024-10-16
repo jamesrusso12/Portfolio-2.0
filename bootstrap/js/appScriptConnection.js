@@ -1,5 +1,5 @@
 //JavaScript Code for Form Submission
-const scriptURL = 'https://script.google.com/macros/s/AKfycbxiqg9ZZH_pLkSR8T-Dm3xc5bQ3lrGRJU0oUSl9uEg5LpT1Dbpryv3bVF5Vr-G4OJKG/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwc9eSEMNy4XTqUvX0S3UfOrmSghUTTsCwsn5QPkIrcrP3Oi9qWuSinn8eBjTemIezb/exec';
 const form = document.forms['submit-to-google-sheet'];
 const msg = document.getElementById("msg");
 
@@ -18,3 +18,5 @@ form.addEventListener('submit', e => {
             msg.innerHTML = "Failed to send message!";
         });
 });
+
+
