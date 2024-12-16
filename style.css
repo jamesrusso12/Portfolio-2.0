@@ -16,12 +16,23 @@ body {
     line-height: 1.4;
 }
 
+h1, h2, h3, h4,
+h5 {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: clamp(1.5rem, 2vw + 1rem, 3rem);
+}
+
 .content {
     font-size: 18px;
     font-weight: 300;
     border-radius: 10px;
     transition: background 0.5s, transform 0.5s;
-    color: white;/*#ababab*/
+    color: white;
+    /*#ababab*/
 }
 
 .more-content {
@@ -45,7 +56,6 @@ body {
 }
 
 .container {
-    padding: 10px 10%;
     max-width: 1200px;
     margin: auto;
     padding: 20px;
@@ -67,6 +77,7 @@ button {
     background-color: black;
     color: white;
     border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
@@ -128,13 +139,8 @@ nav ul li a:hover::after {
     color: #D43F52;
 }
 
-h1,h2,h3,h4,h5
-    {
-        color: #ffffff;
-        font-weight: bold;
-    }
-a{
-	color:inherit;
+a {
+    color: inherit;
 }
 
 /* start simpletextrotator */
@@ -157,19 +163,22 @@ a{
 
 
 @keyframes spin_words {
-    10%{
+    10% {
         transform: translateY(-105%);
     }
-    25%{
+
+    25% {
         transform: translateY(-100%);
     }
-    35%{
+
+    35% {
         transform: translateY(-205%);
     }
-    50%{
+
+    50% {
         transform: translateY(-200%);
     }
-    
+
 }
 
 /* end simpletextrotator */
@@ -177,9 +186,8 @@ a{
 /*---about me section---*/
 
 #about {
-    padding: 80px 0;
-    color: white;
-    
+    padding: 50px 0;
+
 }
 
 .row {
@@ -191,20 +199,20 @@ a{
 
 .about-col-1 {
     flex-basis: 27%;
-    
+
 }
 
 .about-col-1 img {
     width: 100%;
     border-radius: 15px;
-    
+
 }
 
 .about-col-2 {
     flex-basis: 60%;
 }
 
-.sub-title {   
+.sub-title {
     /*font-size: 60px;*/
     font-weight: 600;
     color: #D43F52;
@@ -219,7 +227,7 @@ a{
 
 .tab-links {
     margin-right: 50px;
-    font-size: 30px;
+    font-size: 1.25rem;
     font-weight: 600;
     cursor: pointer;
     position: relative;
@@ -347,11 +355,12 @@ a{
 
 
 @keyframes progress {
-    0%{
+    0% {
         width: 0;
         opacity: 1;
     }
-    100%{
+
+    100% {
         opacity: 1;
     }
 }
@@ -380,12 +389,13 @@ a{
     transform: translateX(-50%) rotate(45deg);
 
 }
+
 /*----end skill bar----*/
 
 /*-----Experience------*/
 
 #experience {
-    padding: 40px 0;
+    padding: 50px 0;
 }
 
 .experience-container {
@@ -407,18 +417,19 @@ a{
     margin: auto;
     width: 100%;
     padding: 10px;
-    
+
 }
+
 /*--------------end of Experience-----------*/
 
 /*------------------services----------------*/
 #services {
-    padding: 40px 0;
+    padding: 50px 0;
 }
 
 #education {
     background: #262626;
-    padding: 40px;
+    padding: 50px 0;
     font-size: 18px;
     font-weight: 300;
     border-radius: 10px;
@@ -465,18 +476,34 @@ a{
     background: #D43F52;
     transform: translateY(-10px);
 }
+
 /*------------------------------------------*/
+
 /*-----Portfolio section-----*/
+#portfolio {
+    padding: 50px 0;
+}
+
+.portfolio-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
 
 .portfolio-item {
     position: relative;
-    flex: 1 1 calc(33.333% - 20px);
+    flex: 1 1 30%;
     background-color: #1e1e1e;
     border-radius: 8px;
     padding: 10px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1;
 }
 
 .portfolio-item:hover {
@@ -503,13 +530,24 @@ a{
     opacity: 0;
     visibility: hidden;
     transition: visibility 0s, opacity 0.3s ease-in-out;
-    cursor: pointer; 
-    z-index: 1; 
+    z-index: 2; 
+    cursor: pointer;  
 }
 
 .portfolio-item:hover .quick-view {
     visibility: visible;
     opacity: 1;
+}
+
+.portfolio-item a {
+    position: relative;
+    z-index: 3; 
+    text-decoration: none;
+    color: #D43F52; 
+}
+
+.portfolio-item a:hover {
+    color: #fff; 
 }
 
 .quick-demo {
@@ -519,7 +557,7 @@ a{
     font-size: 1.2rem;
     border-radius: 10px;
     border-color: #fff;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 #iframe-content {
@@ -531,7 +569,8 @@ a{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(0, 0, 0, 0.8); /* Dim background */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Dim background */
     z-index: 1000;
 }
 
@@ -549,7 +588,8 @@ a{
 
 .iframe-wrapper iframe {
     width: 100%;
-    height: calc(100% - 40px); /* Reserve space for buttons */
+    height: calc(100% - 40px);
+    /* Reserve space for buttons */
     border: none;
 }
 
@@ -593,8 +633,10 @@ a{
 
 .no-hover:hover {
     transform: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Maintain original shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* Maintain original shadow */
 }
+
 /*-----End Portfolio section-----*/
 
 /* ---------contact-------- */
@@ -634,10 +676,29 @@ a{
     transform: translateY(-5px);
 }
 
-.btn.btn2 {
+.btn {
     display: inline-block;
-    background: #D43F52;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: transparent;  
+    text-decoration: none;
+    margin: 10px 0;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    border: 2px solid;
+    border-color: #D43F52;
 }
+
+.btn:hover {
+    background-color: #D43F52;  
+    text-decoration: none;
+    color: white;
+}
+
+.btn2 {
+    background-color: black;  
+}
+
 
 .contact-right form {
     width: 100%;
@@ -689,6 +750,11 @@ nav .fas {
 @media only screen and (max-width: 600px) {
     #header {
         background-image: url(images/phone-background.png);
+        background-size: cover; 
+    }
+
+    .logo {
+        width: 100px;
     }
 
     .header-text {
@@ -789,5 +855,15 @@ nav .fas {
 @media (max-width: 480px) {
     .portfolio-item {
         width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .skill-box .title {
+        font-size: 18px;
+    }
+
+    .skill-box .tooltip {
+        font-size: 14px;
     }
 }
