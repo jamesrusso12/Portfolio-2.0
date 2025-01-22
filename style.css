@@ -45,7 +45,6 @@ h1 {
 
 /*nav menu*/
 #header {
-    width: 100%;
     height: 100vh;
     background-image: url(img/Portfolio\ Banner\ 2.jpg);
     background-size: auto;
@@ -55,10 +54,20 @@ h1 {
     background-attachment: fixed;
 }
 
+
+
 .container {
     max-width: 1200px;
     margin: auto;
     padding: 20px;
+}
+
+.container2 {
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    background: black;
+    border-radius: 7px;
 }
 
 .container3 {
@@ -88,7 +97,6 @@ button:hover {
 
 nav {
     display: flex;
-    align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
 }
@@ -145,20 +153,16 @@ a {
 
 /* start simpletextrotator */
 .wrapper {
-    box-sizing: content-box;
-    background-color: transparent;
-    height: 100px;
     display: flex;
     overflow: hidden;
+    margin-bottom: 20px;
 }
 
 .words>span {
     overflow: hidden;
-    display: block;
     color: #D43F52;
-    font-size: 60;
+    font-size: 55;
     font-family: Arial, sans-serif;
-    font-weight: 500;
 }
 
 /* end simpletextrotator */
@@ -248,14 +252,6 @@ a {
 }
 
 /*----Skills Section----*/
-
-.container2 {
-    position: relative;
-    max-width: 100%;
-    width: 100%;
-    background: black;
-    border-radius: 7px;
-}
 
 .container2 .skill-box {
     width: 100%;
