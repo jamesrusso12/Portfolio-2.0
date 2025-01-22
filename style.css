@@ -155,30 +155,10 @@ a {
 .words>span {
     overflow: hidden;
     display: block;
-    height: 100%;
     color: #D43F52;
-    animation: spin_words 12s infinite;
-}
-
-
-
-@keyframes spin_words {
-    10% {
-        transform: translateY(-105%);
-    }
-
-    25% {
-        transform: translateY(-100%);
-    }
-
-    35% {
-        transform: translateY(-205%);
-    }
-
-    50% {
-        transform: translateY(-200%);
-    }
-
+    font-size: 60;
+    font-family: Arial, sans-serif;
+    font-weight: 500;
 }
 
 /* end simpletextrotator */
