@@ -181,12 +181,14 @@
                 <h3 class="experience-title">Finance Simulator Tool Website</h3>
                 <p>
                     As the lead UI/UX designer and tester for a Boise State University-hosted project, I spearheaded the
-                    design and development of a website aimed at helping students manage their finances throughout college.
+                    design and development of a website aimed at helping students manage their finances throughout
+                    college.
                 </p>
                 <p>
                     Collaborating with two team members, I focused on creating an intuitive, user-friendly interface
                     that meets the unique needs of students. I also contributed to front-end development alongside my
-                    colleagues and worked closely with Boise State Financial staff to ensure we delivered an effective and
+                    colleagues and worked closely with Boise State Financial staff to ensure we delivered an effective
+                    and
                     accessible financial management tool for the student body.
                 </p>
                 <a href="https://jordanralba.github.io/BSU-personal-finances/" target="_blank">Visit Student Finance
@@ -198,7 +200,7 @@
                 </div>
             </div>
         </div>
-    </div>    
+    </div>
 
     <!--End Experience-->
 
@@ -266,139 +268,208 @@
     <!--end services-->
 
     <!-- Portfolio Section -->
-<section id="portfolio" class="portfolio-section">
-    <h1 class="sub-title">Portfolio</h1>
-    <div class="row">
-        <article class="portfolio-item">
-            <div class="portfolio-item__wrapper" data-demo="https://github.com/jamesrusso12?tab=repositories">
-                <div class="portfolio-item__demo">
-                    <img src="img/GameDevelopment.jpg" alt="Game Development Preview">
-                    <span class="quick-view"><span class="quick-demo">Preview</span></span>
+    <section id="portfolio" class="portfolio-section">
+        <h1 class="sub-title">Portfolio</h1>
+        <div class="row">
+            <article class="portfolio-item">
+                <div class="portfolio-item__wrapper" data-demo="https://github.com/jamesrusso12?tab=repositories">
+                    <div class="portfolio-item__demo">
+                        <img src="img/GameDevelopment.jpg" alt="Game Development Preview">
+                        <span class="quick-view"><span class="quick-demo">Preview</span></span>
+                    </div>
+                    <div class="portfolio-item__title">
+                        <h2>Game Development</h2>
+                    </div>
                 </div>
-                <div class="portfolio-item__title">
-                    <h2>Game Development</h2>
+            </article>
+
+            <article class="portfolio-item">
+                <div class="portfolio-item__wrapper" data-demo="https://github.com/jamesrusso12?tab=repositories">
+                    <div class="portfolio-item__demo">
+                        <img src="img/WebDevelopment.svg" alt="Web Development Preview">
+                        <span class="quick-view"><span class="quick-demo">Preview</span></span>
+                    </div>
+                    <div class="portfolio-item__title">
+                        <h2>Web Development</h2>
+                    </div>
+                </div>
+            </article>
+
+            <article class="portfolio-item">
+                <div class="portfolio-item__wrapper" data-demo="https://github.com/jamesrusso12/AppleDevelopment2">
+                    <div class="portfolio-item__demo">
+                        <img src="img/IOSDevelopment.png" alt="IOS Development Preview">
+                        <span class="quick-view"><span class="quick-demo">Preview</span></span>
+                    </div>
+                    <div class="portfolio-item__title">
+                        <h2>IOS Development</h2>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- iFrame Preview Section -->
+    <div id="iframe-content" style="display: none;">
+        <div class="iframe-title">
+            <div class="demo-title"></div>
+            <div class="devices-wrapper">
+                <button class="preview-close" onclick="closePreview()">Close</button>
+                <button class="preview-open" onclick="openInNewTab()">Open in New Tab</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- iFrame Preview Section -->
+    <div id="iframe-content" style="display: none;">
+        <div class="iframe-title">
+            <div class="demo-title"></div>
+            <div class="devices-wrapper">
+                <button class="preview-close" onclick="closePreview()">Close</button>
+                <button class="preview-open" onclick="openInNewTab()">Open in New Tab</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Gallery Section -->
+    <section id="photo-gallery" class="photo-gallery">
+        <h1 class="sub-title">Image Gallery</h1>
+
+        <!-- Navigation Buttons -->
+        <div class="gallery-navigation">
+            <button class="btn" data-section="unity-gallery">Unity</button>
+            <button class="btn" data-section="web-gallery">Web Design</button>
+            <button class="btn" data-section="unreal-gallery">Unreal</button>
+        </div>
+
+        <!-- Unity Projects Image Gallery -->
+        <div id="unity-gallery" class="gallery-content active">
+            <h2 class="gallery-title">Unity Projects</h2>
+            <div class="image-grid">
+                <img src="img/2D Unity Level 1.jpg"
+                    onclick="openModal('unity-gallery');currentSlide(1, 'unity-gallery')" alt="Unity Project"
+                    class="wide hover-shadow">
+                <img src="img/2D Unity Level 2.jpg"
+                    onclick="openModal('unity-gallery');currentSlide(2, 'unity-gallery')" alt="Unity Project"
+                    class="hover-shadow">
+                <img src="img/AR.jpg" onclick="openModal('unity-gallery');currentSlide(3, 'unity-gallery')"
+                    alt="Unity Project" class="tall hover-shadow">
+                <img src="img/AR Ace.jpg" onclick="openModal('unity-gallery');currentSlide(4, 'unity-gallery')"
+                    alt="Unity Project" class="tall hover-shadow">
+                <img src="img/AR3.jpg" onclick="openModal('unity-gallery');currentSlide(5, 'unity-gallery')"
+                    alt="Unity Project" class="wide hover-shadow">
+                <img src="img/Capture.JPG" onclick="openModal('unity-gallery');currentSlide(6, 'unity-gallery')"
+                    alt="Unity Project" class="tall hover-shadow">
+                <img src="img/Coding assignment 2.JPG"
+                    onclick="openModal('unity-gallery');currentSlide(7, 'unity-gallery')" alt="Unity Project"
+                    class="wide hover-shadow">
+                <img src="img/Raw Unity.JPG" onclick="openModal('unity-gallery');currentSlide(8, 'unity-gallery')"
+                    alt="Unity Project" class="tall hover-shadow">
+                <img src="img/Unity Code.JPG" onclick="openModal('unity-gallery');currentSlide(9, 'unity-gallery')"
+                    alt="Unity Project" class="wide hover-shadow">
+                <img src="img/Unity 10.JPG" onclick="openModal('unity-gallery');currentSlide(10, 'unity-gallery')"
+                    alt="Unity Project" class="wide hover-shadow">
+                <img src="img/UnityScreenshot.JPG" onclick="openModal('unity-gallery');currentSlide(10, 'unity-gallery')"
+                    alt="Unity Project" class="hover-shadow">
+            <!--<img src="img/Coding Assignment #8.JPG" alt="Unity Project">
+            <img src="img/Coding assignment #7.JPG" alt="Unity Project">-->
+            </div>
+        </div>
+
+        <!-- Web Design Projects Image Gallery -->
+        <div id="web-gallery" class="gallery-content">
+            <h2 class="gallery-title">Web Design Projects</h2>
+            <div class="image-grid">
+                <img src="img/HaloMaps.JPG" onclick="openModal('web-gallery');currentSlide(1, 'web-gallery')"
+                    alt="Web Design Project" class="wide hover-shadow">
+                <img src="img/Halo-SpeedRuns.jpg" onclick="openModal('web-gallery');currentSlide(2, 'web-gallery')"
+                    alt="Web Design Project" class="wide hover-shadow">
+                <img src="img/Halo Maps CRUD API.JPG"
+                    onclick="openModal('web-gallery');currentSlide(3, 'web-gallery')" alt="Web Design Project"
+                    class="wide hover-shadow">
+                <img src="img/HaloMapsDataBase.JPG"
+                    onclick="openModal('web-gallery');currentSlide(4, 'web-gallery')" alt="Web Design Project"
+                    class="wide hover-shadow">
+                <img src="img/HaloMapsDeletePage.JPG"
+                    onclick="openModal('web-gallery');currentSlide(5, 'web-gallery')" alt="Web Design Project"
+                    class="wide hover-shadow">
+                <img src="img/HaloMapsEditPage.JPG"
+                    onclick="openModal('web-gallery');currentSlide(6, 'web-gallery')" alt="Web Design Project"
+                    class="wide hover-shadow">
+                <img src="img/HaloSpeedrunsScoreBoard.JPG"
+                    onclick="openModal('web-gallery');currentSlide(7, 'web-gallery')" alt="Web Design Project"
+                    class="wide hover-shadow">
+                <img src="img/ITM Web Page.JPG" onclick="openModal('web-gallery');currentSlide(8, 'web-gallery')"
+                    alt="Web Design Project" class="wide hover-shadow">
+                <img src="img/WebpageCalculator.JPG"
+                    onclick="openModal('web-gallery');currentSlide(9, 'web-gallery')" alt="Web Design Project"
+                    class="wide hover-shadow">
+                <img src="img/WebpageResume.JPG" onclick="openModal('web-gallery');currentSlide(10, 'web-gallery')"
+                    alt="Web Design Project" class="wide hover-shadow">
+            </div>
+        </div>
+
+        <!-- Unreal Projects Image Gallery -->
+        <div id="unreal-gallery" class="gallery-content">
+            <h2 class="gallery-title">Unreal Projects</h2>
+            <div class="image-grid">
+                <img src="img/Air_Attack_Code.png" onclick="openModal('unreal-gallery');currentSlide(1, 'unreal-gallery')"
+                    alt="Unreal project" class="wide hover-shadow">
+                <img src="img/Attack_Code.png" onclick="openModal('unreal-gallery');currentSlide(2, 'unreal-gallery')"
+                    alt="Unreal project" class="hover-shadow">
+                <img src="img/Attack_System_code.png"
+                    onclick="openModal('unreal-gallery');currentSlide(3, 'unreal-gallery')" alt="Unreal project"
+                    class="tall hover-shadow">
+                <img src="img/Block_System_code_.png"
+                    onclick="openModal('unreal-gallery');currentSlide(4, 'unreal-gallery')" alt="Unreal project"
+                    class="hover-shadow">
+                <img src="img/Character_Movement_code.png"
+                    onclick="openModal('unreal-gallery');currentSlide(5, 'unreal-gallery')" alt="Unreal project"
+                    class="hover-shadow">
+                <img src="img/Jump_Movement_code.png"
+                    onclick="openModal('unreal-gallery');currentSlide(6, 'unreal-gallery')" alt="Unreal project"
+                    class="hover-shadow">
+                <img src="img/Move_Player2_code.png"
+                    onclick="openModal('unreal-gallery');currentSlide(7, 'unreal-gallery')" alt="Unreal project"
+                    class="hover-shadow">
+                <img src="img/NPC_Enemy_AI_code.png"
+                    onclick="openModal('unreal-gallery');currentSlide(8, 'unreal-gallery')" alt="Unreal project"
+                    class="hover-shadow">
+                <img src="img/PlayPause_code.png" onclick="openModal('unreal-gallery');currentSlide(9, 'unreal-gallery')"
+                    alt="Unreal project" class="hover-shadow">
+                <img src="img/Random_Spawn_code.png"
+                    onclick="openModal('unreal-gallery');currentSlide(10, 'unreal-gallery')" alt="Unreal project"
+                    class="hover-shadow">
+                <img src="img/Taking_damage_code_.png"
+                    onclick="openModal('unreal-gallery');currentSlide(11, 'unreal-gallery')" alt="Unreal project"
+                    class="hover-shadow">
+                <img src="img/Target_is_hit_code_.png"
+                    onclick="openModal('unreal-gallery');currentSlide(12, 'unreal-gallery')" alt="Unreal project"
+                    class="hover-shadow">
+                <img src="img/Target_is_not_hit_code.png"
+                    onclick="openModal('unreal-gallery');currentSlide(13, 'unreal-gallery')" alt="Unreal project"
+                    class="hover-shadow">
+            </div>
+        </div>
+        <!-- The Modal (Hidden Initially) -->
+        <div id="myModal" class="modal">
+            <span class="close cursor" onclick="closeModal()">&times;</span>
+            <div class="modal-content">
+                <div id="modal-slides"></div>
+
+                <!-- Next/Previous Controls -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                <!-- Caption Text -->
+                <div class="caption-container">
+                    <p id="caption"></p>
                 </div>
             </div>
-        </article>
-
-        <article class="portfolio-item">
-            <div class="portfolio-item__wrapper" data-demo="https://github.com/jamesrusso12?tab=repositories">
-                <div class="portfolio-item__demo">
-                    <img src="img/WebDevelopment.svg" alt="Web Development Preview">
-                    <span class="quick-view"><span class="quick-demo">Preview</span></span>
-                </div>
-                <div class="portfolio-item__title">
-                    <h2>Web Development</h2>
-                </div>
-            </div>
-        </article>
-
-        <article class="portfolio-item">
-            <div class="portfolio-item__wrapper" data-demo="https://github.com/jamesrusso12/AppleDevelopment2">
-                <div class="portfolio-item__demo">
-                    <img src="img/IOSDevelopment.png" alt="IOS Development Preview">
-                    <span class="quick-view"><span class="quick-demo">Preview</span></span>
-                </div>
-                <div class="portfolio-item__title">
-                    <h2>IOS Development</h2>
-                </div>
-            </div>
-        </article>
-    </div>
-</section>
-
-<!-- iFrame Preview Section -->
-<div id="iframe-content" style="display: none;">
-    <div class="iframe-title">
-        <div class="demo-title"></div>
-        <div class="devices-wrapper">
-            <button class="preview-close" onclick="closePreview()">Close</button>
-            <button class="preview-open" onclick="openInNewTab()">Open in New Tab</button>
         </div>
-    </div>
-</div>
+    </section>
 
-<!-- iFrame Preview Section -->
-<div id="iframe-content" style="display: none;">
-    <div class="iframe-title">
-        <div class="demo-title"></div>
-        <div class="devices-wrapper">
-            <button class="preview-close" onclick="closePreview()">Close</button>
-            <button class="preview-open" onclick="openInNewTab()">Open in New Tab</button>
-        </div>
-    </div>
-</div>
-
-<!-- Image Gallery Section -->
-<section id="photo-gallery" class="photo-gallery">
-    <h1 class="sub-title">Image Gallery</h1>
-
-    <!-- Navigation Buttons -->
-    <div class="gallery-navigation">
-        <button class="btn" data-section="unity-gallery">Unity</button>
-        <button class="btn" data-section="web-gallery">Web Design</button>
-        <button class="btn" data-section="unreal-gallery">Unreal</button>
-    </div>
-
-    <!-- Unity Projects Image Gallery -->
-    <div id="unity-gallery" class="gallery-content active">
-        <h2 class="gallery-title">Unity Projects</h2>
-        <div class="image-grid">
-            <img src="img/2D Unity Level 1.jpg" alt="Unity Project" class="wide">
-            <img src="img/2D Unity Level 2.jpg" alt="Unity Project">
-            <img src="img/AR Ace.jpg" alt="Unity Project" class="tall">
-            <img src="img/AR.jpg" alt="Unity Project" class="wide">
-            <img src="img/AR3.jpg" alt="Unity Project">
-            <img src="img/Capture.JPG" alt="Unity Project">
-            <img src="img/Coding assignment 2.JPG" alt="Unity Project">
-            <img src="img/Raw Unity.JPG" alt="Unity Project">
-            <img src="img/Unity Code.JPG" alt="Unity Project">
-            <img src="img/Unity 10.JPG" alt="Unity Project">  
-            <!--<img src="img/Coding Assignment #1.jpg" alt="Unity Project">
-            <img src="img/Coding Assignment #8.JPG" alt="Unity Project">
-            <img src="img/Coding assignment #7.JPG" alt="Unity Project">-->          
-        </div>
-    </div>
-
-    <!-- Web Design Projects Image Gallery -->
-    <div id="web-gallery" class="gallery-content">
-        <h2 class="gallery-title">Web Design Projects</h2>
-        <div class="image-grid">
-            <img src="img/HaloMaps.JPG" alt="Web Design Project">
-            <img src="img/Halo-SpeedRuns.jpg" alt="Web Design Project" class="wide">
-            <img src="img/Halo Maps CRUD API.JPG" alt="Web Design Project" class="tall">
-            <img src="img/HaloMapsDataBase.JPG" alt="Web Design Project">
-            <img src="img/HaloMapsDeletePage.JPG" alt="Web Design Project">
-            <img src="img/HaloMapsEditPage.JPG" alt="Web Design Project">
-            <img src="img/HaloSpeedrunsScoreBoard.JPG" alt="Web Design Project">
-            <img src="img/ITM Web Page.JPG" alt="Web Design Project">
-            <img src="img/WebpageCalculator.JPG" alt="Web Design Project">
-            <img src="img/WebpageResume.JPG" alt="Web Design Project">
-        </div>
-    </div>
-
-    <!-- Unreal Projects Image Gallery -->
-    <div id="unreal-gallery" class="gallery-content">
-        <h2 class="gallery-title">Unreal Projects</h2>
-        <div class="image-grid">
-            <img src="img/Air_Attack_Code.png" alt="Unreal Project">
-            <img src="img/Attack_Code.png" alt="Unreal Project">
-            <img src="img/Attack_System_code.png" alt="Unreal Project" class="tall">
-            <img src="img/Block_System_code_.png" alt="Unreal Project">
-            <img src="img/Character_Movement_code.png" alt="Unreal Project">
-            <img src="img/Jump_Movement_code.png" alt="Unreal Project">
-            <img src="img/Move_Player2_code.png" alt="Unreal Project">
-            <img src="img/NPC_Enemy_AI_code.png" alt="Unreal Project">
-            <img src="img/PlayPause_code.png" alt="Unreal Project">
-            <img src="img/Random_Spawn_code.png" alt="Unreal Project">
-            <img src="img/Taking_damage_code_.png" alt="Unreal Project">
-            <img src="img/Target_is_hit_code_.png" alt="Unreal Project">
-            <img src="img/Target_is_not_hit_code.png" alt="Unreal Project">
-        </div>
-    </div>
-</section>
-
-<!--End Portfolio-->
+    <!--End Portfolio-->
 
 
     <!-- Contact Section -->
