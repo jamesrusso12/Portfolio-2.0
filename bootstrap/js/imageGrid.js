@@ -1,19 +1,55 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Lightbox Setup
-    const lightbox = document.createElement("div");
-    lightbox.id = "lightbox";
-    document.body.appendChild(lightbox);
+    // Expose openModal globally
+    window.openModal = function (section) {
+        document.getElementById("myModal").style.display = "block";
 
-    lightbox.innerHTML = `
-        <div class="lightbox-content">
-            <span class="close-lightbox">&times;</span>
-            <div id="lightbox-inner"></div>
-        </div>`;
+        // Generate slides dynamically based on the selected section
+        let slides = document.querySelectorAll(`#${section} .image-grid img`);
+        let modalSlides = document.getElementById("modal-slides");
+        modalSlides.innerHTML = "";
 
-    const lightboxInner = document.getElementById("lightbox-inner");
-    const closeLightbox = document.querySelector(".close-lightbox");
+        slides.forEach((img, index) => {
+            modalSlides.innerHTML += `
+                <div class="mySlides">
+                    <div class="numbertext">${index + 1} / ${slides.length}</div>
+                    <img src="${img.src}" style="width:100%">
+                </div>
+            `;
+        });
 
-    // Image Gallery Navigation (Unity, Web, Unreal)
+        showSlides(1);
+    };
+
+    // Expose closeModal globally
+    window.closeModal = function () {
+        document.getElementById("myModal").style.display = "none";
+    };
+
+    let slideIndex = 1;
+
+    // Next/previous controls
+    window.plusSlides = function (n) {
+        showSlides(slideIndex += n);
+    };
+
+    // Thumbnail image controls
+    window.currentSlide = function (n) {
+        showSlides(slideIndex = n);
+    };
+
+    function showSlides(n) {
+        let slides = document.getElementsByClassName("mySlides");
+        let captionText = document.getElementById("caption");
+        if (n > slides.length) { slideIndex = 1; }
+        if (n < 1) { slideIndex = slides.length; }
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex - 1].style.display = "block";
+        captionText.innerHTML = `Image ${slideIndex} of ${slides.length}`;
+    }
+
+    // Filtering between Unity, Web, and Unreal sections
     function showGallerySection(sectionId) {
         document.querySelectorAll(".gallery-content").forEach(section => {
             section.classList.remove("active");
@@ -29,34 +65,5 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Set default section (Unity Gallery)
-    showGallerySection('unity-gallery');
-
-    // Lightbox Functionality (Enlarging Images & Videos)
-    document.querySelectorAll(".image-grid img, .image-grid video").forEach(media => {
-        media.addEventListener("click", function () {
-            lightbox.classList.add("show");
-
-            if (this.tagName === "VIDEO") {
-                lightboxInner.innerHTML = `
-                    <video controls autoplay>
-                        <source src="${this.src}" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>`;
-            } else {
-                lightboxInner.innerHTML = `<img src="${this.src}" alt="Expanded Image">`;
-            }
-        });
-    });
-
-    // Lightbox Closing
-    closeLightbox.addEventListener("click", function () {
-        lightbox.classList.remove("show");
-    });
-
-    lightbox.addEventListener("click", function (e) {
-        if (e.target === lightbox || e.target.classList.contains("close-lightbox")) {
-            lightbox.classList.remove("show");
-        }
-    });
+    showGallerySection('unity-gallery');  // Default section
 });
