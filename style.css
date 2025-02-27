@@ -16,9 +16,7 @@ body {
     line-height: 1.4;
 }
 
-h1, h2, h3, h4,
-h5 {
-    color: #ffffff;
+h1, h2, h3, h4, h5 {
     font-weight: bold;
 }
 
@@ -46,35 +44,26 @@ h1 {
 /*nav menu*/
 #header {
     height: 100vh;
-    background-image: url(img/Portfolio\ Banner\ 2.jpg);
-    background-size: auto;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background: url("img/Portfolio\ Banner\ 2.jpg")no-repeat center/cover fixed;
 }
-
-
 
 .container {
     max-width: 1200px;
     margin: auto;
     padding: 20px;
-}
-
-.container2 {
-    position: relative;
-    max-width: 100%;
     width: 100%;
-    background: black;
-    border-radius: 7px;
 }
 
-.container3 {
-    display: inline-block;
-    padding: 3%;
-    background-color: #262626;
-    border: none;
+.container.full-width {
+    max-width: 100%;
+}
+
+.container.dark-bg {
+    background: #262626; /* Previously container3 */
+}
+
+.container.rounded {
+    border-radius: 10px; /* Previously container2 */
 }
 
 button {
@@ -253,117 +242,88 @@ a {
 
 /*----Skills Section----*/
 
-.container2 .skill-box {
+/* Skills Section Wrapper */
+.skills-container {
     width: 100%;
-    margin: 25px 0;
+    max-width: 1200px;
+    margin: auto;
+    padding: 50px 0;
+    background-color: #262626;
+    border-radius: 10px;
 }
 
+/* Skill Row */
+.skills-row {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Ensures good spacing */
+    padding: 0 20px;
+}
+
+/* Skill Box */
+.skill-box {
+    width: 100%;
+    margin-bottom: 30px;
+    position: relative; /* Ensures tooltip positioning works */
+}
+
+/* Skill Title */
 .skill-box .title {
     display: block;
-    font-size: 25px;
-    font-weight: 700;
+    font-size: 22px;
+    font-weight: bold;
     color: white;
+    margin-bottom: 8px;
 }
 
+/* Skill Bar */
 .skill-box .skill-bar {
-    height: 10px;
+    height: 16px;
     width: 100%;
-    border-radius: 6px;
-    margin-top: 6px;
-    background: white;
+    border-radius: 8px;
+    background: #444;
+    position: relative;
+    overflow: visible; /* Fixes clipping issue */
 }
 
+/* Skill Percentage Fill */
 .skill-bar .skill-per {
-    position: relative;
     display: block;
     height: 100%;
-    width: 85%;
-    border-radius: 6px;
+    border-radius: 10px;
     background: #D43F52;
-    animation: progress 0.4s ease-in-out forwards;
-    opacity: 0;
+    animation: progress 1.2s ease-in-out forwards;
 }
 
-.skill-per.unity {
-    width: 95%;
-    animation-delay: 0.1;
-}
+/* Individual Bar Widths */
+.skill-per.unity { width: 95%; }
+.skill-per.unreal { width: 80%; }
+.skill-per.frontend { width: 95%; }
+.skill-per.vr { width: 85%; }
+.skill-per.uiux { width: 80%; }
+.skill-per.xcode { width: 88%; }
+.skill-per.mysql { width: 65%; }
+.skill-per.development { width: 90%; }
+.skill-per.ios { width: 85%; }
 
-.skill-per.unreal {
-    width: 80%;
-    animation-delay: 0.2;
-}
-
-.skill-per.frontend {
-    width: 95%;
-    animation-delay: 0.3;
-}
-
-.skill-per.vr {
-    width: 85%;
-    animation-delay: 0.8;
-}
-
-.skill-per.uiux {
-    width: 80%;
-    animation-delay: 0.4;
-}
-
-.skill-per.xcode {
-    width: 88%;
-    animation-delay: 0.5;
-}
-
-.skill-per.mysql {
-    width: 65%;
-    animation-delay: 0.6;
-}
-
-.skill-per.development {
-    width: 90%;
-    animation-delay: 0.7;
-}
-
-.skill-per.ios {
-    width: 85%;
-    animation-delay: 0.8;
+/* Skill Percentage Number */
+.skill-box .tooltip {
+    position: absolute;
+    top: -30px; /* Moves above the bar */
+    right: 0; /* Aligns with the end of the bar */
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    white-space: nowrap;
+    z-index: 100; /* Ensures it stays above everything */
 }
 
 
+
+/* Animation */
 @keyframes progress {
-    0% {
-        width: 0;
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-.skill-per .tooltip {
-    position: absolute;
-    right: -14px;
-    top: -40px;
-    font-size: 20px;
-    font-weight: 800;
-    color: #fff;
-    padding: 1px 1px;
-    border-radius: 3px;
-    background: black;
-    z-index: 1;
-}
-
-.tooltip::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: -2px;
-    height: 10px;
-    z-index: -1;
-    background-color: #4070f4;
-    transform: translateX(-50%) rotate(45deg);
-
+    0% { width: 0; opacity: 1; }
+    100% { opacity: 1; }
 }
 
 /*----end skill bar----*/
@@ -839,7 +799,7 @@ img.hover-shadow {
     color: white;
 }
 
-.btn2 {
+.btn.dark {
     background-color: black;  
 }
 
@@ -983,31 +943,21 @@ nav .fas {
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-    .logo {
-        width: 100px;
-    }
-
-    nav ul {
-        gap: 10px;
-    }
-
-    .portfolio-item {
-        width: 45%;
-    }
-}
-
-@media (max-width: 480px) {
-    .portfolio-item {
-        width: 100%;
-    }
+    .logo { width: 100px; }
+    nav ul { gap: 10px; }
+    .portfolio-item { width: 45%; }
+    .skill-box .title { font-size: 18px; }
 }
 
 @media (max-width: 600px) {
-    .skill-box .title {
-        font-size: 18px;
+    .header-text {
+        margin-top: 100%;
+        font-size: 16px;
     }
+    .header-text h1 { font-size: 30px; }
+    .skill-box .tooltip { font-size: 14px; }
+}
 
-    .skill-box .tooltip {
-        font-size: 14px;
-    }
+@media (max-width: 480px) {
+    .portfolio-item { width: 100%; }
 }
