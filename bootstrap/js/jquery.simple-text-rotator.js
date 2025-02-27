@@ -9,4 +9,4 @@ function rotate(sID,aWords, iIndex){
 
 
 
-rotate("test1",["Game Developer", "Web Designer", "Game Engine Specialist"], 0);
+rotate("test1",["Game Developer", "Web Designer", "Software Architect"], 0);
