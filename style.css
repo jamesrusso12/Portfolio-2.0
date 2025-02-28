@@ -25,11 +25,13 @@ h1 {
 }
 
 .content {
+    background: #262626;
+    padding: 20px;
+    margin: auto;
+    max-width: 1200px;
     font-size: 18px;
-    font-weight: 300;
     border-radius: 10px;
     transition: background 0.5s, transform 0.5s;
-    color: white;
     /*#ababab*/
 }
 
@@ -43,9 +45,23 @@ h1 {
 
 /*nav menu*/
 #header {
-    height: 100vh;
-    background: url("img/Portfolio\ Banner\ 2.jpg")no-repeat center/cover fixed;
-}
+    width: 100%;
+    height: 100vh; 
+    background-image:
+      url("img/New\ Project.png"),
+      url("img/Speedline@1x-3.0s-2506px-1272px.gif");
+    background-position:
+      right center,
+      left center;
+    background-repeat:
+      no-repeat,
+      no-repeat;
+    background-size:
+      auto,
+      cover;
+    background-color: black;
+  }
+  
 
 .container {
     max-width: 1200px;
@@ -88,6 +104,9 @@ nav {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    background-color: #262626;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 .logo {
@@ -97,13 +116,13 @@ nav {
 nav ul li {
     display: inline-block;
     list-style: none;
-    margin: 10px 20px;
+    margin: 20px 20px;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
     position: relative;
 }
 
@@ -143,17 +162,20 @@ a {
 /* start simpletextrotator */
 .wrapper {
     display: flex;
-    overflow: hidden;
+    align-items: center;
     margin-bottom: 20px;
+    height: 50px; 
 }
 
-.words>span {
-    overflow: hidden;
+.words > span {
+    font-size: 50px !important;  
+    font-family: 'Raleway', sans-serif !important; 
+    font-weight: bold;
     color: #D43F52;
-    font-size: 55;
-    font-family: Arial, sans-serif;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap; 
 }
-
 /* end simpletextrotator */
 
 /*---about me section---*/
