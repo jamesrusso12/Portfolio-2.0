@@ -101,13 +101,24 @@ button:hover {
 
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    width: 1200px;
+    position: fixed;        /* Pins it in a fixed spot relative to the viewport */
+    top: 20px;              /* Moves it 20px from the top edge */
+    left: 50%;              /* Centers horizontally */
+    transform: translateX(-50%); /* Pulls it back left by half its own width, so it's perfectly centered */
+    
+    z-index: 9999;          /* Keep it on top of other content */
     background-color: #262626;
     border-radius: 10px;
     padding: 10px;
-}
+    border: 3px solid #D43F52;
+  
+    display: flex;
+    justify-content: center;
+    /* Optionally add a subtle box shadow for a “floating” look: */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  }
+  
 
 .logo {
     width: 250px;
