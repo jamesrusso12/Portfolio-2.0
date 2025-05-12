@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\bootstrap",
+    "\\bootstrap\\js",
+    "\\img"
   ],
-  "SelectedNode": "\\workingIframe.html",
+  "SelectedNode": "\\img\\UnrealFighterGame.mp4",
   "PreviewInSolutionExplorer": false
 }

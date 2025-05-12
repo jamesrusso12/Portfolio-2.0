@@ -1,42 +1,31 @@
-// Add event listeners for quick-view buttons
-document.querySelectorAll('.quick-view').forEach(item => {
-    item.addEventListener('click', function() {
-        const portfolioItem = this.closest('.portfolio-item');
-        const demoUrl = portfolioItem.querySelector('.portfolio-item__wrapper').dataset.demo;
+document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.querySelector('.video-slider');
+    if (!slider) return;
 
-        // Add a class to disable hover effects
-        portfolioItem.classList.add('no-hover');
+    const slides = Array.from(slider.querySelectorAll('.slide'));
+    const prevBtn = slider.querySelector('.prev');
+    const nextBtn = slider.querySelector('.next');
+    let currentIdx = slides.findIndex(s => s.classList.contains('active'));
+    if (currentIdx < 0) currentIdx = 0;
 
-        const iframeWrapper = document.createElement('div');
-        iframeWrapper.classList.add('iframe-wrapper');
-        iframeWrapper.innerHTML = `
-            <iframe src="${demoUrl}"></iframe>
-            <div class="devices-wrapper">
-                <button onclick="closePreview(this)">Close</button>
-                <button onclick="openInNewTab('${demoUrl}')">Open in New Tab</button>
-            </div>
-        `;
-        portfolioItem.appendChild(iframeWrapper);
+    /**
+     * Switches the `.active` class from the current slide to the one at newIndex.
+     * Wraps around at either end.
+     */
+    function showSlide(newIndex) {
+        slides[currentIdx].classList.remove('active');
+        currentIdx = (newIndex + slides.length) % slides.length;
+        slides[currentIdx].classList.add('active');
+    }
+
+    // Hook up arrow buttons
+    prevBtn.addEventListener('click', () => showSlide(currentIdx - 1));
+    nextBtn.addEventListener('click', () => showSlide(currentIdx + 1));
+
+    // Optional: arrow-key navigation when the slider has focus
+    slider.setAttribute('tabindex', '0');
+    slider.addEventListener('keydown', e => {
+        if (e.key === 'ArrowLeft') showSlide(currentIdx - 1);
+        if (e.key === 'ArrowRight') showSlide(currentIdx + 1);
     });
 });
-
-// Function to close the preview and restore hover effects
-function closePreview(button) {
-    const iframeWrapper = button.closest('.iframe-wrapper');
-    const portfolioItem = iframeWrapper.closest('.portfolio-item');
-    iframeWrapper.remove();
-
-    // Remove the class to enable hover effects again
-    portfolioItem.classList.remove('no-hover');
-}
-
-// Function to open the preview in a new tab
-function openInNewTab(url) {
-    window.open(url, '_blank');
-}
-
-// Function to toggle the side menu
-function toggleMenu() {
-    const menu = document.getElementById("sidemenu");
-    menu.style.right = menu.style.right === "0px" ? "-200px" : "0";
-}
