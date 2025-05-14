@@ -3,21 +3,41 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>James Russo Portfolio</title>
 
-    <!-- CSS -->
+    <!-- 1. Owl Carousel CSS -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/assets/owl.theme.default.min.css" />
+
+    <!-- 2. Plyr CSS -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.css" />
+
+    <!-- 3. Your main stylesheet -->
     <link rel="stylesheet" href="style.css" />
 
-    <!-- Google Fonts for icons (Material Symbols) -->
+    <!-- Google Material Symbols for icons -->
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
 
-    <!-- jQuery & Font Awesome -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
-    <script src="https://kit.fontawesome.com/bc56acafc1.js" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/bc56acafc1.js"
+            crossorigin="anonymous"></script>
+
+    <!-- 4. jQuery (must load before Owl) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- 5. Owl Carousel JS -->
+    <script src="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
+
+    <!-- 6. Plyr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.polyfilled.js"></script>
 </head>
+
 
 <body>
     <!-- HEADER SECTION -->
@@ -298,32 +318,22 @@
     <section id="portfolio" class="portfolio-section">
         <div class="container">
             <h2 class="sub-title">Portfolio</h2>
-
-            <!-- Video carousel slider -->
-            <div class="video-slider">
-                <button class="slider-arrow prev" aria-label="Previous">‹</button>
-                <div class="slider-slides">
-                    <!-- Slide 1 -->
-                    <div class="slide active">
-                        <video controls preload="none" src="img/UnrealFighterGame.mp4"></video>
-                        <h3>Unreal Fighter Game</h3>
-                    </div>
-                    <!-- Slide 2 -->
-                    <div class="slide">
-                        <video controls preload="none" src="img/TargetPracticeMP.mp4"></video>
-                        <h3>Target Practice MP</h3>
-                    </div>
-                    <!-- Slide 3 -->
-                    <div class="slide">
-                        <video controls preload="none" src="img/MR%20game%20progress%20video.mp4"></video>
-                        <h3>MR Game Progress</h3>
-                    </div>
+            <div class="owl-carousel owl-theme video-section">
+                <div class="item">
+                    <video src="img/UnrealFighterGame.mp4" preload="metadata" controls></video>
+                    <h3 class="video-title">Unreal Fighter Game</h3>
                 </div>
-                <button class="slider-arrow next" aria-label="Next">›</button>
+                <div class="item">
+                    <video src="img/TargetPracticeMP.mp4" preload="metadata" controls></video>
+                    <h3 class="video-title">Target Practice MP</h3>
+                </div>
+                <div class="item">
+                    <video src="img/MR%20game%20progress%20video.mp4" preload="metadata" controls></video>
+                    <h3 class="video-title">MR Game Progress</h3>
+                </div>
             </div>
         </div>
     </section>
-
     <!-- END PORTFOLIO SECTION -->
     <!-- IMAGE GALLERY SECTION -->
     <section id="photo-gallery" class="photo-gallery">
