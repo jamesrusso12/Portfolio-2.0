@@ -57,17 +57,16 @@
     background-repeat: no-repeat, no-repeat;
     background-size: cover, cover;
     background-color: black;
-    background-attachment: fixed; /* Parallax effect on desktops */
+    background-attachment: fixed; 
   }
   
   #header .container {
     max-width: 1200px;
     margin: auto;
-    padding: 20px; /* consistent with other sections */
+    padding: 20px; 
     width: 100%;
   }
   
-  /* Disable parallax on smaller screens */
   @media (max-width: 768px) {
     #header {
       background-attachment: scroll;
@@ -88,10 +87,10 @@
   /* -------------------------------------------------------------------------- */
   .header-text {
     margin-top: 20%;
-    font-size: 30px; /* original size */
+    font-size: 30px; 
   }
   .header-text h1 {
-    font-size: 55px; /* original size */
+    font-size: 55px; 
     margin-top: 20px;
     color: #fff;
   }
@@ -100,7 +99,6 @@
     color: #fff;
   }
   
-  /* Text rotator wrapper if needed */
   .wrapper {
     display: flex;
     align-items: center;
@@ -112,13 +110,12 @@
   /* NEW SIDEBAR CODE                               */
   /* -------------------------------------------------------------------------- */
   
-  /* The .sidebar container */
   .sidebar {
     position: fixed;
     width: 270px;
     margin: 16px;
     border-radius: 16px;
-    background: #262626; /* or #262626, your choice */
+    background: #262626; 
     height: calc(100vh - 32px);
     transition: all 0.4s ease;
     z-index: 9999;
@@ -127,7 +124,7 @@
     width: 85px;
   }
   
-  /* Sidebar header (logo + togglers) */
+  /* Sidebar header */
   .sidebar-header {
     display: flex;
     position: relative;
@@ -312,7 +309,7 @@
     height: auto;
     min-height: 50px;
     margin-bottom: 20px;
-    margin-left: 0; /* remove leftover margin */
+    margin-left: 0; 
 }
 
 .words > span {
@@ -329,7 +326,7 @@
   /* COMMON .container STYLES                                                  */
   /* -------------------------------------------------------------------------- */
   .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: auto;
     padding: 20px;
     width: 100%;
@@ -434,7 +431,7 @@
 /* -------------------------------------------------------------------------- */
 .skills-container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: auto;
     padding: 50px 0;
     background-color: #262626;
@@ -479,10 +476,10 @@
 .skill-per.frontend { width: 95%; }
 .skill-per.vr { width: 85%; }
 .skill-per.uiux { width: 80%; }
-.skill-per.xcode { width: 88%; }
+.skill-per.xcode { width: 80%; }
 .skill-per.mysql { width: 65%; }
-.skill-per.development { width: 90%; }
-.skill-per.ios { width: 80%; }
+.skill-per.development { width: 75%; }
+.skill-per.ios { width: 70%; }
 
 .skill-box .tooltip {
     position: absolute;
@@ -507,7 +504,7 @@
     background: #262626;
     padding: 20px;
     margin: auto;
-    max-width: 1200px;
+    max-width: 1400px;
     font-size: 18px;
     border-radius: 10px;
 }
@@ -590,12 +587,19 @@
     padding: 40px 0;
     border-radius: 10px;
     margin-top: 20px;
-    overflow: visible;
+    position: relative;
+    overflow: hidden;
 }
 
-    /* Allow side‐slides to peek */
+    /* Remove fade mask overlays entirely */
+    #portfolio .video-section::before,
+    #portfolio .video-section::after {
+        display: none;
+    }
+
+    /* Carousel layout overrides */
     #portfolio .video-section .owl-stage-outer {
-        overflow: visible;
+        overflow: hidden !important;
     }
 
     #portfolio .video-section .owl-stage {
@@ -608,45 +612,67 @@
             cursor: grabbing;
         }
 
-    /* Layout slides horizontally */
     #portfolio .video-section .owl-item {
         flex: 0 0 auto !important;
         display: flex !important;
         justify-content: center;
+        z-index: 1;
     }
 
-        /* Side slides: 80% width, faded/scale */
+        /* Hide all non-center slides */
         #portfolio .video-section .owl-item .item {
-            width: 80%;
-            max-width: 100%;
-            margin: 0 10px;
-            opacity: 0.6;
-            transform: scale(0.95);
-            transition: width 0.4s ease, transform 0.4s ease, opacity 0.4s ease;
+            opacity: 0;
+            transform: scale(0.9);
+            pointer-events: none;
+            visibility: hidden;
+            transition: all 0.4s ease;
         }
 
-        /* Center slide: full width, full opacity/scale */
+        /* Show only the center slide */
         #portfolio .video-section .owl-item.center .item {
-            width: 100%;
+            width: 90%;
+            margin: 0 !important;
             opacity: 1;
             transform: scale(1);
+            pointer-events: auto;
+            visibility: visible;
+            z-index: 2;
         }
 
-    /* Video fills its parent */
+    /* Video styling */
     #portfolio .video-section .item video {
         width: 100%;
         height: auto;
-        max-width: 100%;
         border-radius: 10px;
         box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    /* Nav arrows */
+        #portfolio .video-section .item video:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+        }
+
+/* Title styling */
+.video-title {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #D43F52;
+    font-weight: 600;
+    text-shadow: 1px 1px 4px black;
+}
+
+/* Nav button styling */
+#portfolio .video-section .owl-nav {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
     #portfolio .video-section .owl-nav button.owl-prev,
     #portfolio .video-section .owl-nav button.owl-next {
-        position: static; 
-        top: auto;
-        transform: none;
         background: rgba(0,0,0,0.6);
         border: none;
         color: #fff;
@@ -654,27 +680,27 @@
         width: 2.5rem;
         height: 2.5rem;
         margin: 0 10px;
+        cursor: pointer;
+        z-index: 10;
     }
 
-    #portfolio .video-section .owl-nav {
-        display: flex !important;
-        justify-content: center;
-        align-items: center;
-        margin-top: 20px; 
+/* Hide dots */
+#portfolio .video-section .owl-dots {
+    display: none !important;
+}
+
+/* Mobile styles */
+@media (max-width: 600px) {
+    #portfolio .video-section .owl-item.center .item {
+        width: 100%;
     }
 
-    #portfolio .video-section .owl-nav .owl-prev {
-        left: 20px;
+    .video-title {
+        font-size: 1rem;
     }
+}
 
-    #portfolio .video-section .owl-nav .owl-next {
-        right: 20px;
-    }
 
-    /* Hide pagination dots */
-    #portfolio .video-section .owl-dots {
-        display: none;
-    }
 /* -------------------------------------------------------------------------- */
 /* IMAGE GALLERY SECTION                                                      */
 /* -------------------------------------------------------------------------- */
@@ -717,7 +743,7 @@
     grid-auto-rows: 300px;
     gap: 10px;
     justify-content: center;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: auto;
 }
 .image-grid img,
@@ -753,7 +779,7 @@
     position: relative;
     margin: auto;
     width: 90%;
-    max-width: 1200px;
+    max-width: 1400px;
 }
 .close {
     color: white;
