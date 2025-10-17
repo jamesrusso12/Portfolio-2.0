@@ -7,33 +7,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>James Russo Portfolio</title>
 
+    <meta name="description" content="James Russo — Game & XR Developer. Unity/C#, Unreal/C++, and VR/MR projects.">
+    <meta property="og:title" content="James Russo — Game & XR Developer">
+    <meta property="og:description" content="Interactive systems, VR/MR, UI/UX. Playable demos & case studies.">
+    <meta property="og:image" content="img/og-preview.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
     <!-- 1. Owl Carousel CSS -->
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/assets/owl.carousel.min.css" />
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/assets/owl.theme.default.min.css" />
-
     <!-- 2. Plyr CSS -->
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.css" />
-
     <!-- 3. Your main stylesheet -->
     <link rel="stylesheet" href="style.css" />
-
     <!-- Google Material Symbols for icons -->
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
-
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/bc56acafc1.js"
             crossorigin="anonymous"></script>
-
     <!-- 4. jQuery (must load before Owl) -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
     <!-- 5. Owl Carousel JS -->
     <script src="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
-
     <!-- 6. Plyr JS -->
     <script src="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.polyfilled.js"></script>
 </head>
@@ -42,208 +42,266 @@
 <body>
     <!-- HEADER SECTION -->
     <section id="home">
-        <aside class="sidebar">
+        <aside class="sidebar" id="sidebar" aria-label="Primary sidebar">
             <header class="sidebar-header">
-                <!-- Collapsing toggler (for desktops) -->
-                <button class="toggler sidebar-toggler">
-                    <span class="material-symbols-rounded">chevron_left</span>
+                <!-- Collapsing toggler (desktops) -->
+                <button type="button"
+                        class="toggler sidebar-toggler"
+                        aria-label="Collapse sidebar"
+                        aria-controls="sidebar"
+                        aria-expanded="true">
+                    <span class="material-symbols-rounded" aria-hidden="true">chevron_left</span>
                 </button>
-                <!-- Menu toggler (for smaller screens) -->
-                <button class="toggler menu-toggler">
-                    <span class="material-symbols-rounded">menu</span>
+
+                <!-- Menu toggler (smaller screens) -->
+                <button type="button"
+                        class="toggler menu-toggler"
+                        aria-label="Open menu"
+                        aria-controls="sidebar-nav"
+                        aria-expanded="false">
+                    <span class="material-symbols-rounded" aria-hidden="true">menu</span>
                 </button>
             </header>
 
-            <nav class="sidebar-nav">
-                <!-- top nav links -->
+            <nav class="sidebar-nav" id="sidebar-nav" role="navigation" aria-label="Primary">
                 <ul class="nav-list primary-nav">
                     <li class="nav-item">
-                        <a href="#home" class="nav-link">
-                            <span class="nav-icon material-symbols-rounded">home</span>
+                        <a href="#home" class="nav-link" aria-describedby="tt-home">
+                            <span class="nav-icon material-symbols-rounded" aria-hidden="true">home</span>
                             <span class="nav-label">Home</span>
                         </a>
-                        <span class="nav-tooltip">Home</span>
+                        <span class="nav-tooltip" role="tooltip" id="tt-home">Home</span>
                     </li>
+
                     <li class="nav-item">
-                        <a href="#about" class="nav-link">
-                            <span class="nav-icon material-symbols-rounded">person</span>
+                        <a href="#about" class="nav-link" aria-describedby="tt-about">
+                            <span class="nav-icon material-symbols-rounded" aria-hidden="true">person</span>
                             <span class="nav-label">About</span>
                         </a>
-                        <span class="nav-tooltip">About</span>
+                        <span class="nav-tooltip" role="tooltip" id="tt-about">About</span>
                     </li>
+
                     <li class="nav-item">
-                        <a href="#services" class="nav-link">
-                            <span class="nav-icon material-symbols-rounded">build</span>
+                        <a href="#services" class="nav-link" aria-describedby="tt-services">
+                            <span class="nav-icon material-symbols-rounded" aria-hidden="true">build</span>
                             <span class="nav-label">Services</span>
                         </a>
-                        <span class="nav-tooltip">Services</span>
+                        <span class="nav-tooltip" role="tooltip" id="tt-services">Services</span>
                     </li>
+
                     <li class="nav-item">
-                        <a href="#portfolio" class="nav-link">
-                            <span class="nav-icon material-symbols-rounded">collections</span>
+                        <a href="#portfolio" class="nav-link" aria-describedby="tt-portfolio">
+                            <span class="nav-icon material-symbols-rounded" aria-hidden="true">collections</span>
                             <span class="nav-label">Portfolio</span>
                         </a>
-                        <span class="nav-tooltip">Portfolio</span>
+                        <span class="nav-tooltip" role="tooltip" id="tt-portfolio">Portfolio</span>
                     </li>
+
                     <li class="nav-item">
-                        <a href="#contact" class="nav-link">
-                            <span class="nav-icon material-symbols-rounded">mail</span>
+                        <a href="#contact" class="nav-link" aria-describedby="tt-contact">
+                            <span class="nav-icon material-symbols-rounded" aria-hidden="true">mail</span>
                             <span class="nav-label">Contact</span>
                         </a>
-                        <span class="nav-tooltip">Contact</span>
+                        <span class="nav-tooltip" role="tooltip" id="tt-contact">Contact</span>
                     </li>
                 </ul>
             </nav>
         </aside>
 
+
         <!-- HEADER SECTION with your background, title, short description -->
-        <header id="header">
+        <header id="header" role="banner" aria-labelledby="site-title">
             <div class="container">
                 <div class="header-text">
-                    <h1>James Russo</h1>
+                    <h1 id="site-title">James Russo</h1>
+
+                    <!-- Rotating tagline (uses your simple-text-rotator) -->
                     <div class="wrapper">
-                        <div class="words">
-                            <span style="display:none;" id="test1"></span><br />
+                        <div class="words" aria-live="polite" aria-atomic="true">
+                            <!-- If you’re using jquery.simple-text-rotator, use class="rotate" -->
+                            <span id="test1" class="rotate">Game & XR Developer, Unity/C# & Unreal/C++, UI/UX for Immersive Systems</span>
                         </div>
                     </div>
-                    <h4>
-                        Dedicated, hardworking, and fast learner<br>
-                        that is committed to producing the best<br>
-                        and most creative projects possible and<br>
-                        completing any task assigned to me.
-                    </h4>
+
+                    <!-- Accessible, single-line subtitle instead of <br> chains -->
+                    <p class="subtitle">
+                        Dedicated, hardworking, and fast learner focused on building creative, high-quality interactive projects and shipping what I start.
+                    </p>
+
+                    <!-- Optional primary calls-to-action -->
+                    <div class="hero-ctas" aria-label="Primary actions">
+                        <a href="#portfolio" class="btn">View Portfolio</a>
+                        <a href="#contact" class="btn dark">Contact Me</a>
+                    </div>
+
+                    <!-- No-JS fallback for the rotator -->
+                    <noscript>
+                        <p class="subtitle">Game & XR Developer · Unity/C# · Unreal/C++ · UI/UX</p>
+                    </noscript>
                 </div>
             </div>
         </header>
+
     </section>
     <!-- END HEADER -->
     <!-- ABOUT SECTION -->
-    <section id="about">
-        <div class="container">
-            <h1 class="sub-title">About Me</h1>
-            <div class="content dark-bg rounded">
-                <p>
-                    Hardworking student with a passion for learning new technologies and helping others. Detail-oriented
-                    with excellent observational, organizational, and communication skills. Team player willing to help,
-                    reach common goals, and adapt to fit the needs of the group. Comfortable with entering new
-                    ecosystems and
-                    hands-on experience helping others regardless of their technological background. Experienced with
-                    Adobe
-                    Premiere, Photoshop, XD, and Animate. Extensive work in the Unity engine and very comfortable
-                    working in it.
-                </p>
-            </div>
-
-            <div class="tab-titles">
-                <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-            </div>
-
-            <div class="tab-contents active-tab" id="skills">
-                <div class="skills-container">
-                    <div class="skills-row">
-                        <div class="skill-box">
-                            <span class="title">Unity & C#</span>
-                            <div class="skill-bar">
-                                <span class="tooltip">95%</span>
-                                <span class="skill-per unity"></span>
-                            </div>
-                        </div>
-
-                        <div class="skill-box">
-                            <span class="title">C++ & Unreal</span>
-                            <div class="skill-bar">
-                                <span class="tooltip">80%</span>
-                                <span class="skill-per unreal"></span>
-                            </div>
-                        </div>
-
-                        <div class="skill-box">
-                            <span class="title">Front End Development</span>
-                            <div class="skill-bar">
-                                <span class="tooltip">95%</span>
-                                <span class="skill-per frontend"></span>
-                            </div>
-                        </div>
-
-                        <div class="skill-box">
-                            <span class="title">VR/AR Game Development</span>
-                            <div class="skill-bar">
-                                <span class="tooltip">85%</span>
-                                <span class="skill-per vr"></span>
-                            </div>
-                        </div>
-
-                        <div class="skill-box">
-                            <span class="title">UI/UX Design</span>
-                            <div class="skill-bar">
-                                <span class="tooltip">80%</span>
-                                <span class="skill-per uiux"></span>
-                            </div>
-                        </div>
-
-                        <div class="skill-box">
-                            <span class="title">Xcode & SwiftUI</span>
-                            <div class="skill-bar">
-                                <span class="tooltip">80%</span>
-                                <span class="skill-per xcode"></span>
-                            </div>
-                        </div>
-
-                        <div class="skill-box">
-                            <span class="title">MySQL & PHP</span>
-                            <div class="skill-bar">
-                                <span class="tooltip">65%</span>
-                                <span class="skill-per mysql"></span>
-                            </div>
-                        </div>
-
-                        <div class="skill-box">
-                            <span class="title">Adobe Photoshop</span>
-                            <div class="skill-bar">
-                                <span class="tooltip">75%</span>
-                                <span class="skill-per development"></span>
-                            </div>
-                        </div>
-
-                        <div class="skill-box">
-                            <span class="title">Github</span>
-                            <div class="skill-bar">
-                                <span class="tooltip">70%</span>
-                                <span class="skill-per ios"></span>
-                            </div>
-                        </div>
-                    </div>
+    <div class="tab-contents active-tab" id="skills" role="tabpanel" aria-labelledby="skills-tab">
+        <div class="skills-grid">
+            <!-- Unity & C# -->
+            <article class="skill-card glass-card">
+                <div class="skill-header">
+                    <i class="fa-brands fa-unity skill-icon"></i>
+                    <h3>Unity & C#</h3>
                 </div>
-            </div>
+                <ul class="proof-points">
+                    <li>3 shipped prototypes: 2D Fighter, VR Target Practice, MR Shooter.</li>
+                    <li>Optimized Quest builds with object pooling & haptics (60 FPS target).</li>
+                </ul>
+            </article>
+
+            <!-- Unreal & C++ -->
+            <article class="skill-card glass-card">
+                <div class="skill-header">
+                    <i class="fa-solid fa-cubes skill-icon"></i>
+                    <h3>Unreal & C++</h3>
+                </div>
+                <ul class="proof-points">
+                    <li>Developing parkour system (mantle, vault, ledge grab, crouch).</li>
+                    <li>AI perception, combat logic, and Niagara VFX polish.</li>
+                </ul>
+            </article>
+
+            <!-- Front-End -->
+            <article class="skill-card glass-card">
+                <div class="skill-header">
+                    <i class="fa-solid fa-code skill-icon"></i>
+                    <h3>Front-End Development</h3>
+                </div>
+                <ul class="proof-points">
+                    <li>Portfolio 2.0 built with jQuery, Owl Carousel & Formspree.</li>
+                    <li>Optimized accessibility, SEO meta, and responsive grid layouts.</li>
+                </ul>
+            </article>
+
+            <!-- VR / AR -->
+            <article class="skill-card glass-card">
+                <div class="skill-header">
+                    <i class="fa-solid fa-vr-cardboard skill-icon"></i>
+                    <h3>VR / AR Game Development</h3>
+                </div>
+                <ul class="proof-points">
+                    <li>Meta AIO SDK v72, Passthrough & MR Utility Kit integration.</li>
+                    <li>Designed comfort tuning: grab thresholds, spatial SFX, hit feedback.</li>
+                </ul>
+            </article>
+
+            <!-- UI/UX -->
+            <article class="skill-card glass-card">
+                <div class="skill-header">
+                    <i class="fa-solid fa-palette skill-icon"></i>
+                    <h3>UI / UX Design</h3>
+                </div>
+                <ul class="proof-points">
+                    <li>Designed diegetic HUDs & menus for VR accessibility.</li>
+                    <li>Created Figma wireframes and user-tested micro-interactions.</li>
+                </ul>
+            </article>
+
+            <!-- Xcode & SwiftUI -->
+            <article class="skill-card glass-card">
+                <div class="skill-header">
+                    <i class="fa-brands fa-apple skill-icon"></i>
+                    <h3>Xcode & SwiftUI</h3>
+                </div>
+                <ul class="proof-points">
+                    <li>Co-developed two iOS titles — one Unity-to-Xcode port, one SwiftUI AR 2D platformer.</li>
+                    <li>Focused on accessible UI/UX and smooth AR interactions.</li>
+                </ul>
+            </article>
+
+            <!-- Photoshop -->
+            <article class="skill-card glass-card">
+                <div class="skill-header">
+                    <i class="fa-solid fa-image skill-icon"></i>
+                    <h3>Adobe Photoshop</h3>
+                </div>
+                <ul class="proof-points">
+                    <li>Created textures, UI assets, and optimized sprite sheets.</li>
+                </ul>
+            </article>
+
+            <!-- GitHub -->
+            <article class="skill-card glass-card">
+                <div class="skill-header">
+                    <i class="fa-brands fa-github skill-icon"></i>
+                    <h3>GitHub</h3>
+                </div>
+                <ul class="proof-points">
+                    <li>Version control for group projects; pull requests and branching workflow.</li>
+                </ul>
+            </article>
         </div>
-    </section>
+
+        <!-- Highlights box stays -->
+        <div class="skills-proof glass-card">
+            <h3>Recent Highlights</h3>
+            <ul>
+                <li>Unity (C#): Mixed-Reality shooter & VR target practice loops using Meta SDK v72; optimized with object pooling and profiling.</li>
+                <li>Unreal (C++/BP): Developing a climbing/parkour game with advanced movement (ledge grab, wall run, vault).</li>
+                <li>UI/UX: Designed accessible HUDs & menus; refined input mapping for controller + VR users.</li>
+                <li>iOS (SwiftUI): Led UI/UX for two titles — one Unity→Xcode port & one native AR 2D platformer.</li>
+                <li>Web: Built & optimized this portfolio with lazy-loading, SEO meta, and Formspree integration.</li>
+            </ul>
+        </div>
+    </div>
     <!-- END ABOUT SECTION -->
     <!-- EXPERIENCE SECTION -->
-    <section id="experience">
+    <section id="experience" aria-labelledby="experience-heading">
         <div class="container">
-            <h1 class="sub-title">Experience</h1>
-            <div class="experience-container">
-                <h3 class="experience-title">Finance Simulator Tool Website</h3>
+            <h1 class="sub-title" id="experience-heading">Experience</h1>
+
+            <article class="experience-container glass-card" aria-labelledby="finance-sim-title">
+                <header>
+                    <h3 class="experience-title" id="finance-sim-title">Finance Simulator Tool Website</h3>
+                </header>
+
                 <p>
-                    As the lead UI/UX designer and tester for a Boise State University-hosted project, I spearheaded the
-                    design and development of a website aimed at helping students manage their finances throughout
-                    college.
+                    As the lead UI/UX designer and tester for a Boise State University–hosted project, I spearheaded the
+                    design and development of a website aimed at helping students manage their finances throughout college.
                 </p>
                 <p>
                     Collaborating with two team members, I focused on creating an intuitive, user-friendly interface
-                    that meets the unique needs of students. I also contributed to front-end development alongside my
-                    colleagues and worked closely with Boise State Financial staff to ensure we delivered an effective
-                    and accessible financial management tool for the student body.
+                    that meets the unique needs of students. I also contributed to front-end development and worked closely
+                    with Boise State Financial staff to deliver an effective and accessible financial management tool for the student body.
                 </p>
-                <a href="https://jordanralba.github.io/BSU-personal-finances/" target="_blank" class="btn">
-                    Visit Student Finance Simulator
-                </a>
-                <div class="experienceimg">
-                    <video src="img/Finance Simulator.mp4" controls class="experiencevideo">
+
+                <p>
+                    <a href="https://jordanralba.github.io/BSU-personal-finances/"
+                       class="btn"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Visit Student Finance Simulator (opens in a new tab)">
+                        Visit Student Finance Simulator
+                    </a>
+                </p>
+
+                <figure class="experienceimg">
+                    <!-- Add a poster image if you have one: poster="img/finance-sim-poster.jpg" -->
+                    <video id="exp-finance-video"
+                           class="experiencevideo"
+                           controls
+                           preload="metadata"
+                           playsinline
+                           controlslist="nodownload">
+                        <source src="img/Finance Simulator.mp4" type="video/mp4" />
+                        <!-- Optional captions track (recommended)
+                        <track kind="captions" src="captions/finance-sim-en.vtt" srclang="en" label="English" default />
+                        -->
                         Your browser does not support the video tag.
                     </video>
-                </div>
-            </div>
+                    <figcaption class="sr-only">Demo of the Student Finance Simulator website.</figcaption>
+                </figure>
+            </article>
         </div>
     </section>
     <!-- END EXPERIENCE SECTION -->
@@ -252,114 +310,162 @@
         <div class="container">
             <h1 class="sub-title">What I Can Do</h1>
             <div class="services-list">
-                <div class="service-item">
+
+                <!-- Web Design -->
+                <article class="service-item glass-card">
                     <span class="service-icon"><i class="fa-solid fa-code"></i></span>
-                    <h2>Web Design</h2>
+                    <h2>Web Design & Front-End Development</h2>
                     <p>
-                        Web design is a skill that I have diligently cultivated, and I take pride in the projects I've
-                        successfully completed. Over the years, I've honed my ability to create websites through
-                        full-stack development techniques. Additionally, I've expanded my capabilities by optimizing the
-                        use of tools like D3.js and MySQL with PHP to create more captivating websites, incorporating
-                        dynamic databases...
+                        I’ve designed and built responsive, performance-focused web experiences that highlight both technical depth and aesthetic precision.
+                        My work balances clean UX with optimized performance, accessibility, and real-world use.
                         <span class="dots">...</span>
-                        <span class="more-content">
-                            This expertise has empowered me to craft and personalize my own portfolio.
-                            Currently, I'm in the process of acquiring proficiency in AWS, which is enhancing my web
-                            development skills. Personally, I've always had an affinity for UI/UX design and am
-                            well-versed in both Google and Apple design practices, with a continuous drive to expand my
-                            knowledge in web design.
+                        <span class="more-content" id="svc-web-more" hidden>
+                            One of my proudest examples is this very website —
+                            <strong>James Russo Portfolio 2.0</strong> — built entirely from scratch with
+                            <strong>HTML5, CSS3, and jQuery</strong> and enhanced through
+                            <strong>Owl Carousel</strong> for dynamic media presentation.
+                            Every section is modular, responsive, and designed with Bootstrap-style layout logic
+                            for easy scalability.
+                            I’ve also developed full-stack projects, such as the
+                            <a href="https://jordanralba.github.io/BSU-personal-finances/" target="_blank" rel="noopener noreferrer">Finance Simulator Tool</a>,
+                            a collaborative Boise State University project that helps students learn
+                            money management through an interactive web app.
+                            Currently, I’m integrating more advanced front-end interactions using lazy-loaded assets,
+                            accessibility-first markup, and lightweight JS animations that maintain
+                            a glassmorphic aesthetic across devices.
                         </span>
                     </p>
                     <button class="btn read-more" onclick="toggleReadMore(this)">Read more</button>
-                </div>
+                </article>
 
-                <div class="service-item">
+                <!-- Unity -->
+                <article class="service-item glass-card">
                     <span class="service-icon"><i class="fa-brands fa-unity"></i></span>
-                    <h2>Unity Game Design</h2>
+                    <h2>Unity Game Design & Development</h2>
                     <p>
-                        Creating and building within Unity has been a cherished pursuit of mine, allowing me to channel
-                        my creative interests effectively into game development. Leveraging my proficiency in C#, I've
-                        successfully crafted a range of games, from 2D platformers to immersive VR experiences. Each
-                        project has provided valuable insights and deepened my knowledge. <span class="dots">...</span>
-                        <span class="more-content">
-                            In one of my initial endeavors, I created a fully functional 2D platformer game complete
-                            with AI-driven enemies, player health and damage systems, wall-running mechanics, and more.
-                            Currently, I'm engaged in my final project, a 3D environment project where I'm designing my
-                            own models and textures, ultimately transforming it into a VR first-person shooter game. My
-                            passion for game design is unwavering, particularly when utilizing tools like Unity, C#,
-                            Maya,and Blender.
+                        I’ve developed a range of Unity projects, from 2D platformers to immersive VR and MR experiences,
+                        focusing on player interaction, fluid movement, and optimized performance.
+                        <span class="dots">...</span>
+                        <span class="more-content" id="svc-unity-more" hidden>
+                            Some of my most significant Unity projects include a
+                            <strong>Mixed-Reality (MR) shooter</strong> built with the Meta All-in-One SDK v72,
+                            featuring passthrough environments, spatial SFX, and haptic feedback for full immersion.
+                            I also built a <strong>VR Target Practice</strong> experience using Unity 6,
+                            where I implemented physics-based projectile mechanics, precise grab thresholds, and object pooling
+                            to maintain 60 FPS on Meta Quest devices.
+                            Earlier projects include my <strong>2D Fighter Game</strong>, which showcases AI-driven combat,
+                            animation state machines, and advanced player health/damage systems.
+                            Each project emphasizes my ability to blend strong technical systems (C#, event-driven architecture)
+                            with engaging design principles and player-centered polish.
                         </span>
                     </p>
                     <button class="btn read-more" onclick="toggleReadMore(this)">Read more</button>
-                </div>
+                </article>
 
-                <div class="service-item">
+                <!-- Application Design -->
+                <article class="service-item glass-card">
                     <span class="service-icon"><i class="fa-brands fa-app-store"></i></span>
-                    <h2>Application Design</h2>
+                    <h2>Application & UI/UX Design</h2>
                     <p>
-                        The experience I've garnered in these fields has been immensely beneficial. My exposure to web
-                        and game development design has provided me with a valuable perspective on approaching new
-                        projects. Understanding the intricacies of game development and design has made me adaptable in
-                        tackling tasks and shaping 3D models. <span class="dots">...</span>
-                        <span class="more-content">
-                            This aptitude for design extends to creating engaging gameplay and level design,
-                            focusing on enhancing accessibility and user enjoyment. I have a genuine enthusiasm
-                            for collaborative work, thriving in team settings, and taking on diverse
-                            challenges to design projects effectively and efficiently.
+                        I specialize in designing intuitive, accessible applications that merge function and creativity,
+                        applying user-centered design across multiple platforms — from iOS to web and VR interfaces.
+                        <span class="dots">...</span>
+                        <span class="more-content" id="svc-app-more" hidden>
+                            My application work includes designing two iOS apps — one developed in <strong>SwiftUI</strong> and another
+                            built in <strong>Unity</strong> and ported to Xcode — where I led UI/UX design to create clean navigation
+                            and efficient layouts optimized for touch interaction.
+                            I’ve also applied these skills in XR, designing
+                            <strong>diegetic HUDs</strong> and in-game menu systems that integrate naturally into 3D spaces.
+                            Across every project, I prioritize accessibility, from contrast compliance to input mapping consistency
+                            (keyboard, controller, and VR hand tracking).
+                            My UI/UX philosophy is simple — “design that feels invisible.”
+                            Whether it’s prototyping in Figma or refining interactions in-engine, I always aim to make the user feel
+                            confident, not confused.
                         </span>
                     </p>
                     <button class="btn read-more" onclick="toggleReadMore(this)">Read more</button>
-                </div>
+                </article>
+
             </div>
         </div>
     </section>
     <!-- END SERVICES SECTION -->
-
-    <!-- PORTFOLIO SECTION -->
+    <!-- PORTFOLIO / PLAYGROUND SECTION -->
     <section id="portfolio" class="portfolio-section">
         <div class="container">
-            <h2 class="sub-title">Portfolio</h2>
-            <div class="owl-carousel owl-theme video-section">
+            <h2 class="sub-title">Playground</h2>
+            <p class="portfolio-intro">
+                A collection of my favorite interactive experiments — spanning Unreal Engine, Unity, and front-end prototypes.
+                Each clip highlights a different layer of my design, programming, or system optimization work.
+            </p>
+
+            <div class="owl-carousel owl-theme video-section glass-card">
+                <!-- Unreal Fighter -->
                 <div class="item">
-                    <video src="img/UnrealFighterGame.mp4" preload="metadata" controls></video>
-                    <h3 class="video-title">2D Fighter Game - Unreal Engine</h3>
+                    <video src="img/UnrealFighterGame.mp4" preload="metadata" controls muted playsinline loading="lazy"></video>
+                    <h3 class="video-title">2D Fighter Game <span>- Unreal Engine 5</span></h3>
+                    <p class="video-desc">A prototype showcasing AI combat logic, animation blueprints, and C++ attack combo systems built for Unreal Engine 5.</p>
                 </div>
+
+                <!-- Target Practice MP -->
                 <div class="item">
-                    <video src="img/TargetPracticeMP.mp4" preload="metadata" controls></video>
-                    <h3 class="video-title">Target Practice MP - Unreal Engine</h3>
+                    <video src="img/TargetPracticeMP.mp4" preload="metadata" controls muted playsinline loading="lazy"></video>
+                    <h3 class="video-title">Target Practice MP <span>- Unreal Engine</span></h3>
+                    <p class="video-desc">Multiplayer target range powered by Unreal's replication system — including networked scoring, dynamic spawns, and hit detection.</p>
                 </div>
+
+                <!-- MR Game -->
                 <div class="item">
-                    <video src="img/MR game progress video.mp4" preload="metadata" controls></video>
-                    <h3 class="video-title">MR Game Progress - Unity 6</h3>
+                    <video src="img/MR game progress video.mp4" preload="metadata" controls muted playsinline loading="lazy"></video>
+                    <h3 class="video-title">Mixed Reality Shooter <span>- Unity 6</span></h3>
+                    <p class="video-desc">Built using Meta’s AIO SDK v72 — blends passthrough environments, spatial SFX, and interactive mixed-reality mechanics.</p>
                 </div>
+
+                <!-- Finance Simulator -->
                 <div class="item">
-                    <video src="img/Finance Simulator.mp4" preload="metadata" controls muted></video>
-                    <h3 class="video-title">Finance Simulator</h3>
+                    <video src="img/Finance Simulator.mp4" preload="metadata" controls muted playsinline loading="lazy"></video>
+                    <h3 class="video-title">Finance Simulator <span>- Web Application</span></h3>
+                    <p class="video-desc">Lead UI/UX designer for a Boise State-hosted student finance site using HTML, CSS, and JS — helping students visualize budgeting over time.</p>
                 </div>
+
+                <!-- OnRamp AR -->
                 <div class="item">
-                    <video src="img/OnRampAR.mp4" preload="metadata" controls muted></video>
-                    <h3 class="video-title">OnRamp AR</h3>
+                    <video src="img/OnRampAR.mp4" preload="metadata" controls muted playsinline loading="lazy"></video>
+                    <h3 class="video-title">OnRamp AR <span>- Unity</span></h3>
+                    <p class="video-desc">Augmented reality learning project featuring image tracking, 3D overlays, and real-time educational interactivity.</p>
                 </div>
+
+                <!-- Halo Analysis -->
                 <div class="item">
-                    <video src="img/Halo SpeedRuns.mp4" preload="metadata" controls muted></video>
-                    <h3 class="video-title">Halo SpeedRuns Analysis</h3>
+                    <video src="img/Halo SpeedRuns.mp4" preload="metadata" controls muted playsinline loading="lazy"></video>
+                    <h3 class="video-title">Halo SpeedRuns Analysis <span>- Data Visualization</span></h3>
+                    <p class="video-desc">A D3.js and MySQL dashboard visualizing player speedrun statistics and performance trends across Halo map archives.</p>
                 </div>
+
+                <!-- Alexa Intent Box -->
                 <div class="item">
-                    <video src="img/AlexaIntentBox.mp4" preload="metadata" controls muted></video>
-                    <h3 class="video-title">Alexa Intent Box</h3>
+                    <video src="img/AlexaIntentBox.mp4" preload="metadata" controls muted playsinline loading="lazy"></video>
+                    <h3 class="video-title">Alexa Intent Box <span>- Voice UX Prototype</span></h3>
+                    <p class="video-desc">Voice-activated interface integrating Amazon’s Alexa SDK for smart assistant-based storytelling interactions.</p>
                 </div>
+
+                <!-- Game Design Prototype -->
                 <div class="item">
-                    <video src="img/Game Design Prototype - SampleScene - Windows, Mac, Linux - Unity 2021.3.10f1 Personal_ _DX11_ 2023-05-01 10-07-07.mp4" preload="metadata" controls muted></video>
-                    <h3 class="video-title">Game Design Prototype</h3>
+                    <video src="img/Game Design Prototype - SampleScene - Windows, Mac, Linux - Unity 2021.3.10f1 Personal_ _DX11_ 2023-05-01 10-07-07.mp4"
+                           preload="metadata" controls muted playsinline loading="lazy"></video>
+                    <h3 class="video-title">Game Design Prototype <span>- Unity 2021</span></h3>
+                    <p class="video-desc">Early Unity experiment blending player physics, animation trees, and responsive environment triggers.</p>
                 </div>
+
+                <!-- Unity Showcase -->
                 <div class="item">
-                    <video src="img/UnityShowcase.MP4" preload="metadata" controls muted></video>
-                    <h3 class="video-title">Unity Showcase</h3>
+                    <video src="img/UnityShowcase.MP4" preload="metadata" controls muted playsinline loading="lazy"></video>
+                    <h3 class="video-title">Unity Showcase <span>- Engine Overview</span></h3>
+                    <p class="video-desc">A compilation reel of Unity systems I’ve designed — from interaction logic to custom shaders and material blending.</p>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- END PORTFOLIO SECTION -->
 
     <!-- IMAGE GALLERY SECTION -->
@@ -374,7 +480,7 @@
         </div>
 
         <!-- Unity Projects -->
-        <div id="unity-gallery" class="gallery-content active">
+        <div id="unity-gallery" class="gallery-content active glass-card">
             <h2 class="gallery-title">Unity Projects</h2>
             <div class="image-grid">
                 <img src="img/2D Unity Level 1.jpg" alt="Unity Project" class="wide hover-shadow"
@@ -405,7 +511,7 @@
         </div>
 
         <!-- Web Design Projects -->
-        <div id="web-gallery" class="gallery-content">
+        <div id="web-gallery" class="gallery-content glass-card">
             <h2 class="gallery-title">Web Design Projects</h2>
             <div class="image-grid">
                 <img src="img/HaloMaps.JPG" alt="Web Design Project" class="wide hover-shadow"
@@ -432,7 +538,7 @@
         </div>
 
         <!-- Unreal Projects -->
-        <div id="unreal-gallery" class="gallery-content">
+        <div id="unreal-gallery" class="gallery-content glass-card">
             <h2 class="gallery-title">Unreal Projects</h2>
             <div class="image-grid">
                 <img src="img/Air_Attack_Code.png" alt="Unreal project" class="wide hover-shadow"
@@ -482,38 +588,52 @@
         </div>
     </section>
     <!-- END IMAGE GALLERY SECTION -->
+
     <!-- CONTACT SECTION -->
-    <div id="contact">
-        <div class="container">
-            <div class="row">
+    <section id="contact" class="contact-section">
+        <div class="container glass-card">
+            <div class="row contact-wrapper">
+
+                <!-- LEFT: Info -->
                 <div class="contact-left">
                     <h1 class="sub-title">Contact Me</h1>
-                    <p><i class="fas fa-paper-plane"></i> jrusso03@icloud.com</p>
-                    <p><i class="fas fa-phone-square-alt"></i> (949) 397-0464</p>
+                    <p><i class="fas fa-paper-plane"></i> <a href="mailto:jrusso03@icloud.com">jrusso03@icloud.com</a></p>
+                    <p><i class="fas fa-phone-square-alt"></i> <a href="tel:+19493970464">(949) 397-0464</a></p>
+
                     <div class="social-icons">
-                        <a href=""><i class="fab fa-twitter-square"></i></a>
-                        <a href="https://www.instagram.com/james_russo03/"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/in/jamesjrusso/"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter-square"></i></a>
+                        <a href="https://www.instagram.com/james_russo03/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/jamesjrusso/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
                     </div>
+
                     <a href="img/Cover Letter.pdf" download class="btn dark" role="button">Download Cover Letter</a>
                 </div>
 
+                <!-- RIGHT: Form -->
                 <div class="contact-right">
-                    <!-- Contact Form -->
-                    <form action="https://formspree.io/f/xwpvdgko" method="POST" onsubmit="return showMessage(event)">
-                        <input type="text" name="name" placeholder="Your Name" required />
-                        <input type="email" name="email" placeholder="Your Email" required />
-                        <textarea name="message" rows="6" placeholder="Your Message"></textarea>
-                        <button type="submit" class="btn dark">Submit</button>
+                    <form action="https://formspree.io/f/xwpvdgko"
+                          method="POST"
+                          onsubmit="return showMessage(event)"
+                          class="glass-form">
+                        <label for="name">Name</label>
+                        <input id="name" type="text" name="name" placeholder="Your Name" required />
+
+                        <label for="email">Email</label>
+                        <input id="email" type="email" name="email" placeholder="Your Email" required />
+
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Your Message"></textarea>
+
+                        <button type="submit" class="btn">Send Message</button>
                         <span id="msg"></span>
                     </form>
-                    <span id="msg"></span>
-                    <!-- Success/Failure Message -->
                 </div>
+
             </div>
         </div>
-    </div>
+    </section>
     <!-- END CONTACT SECTION -->
+
     <!-- Footer -->
     <div class="copyright">
         <p>&copy; 2024 James Russo | All Rights Reserved</p>
@@ -526,6 +646,17 @@
     <script src="bootstrap/js/readMore.js" defer></script>
     <script src="bootstrap/js/formSpree.js" defer></script>
     <script src="bootstrap/js/navMenu.js" defer></script>
+    <script>
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.Plyr) new Plyr('#exp-finance-video', { ratio: '16:9' });
+        });
+    </script>
+
 </body>
 
 </html>
