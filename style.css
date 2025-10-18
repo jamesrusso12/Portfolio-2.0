@@ -444,140 +444,73 @@ button {
 /* ABOUT SECTION (Updated - Glass Skill Cards Version)                        */
 /* -------------------------------------------------------------------------- */
 
-#about {
-    padding: 50px 0;
-}
-
-.sub-title {
-    font-weight: 600;
-    color: var(--color-accent);
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-.content {
-    margin-bottom: 2rem;
-}
-
-.tab-titles {
-    display: flex;
-    justify-content: flex-start;
-    margin: 20px 0 40px;
-}
-
-.tab-links {
-    margin-right: 40px;
-    font-size: 1.25rem;
-    font-weight: 600;
-    cursor: pointer;
-    position: relative;
-    color: var(--color-text);
-    background: none;
-    border: none;
-    outline: none;
-}
-
-    .tab-links::after {
-        content: '';
-        width: 0;
-        height: 3px;
-        background: var(--color-accent);
-        position: absolute;
-        left: 0;
-        bottom: -8px;
-        transition: width 0.4s ease;
-    }
-
-    .tab-links.active-link::after {
-        width: 60%;
-    }
-
-/* Skill Grid Layout */
-.skills-grid {
+#about .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: clamp(14px, 2.5vw, 22px);
+    margin-top: 18px;
 }
 
-/* Individual Skill Cards */
-.skill-card {
-    padding: 1.5rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+#about .skill-card.glass-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    backdrop-filter: var(--blur-glass);
+    -webkit-backdrop-filter: var(--blur-glass);
+    box-shadow: var(--shadow-glass);
+    border-radius: 12px;
+    padding: clamp(14px, 2vw, 22px);
 }
 
-    .skill-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-    }
-
-/* Header inside each card */
-.skill-header {
+#about .skill-header {
     display: flex;
     align-items: center;
-    gap: 0.6rem;
-    margin-bottom: 0.75rem;
+    gap: 10px;
+    margin-bottom: 8px;
 }
 
-    .skill-header h3 {
-        font-size: 1.25rem;
-        font-weight: 600;
-        color: var(--color-accent);
-    }
-
-.skill-icon {
-    font-size: 1.4rem;
-    color: var(--color-accent);
+#about .skill-icon {
+    font-size: 1.35rem;
+    opacity: 0.9;
 }
 
-/* Bullet points under each skill */
-.proof-points {
+#about .proof-points {
     margin: 8px 0 0 20px;
     padding: 0;
     list-style: disc;
-    color: var(--color-text);
-    opacity: 0.9;
+    color: #cfcfcf;
     font-size: 0.95rem;
-    line-height: 1.45;
+    line-height: 1.5;
 }
 
-    .proof-points li {
-        margin: 4px 0;
-    }
-
-/* Recent Highlights Glass Box */
-.skills-proof {
-    margin-top: 2.5rem;
-    padding: 1.5rem 1.8rem;
-    border: 1px solid var(--color-surface-border);
+#about .skills-proof.glass-card {
     background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
     backdrop-filter: var(--blur-glass);
     -webkit-backdrop-filter: var(--blur-glass);
-    border-radius: 10px;
     box-shadow: var(--shadow-glass);
+    border-radius: 12px;
+    padding: clamp(16px, 2.2vw, 24px);
+    margin-top: clamp(16px, 2.5vw, 24px);
 }
 
-    .skills-proof h3 {
-        margin-bottom: 0.8rem;
-        font-size: 1.2rem;
-        color: var(--color-accent);
-        font-weight: 600;
-    }
+#about .skills-proof h3 {
+    margin: 0 0 8px;
+    font-size: 1.05rem;
+    color: var(--color-accent);
+}
 
-    .skills-proof ul {
-        margin: 0;
-        padding-left: 1.2rem;
-        color: var(--color-text);
-        opacity: 0.9;
-        line-height: 1.6;
-        font-size: 0.95rem;
-    }
+#about .skills-proof ul {
+    margin: 0;
+    padding-left: 1.2rem;
+    color: #cfcfcf;
+    line-height: 1.55;
+}
 
-    .skills-proof li {
-        margin: 0.35rem 0;
-    }
+#about .skills-proof li {
+    margin: .35rem 0;
+}
 
-/* Optional: fade-up animation on scroll */
+/* Optional subtle reveal */
 @keyframes fadeUp {
     from {
         opacity: 0;
@@ -590,136 +523,117 @@ button {
     }
 }
 
-.skill-card,
-.skills-proof {
-    animation: fadeUp 0.5s ease both;
+#about .proof-points li,
+#about .skills-proof li {
+    animation: fadeUp .4s ease both;
 }
 
+    #about .proof-points li:nth-child(2) {
+        animation-delay: .05s;
+    }
+
+    #about .proof-points li:nth-child(3) {
+        animation-delay: .1s;
+    }
+
+    #about .proof-points li:nth-child(4) {
+        animation-delay: .15s;
+    }
 
 /* -------------------------------------------------------------------------- */
-/* EXPERIENCE SECTION (Updated - Glass Layout + Full-Width Video)             */
+/* EXPERIENCE SECTION (Glass Layout + Full-Width Video, Plyr-safe)            */
 /* -------------------------------------------------------------------------- */
 
-#experience {
-    padding: 60px 0;
-}
-
-.experience-container {
+#experience .experience-container {
     background: var(--color-surface);
     border: 1px solid var(--color-surface-border);
     backdrop-filter: var(--blur-glass);
     -webkit-backdrop-filter: var(--blur-glass);
     box-shadow: var(--shadow-glass);
-    padding: 2rem 2.5rem;
-    margin: 0 auto;
-    max-width: 1200px;
+    padding: clamp(16px, 2.5vw, 28px);
     border-radius: 12px;
-    text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-    .experience-container:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
-    }
-
-.experience-title {
-    font-size: 1.6rem;
-    font-weight: 600;
+#experience .experience-title {
+    font-size: clamp(1.1rem, 1.6vw, 1.4rem);
     color: var(--color-accent);
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 10px;
 }
 
-.experience-container p {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: var(--color-text);
-    opacity: 0.9;
-    margin-bottom: 1rem;
-}
-
-/* Button placement */
-.experience-container .btn {
-    display: inline-block;
-    margin-top: 0.5rem;
-}
-
-/* Video wrapper */
-.experienceimg {
+#experience .experienceimg {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1.5rem;
+    margin-top: 12px;
+    display: block; 
+}
+
+    #experience .experienceimg > video,
+    #experience .experienceimg > .plyr {
+        display: block;
+        width: 100% !important; 
+        max-width: 1400px !important; 
+        margin-inline: auto;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,.35);
+        aspect-ratio: 16 / 9; 
+        object-fit: cover;
+    }
+
+    #experience .experienceimg .plyr video {
+        width: 100% !important;
+        height: 100% !important;
+        border-radius: inherit;
+    }
+
+/* -------------------------------------------------------------------------- */
+/* SHOWCASE SECTION (Glass Layout + Responsive YouTube Embed)                 */
+/* -------------------------------------------------------------------------- */
+#showcase .showcase-container {
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    backdrop-filter: var(--blur-glass);
+    -webkit-backdrop-filter: var(--blur-glass);
+    box-shadow: var(--shadow-glass);
+    padding: clamp(16px, 2.5vw, 28px);
+    border-radius: 12px;
+}
+
+#showcase .showcase-title {
+    font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+    color: var(--color-accent);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#showcase p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    color: var(--color-text);
+}
+
+/* Responsive YouTube iframe wrapper */
+.showcase-video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    aspect-ratio: 16 / 9;
+    margin: 1rem auto 0 auto;
     border-radius: 10px;
     overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,.35);
 }
 
-/* Responsive full-width video */
-.experiencevideo {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 9;
-    border-radius: 10px;
-    object-fit: cover;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-}
-
-    /* Slight glow on hover for cinematic effect */
-    .experiencevideo:hover {
-        box-shadow: 0 12px 36px rgba(0, 0, 0, 0.55);
-        transform: scale(1.01);
-        transition: all 0.3s ease;
+    .showcase-video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: inherit;
     }
-
-/* Mobile adjustments */
-@media (max-width: 768px) {
-    .experience-container {
-        padding: 1.5rem;
-    }
-
-    .experience-title {
-        font-size: 1.4rem;
-    }
-
-    .experiencevideo {
-        aspect-ratio: 16 / 9;
-    }
-}
-
-/* Force full-width video in the Experience section */
-#experience .experienceimg {
-    margin-top: 1.5rem;
-    padding: 0;
-    width: 100% !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-    #experience .experienceimg video,
-    #experience .experiencevideo {
-        display: block;
-        width: 100% !important; /* fill the container */
-        max-width: 1200px !important; /* same as container width */
-        height: auto !important;
-        aspect-ratio: 16 / 9;
-        object-fit: cover;
-        border-radius: 10px;
-        box-shadow: 0 8px 24px rgba(0,0,0,.4);
-    }
-
-/* If Plyr is enabled, ensure its wrapper also stretches */
-#experience .plyr,
-#experience .plyr__video-wrapper,
-#experience .plyr--video {
-    width: 100% !important;
-    max-width: 1200px !important;
-}
-
-
 
 /* -------------------------------------------------------------------------- */
 /* SERVICES (Glass Cards)                                                     */
@@ -828,27 +742,47 @@ button {
     #portfolio .container {
         display: flex;
         flex-direction: column;
-        align-items: flex-start; 
+        align-items: flex-start;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
     }
 
+    /* Make "Playground" match other section titles */
     #portfolio .sub-title {
-        margin-left: 0;
-        padding-left: 0;
+        font-size: clamp(2rem, 3vw, 2.5rem); /* consistent size */
+        font-weight: 700;
+        color: var(--color-text);
+        margin-bottom: 0.75rem;
+        text-align: left;
+        line-height: 1.2;
     }
 
-/* Intro paragraph aligned left under section title */
+/* Align intro paragraph under the title */
 .portfolio-intro {
     text-align: left;
-    font-size: 1.05rem;
+    font-size: clamp(1rem, 1.3vw, 1.15rem);
     color: var(--color-text);
     opacity: 0.85;
-    margin-top: 0.5rem;
-    margin-bottom: 2rem;
-    max-width: 700px;
+    max-width: 800px;
+    margin: 0 0 2rem 0;
     line-height: 1.6;
     padding-left: 0;
     animation: fadeUp 0.6s ease both;
     animation-delay: 0.1s;
+}
+
+/* Small screens: keep alignment consistent */
+@media (max-width: 600px) {
+    #portfolio .sub-title {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .portfolio-intro {
+        text-align: center;
+        margin: 0 auto 1.5rem;
+    }
 }
 
 /* Carousel container */
@@ -1400,7 +1334,7 @@ copyright i, copyright a {
 }
 
 /* -------------------------------------------------------------------------- */
-/* RESPONSIVE DESIGN — FINAL OPTIMIZED VERSION                               */
+/* RESPONSIVE DESIGN                                */
 /* -------------------------------------------------------------------------- */
 
 /* --- Small Phones (≤ 600px) --- */

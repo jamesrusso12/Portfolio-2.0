@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function applyMobileState() {
-        // Let CSS handle height/position; just ensure collapsed OFF for readability
         sidebar.classList.remove("collapsed");
         sidebar.classList.remove("menu-active");
         sidebar.setAttribute("aria-hidden", "true");
