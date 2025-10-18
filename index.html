@@ -14,6 +14,9 @@
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
 
+    <!-- Animate.css for WOW.js scroll animations -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!-- 1. Owl Carousel CSS -->
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/assets/owl.carousel.min.css" />
@@ -30,7 +33,7 @@
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/bc56acafc1.js"
             crossorigin="anonymous"></script>
-    <!-- 4. jQuery (must load before Owl) -->
+    <!-- 4. jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- 5. Owl Carousel JS -->
     <script src="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
@@ -108,33 +111,31 @@
             </nav>
         </aside>
 
-
         <!-- HEADER SECTION with your background, title, short description -->
         <header id="header" role="banner" aria-labelledby="site-title">
             <div class="container">
-                <div class="header-text">
-                    <h1 id="site-title">James Russo</h1>
+                <div class="header-text wow animate__fadeInDown" data-wow-delay="0.1s">
+                    <h1 id="site-title" class="wow animate__fadeInDown" data-wow-delay="0.2s">James Russo</h1>
 
-                    <!-- Rotating tagline (uses your simple-text-rotator) -->
-                    <div class="wrapper">
+                    <!-- Rotating tagline -->
+                    <div class="wrapper wow animate__fadeInUp" data-wow-delay="0.4s">
                         <div class="words" aria-live="polite" aria-atomic="true">
-                            <!-- If you’re using jquery.simple-text-rotator, use class="rotate" -->
                             <span id="test1" class="rotate">Game & XR Developer, Unity/C# & Unreal/C++, UI/UX for Immersive Systems</span>
                         </div>
                     </div>
 
-                    <!-- Accessible, single-line subtitle instead of <br> chains -->
-                    <p class="subtitle">
+                    <!-- Subtitle -->
+                    <p class="subtitle wow animate__fadeInUp" data-wow-delay="0.6s">
                         Dedicated, hardworking, and fast learner focused on building creative, high-quality interactive projects and shipping what I start.
                     </p>
 
-                    <!-- Optional primary calls-to-action -->
-                    <div class="hero-ctas" aria-label="Primary actions">
+                    <!-- CTA buttons -->
+                    <div class="hero-ctas wow animate__fadeInUp" data-wow-delay="0.8s" aria-label="Primary actions">
                         <a href="#portfolio" class="btn">View Portfolio</a>
                         <a href="#contact" class="btn dark">Contact Me</a>
                     </div>
 
-                    <!-- No-JS fallback for the rotator -->
+                    <!-- No-JS fallback -->
                     <noscript>
                         <p class="subtitle">Game & XR Developer · Unity/C# · Unreal/C++ · UI/UX</p>
                     </noscript>
@@ -145,118 +146,127 @@
     </section>
     <!-- END HEADER -->
     <!-- ABOUT SECTION -->
-    <div class="tab-contents active-tab" id="skills" role="tabpanel" aria-labelledby="skills-tab">
-        <div class="skills-grid">
-            <!-- Unity & C# -->
-            <article class="skill-card glass-card">
-                <div class="skill-header">
-                    <i class="fa-brands fa-unity skill-icon"></i>
-                    <h3>Unity & C#</h3>
-                </div>
-                <ul class="proof-points">
-                    <li>3 shipped prototypes: 2D Fighter, VR Target Practice, MR Shooter.</li>
-                    <li>Optimized Quest builds with object pooling & haptics (60 FPS target).</li>
-                </ul>
-            </article>
+    <section id="about" class="with-sidebar wow animate__fadeIn" data-wow-offset="80">
+        <div class="container">
 
-            <!-- Unreal & C++ -->
-            <article class="skill-card glass-card">
-                <div class="skill-header">
-                    <i class="fa-solid fa-cubes skill-icon"></i>
-                    <h3>Unreal & C++</h3>
-                </div>
-                <ul class="proof-points">
-                    <li>Developing parkour system (mantle, vault, ledge grab, crouch).</li>
-                    <li>AI perception, combat logic, and Niagara VFX polish.</li>
-                </ul>
-            </article>
+            <div class="tab-contents active-tab wow animate__fadeIn" data-wow-offset="80"
+                 id="skills" role="tabpanel" aria-labelledby="skills-tab">
 
-            <!-- Front-End -->
-            <article class="skill-card glass-card">
-                <div class="skill-header">
-                    <i class="fa-solid fa-code skill-icon"></i>
-                    <h3>Front-End Development</h3>
-                </div>
-                <ul class="proof-points">
-                    <li>Portfolio 2.0 built with jQuery, Owl Carousel & Formspree.</li>
-                    <li>Optimized accessibility, SEO meta, and responsive grid layouts.</li>
-                </ul>
-            </article>
+                <div class="skills-grid">
+                    <!-- Unity & C# -->
+                    <article class="skill-card glass-card wow animate__fadeInUp" data-wow-delay="0.10s">
+                        <div class="skill-header">
+                            <i class="fa-brands fa-unity skill-icon"></i>
+                            <h3>Unity & C#</h3>
+                        </div>
+                        <ul class="proof-points">
+                            <li>3 shipped prototypes: 2D Fighter, VR Target Practice, MR Shooter.</li>
+                            <li>Optimized Quest builds with object pooling & haptics (60 FPS target).</li>
+                        </ul>
+                    </article>
 
-            <!-- VR / AR -->
-            <article class="skill-card glass-card">
-                <div class="skill-header">
-                    <i class="fa-solid fa-vr-cardboard skill-icon"></i>
-                    <h3>VR / AR Game Development</h3>
-                </div>
-                <ul class="proof-points">
-                    <li>Meta AIO SDK v72, Passthrough & MR Utility Kit integration.</li>
-                    <li>Designed comfort tuning: grab thresholds, spatial SFX, hit feedback.</li>
-                </ul>
-            </article>
+                    <!-- Unreal & C++ -->
+                    <article class="skill-card glass-card wow animate__fadeInUp" data-wow-delay="0.20s">
+                        <div class="skill-header">
+                            <i class="fa-solid fa-cubes skill-icon"></i>
+                            <h3>Unreal & C++</h3>
+                        </div>
+                        <ul class="proof-points">
+                            <li>Developing parkour system (mantle, vault, ledge grab, crouch).</li>
+                            <li>AI perception, combat logic, and Niagara VFX polish.</li>
+                        </ul>
+                    </article>
 
-            <!-- UI/UX -->
-            <article class="skill-card glass-card">
-                <div class="skill-header">
-                    <i class="fa-solid fa-palette skill-icon"></i>
-                    <h3>UI / UX Design</h3>
-                </div>
-                <ul class="proof-points">
-                    <li>Designed diegetic HUDs & menus for VR accessibility.</li>
-                    <li>Created Figma wireframes and user-tested micro-interactions.</li>
-                </ul>
-            </article>
+                    <!-- Front-End -->
+                    <article class="skill-card glass-card wow animate__fadeInUp" data-wow-delay="0.30s">
+                        <div class="skill-header">
+                            <i class="fa-solid fa-code skill-icon"></i>
+                            <h3>Front-End Development</h3>
+                        </div>
+                        <ul class="proof-points">
+                            <li>Portfolio 2.0 built with jQuery, Owl Carousel & Formspree.</li>
+                            <li>Optimized accessibility, SEO meta, and responsive grid layouts.</li>
+                        </ul>
+                    </article>
 
-            <!-- Xcode & SwiftUI -->
-            <article class="skill-card glass-card">
-                <div class="skill-header">
-                    <i class="fa-brands fa-apple skill-icon"></i>
-                    <h3>Xcode & SwiftUI</h3>
-                </div>
-                <ul class="proof-points">
-                    <li>Co-developed two iOS titles — one Unity-to-Xcode port, one SwiftUI AR 2D platformer.</li>
-                    <li>Focused on accessible UI/UX and smooth AR interactions.</li>
-                </ul>
-            </article>
+                    <!-- VR / AR -->
+                    <article class="skill-card glass-card wow animate__fadeInUp" data-wow-delay="0.40s">
+                        <div class="skill-header">
+                            <i class="fa-solid fa-vr-cardboard skill-icon"></i>
+                            <h3>VR / AR Game Development</h3>
+                        </div>
+                        <ul class="proof-points">
+                            <li>Meta AIO SDK v72, Passthrough & MR Utility Kit integration.</li>
+                            <li>Designed comfort tuning: grab thresholds, spatial SFX, hit feedback.</li>
+                        </ul>
+                    </article>
 
-            <!-- Photoshop -->
-            <article class="skill-card glass-card">
-                <div class="skill-header">
-                    <i class="fa-solid fa-image skill-icon"></i>
-                    <h3>Adobe Photoshop</h3>
-                </div>
-                <ul class="proof-points">
-                    <li>Created textures, UI assets, and optimized sprite sheets.</li>
-                </ul>
-            </article>
+                    <!-- UI/UX -->
+                    <article class="skill-card glass-card wow animate__fadeInUp" data-wow-delay="0.50s">
+                        <div class="skill-header">
+                            <i class="fa-solid fa-palette skill-icon"></i>
+                            <h3>UI / UX Design</h3>
+                        </div>
+                        <ul class="proof-points">
+                            <li>Designed diegetic HUDs & menus for VR accessibility.</li>
+                            <li>Created Figma wireframes and user-tested micro-interactions.</li>
+                        </ul>
+                    </article>
 
-            <!-- GitHub -->
-            <article class="skill-card glass-card">
-                <div class="skill-header">
-                    <i class="fa-brands fa-github skill-icon"></i>
-                    <h3>GitHub</h3>
+                    <!-- Xcode & SwiftUI -->
+                    <article class="skill-card glass-card wow animate__fadeInUp" data-wow-delay="0.60s">
+                        <div class="skill-header">
+                            <i class="fa-brands fa-apple skill-icon"></i>
+                            <h3>Xcode & SwiftUI</h3>
+                        </div>
+                        <ul class="proof-points">
+                            <li>Co-developed two iOS titles — one Unity-to-Xcode port, one SwiftUI AR 2D platformer.</li>
+                            <li>Focused on accessible UI/UX and smooth AR interactions.</li>
+                        </ul>
+                    </article>
+
+                    <!-- Photoshop -->
+                    <article class="skill-card glass-card wow animate__fadeInUp" data-wow-delay="0.70s">
+                        <div class="skill-header">
+                            <i class="fa-solid fa-image skill-icon"></i>
+                            <h3>Adobe Photoshop</h3>
+                        </div>
+                        <ul class="proof-points">
+                            <li>Created textures, UI assets, and optimized sprite sheets.</li>
+                        </ul>
+                    </article>
+
+                    <!-- GitHub -->
+                    <article class="skill-card glass-card wow animate__fadeInUp" data-wow-delay="0.80s">
+                        <div class="skill-header">
+                            <i class="fa-brands fa-github skill-icon"></i>
+                            <h3>GitHub</h3>
+                        </div>
+                        <ul class="proof-points">
+                            <li>Version control for group projects; pull requests and branching workflow.</li>
+                        </ul>
+                    </article>
                 </div>
-                <ul class="proof-points">
-                    <li>Version control for group projects; pull requests and branching workflow.</li>
-                </ul>
-            </article>
+
+                <!-- Highlights box -->
+                <div class="skills-proof glass-card wow animate__fadeIn" data-wow-delay="0.30s">
+                    <h3>Recent Highlights</h3>
+                    <ul>
+                        <li>Unity (C#): Mixed-Reality shooter & VR target practice loops using Meta SDK v72; optimized with object pooling and profiling.</li>
+                        <li>Unreal (C++/BP): Developing a climbing/parkour game with advanced movement (ledge grab, wall run, vault).</li>
+                        <li>UI/UX: Designed accessible HUDs & menus; refined input mapping for controller + VR users.</li>
+                        <li>iOS (SwiftUI): Led UI/UX for two titles — one Unity→Xcode port & one native AR 2D platformer.</li>
+                        <li>Web: Built & optimized this portfolio with lazy-loading, SEO meta, and Formspree integration.</li>
+                    </ul>
+                </div>
+
+            </div>
+
         </div>
-
-        <!-- Highlights box stays -->
-        <div class="skills-proof glass-card">
-            <h3>Recent Highlights</h3>
-            <ul>
-                <li>Unity (C#): Mixed-Reality shooter & VR target practice loops using Meta SDK v72; optimized with object pooling and profiling.</li>
-                <li>Unreal (C++/BP): Developing a climbing/parkour game with advanced movement (ledge grab, wall run, vault).</li>
-                <li>UI/UX: Designed accessible HUDs & menus; refined input mapping for controller + VR users.</li>
-                <li>iOS (SwiftUI): Led UI/UX for two titles — one Unity→Xcode port & one native AR 2D platformer.</li>
-                <li>Web: Built & optimized this portfolio with lazy-loading, SEO meta, and Formspree integration.</li>
-            </ul>
-        </div>
-    </div>
+    </section>
     <!-- END ABOUT SECTION -->
     <!-- EXPERIENCE SECTION -->
-    <section id="experience" aria-labelledby="experience-heading">
+    <section id="experience" class="with-sidebar wow animate__fadeIn" data-wow-offset="100">
         <div class="container">
             <h1 class="sub-title" id="experience-heading">Experience</h1>
 
@@ -305,6 +315,39 @@
         </div>
     </section>
     <!-- END EXPERIENCE SECTION -->
+
+    <!-- SHOWCASE SECTION -->
+    <section id="showcase">
+        <div class="container">
+            <h1 class="sub-title">Senior Showcase</h1>
+            <div class="showcase-container">
+                <h3 class="showcase-title">GIMM Senior Showcase Reel</h3>
+                <p>
+                    For my Boise State University senior showcase, I presented my capstone Mixed Reality game
+                    built in Unity 6 using the Meta All-in-One SDK. The project combines VR and AR
+                    interactions, showcasing dynamic spatial awareness, passthrough environments, and player feedback systems
+                    optimized for Quest 3 hardware.
+                </p>
+                <p>
+                    I designed and developed every aspect of the game, from core gameplay logic to UI/UX design,
+                    environmental lighting, and comfort features for player experience. This project represents the culmination
+                    of my degree and the skills I’ve developed in immersive media development.
+                </p>
+
+                <!-- Responsive YouTube embed -->
+                <div class="showcase-video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/ARRNizsN0g8?si=ZV4kdju_1fQUdHpH"
+                            title="Senior Showcase Video"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END SHOWCASE SECTION -->
+
     <!-- SERVICES SECTION -->
     <section id="services">
         <div class="container">
@@ -467,7 +510,6 @@
         </div>
     </section>
     <!-- END PORTFOLIO SECTION -->
-
     <!-- IMAGE GALLERY SECTION -->
     <section id="photo-gallery" class="photo-gallery">
         <h1 class="sub-title">Image Gallery</h1>
@@ -588,7 +630,6 @@
         </div>
     </section>
     <!-- END IMAGE GALLERY SECTION -->
-
     <!-- CONTACT SECTION -->
     <section id="contact" class="contact-section">
         <div class="container glass-card">
@@ -633,27 +674,50 @@
         </div>
     </section>
     <!-- END CONTACT SECTION -->
-
     <!-- Footer -->
     <div class="copyright">
         <p>&copy; 2024 James Russo | All Rights Reserved</p>
     </div>
     <!-- End Footer -->
     <!-- External JS with "defer" to ensure HTML is parsed first -->
+    <!-- jQuery + Owl + Plyr (if you keep Plyr) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
+
+    <!-- Your JS (defer is fine since they don't need to run before DOM paint) -->
+    <script src="bootstrap/js/navMenu.js" defer></script>
     <script src="bootstrap/js/jquery.simple-text-rotator.js" defer></script>
     <script src="bootstrap/js/portfolio.js" defer></script>
     <script src="bootstrap/js/imageGrid.js" defer></script>
-    <script src="bootstrap/js/readMore.js" defer></script>
     <script src="bootstrap/js/formSpree.js" defer></script>
-    <script src="bootstrap/js/navMenu.js" defer></script>
+
+    <!-- Optional WOW -->
+    <script src="bootstrap/js/wow.min.js" defer></script>
+    <script src="bootstrap/js/wow-init.js" defer></script>
+    <!-- Light Mode/Dark Mode -->
     <script>
         if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
             document.documentElement.setAttribute('data-theme', 'dark');
         }
     </script>
+    <!-- Experience Video size -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             if (window.Plyr) new Plyr('#exp-finance-video', { ratio: '16:9' });
+        });
+    </script>
+    <!-- WOW.js -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            if (typeof WOW === "function") {
+                new WOW({
+                    boxClass: "wow",
+                    animateClass: "animate__animated",
+                    offset: 60,
+                    mobile: true,
+                    live: true
+                }).init();
+            }
         });
     </script>
 
