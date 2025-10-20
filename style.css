@@ -144,232 +144,191 @@ a {
 }
 
 /* -------------------------------------------------------------------------- */
-/* NEW SIDEBAR CODE                                                          */
+/* TOP NAV (replaces the entire "NEW SIDEBAR CODE" sidebar block)             */
 /* -------------------------------------------------------------------------- */
-.sidebar {
+.topnav {
     position: fixed;
-    width: 270px;
-    margin: 16px;
-    border-radius: 16px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10010;
     background: var(--color-surface);
-    border: 1px solid var(--color-surface-border);
+    border-bottom: 1px solid var(--color-surface-border);
     backdrop-filter: var(--blur-glass);
     -webkit-backdrop-filter: var(--blur-glass);
     box-shadow: var(--shadow-glass);
-    height: calc(100vh - 32px);
-    transition: all 0.4s ease;
-    z-index: 9999;
+    transform: translateY(0);
+    transition: transform .35s ease, background .25s ease, box-shadow .25s ease;
 }
 
-    .sidebar.collapsed {
-        width: 85px;
+    /* When JS adds .nav-hidden on scroll down */
+    .topnav.nav-hidden {
+        transform: translateY(-100%);
     }
 
-/* Sidebar header */
-.sidebar-header {
-    display: flex;
-    position: relative;
-    padding: 25px 20px;
-    align-items: center;
-    justify-content: space-between;
-}
-
-    .sidebar-header .header-logo img {
-        width: 46px;
-        height: 46px;
-        object-fit: contain;
-        border-radius: 50%;
-    }
-
-    .sidebar-header .toggler {
-        height: 35px;
-        width: 35px;
-        color: var(--color-text);
-        border: 1px solid var(--color-surface-border);
-        cursor: pointer;
+    .topnav .nav-inner {
         display: flex;
-        background: var(--color-surface);
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        min-height: 64px;
+        padding: 8px 0; 
+    }
+
+    /* Brand */
+    .topnav .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color: var(--color-text);
+        font-weight: 700;
+        letter-spacing: .2px;
+    }
+
+    .topnav .brand-mark {
+        display: inline-flex;
         align-items: center;
         justify-content: center;
-        border-radius: 8px;
-        transition: 0.4s ease;
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        border: 1px solid var(--color-surface-border);
+        background: rgba(255,255,255,.08);
+        font-size: 0.95rem;
     }
 
-    .sidebar-header .sidebar-toggler {
-        position: absolute;
-        right: 20px;
+    .topnav .brand-name {
+        font-size: 1.05rem;
     }
 
-    .sidebar-header .menu-toggler {
-        display: none;
+    /* Links */
+    .topnav .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        list-style: none;
     }
 
-.sidebar.collapsed .sidebar-header .toggler {
-    transform: translate(-4px, 65px);
-}
-
-.sidebar-header .toggler:hover {
-    background: var(--color-accent);
-    color: var(--color-text);
-}
-
-.sidebar-header .toggler span {
-    font-size: 1.75rem;
-    transition: 0.4s ease;
-}
-
-.sidebar.collapsed .sidebar-header .toggler span {
-    transform: rotate(180deg);
-}
-
-/* Sidebar nav */
-.sidebar-nav .nav-list {
-    list-style: none;
-    display: flex;
-    gap: 4px;
-    padding: 0 15px;
-    flex-direction: column;
-    transform: translateY(15px);
-    transition: 0.4s ease;
-}
-
-.sidebar.collapsed .sidebar-nav .primary-nav {
-    transform: translateY(65px);
-}
-
-.sidebar-nav .nav-link {
-    color: var(--color-accent);
-    display: flex;
-    gap: 12px;
-    white-space: nowrap;
-    border-radius: 8px;
-    padding: 12px 15px;
-    align-items: center;
-    text-decoration: none;
-    transition: 0.4s ease;
-}
-
-.sidebar.collapsed .nav-link {
-    border-radius: 12px;
-}
-
-.sidebar .sidebar-nav .nav-link .nav-label {
-    transition: opacity 0.3s ease;
-}
-
-.sidebar.collapsed .sidebar-nav .nav-link .nav-label {
-    opacity: 0;
-    pointer-events: none;
-}
-
-.sidebar-nav .nav-link:hover {
-    background: var(--color-accent);
-    color: var(--color-text);
-}
-
-.sidebar-nav .nav-item {
-    position: relative;
-}
-
-.sidebar-nav .nav-tooltip {
-    position: absolute;
-    top: -10px;
-    opacity: 0;
-    color: #262626;
-    display: none;
-    pointer-events: none;
-    padding: 6px 12px;
-    border-radius: 8px;
-    white-space: nowrap;
-    background: #fff;
-    left: calc(100% + 25px);
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-    transition: 0s;
-}
-
-.sidebar.collapsed .nav-tooltip {
-    display: block;
-}
-
-.sidebar-nav .nav-item:hover .nav-tooltip {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(50%);
-    transition: all 0.4s ease;
-}
-
-.sidebar-nav .secondary-nav {
-    position: absolute;
-    bottom: 30px;
-    width: 100%;
-}
-
-/* Responsive sidebar */
-@media (max-width: 1024px) {
-    .sidebar {
-        height: 56px;
-        margin: 13px;
-        overflow-y: hidden;
-        scrollbar-width: none;
-        width: calc(100% - 26px);
-        max-height: calc(100vh - 26px);
-    }
-
-        .sidebar.menu-active {
-            overflow-y: auto;
-        }
-
-        .sidebar .sidebar-header {
-            position: sticky;
-            top: 0;
-            z-index: 20;
-            border-radius: 16px;
-            background: var(--color-surface);
-            border: 1px solid var(--color-surface-border);
-            backdrop-filter: var(--blur-glass);
-            -webkit-backdrop-filter: var(--blur-glass);
+        .topnav .nav-links a {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--color-text);
+            font-weight: 600;
+            font-size: 0.98rem;
             padding: 8px 10px;
+            border-radius: 8px;
+            transition: background .2s ease, color .2s ease, transform .2s ease;
         }
 
-    .sidebar-header .header-logo img {
+            .topnav .nav-links a:hover,
+            .topnav .nav-links a:focus-visible {
+                background: var(--color-accent);
+                color: var(--color-bg);
+            }
+
+    /* CTA */
+    .topnav .btn.small.cta {
+        padding: 8px 12px;
+        font-size: 0.92rem;
+        border: 1px solid var(--color-accent);
+        background: transparent;
+    }
+
+        .topnav .btn.small.cta:hover {
+            background: var(--color-accent);
+            color: var(--color-bg);
+        }
+
+    /* Hamburger (hidden on desktop) */
+    .topnav .hamburger {
+        display: none;
+        border: 1px solid var(--color-surface-border);
+        background: var(--color-surface);
+        color: var(--color-text);
         width: 40px;
         height: 40px;
+        border-radius: 10px;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background .2s ease;
     }
 
-    .sidebar-header .sidebar-toggler, .sidebar-nav .nav-item:hover .nav-tooltip {
-        display: none;
-    }
-
-    .sidebar-header .menu-toggler {
-        display: flex;
-        height: 30px;
-        width: 30px;
-    }
-
-        .sidebar-header .menu-toggler span {
-            font-size: 1.3rem;
+        .topnav .hamburger:hover {
+            background: var(--color-accent);
+            color: var(--color-bg);
         }
 
-    .sidebar .nav-list {
-        padding: 0 10px;
+/* Screen-reader only helper */
+.sr-only {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Ensure page content isn't hidden under fixed topnav */
+body {
+    padding-top: 72px;
+}
+/* adjust if you change nav height */
+
+/* -------------------------------------------------------------------------- */
+/* Responsive                                                                 */
+/* -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+    .topnav .hamburger {
+        display: inline-flex;
     }
 
-    .sidebar-nav .nav-link {
-        gap: 10px;
-        padding: 10px;
-        font-size: 0.94rem;
+    .topnav .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        margin: 0;
+        padding: 10px 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        background: var(--color-surface);
+        border-bottom: 1px solid var(--color-surface-border);
+        backdrop-filter: var(--blur-glass);
+        -webkit-backdrop-filter: var(--blur-glass);
+        box-shadow: var(--shadow-glass);
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-8px);
+        transition: max-height .35s ease, opacity .25s ease, transform .25s ease, visibility 0s linear .35s;
     }
 
-        .sidebar-nav .nav-link .nav-icon {
-            font-size: 1.37rem;
+        /* JS toggles .open on the UL */
+        .topnav .nav-links.open {
+            max-height: 60vh;
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            transition: max-height .45s ease, opacity .25s ease, transform .25s ease;
         }
 
-    .sidebar-nav .secondary-nav {
-        position: relative;
-        bottom: 0;
-        margin: 40px 0 30px;
+        .topnav .nav-links a {
+            width: 100%;
+            padding: 10px 12px;
+        }
+
+    .topnav .btn.small.cta {
+        display: none; /* keep it simple on mobile */
     }
 }
+
 
 /* -------------------------------------------------------------------------- */
 /* HEADER TEXT ROTATOR ETC.                                                  */
@@ -589,29 +548,41 @@ button {
 /* -------------------------------------------------------------------------- */
 /* SHOWCASE SECTION (Glass Layout + Responsive YouTube Embed)                 */
 /* -------------------------------------------------------------------------- */
-#showcase .showcase-container {
-    background: var(--color-surface);
-    border: 1px solid var(--color-surface-border);
-    backdrop-filter: var(--blur-glass);
-    -webkit-backdrop-filter: var(--blur-glass);
-    box-shadow: var(--shadow-glass);
-    padding: clamp(16px, 2.5vw, 28px);
-    border-radius: 12px;
+#showcase {
+    padding: 60px 0;
 }
 
-#showcase .showcase-title {
-    font-size: clamp(1.1rem, 1.6vw, 1.4rem);
-    color: var(--color-accent);
-    text-align: center;
-    margin-bottom: 10px;
-}
+    #showcase .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
 
-#showcase p {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 12px;
-    color: var(--color-text);
-}
+    #showcase .showcase-container {
+        background: var(--color-surface);
+        border: 1px solid var(--color-surface-border);
+        backdrop-filter: var(--blur-glass);
+        -webkit-backdrop-filter: var(--blur-glass);
+        box-shadow: var(--shadow-glass);
+        padding: clamp(16px, 2.5vw, 28px);
+        border-radius: 12px;
+    }
+
+    #showcase .showcase-title {
+        font-size: clamp(1.25rem, 1.7vw, 1.4rem);
+        font-weight: 600;
+        color: var(--color-accent);
+        text-align: center;
+        margin: 12px 0 12px;
+    }
+
+    #showcase p {
+        font-size: 1.05rem; 
+        line-height: 1.7;
+        margin-bottom: 12px;
+        color: var(--color-text);
+        opacity: 0.95;
+    }
 
 /* Responsive YouTube iframe wrapper */
 .showcase-video-wrapper {
@@ -627,13 +598,20 @@ button {
 
     .showcase-video-wrapper iframe {
         position: absolute;
-        top: 0;
-        left: 0;
+        inset: 0;
         width: 100%;
         height: 100%;
         border: none;
         border-radius: inherit;
     }
+
+/* Small screens */
+@media (max-width: 600px) {
+    #showcase .showcase-title {
+        text-align: center;
+    }
+}
+
 
 /* -------------------------------------------------------------------------- */
 /* SERVICES (Glass Cards)                                                     */

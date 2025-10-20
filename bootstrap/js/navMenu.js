@@ -1,76 +1,35 @@
+// navMenu.js (top nav version)
 document.addEventListener("DOMContentLoaded", () => {
-    const sidebar = document.querySelector(".sidebar");
-    const sidebarToggler = document.querySelector(".sidebar-toggler");
-    const menuToggler = document.querySelector(".menu-toggler");
-    const navLinks = document.querySelectorAll(".sidebar-nav .nav-link");
+    const nav = document.querySelector(".topnav");
+    const burger = document.querySelector(".hamburger");
+    const links = document.querySelector(".nav-links");
+    let lastY = window.pageYOffset;
 
-    if (!sidebar || !sidebarToggler || !menuToggler) return;
-
-    const DESKTOP_WIDTH = 1024;
-    const LS_KEY = "sidebar-collapsed";
-
-    // Helpers
-    const isDesktop = () => window.innerWidth >= DESKTOP_WIDTH;
-
-    function applyDesktopState() {
-        const collapsed = localStorage.getItem(LS_KEY) === "true";
-        sidebar.classList.toggle("collapsed", collapsed);
-        sidebar.classList.remove("menu-active");
-        sidebar.removeAttribute("aria-hidden");
-    }
-
-    function applyMobileState() {
-        sidebar.classList.remove("collapsed");
-        sidebar.classList.remove("menu-active");
-        sidebar.setAttribute("aria-hidden", "true");
-    }
-
-    function syncLayout() {
-        if (isDesktop()) {
-            applyDesktopState();
-        } else {
-            applyMobileState();
-        }
-    }
-
-    // Initial layout
-    syncLayout();
-
-    // Toggle handlers
-    sidebarToggler.setAttribute("aria-expanded", String(!sidebar.classList.contains("collapsed")));
-    sidebarToggler.addEventListener("click", () => {
-        if (isDesktop()) {
-            const nowCollapsed = !sidebar.classList.contains("collapsed");
-            sidebar.classList.toggle("collapsed");
-            localStorage.setItem(LS_KEY, String(nowCollapsed));
-            sidebarToggler.setAttribute("aria-expanded", String(!nowCollapsed));
-        } else {
-            // On mobile, open the menu panel (not collapse)
-            sidebar.classList.add("menu-active");
-            sidebar.removeAttribute("aria-hidden");
-            menuToggler.setAttribute("aria-expanded", "true");
-        }
-    });
-
-    menuToggler.setAttribute("aria-expanded", "false");
-    menuToggler.addEventListener("click", () => {
-        const active = sidebar.classList.toggle("menu-active");
-        if (active) sidebar.removeAttribute("aria-hidden");
-        else sidebar.setAttribute("aria-hidden", "true");
-        menuToggler.setAttribute("aria-expanded", String(active));
-    });
-
-    // Close menu on link click (mobile)
-    navLinks.forEach(link => {
-        link.addEventListener("click", () => {
-            if (!isDesktop()) {
-                sidebar.classList.remove("menu-active");
-                sidebar.setAttribute("aria-hidden", "true");
-                menuToggler.setAttribute("aria-expanded", "false");
-            }
+    // Hamburger toggle
+    if (burger && links) {
+        burger.addEventListener("click", () => {
+            const open = links.classList.toggle("open");
+            burger.setAttribute("aria-expanded", open ? "true" : "false");
         });
-    });
 
-    // Resize handling
-    window.addEventListener("resize", syncLayout);
+        // Close menu when a link is clicked (mobile)
+        links.querySelectorAll("a").forEach(a => {
+            a.addEventListener("click", () => {
+                links.classList.remove("open");
+                burger.setAttribute("aria-expanded", "false");
+            });
+        });
+    }
+
+    // Auto hide on scroll down, show on scroll up
+    window.addEventListener("scroll", () => {
+        const y = window.pageYOffset || 0;
+        if (y > 120) {
+            if (y > lastY) nav.classList.add("hide");
+            else nav.classList.remove("hide");
+        } else {
+            nav.classList.remove("hide");
+        }
+        lastY = y;
+    });
 });
