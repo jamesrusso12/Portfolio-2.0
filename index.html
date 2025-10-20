@@ -43,60 +43,95 @@
 
 
 <body>
-    <!-- HERO / HEADER -->
-    <header id="header" role="banner" aria-labelledby="site-title">
-        <div class="hero-bg">
-            <!-- (A) Optional ambient video on desktop -->
-            <video class="hero-video" autoplay muted loop playsinline poster="img/hero-poster.jpg">
-                <source src="img/hero-ambient.mp4" type="video/mp4" />
-                <!-- Fallback handled by CSS bg-image -->
-            </video>
-            <!-- Gradient mask to improve text contrast -->
-            <div class="hero-mask"></div>
-        </div>
+    <!-- HEADER SECTION -->
+    <section id="home">
 
-        <div class="container hero-inner">
-            <!-- LEFT: intro -->
-            <div class="hero-copy wow animate__fadeInDown" data-wow-delay="0.1s">
-                <h1 id="site-title">James Russo</h1>
+        <!-- TOP NAVIGATION BAR -->
+        <nav class="topnav glass-card" role="navigation" aria-label="Primary">
+            <div class="nav-inner container">
+                <!-- Brand / Logo -->
+                <a class="brand" href="#home" aria-label="Go to home">
+                    <span class="brand-mark">JR</span>
+                    <span class="brand-name">James Russo</span>
+                </a>
 
-                <p class="tagline">
-                    <span id="test1">Game & XR Developer • Unity/C# • Unreal/C++ • UI/UX</span>
-                </p>
+                <!-- Hamburger for mobile -->
+                <button class="hamburger" aria-expanded="false" aria-controls="primary-links">
+                    <span class="material-symbols-rounded" aria-hidden="true">menu</span>
+                    <span class="sr-only">Toggle menu</span>
+                </button>
 
-                <p class="subtitle">
-                    I build playful, high-quality interactive systems for VR/MR and games—focused on readable UX, tight feel,
-                    and shipping polish.
-                </p>
-
-                <div class="hero-ctas" aria-label="Primary actions">
-                    <a href="#portfolio" class="btn">View Portfolio</a>
-                    <a href="#contact" class="btn dark">Contact Me</a>
-                </div>
-
-                <ul class="tech-chips" aria-label="Key tools">
-                    <li>Unity 6</li>
-                    <li>Unreal 5</li>
-                    <li>Meta AIO SDK</li>
-                    <li>SwiftUI</li>
+                <!-- Primary Links -->
+                <ul id="primary-links" class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Playground</a></li>
+                    <li><a href="#photo-gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
+
+                <!-- CTA button -->
+                <a href="#contact" class="btn small cta">Hire Me</a>
+            </div>
+        </nav>
+        <!-- END TOP NAV -->
+
+        <!-- HERO / HEADER -->
+        <header id="header" role="banner" aria-labelledby="site-title">
+            <div class="hero-bg">
+                <!-- Optional ambient video on desktop -->
+                <video class="hero-video" autoplay muted loop playsinline poster="img/hero-poster.jpg">
+                    <source src="img/hero-ambient.mp4" type="video/mp4" />
+                    <!-- Fallback handled by CSS bg-image -->
+                </video>
+                <!-- Gradient mask to improve text contrast -->
+                <div class="hero-mask"></div>
             </div>
 
-            <!-- RIGHT: device reel / hero media -->
-            <figure class="hero-media wow animate__fadeInUp" data-wow-delay="0.25s">
-                <div class="device-frame">
-                    <video class="hero-clip" src="img/MR game progress video.mp4"
-                           muted autoplay loop playsinline preload="metadata" poster="img/hero-clip-poster.jpg"></video>
-                </div>
-                <figcaption class="sr-only">Mixed Reality gameplay clip running in a device frame.</figcaption>
-            </figure>
-        </div>
+            <div class="container hero-inner">
+                <!-- LEFT: intro -->
+                <div class="hero-copy wow animate__fadeInDown" data-wow-delay="0.1s">
+                    <h1 id="site-title">James Russo</h1>
 
-        <!-- Scroll cue -->
-        <a href="#about" class="scroll-cue" aria-label="Scroll to About">
-            <span class="material-symbols-rounded" aria-hidden="true">expand_more</span>
-        </a>
-    </header>
+                    <p class="tagline">
+                        <span id="test1">Game & XR Developer • Unity/C# • Unreal/C++ • UI/UX</span>
+                    </p>
+
+                    <p class="subtitle">
+                        I build playful, high-quality interactive systems for VR/MR and games—focused on readable UX, tight feel,
+                        and shipping polish.
+                    </p>
+
+                    <div class="hero-ctas" aria-label="Primary actions">
+                        <a href="#portfolio" class="btn">View Portfolio</a>
+                        <a href="#contact" class="btn dark">Contact Me</a>
+                    </div>
+
+                    <ul class="tech-chips" aria-label="Key tools">
+                        <li>Unity 6</li>
+                        <li>Unreal 5</li>
+                        <li>Meta AIO SDK</li>
+                        <li>SwiftUI</li>
+                    </ul>
+                </div>
+
+                <!-- RIGHT: device reel / hero media -->
+                <figure class="hero-media wow animate__fadeInUp" data-wow-delay="0.25s">
+                    <div class="device-frame">
+                        <video class="hero-clip" src="img/MR game progress video.mp4"
+                               muted autoplay loop playsinline preload="metadata" poster="img/hero-clip-poster.jpg"></video>
+                    </div>
+                    <figcaption class="sr-only">Mixed Reality gameplay clip running in a device frame.</figcaption>
+                </figure>
+            </div>
+
+            <!-- Scroll cue -->
+            <a href="#about" class="scroll-cue" aria-label="Scroll to About">
+                <span class="material-symbols-rounded" aria-hidden="true">expand_more</span>
+            </a>
+        </header>
+    </section>
+    <!-- END HEADER -->
 
     <!-- ABOUT SECTION -->
     <section id="about" class="with-sidebar wow animate__fadeIn" data-wow-offset="80">
@@ -312,6 +347,7 @@
         </div>
     </section>
     <!-- END SHOWCASE SECTION -->
+
     <!-- SERVICES SECTION -->
     <section id="services" class="wow animate__fadeIn" data-wow-offset="80">
         <div class="container">
@@ -363,6 +399,7 @@
         </div>
     </section>
     <!-- END SERVICES SECTION -->
+
     <!-- PORTFOLIO / PLAYGROUND SECTION -->
     <section id="portfolio" class="portfolio-section">
         <div class="container">
@@ -440,6 +477,7 @@
         </div>
     </section>
     <!-- END PORTFOLIO SECTION -->
+
     <!-- IMAGE GALLERY SECTION -->
     <section id="photo-gallery" class="photo-gallery">
         <h1 class="sub-title">Image Gallery</h1>

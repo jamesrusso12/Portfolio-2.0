@@ -89,7 +89,6 @@ a {
     display: grid;
     align-items: center;
     overflow: hidden;
-    /* Fallback Ken Burns on the bg image if video can’t play */
     background-image: url("img/hero-poster.jpg");
     background-size: cover;
     background-position: center;
