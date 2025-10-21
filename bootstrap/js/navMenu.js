@@ -33,3 +33,29 @@ document.addEventListener("DOMContentLoaded", () => {
         lastY = y;
     });
 });
+
+// ----------------------------------------------------
+// THEME TOGGLE LOGIC
+// ----------------------------------------------------
+document.addEventListener("DOMContentLoaded", () => {
+    const toggleBtn = document.getElementById("theme-toggle");
+    const icon = document.getElementById("theme-icon");
+
+    if (!toggleBtn || !icon) return; // safeguard if not found
+
+    // Load saved preference
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+        document.documentElement.setAttribute("data-theme", savedTheme);
+        icon.textContent = savedTheme === "dark" ? "light_mode" : "dark_mode";
+    }
+
+    // Toggle on click
+    toggleBtn.addEventListener("click", () => {
+        const currentTheme = document.documentElement.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+        icon.textContent = newTheme === "dark" ? "light_mode" : "dark_mode";
+    });
+});
