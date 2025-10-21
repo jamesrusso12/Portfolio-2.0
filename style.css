@@ -8,11 +8,16 @@
     --color-surface: rgba(255,255,255,.45);
     --color-surface-border: rgba(255,255,255,.30);
     --color-text: #222831;
+    --color-text-secondary: #4A4A4A; 
     --color-accent: #00CED1;
     --color-accent-alt: #26547C;
     --color-highlight: #00BFA5;
     --shadow-glass: 0 8px 24px rgba(0,0,0,.15);
     --blur-glass: blur(15px);
+}
+
+:root, [data-theme="dark"] {
+    transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease, background-color 0.4s ease;
 }
 
 /* Dark Mode (Cyan Glow) */
@@ -21,6 +26,7 @@
     --color-surface: rgba(44,44,44,.6);
     --color-surface-border: rgba(255,255,255,.1);
     --color-text: #FFFFFF;
+    --color-text-secondary: #cfcfcf; 
     --color-accent: #00CFFF;
     --color-accent-alt: #3AAFFF;
     --color-highlight: #00E5FF;
@@ -124,26 +130,76 @@ a {
     z-index: 1;
 }
 
+/* HEADER PROFILE IMAGE — final, unambiguous */
+.hero-copy .profile-image-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: .6rem;
+}
+
+.hero-copy .profile-image {
+    width: 300px; 
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1.5px solid var(--color-accent);
+    box-shadow: 0 0 8px rgba(0, 207, 255, 0.25);
+    display: block;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .hero-copy .profile-image {
+        width: 68px;
+        height: 68px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .hero-copy .profile-image {
+        width: 56px;
+        height: 56px;
+    }
+}
+
 .hero-copy h1 {
-    font-size: clamp(2rem, 4.2vw, 3.25rem);
+    font-size: clamp(2.4rem, 5vw, 3.75rem);
     line-height: 1.1;
-    margin-bottom: .35rem;
+    margin-bottom: 0.5rem;
     color: var(--color-text);
 }
 
 .tagline {
-    font-size: clamp(1rem, 1.6vw, 1.2rem);
-    font-weight: 700;
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(1.3rem, 2.2vw, 1.6rem);
+    font-weight: 800;
     color: var(--color-accent);
-    margin: .25rem 0 0.75rem;
+    margin: 0.4rem 0 1.2rem;
+    letter-spacing: 0.5px;
+    text-transform: none;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.25);
+    animation: accentPulse 6s ease-in-out infinite;
+}
+
+@keyframes accentPulse {
+    0%, 100% {
+        text-shadow: 0 0 8px rgba(0, 207, 255, 0.4);
+    }
+
+    50% {
+        text-shadow: 0 0 16px rgba(0, 207, 255, 0.7);
+    }
 }
 
 .subtitle {
-    font-size: clamp(1.02rem, 1.5vw, 1.15rem);
-    line-height: 1.6;
-    max-width: 42ch;
-    opacity: .92;
-    margin-bottom: 1rem;
+    font-size: clamp(1.1rem, 1.7vw, 1.3rem);
+    line-height: 1.7;
+    max-width: 52ch;
+    opacity: 0.95;
+    margin-bottom: 1.4rem;
+    color: var(--color-text);
 }
 
 .hero-ctas {
@@ -276,7 +332,6 @@ a {
         font-size: 1rem;
     }
 }
-
 
 /* -------------------------------------------------------------------------- */
 /* TOP NAV (replaces the entire "NEW SIDEBAR CODE" sidebar block)             */
@@ -411,7 +466,42 @@ a {
 body {
     padding-top: 72px;
 }
-/* adjust if you change nav height */
+
+/* ---------------------------------------------------- */
+/* THEME TOGGLE BUTTON                                  */
+/* ---------------------------------------------------- */
+.theme-toggle {
+    border: 1px solid var(--color-surface-border);
+    background: var(--color-surface);
+    color: var(--color-text);
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.25s ease;
+    margin-left: 8px;
+}
+
+    .theme-toggle:hover {
+        background: var(--color-accent);
+        color: var(--color-bg);
+        transform: translateY(-2px);
+    }
+
+    .theme-toggle span {
+        font-size: 1.4rem;
+    }
+
+/* Ensure it looks clean on mobile */
+@media (max-width: 1024px) {
+    .theme-toggle {
+        width: 36px;
+        height: 36px;
+    }
+}
 
 /* -------------------------------------------------------------------------- */
 /* Responsive                                                                 */
@@ -570,7 +660,7 @@ button {
     margin: 8px 0 0 20px;
     padding: 0;
     list-style: disc;
-    color: #cfcfcf;
+    color: var(--color-text-secondary);
     font-size: 0.95rem;
     line-height: 1.5;
 }
@@ -595,7 +685,7 @@ button {
 #about .skills-proof ul {
     margin: 0;
     padding-left: 1.2rem;
-    color: #cfcfcf;
+    color: var(--color-text-secondary);
     line-height: 1.55;
 }
 
