@@ -45,8 +45,15 @@ document.addEventListener("DOMContentLoaded", () => {
         if (n > slides.length) slideIndex = 1;
         if (n < 1) slideIndex = slides.length;
 
-        [...slides].forEach(s => s.style.display = "none");
+        // Hide all slides
+        [...slides].forEach(s => {
+            s.style.display = "none";
+            s.classList.remove("active");
+        });
+        
+        // Show current slide
         slides[slideIndex - 1].style.display = "block";
+        slides[slideIndex - 1].classList.add("active");
         captionText.innerHTML = `Image ${slideIndex} of ${slides.length}`;
     }
 
