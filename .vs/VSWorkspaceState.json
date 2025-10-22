@@ -2,7 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\bootstrap",
-    "\\bootstrap\\js"
+    "\\bootstrap\\js",
+    "\\img"
   ],
+  "SelectedNode": "\\bootstrap\\js\\wow-init.js",
   "PreviewInSolutionExplorer": false
 }
