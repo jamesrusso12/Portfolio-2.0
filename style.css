@@ -1058,6 +1058,85 @@ button {
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
+    /* -------------------------------------------------------------------------- */
+/* GHOST DEFIANT FEATURE SECTION                                              */
+/* -------------------------------------------------------------------------- */
+#ghost-defiant {
+    padding: 60px 0;
+}
+
+    #ghost-defiant .container {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    #ghost-defiant .sub-title {
+        margin-bottom: 0;
+    }
+
+.ghost-defiant-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    gap: 32px;
+    align-items: center;
+}
+
+.ghost-defiant-media {
+    padding: 24px;
+}
+
+    .ghost-defiant-media video {
+        width: 100%;
+        border-radius: 12px;
+        display: block;
+    }
+
+.ghost-defiant-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ghost-defiant-highlights {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 12px;
+    color: var(--color-text);
+    opacity: 0.9;
+}
+
+    .ghost-defiant-highlights li {
+        position: relative;
+        padding-left: 22px;
+        line-height: 1.6;
+    }
+
+    .ghost-defiant-highlights li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: var(--color-accent);
+    }
+
+.ghost-defiant-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+    .ghost-defiant-content {
+        grid-template-columns: 1fr;
+    }
+}
+
         #portfolio .video-section .item:hover {
             transform: translateY(-4px);
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
