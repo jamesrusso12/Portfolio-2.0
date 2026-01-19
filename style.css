@@ -716,9 +716,10 @@ button:hover {
     margin: 8px 0 0 20px;
     padding: 0;
     list-style: disc;
-    color: var(--color-text-secondary);
+    color: var(--color-text);
     font-size: 0.95rem;
     line-height: 1.5;
+    opacity: 0.95;
 }
 
 #about .skills-proof.glass-card {
@@ -741,8 +742,9 @@ button:hover {
 #about .skills-proof ul {
     margin: 0;
     padding-left: 1.2rem;
-    color: var(--color-text-secondary);
+    color: var(--color-text);
     line-height: 1.55;
+    opacity: 0.95;
 }
 
 #about .skills-proof li {
