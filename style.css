@@ -55,11 +55,27 @@ body {
     background: var(--color-bg);
     color: var(--color-text);
     font-family: Arial, sans-serif;
-    line-height: 1.4;
+    font-size: 1.1rem;
+    line-height: 1.7;
     opacity: 0;
     animation: fadeInPage 0.8s ease-in forwards;
     margin: 0;
     padding: 0;
+}
+
+/* General paragraph styling for better readability */
+p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+}
+
+/* Experience section paragraphs */
+#experience .experience-container p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
 }
 
 @keyframes fadeInPage {
@@ -251,8 +267,8 @@ img, video, iframe {
 }
 
 .subtitle {
-    font-size: clamp(1.1rem, 1.7vw, 1.3rem);
-    line-height: 1.7;
+    font-size: clamp(1.2rem, 1.9vw, 1.5rem);
+    line-height: 1.8;
     max-width: 52ch;
     opacity: 0.95;
     margin-bottom: 1.4rem;
@@ -261,8 +277,16 @@ img, video, iframe {
 
 .hero-ctas {
     display: flex;
-    gap: 12px;
+    gap: 14px;
     margin: .5rem 0 1rem;
+    flex-wrap: wrap;
+}
+
+.hero-ctas .btn {
+    padding: 14px 28px;
+    font-size: 1.05rem;
+    min-width: 140px;
+    text-align: center;
 }
 
 .tech-chips {
@@ -386,6 +410,31 @@ img, video, iframe {
     }
 
     .subtitle {
+        font-size: 1.1rem;
+    }
+
+    .hero-ctas {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero-ctas .btn {
+        width: 100%;
+        padding: 14px 20px;
+        font-size: 1rem;
+    }
+
+    .ghost-defiant-actions {
+        flex-direction: column;
+    }
+
+    .ghost-defiant-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .btn {
+        padding: 12px 24px;
         font-size: 1rem;
     }
 }
@@ -480,6 +529,8 @@ img, video, iframe {
     font-size: 0.92rem;
     border: 1px solid var(--color-accent);
     background: transparent;
+    color: var(--color-accent);
+    font-weight: 600;
 }
 
 .topnav .btn.small.cta:hover {
@@ -662,16 +713,57 @@ img, video, iframe {
     border-radius: 10px;
 }
 
+/* Base Button Class (.btn) - for links styled as buttons */
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid var(--color-accent);
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    backdrop-filter: var(--blur-glass);
+    -webkit-backdrop-filter: var(--blur-glass);
+    box-shadow: 0 4px 12px rgba(0, 206, 209, 0.2);
+    white-space: nowrap;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 206, 209, 0.35);
+    background-color: var(--color-highlight);
+    border-color: var(--color-highlight);
+    color: var(--color-bg);
+}
+
+.btn.dark {
+    background-color: transparent;
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+.btn.dark:hover {
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+    border-color: var(--color-accent);
+}
+
 /* Buttons (native <button>) */
 button {
     display: inline-block;
-    padding: 5px 10px;
-    font-size: 1em;
+    padding: 14px 28px;
+    font-size: 1.05rem;
+    font-weight: 600;
     cursor: pointer;
-    border: 1px solid var(--color-surface-border);
+    border: 2px solid var(--color-surface-border);
     background-color: var(--color-surface);
     color: var(--color-text);
-    border-radius: 5px;
+    border-radius: 8px;
     transition: all 0.3s ease;
     backdrop-filter: var(--blur-glass);
     -webkit-backdrop-filter: var(--blur-glass);
@@ -682,6 +774,7 @@ button:hover {
     box-shadow: 0 4px 12px rgba(0, 206, 209, 0.2);
     background-color: var(--color-accent);
     color: var(--color-bg);
+    border-color: var(--color-accent);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -722,8 +815,8 @@ button:hover {
     padding: 0;
     list-style: disc;
     color: var(--color-text);
-    font-size: 0.95rem;
-    line-height: 1.5;
+    font-size: 1.05rem;
+    line-height: 1.7;
     opacity: 0.95;
 }
 
@@ -740,7 +833,7 @@ button:hover {
 
 #about .skills-proof h3 {
     margin: 0 0 8px;
-    font-size: 1.05rem;
+    font-size: 1.2rem;
     color: var(--color-accent);
 }
 
@@ -748,7 +841,8 @@ button:hover {
     margin: 0;
     padding-left: 1.2rem;
     color: var(--color-text);
-    line-height: 1.55;
+    font-size: 1.1rem;
+    line-height: 1.8;
     opacity: 0.95;
 }
 
@@ -800,7 +894,7 @@ button:hover {
 }
 
 #experience .experience-title {
-    font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+    font-size: clamp(1.3rem, 1.8vw, 1.6rem);
     color: var(--color-accent);
     text-align: center;
     margin-bottom: 10px;
@@ -919,6 +1013,8 @@ button:hover {
     padding: 28px;
     border-radius: 12px;
     transition: transform .3s ease, box-shadow .3s ease, background .3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .service-item:hover {
@@ -955,10 +1051,11 @@ button:hover {
 
 /* Body copy */
 .service-item p {
-    font-size: 1rem;
-    line-height: 1.75;
+    font-size: 1.1rem;
+    line-height: 1.8;
     color: var(--color-text);
-    opacity: .92;
+    opacity: .95;
+    flex-grow: 1;
 }
 
 /* Read-more behaviour */
@@ -970,8 +1067,11 @@ button:hover {
     opacity: .6;
 }
 
-.service-item .btn.read-more {
-    margin-top: 10px;
+.service-item .btn.read-more,
+.service-item a.btn.read-more {
+    margin-top: auto;
+    align-self: flex-start;
+    text-decoration: none;
 }
 
 /* Optional: subtle accent on hover */
@@ -1028,12 +1128,12 @@ button:hover {
 /* Align intro paragraph under the title */
 .portfolio-intro {
     text-align: left;
-    font-size: clamp(1rem, 1.3vw, 1.15rem);
+    font-size: clamp(1.15rem, 1.5vw, 1.3rem);
     color: var(--color-text);
-    opacity: 0.85;
+    opacity: 0.9;
     max-width: 800px;
     margin: 0 0 2rem 0;
-    line-height: 1.6;
+    line-height: 1.8;
     padding-left: 0;
     animation: fadeUp 0.6s ease both;
     animation-delay: 0.1s;
@@ -1147,12 +1247,20 @@ button:hover {
 .ghost-defiant-content {
     display: grid;
     grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-    gap: 32px;
-    align-items: center;
+    gap: 40px;
+    align-items: start;
+}
+
+.ghost-defiant-details {
+}
+
+.ghost-defiant-details .showcase-title {
+    margin-top: 0;
+    padding-top: 0;
 }
 
 .ghost-defiant-media {
-    padding: 24px;
+    padding: 0;
 }
 
 .ghost-defiant-media video {
@@ -1164,42 +1272,118 @@ button:hover {
 .ghost-defiant-details {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 24px;
+    padding: 0;
+    margin-top: 0;
+}
+
+.ghost-defiant-details .showcase-title {
+    font-size: clamp(1.4rem, 2vw, 1.7rem);
+    font-weight: 700;
+    color: var(--color-accent);
+    margin: 0 0 8px 0;
+    padding: 0;
+    text-align: left;
+    letter-spacing: 0.3px;
+    line-height: 1.2;
 }
 
 .ghost-defiant-highlights {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: grid;
-    gap: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
     color: var(--color-text);
-    opacity: 0.9;
 }
 
 .ghost-defiant-highlights li {
     position: relative;
-    padding-left: 22px;
-    line-height: 1.6;
+    padding: 14px 16px 14px 44px;
+    font-size: 1.1rem;
+    line-height: 1.75;
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    border-radius: 10px;
+    backdrop-filter: var(--blur-glass);
+    -webkit-backdrop-filter: var(--blur-glass);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.ghost-defiant-highlights li:hover {
+    transform: translateX(4px);
+    box-shadow: 0 4px 12px rgba(0, 206, 209, 0.15);
+    border-color: var(--color-accent);
 }
 
 .ghost-defiant-highlights li::before {
-    content: "•";
+    content: "▸";
     position: absolute;
-    left: 0;
-    top: 0;
+    left: 16px;
+    top: 14px;
     color: var(--color-accent);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.ghost-defiant-highlights li strong {
+    color: var(--color-accent);
+    font-weight: 600;
+    display: inline;
+    margin-right: 6px;
+    font-size: 1.15rem;
+}
+
+.ghost-defiant-highlights li {
+    color: var(--color-text);
+    opacity: 0.95;
 }
 
 .ghost-defiant-actions {
     display: flex;
-    gap: 12px;
+    gap: 14px;
     flex-wrap: wrap;
+    margin-top: 8px;
+    padding-top: 8px;
+}
+
+.ghost-defiant-actions .btn {
+    padding: 14px 24px;
+    font-size: 1.05rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 }
 
 @media (max-width: 900px) {
     .ghost-defiant-content {
         grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .ghost-defiant-details {
+        padding: 16px 0;
+    }
+
+    .ghost-defiant-highlights li {
+        padding: 12px 14px 12px 40px;
+        font-size: 1.05rem;
+    }
+
+    .ghost-defiant-highlights li::before {
+        left: 14px;
+        top: 12px;
+    }
+
+    .ghost-defiant-actions {
+        flex-direction: column;
+    }
+
+    .ghost-defiant-actions .btn {
+        width: 100%;
+        justify-content: center;
     }
 }
 
@@ -1241,12 +1425,13 @@ button:hover {
 .video-desc {
     text-align: center;
     color: var(--color-text);
-    font-size: 0.95rem;
-    opacity: 0.85;
+    font-size: 1.05rem;
+    opacity: 0.9;
     margin-top: 0.5rem;
     max-width: 80%;
     margin-left: auto;
     margin-right: auto;
+    line-height: 1.7;
 }
 
 /* Nav arrows */
@@ -1618,7 +1803,7 @@ button:hover {
 
 .contact-left p {
     margin-top: 10px;
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: var(--color-text);
     display: flex;
     align-items: center;
