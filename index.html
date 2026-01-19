@@ -64,9 +64,10 @@
                 <!-- Primary Links -->
                 <ul id="primary-links" class="nav-links">
                     <li><a href="#about">About</a></li>
+                    <li><a href="#showcase">Featured Project</a></li>
+                    <li><a href="#portfolio">Technical Prototypes</a></li>
+                    <li><a href="#experience">Experience</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Playground</a></li>
-                    <li><a href="#photo-gallery">Gallery</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
 
@@ -115,6 +116,7 @@
                     <div class="hero-ctas" aria-label="Primary actions">
                         <a href="#portfolio" class="btn">View Portfolio</a>
                         <a href="#contact" class="btn dark">Contact Me</a>
+                        <a href="img/Current Resume.pdf" download class="btn dark" role="button">Download Resume</a>
                     </div>
 
                     <ul class="tech-chips" aria-label="Key tools">
@@ -136,7 +138,7 @@
             </div>
 
             <!-- Scroll cue -->
-            <a href="#about" class="scroll-cue" aria-label="Scroll to About">
+            <a href="#about" class="scroll-cue" aria-label="Scroll to About section">
                 <span class="material-symbols-rounded" aria-hidden="true">expand_more</span>
             </a>
         </header>
@@ -256,16 +258,16 @@
                             Unity (C#): Ghost Defiant - MR Capstone (Unity 6, Meta AIO SDK v72) & VR target practice; optimized physics systems with debris interaction, fog particle effects, and object pooling.
                         </li>
                         <li class="wow animate__fadeInUp" data-wow-delay="0.24s">
-                            Unreal (C++/BP): Developing a climbing/parkour game with advanced movement (ledge grab, wall run, vault).
-                        </li>
-                        <li class="wow animate__fadeInUp" data-wow-delay="0.30s">
                             UI/UX: Designed accessible HUDs & menus; refined input mapping for controller + VR users.
                         </li>
-                        <li class="wow animate__fadeInUp" data-wow-delay="0.36s">
+                        <li class="wow animate__fadeInUp" data-wow-delay="0.30s">
                             iOS (SwiftUI): Led UI/UX for two titles — one Unity→Xcode port & one native AR 2D platformer.
                         </li>
-                        <li class="wow animate__fadeInUp" data-wow-delay="0.42s">
+                        <li class="wow animate__fadeInUp" data-wow-delay="0.36s">
                             Web: Built & optimized this portfolio with lazy-loading, SEO meta, and Formspree integration.
+                        </li>
+                        <li class="wow animate__fadeInUp" data-wow-delay="0.42s">
+                            Unreal (C++/BP): Currently working on a climbing/parkour game with advanced movement (ledge grab, wall run, vault).
                         </li>
                     </ul>
                 </div>
@@ -277,180 +279,57 @@
     </section>
     <!-- END ABOUT SECTION -->
 
-    <!-- EXPERIENCE SECTION -->
-    <section id="experience" class="with-sidebar wow animate__fadeIn" data-wow-offset="100">
+    <!-- GHOST DEFIANT FEATURED PROJECT SECTION -->
+    <section id="showcase" class="feature-section">
         <div class="container">
-            <h1 class="sub-title" id="experience-heading">Experience</h1>
-
-            <article class="experience-container glass-card" aria-labelledby="finance-sim-title">
-                <header>
-                    <h3 class="experience-title" id="finance-sim-title">Finance Simulator Tool Website</h3>
-                </header>
-
-                <p>
-                    As the lead UI/UX designer and tester for a Boise State University–hosted project, I spearheaded the
-                    design and development of a website aimed at helping students manage their finances throughout college.
-                </p>
-                <p>
-                    Collaborating with two team members, I focused on creating an intuitive, user-friendly interface
-                    that meets the unique needs of students. I also contributed to front-end development and worked closely
-                    with Boise State Financial staff to deliver an effective and accessible financial management tool for the student body.
-                </p>
-
-                <p>
-                    <a href="https://jordanralba.github.io/BSU-personal-finances/"
-                       class="btn"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       aria-label="Visit Student Finance Simulator (opens in a new tab)">
-                        Visit Student Finance Simulator
-                    </a>
-                </p>
-
-                <figure class="experienceimg">
-                    <!-- Add a poster image if you have one: poster="img/finance-sim-poster.jpg" -->
-                    <video id="exp-finance-video"
-                           class="experiencevideo"
-                           controls
-                           preload="metadata"
-                           playsinline
-                           controlslist="nodownload">
-                        <source src="img/Finance Simulator.mp4" type="video/mp4" />
-                        <!-- Optional captions track (recommended)
-                        <track kind="captions" src="captions/finance-sim-en.vtt" srclang="en" label="English" default />
-                        -->
-                        Your browser does not support the video tag.
-                    </video>
-                    <figcaption class="sr-only">Demo of the Student Finance Simulator website.</figcaption>
-                </figure>
-            </article>
-        </div>
-    </section>
-    <!-- END EXPERIENCE SECTION -->
-
-    <!-- SHOWCASE SECTION -->
-    <section id="showcase">
-        <div class="container">
-            <h1 class="sub-title">Senior Showcase</h1>
-            <div class="showcase-container">
-                <h3 class="showcase-title">GIMM Senior Showcase Reel</h3>
-                <p>
-                    For my Boise State University senior showcase, I presented <strong>Ghost Defiant</strong>, my capstone Mixed Reality ghost-hunting shooter
-                    built in Unity 6 using Meta's All-in-One SDK v72. The project combines VR and AR
-                    interactions, showcasing dynamic spatial awareness, passthrough environments, hand tracking, spatial audio, and player feedback systems
-                    optimized for Quest 3 hardware.
-                </p>
-                <p>
-                    I designed and developed every aspect of the game, from core gameplay logic and optimized physics systems (debris interaction, fog particle effects) to UI/UX design (custom ghost-hunter style HUD),
-                    environmental lighting, and comfort features for player experience. This project represents the culmination
-                    of my degree and the skills I've developed in immersive media development.
-                </p>
-
-                <!-- Responsive YouTube embed -->
-                <div class="showcase-video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/ARRNizsN0g8?si=ZV4kdju_1fQUdHpH"
-                            title="Senior Showcase Video"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin"
-                            allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- END SHOWCASE SECTION -->
-
-    <!-- SERVICES SECTION -->
-    <section id="services" class="wow animate__fadeIn" data-wow-offset="80">
-        <div class="container">
-            <h1 class="sub-title wow animate__fadeInDown" data-wow-delay="0.05s">What I Can Do</h1>
-
-            <div class="services-list">
-                <!-- Web Design -->
-                <article class="service-item glass-card wow animate__fadeInUp" data-wow-delay="0.10s">
-                    <span class="service-icon"><i class="fa-solid fa-code"></i></span>
-                    <h2>Web Design & Front-End Development</h2>
-                    <p>
-                        I’ve designed and built responsive, performance-focused web experiences…
-                        <span class="dots">...</span>
-                        <span class="more-content" id="svc-web-more" hidden>
-                            using modern frameworks and libraries. I've built this portfolio with jQuery, Owl Carousel, and Formspree integration, focusing on accessibility, SEO optimization, and responsive grid layouts. I'm currently expanding my skills with AWS and have a strong foundation in both Google and Apple design practices, with a continuous drive to improve my web development capabilities.
-                        </span>
-                    </p>
-                    <button class="btn read-more" onclick="toggleReadMore(this)">Read more</button>
-                </article>
-
-                <!-- Unity -->
-                <article class="service-item glass-card wow animate__fadeInUp" data-wow-delay="0.20s">
-                    <span class="service-icon"><i class="fa-brands fa-unity"></i></span>
-                    <h2>Unity Game Design & Development</h2>
-                    <p>
-                        I’ve developed a range of Unity projects…
-                        <span class="dots">...</span>
-                        <span class="more-content" id="svc-unity-more" hidden>
-                            including 2D platformers, VR experiences, and Mixed Reality applications. In one of my early projects, I created a fully functional 2D platformer with AI-driven enemies, player health systems, wall-running mechanics, and comprehensive gameplay systems. My final capstone project, <strong>Ghost Defiant</strong>, is a 3D Mixed Reality ghost-hunting shooter built with Unity 6 and Meta's AIO SDK v72 for Quest 3, featuring hand tracking, passthrough integration, spatial audio, optimized physics systems with debris interaction, fog particle effects, and custom UI/UX design.
-                        </span>
-                    </p>
-                    <button class="btn read-more" onclick="toggleReadMore(this)">Read more</button>
-                </article>
-
-                <!-- Application -->
-                <article class="service-item glass-card wow animate__fadeInUp" data-wow-delay="0.30s">
-                    <span class="service-icon"><i class="fa-brands fa-app-store"></i></span>
-                    <h2>Application & UI/UX Design</h2>
-                    <p>
-                        I specialize in designing intuitive, accessible applications…
-                        <span class="dots">...</span>
-                        <span class="more-content" id="svc-app-more" hidden>
-                            with a focus on user-centered design principles. My experience spans both web and game development, giving me a unique perspective on creating engaging user experiences. I've co-developed two iOS applications - one Unity-to-Xcode port and one native SwiftUI AR 2D platformer - with particular attention to accessible UI/UX and smooth AR interactions. I thrive in collaborative environments and enjoy tackling diverse challenges to create effective and efficient design solutions.
-                        </span>
-                    </p>
-                    <button class="btn read-more" onclick="toggleReadMore(this)">Read more</button>
-                </article>
-            </div>
-        </div>
-    </section>
-    <!-- END SERVICES SECTION -->
-
-    <!-- GHOST DEFIANT FEATURE SECTION -->
-    <section id="ghost-defiant" class="feature-section">
-        <div class="container">
-            <h2 class="sub-title">Ghost Defiant - MR Capstone</h2>
+            <h1 class="sub-title">Featured Project: Ghost Defiant</h1>
             <p class="portfolio-intro">
-                A Mixed Reality ghost-hunting shooter built with Unity 6 and Meta AIO SDK v72 for Quest 3. This capstone project showcases hand tracking, passthrough integration, spatial audio, and optimized physics systems with debris interaction and fog particle effects. Features custom UI/UX design with a ghost-hunter aesthetic HUD.
+                My Boise State University capstone project — a Mixed Reality ghost-hunting shooter built with Unity 6 and Meta AIO SDK v72 for Quest 3. 
+                I designed and developed every aspect of the game, from core gameplay logic and optimized physics systems to custom UI/UX design.
+                This project represents the culmination of my degree and demonstrates my skills in Unity development, VR/MR systems, and immersive media.
             </p>
 
             <div class="ghost-defiant-content">
+                <!-- YouTube Showcase Video -->
                 <div class="ghost-defiant-media glass-card">
-                    <video src="img/Ghost-Defiant-Playthrough.mp4"
-                           preload="metadata" controls playsinline></video>
+                    <div class="showcase-video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/ARRNizsN0g8?si=ZV4kdju_1fQUdHpH"
+                                title="Ghost Defiant - Senior Showcase Video"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen></iframe>
+                    </div>
                 </div>
 
+                <!-- Key Features & Details -->
                 <div class="ghost-defiant-details">
+                    <h3 class="showcase-title">Key Features</h3>
                     <ul class="ghost-defiant-highlights">
+                        <li><strong>Implemented custom debris physics</strong> using Unity 6's physics system for interactive environment destruction</li>
+                        <li><strong>Engineered spatial audio and fog particle systems</strong> for immersive atmosphere and gameplay feedback</li>
+                        <li><strong>Optimized for Meta Quest 3</strong> achieving stable 72 FPS with hand tracking, passthrough integration, and spatial awareness</li>
+                        <li><strong>Designed custom UI/UX</strong> with ghost-hunter aesthetic HUD optimized for VR/MR comfort and accessibility</li>
                         <li><strong>Tech Stack:</strong> Unity 6, Meta AIO SDK v72, Quest 3, Hand Tracking, Passthrough API, Spatial Audio</li>
-                        <li><strong>Technical Contributions:</strong> Optimized physics systems with debris interaction, fog particle effects, hand tracking integration</li>
-                        <li><strong>UI/UX Design:</strong> Custom ghost-hunter style HUD and interface design for VR/MR comfort</li>
-                        <li>Documented implementation details, assets, and dev notes in the GitHub repo.</li>
                     </ul>
                     <div class="ghost-defiant-actions">
                         <a class="btn" href="https://github.com/jamesrusso12/Ghost-Defiant" target="_blank" rel="noreferrer">
-                            View Repository
+                            <i class="fab fa-github"></i> View Code on GitHub
                         </a>
                         <a class="btn dark" href="img/Ghost-Defiant-Playthrough.mp4" target="_blank" rel="noreferrer">
-                            Watch Full Playthrough
+                            <i class="fas fa-video"></i> Watch Full Playthrough
                         </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- END GHOST DEFIANT FEATURE SECTION -->
+    <!-- END GHOST DEFIANT FEATURED PROJECT SECTION -->
 
     <!-- PORTFOLIO / PLAYGROUND SECTION -->
     <section id="portfolio" class="portfolio-section">
         <div class="container">
-            <h2 class="sub-title">Playground</h2>
+            <h2 class="sub-title">Technical Prototypes</h2>
             <p class="portfolio-intro">
                 A collection of my favorite interactive experiments — spanning Unreal Engine, Unity, and front-end prototypes.
                 Each clip highlights a different layer of my design, programming, or system optimization work.
@@ -525,126 +404,108 @@
     </section>
     <!-- END PORTFOLIO SECTION -->
 
-    <!-- IMAGE GALLERY SECTION -->
-    <section id="photo-gallery" class="photo-gallery">
-        <h1 class="sub-title">Image Gallery</h1>
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience" class="with-sidebar wow animate__fadeIn" data-wow-offset="100">
+        <div class="container">
+            <h1 class="sub-title" id="experience-heading">Experience</h1>
 
-        <!-- Navigation Buttons -->
-        <div class="gallery-navigation">
-            <button class="btn" data-section="unity-gallery">Unity</button>
-            <button class="btn" data-section="web-gallery">Web Design</button>
-            <button class="btn" data-section="unreal-gallery">Unreal</button>
+            <article class="experience-container glass-card" aria-labelledby="finance-sim-title">
+                <header>
+                    <h3 class="experience-title" id="finance-sim-title">Finance Simulator Tool Website</h3>
+                </header>
+
+                <p>
+                    As the lead UI/UX designer and tester for a Boise State University–hosted project, I spearheaded the
+                    design and development of a website aimed at helping students manage their finances throughout college.
+                </p>
+                <p>
+                    Collaborating with two team members, I focused on creating an intuitive, user-friendly interface
+                    that meets the unique needs of students. I also contributed to front-end development and worked closely
+                    with Boise State Financial staff to deliver an effective and accessible financial management tool for the student body.
+                </p>
+
+                <p>
+                    <a href="https://jordanralba.github.io/BSU-personal-finances/"
+                       class="btn"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Visit Student Finance Simulator (opens in a new tab)">
+                        Visit Student Finance Simulator
+                    </a>
+                </p>
+
+                <figure class="experienceimg">
+                    <!-- Add a poster image if you have one: poster="img/finance-sim-poster.jpg" -->
+                    <video id="exp-finance-video"
+                           class="experiencevideo"
+                           controls
+                           preload="metadata"
+                           playsinline
+                           controlslist="nodownload">
+                        <source src="img/Finance Simulator.mp4" type="video/mp4" />
+                        <!-- Optional captions track (recommended)
+                        <track kind="captions" src="captions/finance-sim-en.vtt" srclang="en" label="English" default />
+                        -->
+                        Your browser does not support the video tag.
+                    </video>
+                    <figcaption class="sr-only">Demo of the Student Finance Simulator website.</figcaption>
+                </figure>
+            </article>
         </div>
+    </section>
+    <!-- END EXPERIENCE SECTION -->
 
-        <!-- Unity Projects -->
-        <div id="unity-gallery" class="gallery-content active glass-card">
-            <h2 class="gallery-title">Unity Projects</h2>
-            <div class="image-grid">
-                <img src="img/2D Unity Level 1.jpg" alt="Unity Project" class="wide hover-shadow"
-                     onclick="openModal('unity-gallery');currentSlide(1, 'unity-gallery')" />
-                <img src="img/2D Unity Level 2.jpg" alt="Unity Project" class="wide hover-shadow"
-                     onclick="openModal('unity-gallery');currentSlide(2, 'unity-gallery')" />
-                <img src="img/ARTiger.png" alt="Unity Project" class="hover-shadow"
-                     onclick="openModal('unity-gallery');currentSlide(3, 'unity-gallery')" />
-                <img src="img/AR.jpg" alt="Unity Project" class="wide hover-shadow"
-                     onclick="openModal('unity-gallery');currentSlide(4, 'unity-gallery')" />
-                <img src="img/AR Ace.jpg" alt="Unity Project" class="hover-shadow"
-                     onclick="openModal('unity-gallery');currentSlide(5, 'unity-gallery')" />
-                <img src="img/AR3.jpg" alt="Unity Project" class="wide hover-shadow"
-                     onclick="openModal('unity-gallery');currentSlide(6, 'unity-gallery')" />
-                <img src="img/Capture.JPG" alt="Unity Project" class="tall hover-shadow"
-                     onclick="openModal('unity-gallery');currentSlide(7, 'unity-gallery')" />
-                <img src="img/Coding assignment 2.JPG" alt="Unity Project" class="wide hover-shadow"
-                     onclick="openModal('unity-gallery');currentSlide(8, 'unity-gallery')" />
-                <img src="img/Raw Unity.JPG" alt="Unity Project" class="wide hover-shadow"
-                     onclick="openModal('unity-gallery');currentSlide(9, 'unity-gallery')" />
-                <img src="img/Unity Code.JPG" alt="Unity Project" class="wide hover-shadow"
-                     onclick="openModal('unity-gallery');currentSlide(10, 'unity-gallery')" />
-                <img src="img/Unity 10.JPG" alt="Unity Project" class="wide hover-shadow"
-                     onclick="openModal('unity-gallery');currentSlide(11, 'unity-gallery')" />
-                <img src="img/UnityScreenshot.JPG" alt="Unity Project" class="wide hover-shadow"
-                     onclick="openModal('unity-gallery');currentSlide(12, 'unity-gallery')" />
-            </div>
-        </div>
+    <!-- SERVICES SECTION -->
+    <section id="services" class="wow animate__fadeIn" data-wow-offset="80">
+        <div class="container">
+            <h1 class="sub-title wow animate__fadeInDown" data-wow-delay="0.05s">What I Can Do</h1>
 
-        <!-- Web Design Projects -->
-        <div id="web-gallery" class="gallery-content glass-card">
-            <h2 class="gallery-title">Web Design Projects</h2>
-            <div class="image-grid">
-                <img src="img/HaloMaps.JPG" alt="Web Design Project" class="wide hover-shadow"
-                     onclick="openModal('web-gallery');currentSlide(1, 'web-gallery')" />
-                <img src="img/Halo-SpeedRuns.jpg" alt="Web Design Project" class="wide hover-shadow"
-                     onclick="openModal('web-gallery');currentSlide(2, 'web-gallery')" />
-                <img src="img/Halo Maps CRUD API.JPG" alt="Web Design Project" class="wide hover-shadow"
-                     onclick="openModal('web-gallery');currentSlide(3, 'web-gallery')" />
-                <img src="img/HaloMapsDataBase.JPG" alt="Web Design Project" class="wide hover-shadow"
-                     onclick="openModal('web-gallery');currentSlide(4, 'web-gallery')" />
-                <img src="img/HaloMapsDeletePage.JPG" alt="Web Design Project" class="wide hover-shadow"
-                     onclick="openModal('web-gallery');currentSlide(5, 'web-gallery')" />
-                <img src="img/HaloMapsEditPage.JPG" alt="Web Design Project" class="wide hover-shadow"
-                     onclick="openModal('web-gallery');currentSlide(6, 'web-gallery')" />
-                <img src="img/HaloSpeedrunsScoreBoard.JPG" alt="Web Design Project" class="wide hover-shadow"
-                     onclick="openModal('web-gallery');currentSlide(7, 'web-gallery')" />
-                <img src="img/ITM Web Page.JPG" alt="Web Design Project" class="wide hover-shadow"
-                     onclick="openModal('web-gallery');currentSlide(8, 'web-gallery')" />
-                <img src="img/WebpageCalculator.JPG" alt="Web Design Project" class="wide hover-shadow"
-                     onclick="openModal('web-gallery');currentSlide(9, 'web-gallery')" />
-                <img src="img/WebpageResume.JPG" alt="Web Design Project" class="wide hover-shadow"
-                     onclick="openModal('web-gallery');currentSlide(10, 'web-gallery')" />
-            </div>
-        </div>
+            <div class="services-list">
+                <!-- Web Design -->
+                <article class="service-item glass-card wow animate__fadeInUp" data-wow-delay="0.10s">
+                    <span class="service-icon"><i class="fa-solid fa-code"></i></span>
+                    <h2>Web Design & Front-End Development</h2>
+                    <p>
+                        I've designed and built responsive, performance-focused web experiences…
+                        <span class="dots">...</span>
+                        <span class="more-content" id="svc-web-more" hidden>
+                            using modern frameworks and libraries. I've built this portfolio with jQuery, Owl Carousel, and Formspree integration, focusing on accessibility, SEO optimization, and responsive grid layouts. I'm currently expanding my skills with AWS and have a strong foundation in both Google and Apple design practices, with a continuous drive to improve my web development capabilities.
+                        </span>
+                    </p>
+                    <button class="btn read-more" onclick="toggleReadMore(this)">Read more</button>
+                </article>
 
-        <!-- Unreal Projects -->
-        <div id="unreal-gallery" class="gallery-content glass-card">
-            <h2 class="gallery-title">Unreal Projects</h2>
-            <div class="image-grid">
-                <img src="img/Air_Attack_Code.png" alt="Unreal project" class="wide hover-shadow"
-                     onclick="openModal('unreal-gallery');currentSlide(1, 'unreal-gallery')" />
-                <img src="img/Attack_Code.png" alt="Unreal project" class="hover-shadow"
-                     onclick="openModal('unreal-gallery');currentSlide(2, 'unreal-gallery')" />
-                <img src="img/Attack_System_code.png" alt="Unreal project" class="tall hover-shadow"
-                     onclick="openModal('unreal-gallery');currentSlide(3, 'unreal-gallery')" />
-                <img src="img/Block_System_code_.png" alt="Unreal project" class="hover-shadow"
-                     onclick="openModal('unreal-gallery');currentSlide(4, 'unreal-gallery')" />
-                <img src="img/Character_Movement_code.png" alt="Unreal project" class="hover-shadow"
-                     onclick="openModal('unreal-gallery');currentSlide(5, 'unreal-gallery')" />
-                <img src="img/Jump_Movement_code.png" alt="Unreal project" class="hover-shadow"
-                     onclick="openModal('unreal-gallery');currentSlide(6, 'unreal-gallery')" />
-                <img src="img/Move_Player2_code.png" alt="Unreal project" class="hover-shadow"
-                     onclick="openModal('unreal-gallery');currentSlide(7, 'unreal-gallery')" />
-                <img src="img/NPC_Enemy_AI_code.png" alt="Unreal project" class="hover-shadow"
-                     onclick="openModal('unreal-gallery');currentSlide(8, 'unreal-gallery')" />
-                <img src="img/PlayPause_code.png" alt="Unreal project" class="hover-shadow"
-                     onclick="openModal('unreal-gallery');currentSlide(9, 'unreal-gallery')" />
-                <img src="img/Random_Spawn_code.png" alt="Unreal project" class="hover-shadow"
-                     onclick="openModal('unreal-gallery');currentSlide(10, 'unreal-gallery')" />
-                <img src="img/Taking_damage_code_.png" alt="Unreal project" class="hover-shadow"
-                     onclick="openModal('unreal-gallery');currentSlide(11, 'unreal-gallery')" />
-                <img src="img/Target_is_hit_code_.png" alt="Unreal project" class="hover-shadow"
-                     onclick="openModal('unreal-gallery');currentSlide(12, 'unreal-gallery')" />
-                <img src="img/Target_is_not_hit_code.png" alt="Unreal project" class="hover-shadow"
-                     onclick="openModal('unreal-gallery');currentSlide(13, 'unreal-gallery')" />
-            </div>
-        </div>
+                <!-- Unity -->
+                <article class="service-item glass-card wow animate__fadeInUp" data-wow-delay="0.20s">
+                    <span class="service-icon"><i class="fa-brands fa-unity"></i></span>
+                    <h2>Unity Game Design & Development</h2>
+                    <p>
+                        I've developed a range of Unity projects…
+                        <span class="dots">...</span>
+                        <span class="more-content" id="svc-unity-more" hidden>
+                            including 2D platformers, VR experiences, and Mixed Reality applications. In one of my early projects, I created a fully functional 2D platformer with AI-driven enemies, player health systems, wall-running mechanics, and comprehensive gameplay systems. My final capstone project, <strong>Ghost Defiant</strong>, is a 3D Mixed Reality ghost-hunting shooter built with Unity 6 and Meta's AIO SDK v72 for Quest 3, featuring hand tracking, passthrough integration, spatial audio, optimized physics systems with debris interaction, fog particle effects, and custom UI/UX design.
+                        </span>
+                    </p>
+                    <button class="btn read-more" onclick="toggleReadMore(this)">Read more</button>
+                </article>
 
-        <!-- MODAL FOR IMAGE VIEWING -->
-        <div id="myModal" class="modal">
-            <span class="close cursor" onclick="closeModal()">&times;</span>
-            <div class="modal-content">
-                <div id="modal-slides"></div>
-
-                <!-- Next/Previous Controls -->
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-                <!-- Caption Text -->
-                <div class="caption-container">
-                    <p id="caption"></p>
-                </div>
+                <!-- Application -->
+                <article class="service-item glass-card wow animate__fadeInUp" data-wow-delay="0.30s">
+                    <span class="service-icon"><i class="fa-brands fa-app-store"></i></span>
+                    <h2>Application & UI/UX Design</h2>
+                    <p>
+                        I specialize in designing intuitive, accessible applications…
+                        <span class="dots">...</span>
+                        <span class="more-content" id="svc-app-more" hidden>
+                            with a focus on user-centered design principles. My experience spans both web and game development, giving me a unique perspective on creating engaging user experiences. I've co-developed two iOS applications - one Unity-to-Xcode port and one native SwiftUI AR 2D platformer - with particular attention to accessible UI/UX and smooth AR interactions. I thrive in collaborative environments and enjoy tackling diverse challenges to create effective and efficient design solutions.
+                        </span>
+                    </p>
+                    <button class="btn read-more" onclick="toggleReadMore(this)">Read more</button>
+                </article>
             </div>
         </div>
     </section>
-    <!-- END IMAGE GALLERY SECTION -->
+    <!-- END SERVICES SECTION -->
 
     <!-- CONTACT SECTION -->
     <section id="contact" class="contact-section">
