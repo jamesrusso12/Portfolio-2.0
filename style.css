@@ -1600,12 +1600,11 @@ button:hover {
     font-weight: 600;
 }
 
-/* Image Grid */
+/* Image Grid - Clean uniform layout */
 .image-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-auto-rows: 240px;
-    gap: 12px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
     justify-content: center;
     max-width: 100%;
     margin: auto;
@@ -1613,28 +1612,28 @@ button:hover {
 
 .image-grid img {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 16 / 9;
     border-radius: 10px;
     object-fit: cover;
     transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
     cursor: pointer;
     border: 1px solid var(--color-surface-border);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Hover glow */
+/* Hover effect with enhanced glow */
 .image-grid img:hover {
-    transform: scale(1.04);
-    box-shadow: 0 0 20px rgba(0, 207, 255, 0.35);
-    filter: brightness(1.1) saturate(1.05);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 8px 24px rgba(0, 207, 255, 0.4),
+                0 0 30px rgba(0, 207, 255, 0.2);
+    filter: brightness(1.08) saturate(1.1);
 }
 
-/* Wide and tall image modifiers */
-.image-grid .tall {
-    grid-row: span 2;
-}
-
+/* Remove wide and tall modifiers for cleaner uniform grid */
+.image-grid .tall,
 .image-grid .wide {
-    grid-column: span 2;
+    grid-row: auto;
+    grid-column: auto;
 }
 
 /* Modal styling */
@@ -1763,7 +1762,8 @@ button:hover {
     }
 
     .image-grid {
-        grid-auto-rows: 180px;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 12px;
     }
 
     /* Modal responsive adjustments */
@@ -1796,6 +1796,13 @@ button:hover {
         font-size: 30px;
         top: 5px;
         right: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
     }
 }
 
@@ -2040,9 +2047,8 @@ button:hover {
 
     /* Image gallery grid */
     .image-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        grid-auto-rows: 160px;
-        gap: 8px;
+        grid-template-columns: 1fr;
+        gap: 10px;
     }
 
     /* Contact section */
@@ -2102,9 +2108,8 @@ button:hover {
 
     /* Grid tightening */
     .image-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        grid-auto-rows: 200px;
-        gap: 10px;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 12px;
     }
 
     .gallery-navigation {

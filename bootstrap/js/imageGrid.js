@@ -66,24 +66,33 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // ===== GALLERY SECTION SWITCHING =====
+    // ===== GALLERY SECTION SWITCHING (Optional) =====
     const buttons = document.querySelectorAll(".gallery-navigation .btn");
     const sections = document.querySelectorAll(".gallery-content");
 
-    function showGallerySection(sectionId) {
-        sections.forEach(s => s.classList.remove("active"));
-        buttons.forEach(b => b.classList.remove("active"));
-        document.getElementById(sectionId).classList.add("active");
-        document.querySelector(`[data-section="${sectionId}"]`).classList.add("active");
-    }
+    // Only set up gallery switching if navigation buttons exist
+    if (buttons.length > 0) {
+        function showGallerySection(sectionId) {
+            sections.forEach(s => s.classList.remove("active"));
+            buttons.forEach(b => b.classList.remove("active"));
+            const targetSection = document.getElementById(sectionId);
+            const targetButton = document.querySelector(`[data-section="${sectionId}"]`);
 
-    buttons.forEach(button => {
-        button.addEventListener("click", () => {
-            const sectionId = button.getAttribute("data-section");
-            showGallerySection(sectionId);
+            if (targetSection) targetSection.classList.add("active");
+            if (targetButton) targetButton.classList.add("active");
+        }
+
+        buttons.forEach(button => {
+            button.addEventListener("click", () => {
+                const sectionId = button.getAttribute("data-section");
+                showGallerySection(sectionId);
+            });
         });
-    });
 
-    // Set Unity gallery active by default
-    showGallerySection("unity-gallery");
+        // Set first gallery active by default only if buttons exist
+        if (buttons[0]) {
+            const firstSectionId = buttons[0].getAttribute("data-section");
+            if (firstSectionId) showGallerySection(firstSectionId);
+        }
+    }
 });
