@@ -1244,6 +1244,30 @@ button:hover {
     margin-bottom: 0;
 }
 
+/* Wrapper for intro paragraph and Key Features side-by-side */
+.ghost-defiant-intro-wrapper {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    gap: 40px;
+    align-items: start;
+    margin-bottom: 32px;
+}
+
+/* Left column containing intro paragraph and video */
+.ghost-defiant-left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Intro paragraph styling within the wrapper */
+.ghost-defiant-intro-wrapper .portfolio-intro {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    align-self: start;
+}
+
 .ghost-defiant-content {
     display: grid;
     grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
@@ -1252,6 +1276,12 @@ button:hover {
 }
 
 .ghost-defiant-details {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 0;
+    margin-top: 0;
+    align-self: start;
 }
 
 .ghost-defiant-details .showcase-title {
@@ -1261,20 +1291,17 @@ button:hover {
 
 .ghost-defiant-media {
     padding: 0;
+    margin-top: 0;
+}
+
+.ghost-defiant-left-column .ghost-defiant-media {
+    width: 100%;
 }
 
 .ghost-defiant-media video {
     width: 100%;
     border-radius: 12px;
     display: block;
-}
-
-.ghost-defiant-details {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    padding: 0;
-    margin-top: 0;
 }
 
 .ghost-defiant-details .showcase-title {
@@ -1358,6 +1385,15 @@ button:hover {
 }
 
 @media (max-width: 900px) {
+    .ghost-defiant-intro-wrapper {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .ghost-defiant-left-column {
+        gap: 20px;
+    }
+
     .ghost-defiant-content {
         grid-template-columns: 1fr;
         gap: 28px;
