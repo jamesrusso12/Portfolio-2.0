@@ -47,6 +47,8 @@
 
 html {
     scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -56,6 +58,8 @@ body {
     line-height: 1.4;
     opacity: 0;
     animation: fadeInPage 0.8s ease-in forwards;
+    margin: 0;
+    padding: 0;
 }
 
 @keyframes fadeInPage {
@@ -402,6 +406,7 @@ img, video, iframe {
     box-shadow: var(--shadow-glass);
     transform: translateY(0);
     transition: transform .35s ease, background .25s ease, box-shadow .25s ease;
+    margin: 0;
 }
 
 .topnav.hide {
@@ -516,7 +521,7 @@ img, video, iframe {
 }
 
 /* Ensure page content isn't hidden under fixed topnav */
-body {
+#home {
     padding-top: 72px;
 }
 
