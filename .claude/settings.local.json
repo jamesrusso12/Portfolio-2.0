@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(python -m http.server:*)"
+      "Bash(python -m http.server:*)",
+      "Bash(ls:*)"
     ]
   }
 }
