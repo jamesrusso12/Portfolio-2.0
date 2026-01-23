@@ -1,8 +1,3 @@
-/**
- * Enhanced Smooth Transitions
- * Adds progressive loading and smooth scroll enhancements
- */
-
 document.addEventListener('DOMContentLoaded', function() {
     // Add loaded class to body for CSS transitions
     document.body.classList.add('loaded');
