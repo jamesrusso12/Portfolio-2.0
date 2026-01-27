@@ -6,7 +6,8 @@
       "Bash(findstr:*)",
       "Bash(dir \"C:\\\\Users\\\\jruss\\\\OneDrive\\\\Desktop\\\\Project Kickoff\\\\Portfolio-2.0\\\\img\" /B)",
       "Bash(test -f \"C:\\\\Users\\\\jruss\\\\OneDrive\\\\Desktop\\\\Project Kickoff\\\\Portfolio-2.0\\\\img\\\\WebDevelopment \\(1\\).JPG\")",
-      "Bash(test -f \"C:\\\\Users\\\\jruss\\\\OneDrive\\\\Desktop\\\\Project Kickoff\\\\Portfolio-2.0\\\\img\\\\GameDevelopment \\(2\\).jpg\")"
+      "Bash(test -f \"C:\\\\Users\\\\jruss\\\\OneDrive\\\\Desktop\\\\Project Kickoff\\\\Portfolio-2.0\\\\img\\\\GameDevelopment \\(2\\).jpg\")",
+      "Bash(dir /s \"C:\\\\Users\\\\jruss\\\\OneDrive\\\\Desktop\\\\Project Kickoff\\\\Portfolio-2.0\\\\img\")"
     ]
   }
 }

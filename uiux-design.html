@@ -15,6 +15,40 @@
     <!-- Animate.css for WOW.js scroll animations -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="style.css" />
+    <!-- UI/UX page prototype layout -->
+    <style>
+        .uiux-split-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+            gap: 32px;
+            align-items: start;
+        }
+
+        .uiux-split-right .video-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .uiux-split-right .video-item h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            color: var(--color-text);
+        }
+
+        .uiux-split-right .video-item video {
+            width: 100%;
+            border-radius: 10px;
+            border: 1px solid var(--color-surface-border);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        @media (max-width: 900px) {
+            .uiux-split-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
     <!-- Google Material Symbols for icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
     <!-- Font Awesome -->
@@ -88,25 +122,96 @@
         <div class="container">
             <h2 class="sub-title wow animate__fadeInDown" data-wow-delay="0.1s">UI/UX Design & Application Projects</h2>
 
-            <!-- Image Gallery -->
-            <div id="app-gallery" class="gallery-content active glass-card wow animate__fadeInUp" data-wow-delay="0.2s">
-                <div class="image-grid">
-                    <img src="img/AppDevelopment.jpg" onclick="openModal('app-gallery');currentSlide(1, 'app-gallery')"
-                        alt="App Development Project" class="wide hover-shadow">
-                    <img src="img/AppDevelopment (1).jpg" onclick="openModal('app-gallery');currentSlide(2, 'app-gallery')"
-                        alt="App Development Project 1" class="hover-shadow">
-                    <img src="img/AppDevelopment (2).jpg" onclick="openModal('app-gallery');currentSlide(3, 'app-gallery')"
-                        alt="App Development Project 2" class="tall hover-shadow">
-                    <img src="img/AppDevelopment (3).jpg" onclick="openModal('app-gallery');currentSlide(4, 'app-gallery')"
-                        alt="App Development Project 3" class="hover-shadow">
-                    <img src="img/AppDevelopment (4).jpg" onclick="openModal('app-gallery');currentSlide(5, 'app-gallery')"
-                        alt="App Development Project 4" class="wide hover-shadow">
-                    <img src="img/AppDevelopment (5).jpg" onclick="openModal('app-gallery');currentSlide(6, 'app-gallery')"
-                        alt="App Development Project 5" class="hover-shadow">
-                    <img src="img/AppDevelopment (6).JPG" onclick="openModal('app-gallery');currentSlide(7, 'app-gallery')"
-                        alt="App Development Project 6" class="tall hover-shadow">
-                    <img src="img/AppDevelopment (7).jpg" onclick="openModal('app-gallery');currentSlide(8, 'app-gallery')"
-                        alt="App Development Project 7" class="hover-shadow">
+            <div class="uiux-split-layout">
+                <!-- LEFT COLUMN — Photo Gallery -->
+                <div class="uiux-split-left">
+                    <div id="app-gallery" class="gallery-content active glass-card wow animate__fadeInUp" data-wow-delay="0.2s">
+                        <div class="image-grid">
+                            <!-- Bookshelf Adventures -->
+                            <img src="img/Screenshots and Photos/Bookshelf Adventure 3Page.png" onclick="openModal('app-gallery');currentSlide(1, 'app-gallery')"
+                                alt="Bookshelf Adventures 3-Page View" class="wide hover-shadow">
+                            <img src="img/Screenshots and Photos/Bookshelf Adventures Augment Model.png" onclick="openModal('app-gallery');currentSlide(2, 'app-gallery')"
+                                alt="Bookshelf Adventures AR Augmented Model" class="tall hover-shadow">
+                            <img src="img/Screenshots and Photos/Bookshelf Adventures Classroom Login.png" onclick="openModal('app-gallery');currentSlide(3, 'app-gallery')"
+                                alt="Bookshelf Adventures Classroom Login" class="tall hover-shadow">
+                            <img src="img/Screenshots and Photos/Bookshelf Adventures Cover.png" onclick="openModal('app-gallery');currentSlide(4, 'app-gallery')"
+                                alt="Bookshelf Adventures Cover Screen" class="hover-shadow">
+                            <img src="img/Screenshots and Photos/Bookshelf Adventures Creators.png" onclick="openModal('app-gallery');currentSlide(5, 'app-gallery')"
+                                alt="Bookshelf Adventures Creators" class="hover-shadow">
+                            <img src="img/Screenshots and Photos/Bookshelf Adventures Explination.png" onclick="openModal('app-gallery');currentSlide(6, 'app-gallery')"
+                                alt="Bookshelf Adventures Page Explanation" class="tall hover-shadow">
+                            <img src="img/Screenshots and Photos/Bookshelf Adventures Icon.png" onclick="openModal('app-gallery');currentSlide(7, 'app-gallery')"
+                                alt="Bookshelf Adventures App Icon" class="hover-shadow">
+                            <img src="img/Screenshots and Photos/Bookshelf Adventures Page Text.png" onclick="openModal('app-gallery');currentSlide(8, 'app-gallery')"
+                                alt="Bookshelf Adventures Page Text Display" class="hover-shadow">
+                            <img src="img/Screenshots and Photos/Bookshelf Adventures thumbnail.png" onclick="openModal('app-gallery');currentSlide(9, 'app-gallery')"
+                                alt="Bookshelf Adventures Thumbnail" class="wide hover-shadow">
+                            <!-- App Development -->
+                            <img src="img/AppDevelopment.jpg" onclick="openModal('app-gallery');currentSlide(10, 'app-gallery')"
+                                alt="App Development Project" class="wide hover-shadow">
+                            <img src="img/AppDevelopment (1).jpg" onclick="openModal('app-gallery');currentSlide(11, 'app-gallery')"
+                                alt="App Development Project 1" class="hover-shadow">
+                            <img src="img/AppDevelopment (2).jpg" onclick="openModal('app-gallery');currentSlide(12, 'app-gallery')"
+                                alt="App Development Project 2" class="tall hover-shadow">
+                            <img src="img/AppDevelopment (3).jpg" onclick="openModal('app-gallery');currentSlide(13, 'app-gallery')"
+                                alt="App Development Project 3" class="hover-shadow">
+                            <img src="img/AppDevelopment (4).jpg" onclick="openModal('app-gallery');currentSlide(14, 'app-gallery')"
+                                alt="App Development Project 4" class="wide hover-shadow">
+                            <img src="img/AppDevelopment (5).jpg" onclick="openModal('app-gallery');currentSlide(15, 'app-gallery')"
+                                alt="App Development Project 5" class="hover-shadow">
+                            <img src="img/AppDevelopment (6).JPG" onclick="openModal('app-gallery');currentSlide(16, 'app-gallery')"
+                                alt="App Development Project 6" class="tall hover-shadow">
+                            <img src="img/AppDevelopment (7).jpg" onclick="openModal('app-gallery');currentSlide(17, 'app-gallery')"
+                                alt="App Development Project 7" class="hover-shadow">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT COLUMN — Mississippi Prototype Videos -->
+                <div class="uiux-split-right">
+                    <div class="glass-card wow animate__fadeInUp" data-wow-delay="0.3s" style="padding: 2rem;">
+                        <h3 class="sub-title" style="margin-bottom: 1rem; font-size: 1.4rem;">
+                            <i class="fa-solid fa-video" style="color: var(--color-accent); margin-right: 8px;"></i>
+                            Mississippi Prototype
+                        </h3>
+                        <p style="margin-bottom: 1.5rem; color: var(--color-text-secondary); line-height: 1.6;">
+                            Screen recordings and documentation from our senior project developed in collaboration
+                            with the Mississippi State University special needs department.
+                        </p>
+
+                        <div class="video-stack">
+                            <div class="video-item">
+                                <h4>Video Portfolio</h4>
+                                <video controls preload="metadata">
+                                    <source src="img/Videos/App Screen Recordings/BookShelf Adventures Video Portfolio.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="video-item">
+                                <h4>3D Models</h4>
+                                <video controls preload="metadata">
+                                    <source src="img/Videos/App Screen Recordings/BookShelf Adventures 3D Models.mp4#t=2" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="video-item">
+                                <h4>Figma Prototype</h4>
+                                <video controls preload="metadata">
+                                    <source src="img/Videos/App Screen Recordings/Bookshelf Adventures Figma.mp4#t=1" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="video-item">
+                                <h4>Project Documents</h4>
+                                <video controls preload="metadata">
+                                    <source src="img/Videos/App Screen Recordings/BookShelf Adverntures Documents.mp4#t=2" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="video-item">
+                                <h4>Teacher Login Page</h4>
+                                <video controls preload="metadata">
+                                    <source src="img/Videos/App Screen Recordings/Teacher login page.mp4#t=1" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
