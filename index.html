@@ -33,12 +33,6 @@
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/bc56acafc1.js"
             crossorigin="anonymous"></script>
-    <!-- 4. jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- 5. Owl Carousel JS -->
-    <script src="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
-    <!-- 6. Plyr JS -->
-    <script src="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.polyfilled.js"></script>
 </head>
 
 
@@ -105,7 +99,7 @@
                     <h1 id="site-title">James Russo</h1>
 
                     <p class="tagline">
-                        <span id="test1">Unity Developer & UI/UX Designer • C# • VR/MR • Interactive Systems</span>
+                        <span id="test1">Game Developer & UI/UX Designer</span>
                     </p>
 
                     <p class="subtitle">
@@ -594,53 +588,29 @@
     </div>
     <!-- End Footer -->
 
-    <!-- jQuery + Owl + Plyr -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
+    <!-- jQuery + Owl -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/owl.carousel.min.js" defer></script>
 
     <!-- JS -->
     <script src="bootstrap/js/smoothTransitions.js"></script>
     <script src="bootstrap/js/navMenu.js" defer></script>
-    <script src="bootstrap/js/jquery.simple-text-rotator.js" defer></script>
     <script src="bootstrap/js/portfolio.js" defer></script>
     <script src="bootstrap/js/imageGrid.js" defer></script>
     <script src="bootstrap/js/formSpree.js" defer></script>
-    <script src="bootstrap/js/readMore.js" defer></script>
     <script src="bootstrap/js/autoYear.js" defer></script>
+    <script src="bootstrap/js/heroRotation.js" defer></script>
+    <script src="bootstrap/js/featuredTabs.js" defer></script>
 
     <!-- Optional WOW -->
     <script src="bootstrap/js/wow.min.js" defer></script>
     <script src="bootstrap/js/wow-init.js" defer></script>
 
-    <!-- Light Mode/Dark Mode -->
-    <script>
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.documentElement.setAttribute('data-theme', 'dark');
-        }
-    </script>
-
-    <!-- Experience Video size -->
-    <script>
+    <!-- Plyr (experience section only) -->
+    <script src="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.polyfilled.js" defer></script>
+    <script defer>
         document.addEventListener('DOMContentLoaded', function () {
             if (window.Plyr) new Plyr('#exp-finance-video', { ratio: '16:9' });
-        });
-    </script>
-
-    <!-- Featured Projects Tab Switching -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var tabs = document.querySelectorAll('.featured-tab');
-            var panels = document.querySelectorAll('.featured-panel');
-
-            tabs.forEach(function (tab) {
-                tab.addEventListener('click', function () {
-                    tabs.forEach(function (t) { t.classList.remove('active'); });
-                    panels.forEach(function (p) { p.classList.remove('active'); });
-
-                    tab.classList.add('active');
-                    document.getElementById('panel-' + tab.getAttribute('data-tab')).classList.add('active');
-                });
-            });
         });
     </script>
 
