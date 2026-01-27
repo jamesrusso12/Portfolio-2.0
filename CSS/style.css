@@ -101,6 +101,88 @@ h1 {
     font-size: clamp(1.5rem, 2vw + 1rem, 3rem);
 }
 
+/* -------------------------------------------------------------------------- */
+/* SECTION TITLES - Professional Portfolio Style                              */
+/* -------------------------------------------------------------------------- */
+.sub-title {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+    position: relative;
+    display: inline-block;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+/* Accent underline for section titles */
+.sub-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-highlight));
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+/* Expand underline on hover */
+.sub-title:hover::after {
+    width: 100px;
+}
+
+/* Section subtitle/description styling */
+.section-subtitle {
+    font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+    color: var(--color-text-secondary);
+    max-width: 700px;
+    line-height: 1.7;
+    margin-top: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+/* Centered section titles variant */
+.sub-title.centered {
+    display: block;
+    text-align: center;
+}
+
+.sub-title.centered::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Section wrapper for consistent spacing */
+section {
+    position: relative;
+}
+
+/* Subtle section divider */
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(90%, 1200px);
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        var(--color-surface-border) 20%, 
+        var(--color-surface-border) 80%, 
+        transparent);
+    opacity: 0.6;
+}
+
+/* Remove divider from first visible section */
+#home::before,
+#about::before {
+    display: none;
+}
+
 .more-content {
     display: none;
 }
@@ -780,9 +862,124 @@ button:hover {
 }
 
 /* -------------------------------------------------------------------------- */
-/* ABOUT SECTION (Updated - Glass Skill Cards Version)                        */
+/* ABOUT SECTION (Consolidated Single Card Version)                           */
 /* -------------------------------------------------------------------------- */
 
+#about {
+    padding: clamp(60px, 8vw, 100px) 0;
+}
+
+#about .container {
+    display: flex;
+    flex-direction: column;
+}
+
+#about .sub-title {
+    margin-bottom: 1.5rem;
+}
+
+#about .about-card.glass-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    backdrop-filter: var(--blur-glass);
+    -webkit-backdrop-filter: var(--blur-glass);
+    box-shadow: var(--shadow-glass);
+    border-radius: 12px;
+    padding: clamp(20px, 3vw, 32px);
+}
+
+#about .about-intro {
+    font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+    line-height: 1.8;
+    color: var(--color-text);
+    margin: 0 0 24px 0;
+    opacity: 0.95;
+}
+
+#about .skills-compact {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: clamp(16px, 2.5vw, 24px);
+}
+
+#about .skill-item {
+    padding: 0;
+}
+
+#about .skill-item h4 {
+    font-size: 1.1rem;
+    color: var(--color-accent);
+    margin: 0 0 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#about .skill-item h4 i {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+#about .skill-item ul {
+    margin: 0;
+    padding-left: 1.2rem;
+    list-style: disc;
+}
+
+#about .skill-item li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-text);
+    opacity: 0.9;
+    margin: 4px 0;
+}
+
+/* -------------------------------------------------------------------------- */
+/* HIGHLIGHTS SECTION                                                          */
+/* -------------------------------------------------------------------------- */
+
+#highlights {
+    padding: clamp(60px, 8vw, 100px) 0;
+}
+
+#highlights .container {
+    display: flex;
+    flex-direction: column;
+}
+
+#highlights .sub-title {
+    margin-bottom: 1.5rem;
+}
+
+#highlights .highlights-card.glass-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    backdrop-filter: var(--blur-glass);
+    -webkit-backdrop-filter: var(--blur-glass);
+    box-shadow: var(--shadow-glass);
+    border-radius: 12px;
+    padding: clamp(20px, 3vw, 32px);
+}
+
+#highlights .highlights-list {
+    margin: 0;
+    padding-left: 1.2rem;
+    list-style: disc;
+}
+
+#highlights .highlights-list li {
+    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+    line-height: 1.7;
+    color: var(--color-text);
+    opacity: 0.95;
+    margin: 12px 0;
+}
+
+#highlights .highlights-list li strong {
+    color: var(--color-accent);
+}
+
+/* Legacy styles for backwards compatibility */
 #about .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -881,7 +1078,7 @@ button:hover {
     animation-delay: .15s;
 }
 
-/* Mobile: Collapsible skill cards */
+/* Mobile: About and Highlights sections */
 @media (max-width: 768px) {
     /* Reduce overall section padding */
     #about {
@@ -892,11 +1089,54 @@ button:hover {
         padding: 0 16px;
     }
 
+    /* New consolidated about card mobile styles */
+    #about .about-card.glass-card {
+        padding: 16px;
+    }
+
+    #about .about-intro {
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 20px;
+    }
+
+    #about .skills-compact {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    #about .skill-item h4 {
+        font-size: 1rem;
+    }
+
+    #about .skill-item li {
+        font-size: 0.9rem;
+    }
+
+    /* Highlights section mobile */
+    #highlights {
+        padding: 20px 0 30px 0;
+    }
+
+    #highlights .container {
+        padding: 0 16px;
+    }
+
+    #highlights .highlights-card.glass-card {
+        padding: 16px;
+    }
+
+    #highlights .highlights-list li {
+        font-size: 0.9rem;
+        margin: 10px 0;
+    }
+
     /* Reduce WOW animation offset on mobile for faster reveal */
     #about[data-wow-offset] {
         --wow-offset: 40px;
     }
 
+    /* Legacy skill card styles */
     #about .skill-card {
         position: relative;
         cursor: pointer;
@@ -1067,6 +1307,38 @@ button:hover {
 /* EXPERIENCE SECTION (Glass Layout + Full-Width Video, Plyr-safe)            */
 /* -------------------------------------------------------------------------- */
 
+#experience {
+    padding: clamp(60px, 8vw, 100px) 0;
+}
+
+#experience .container {
+    display: flex;
+    flex-direction: column;
+}
+
+#experience .sub-title {
+    margin-bottom: 1.5rem;
+}
+
+/* Experience subtitle/role badge */
+.experience-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-accent);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+}
+
+.experience-badge i {
+    font-size: 1rem;
+}
+
 #experience .experience-container {
     background: var(--color-surface);
     border: 1px solid var(--color-surface-border);
@@ -1077,11 +1349,16 @@ button:hover {
     border-radius: 12px;
 }
 
+#experience .experience-container header {
+    margin-bottom: 1.25rem;
+}
+
 #experience .experience-title {
-    font-size: clamp(1.3rem, 1.8vw, 1.6rem);
+    font-size: clamp(1.4rem, 2vw, 1.8rem);
     color: var(--color-accent);
-    text-align: center;
-    margin-bottom: 10px;
+    text-align: left;
+    margin: 0.5rem 0 0 0;
+    font-weight: 600;
 }
 
 #experience .experienceimg {
@@ -1110,16 +1387,26 @@ button:hover {
 }
 
 /* -------------------------------------------------------------------------- */
-/* SHOWCASE SECTION (Glass Layout + Responsive YouTube Embed)                 */
+/* SHOWCASE / FEATURED PROJECTS SECTION                                        */
 /* -------------------------------------------------------------------------- */
 #showcase {
-    padding: 60px 0;
+    padding: clamp(60px, 8vw, 100px) 0;
 }
 
 #showcase .container {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#showcase .sub-title {
+    margin-bottom: 1rem;
+}
+
+#showcase .section-subtitle {
+    margin-bottom: 2rem;
 }
 
 #showcase .showcase-container {
@@ -1182,8 +1469,14 @@ button:hover {
 .featured-tabs {
     display: flex;
     gap: 12px;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+    .featured-tabs {
+        justify-content: center;
+    }
 }
 
 .featured-tab {
@@ -1223,18 +1516,30 @@ button:hover {
 
 
 /* -------------------------------------------------------------------------- */
-/* SERVICES (Glass Cards)                                                     */
+/* SERVICES / WHAT I CAN DO (Glass Cards)                                     */
 /* -------------------------------------------------------------------------- */
 #services {
-    padding: 50px 0;
+    padding: clamp(60px, 8vw, 100px) 0;
+}
+
+#services .container {
+    display: flex;
+    flex-direction: column;
+}
+
+#services .sub-title {
+    margin-bottom: 1rem;
+}
+
+#services .section-subtitle {
+    margin-bottom: 2.5rem;
 }
 
 .services-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    /* wider, cleaner cards */
     gap: 32px;
-    margin-top: 50px;
+    margin-top: 0;
 }
 
 /* Individual service cards */
@@ -1328,10 +1633,10 @@ button:hover {
 
 
 /* -------------------------------------------------------------------------- */
-/* PORTFOLIO / PLAYGROUND VIDEO CAROUSEL                                      */
+/* PORTFOLIO / TECHNICAL PROTOTYPES VIDEO CAROUSEL                            */
 /* -------------------------------------------------------------------------- */
 #portfolio {
-    padding: 60px 0;
+    padding: clamp(60px, 8vw, 100px) 0;
 }
 
 #portfolio .container {
@@ -1343,15 +1648,8 @@ button:hover {
     padding: 0 20px;
 }
 
-/* Make "Playground" match other section titles */
 #portfolio .sub-title {
-    font-size: clamp(2rem, 3vw, 2.5rem);
-    /* consistent size */
-    font-weight: 700;
-    color: var(--color-text);
-    margin-bottom: 0.75rem;
-    text-align: left;
-    line-height: 1.2;
+    margin-bottom: 1rem;
 }
 
 /* Align intro paragraph under the title */
@@ -1364,17 +1662,10 @@ button:hover {
     margin: 0 0 2rem 0;
     line-height: 1.8;
     padding-left: 0;
-    animation: fadeUp 0.6s ease both;
-    animation-delay: 0.1s;
 }
 
 /* Small screens: keep alignment consistent */
 @media (max-width: 600px) {
-    #portfolio .sub-title {
-        font-size: 1.8rem;
-        text-align: center;
-    }
-
     .portfolio-intro {
         text-align: center;
         margin: 0 auto 1.5rem;
@@ -1390,9 +1681,10 @@ button:hover {
     box-shadow: var(--shadow-glass);
     padding: 40px 0;
     border-radius: 14px;
-    margin-top: 20px;
+    margin-top: 0.5rem;
     position: relative;
     overflow: hidden;
+    width: 100%;
 }
 
 /* Disable Owl overlay fade masks */
@@ -2052,7 +2344,17 @@ button:hover {
 /* CONTACT SECTION (GLASS STYLE)                                              */
 /* -------------------------------------------------------------------------- */
 .contact-section {
-    padding: 60px 0;
+    padding: clamp(60px, 8vw, 100px) 0;
+}
+
+.contact-section .sub-title {
+    margin-bottom: 0.5rem;
+}
+
+.contact-left .section-subtitle {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    max-width: none;
 }
 
 .contact-wrapper {
@@ -2230,9 +2532,33 @@ button:hover {
         font-size: 1.8rem;
     }
 
+    /* Section titles mobile */
     .sub-title {
         font-size: 1.8rem;
         text-align: center;
+        display: block;
+    }
+
+    .sub-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+    }
+
+    .sub-title:hover::after {
+        width: 80px;
+    }
+
+    .section-subtitle {
+        text-align: center;
+        font-size: 1rem;
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Hide section dividers on mobile for cleaner look */
+    section::before {
+        display: none;
     }
 
     /* About Section */

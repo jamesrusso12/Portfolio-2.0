@@ -140,152 +140,136 @@
     <!-- END HEADER -->
 
     <!-- ABOUT SECTION -->
-    <section id="about" class="with-sidebar wow animate__fadeIn" data-wow-offset="80">
+    <section id="about" class="wow animate__fadeIn" data-wow-offset="80">
         <div class="container">
+            <h2 class="sub-title wow animate__fadeInDown" data-wow-delay="0.05s">About Me</h2>
+            <p class="section-subtitle wow animate__fadeInDown" data-wow-delay="0.08s">
+                Building interactive experiences across Unity, Unreal Engine, and immersive VR/MR platforms.
+            </p>
 
-            <div class="tab-contents active-tab wow animate__fadeIn" data-wow-offset="80"
-                 id="skills" role="tabpanel" aria-labelledby="skills-tab">
+            <div class="about-card glass-card wow animate__fadeInUp" data-wow-delay="0.10s">
+                <p class="about-intro">
+                    I'm a Game Developer and UI/UX Designer specializing in Unity, Unreal Engine, and immersive VR/MR experiences. 
+                    I build interactive systems with a focus on performance optimization, accessible design, and polished user experiences. 
+                    From mixed reality applications to full-stack web projects, I bring ideas to life with clean code and thoughtful design.
+                </p>
 
-                <div class="skills-grid">
+                <div class="skills-compact">
                     <!-- Unity & C# -->
-                    <article class="skill-card glass-card wow animate__fadeInUp" data-wow-delay="0.10s">
-                        <div class="skill-header">
-                            <i class="fa-brands fa-unity skill-icon"></i>
-                            <h3>Unity & C#</h3>
-                        </div>
-                        <ul class="proof-points">
-                            <li>Ghost Defiant: MR Capstone built with Unity 6 & Meta AIO SDK v72 for Quest 3, featuring custom debris physics, spatial audio, and fog particle systems.</li>
-                            <li>OnRamp AR: AR learning project with image tracking, 3D overlays, and real-time educational interactivity.</li>
-                            <li>Optimized Quest builds achieving stable 72 FPS with hand tracking, passthrough integration, and object pooling.</li>
+                    <div class="skill-item">
+                        <h4><i class="fa-brands fa-unity"></i> Unity & C#</h4>
+                        <ul>
+                            <li>Ghost Defiant: MR Capstone with Unity 6, Meta SDK, custom physics & spatial audio</li>
+                            <li>OnRamp AR: Image tracking & 3D overlays for educational AR</li>
+                            <li>Quest 3 optimization: 72 FPS with hand tracking & passthrough</li>
                         </ul>
-                    </article>
+                    </div>
 
                     <!-- Unreal & C++ -->
-                    <article class="skill-card glass-card wow animate__fadeInUp" data-wow-delay="0.20s">
-                        <div class="skill-header">
-                            <i class="fa-solid fa-cubes skill-icon"></i>
-                            <h3>Unreal & C++</h3>
-                        </div>
-                        <ul class="proof-points">
-                            <li>2D Fighter Game: AI combat logic, animation blueprints, and C++ attack combo systems built for Unreal Engine 5.</li>
-                            <li>Target Practice MP: Multiplayer target range powered by Unreal's replication system with networked scoring, dynamic spawns, and hit detection.</li>
-                            <li>Currently developing advanced parkour system with mantle, vault, ledge grab, and wall run mechanics.</li>
+                    <div class="skill-item">
+                        <h4><i class="fa-solid fa-cubes"></i> Unreal & C++</h4>
+                        <ul>
+                            <li>2D Fighter: AI combat, animation blueprints, C++ combo systems</li>
+                            <li>Target Practice MP: Networked scoring & replication system</li>
+                            <li>Advanced parkour system with mantle, vault & wall run</li>
                         </ul>
-                    </article>
-
-                    <!-- Front-End -->
-                    <article class="skill-card glass-card wow animate__fadeInUp" data-wow-delay="0.30s">
-                        <div class="skill-header">
-                            <i class="fa-solid fa-code skill-icon"></i>
-                            <h3>Front-End Development</h3>
-                        </div>
-                        <ul class="proof-points">
-                            <li>Finance Simulator: Lead UI/UX designer for Boise State-hosted student finance site using HTML, CSS, and JS for budgeting visualization.</li>
-                            <li>Halo SpeedRuns Analysis: D3.js and MySQL dashboard visualizing player speedrun statistics and performance trends.</li>
-                            <li>Halo Maps Database: Full-stack web application with CRUD operations, MySQL database, and REST API integration.</li>
-                            <li>Portfolio 2.0: Built with jQuery, Owl Carousel & Formspree, optimized for accessibility, SEO, and responsive layouts.</li>
-                        </ul>
-                    </article>
+                    </div>
 
                     <!-- VR / AR -->
-                    <article class="skill-card glass-card wow animate__fadeInUp" data-wow-delay="0.40s">
-                        <div class="skill-header">
-                            <i class="fa-solid fa-vr-cardboard skill-icon"></i>
-                            <h3>VR / AR Game Development</h3>
-                        </div>
-                        <ul class="proof-points">
-                            <li>Ghost Defiant: Mixed Reality ghost-hunting shooter with Meta AIO SDK v72, hand tracking, passthrough integration, and spatial awareness for Quest 3.</li>
-                            <li>OnRamp AR: Augmented reality learning project featuring image tracking, 3D overlays, and real-time educational interactivity.</li>
-                            <li>Designed comfort tuning systems: grab thresholds, spatial SFX, hit feedback, and optimized physics for immersive VR/MR experiences.</li>
+                    <div class="skill-item">
+                        <h4><i class="fa-solid fa-vr-cardboard"></i> VR / AR Development</h4>
+                        <ul>
+                            <li>Mixed Reality: Hand tracking, passthrough, spatial awareness</li>
+                            <li>Comfort tuning: Grab thresholds, spatial SFX, hit feedback</li>
+                            <li>ARKit/ARCore: Image recognition & 3D model placement</li>
                         </ul>
-                    </article>
+                    </div>
+
+                    <!-- Front-End -->
+                    <div class="skill-item">
+                        <h4><i class="fa-solid fa-code"></i> Front-End Development</h4>
+                        <ul>
+                            <li>Finance Simulator: Lead UI/UX for Boise State budgeting tool</li>
+                            <li>Halo SpeedRuns: D3.js/MySQL data visualization dashboard</li>
+                            <li>Full-stack web apps with CRUD, REST APIs & responsive design</li>
+                        </ul>
+                    </div>
 
                     <!-- UI/UX -->
-                    <article class="skill-card glass-card wow animate__fadeInUp" data-wow-delay="0.50s">
-                        <div class="skill-header">
-                            <i class="fa-solid fa-palette skill-icon"></i>
-                            <h3>UI / UX Design</h3>
-                        </div>
-                        <ul class="proof-points">
-                            <li>Ghost Defiant: Designed custom ghost-hunter aesthetic HUD optimized for VR/MR comfort and accessibility.</li>
-                            <li>Bookshelf Adventures: Co-designed accessible UI/UX with MSU special needs department, including Figma wireframes and AR interaction patterns.</li>
-                            <li>Finance Simulator: Lead UI/UX designer creating intuitive budgeting interface for Boise State students.</li>
+                    <div class="skill-item">
+                        <h4><i class="fa-solid fa-palette"></i> UI / UX Design</h4>
+                        <ul>
+                            <li>VR/MR HUDs optimized for comfort and accessibility</li>
+                            <li>Figma wireframes & accessible AR interaction patterns</li>
+                            <li>User-centered design for games, apps & web</li>
                         </ul>
-                    </article>
+                    </div>
 
-                    <!-- Xcode & SwiftUI -->
-                    <article class="skill-card glass-card wow animate__fadeInUp" data-wow-delay="0.60s">
-                        <div class="skill-header">
-                            <i class="fa-brands fa-apple skill-icon"></i>
-                            <h3>Xcode & SwiftUI</h3>
-                        </div>
-                        <ul class="proof-points">
-                            <li>Bookshelf Adventures: Co-developed iOS application using SwiftUI and ARKit, bringing children's books to life through AR for MSU special needs students.</li>
-                            <li>Developed AR scene rendering pipeline for real-time book scanning, image recognition, and 3D model placement.</li>
-                            <li>Focused on accessible UI/UX and smooth AR interactions, collaborating with special needs department for user-centered design.</li>
+                    <!-- iOS -->
+                    <div class="skill-item">
+                        <h4><i class="fa-brands fa-apple"></i> iOS & SwiftUI</h4>
+                        <ul>
+                            <li>Bookshelf Adventures: AR iOS app with SwiftUI & ARKit</li>
+                            <li>Real-time book scanning & 3D model placement</li>
+                            <li>Accessible UI for MSU special needs department</li>
                         </ul>
-                    </article>
+                    </div>
 
-                    <!-- Photoshop -->
-                    <article class="skill-card glass-card wow animate__fadeInUp" data-wow-delay="0.70s">
-                        <div class="skill-header">
-                            <i class="fa-solid fa-image skill-icon"></i>
-                            <h3>Adobe Photoshop</h3>
-                        </div>
-                        <ul class="proof-points">
-                            <li>Created textures, UI assets, and optimized sprite sheets for Unity and Unreal Engine projects.</li>
-                            <li>Designed custom UI elements and graphics for Ghost Defiant, Bookshelf Adventures, and web applications.</li>
+                    <!-- Tools -->
+                    <div class="skill-item">
+                        <h4><i class="fa-solid fa-toolbox"></i> Tools & Workflow</h4>
+                        <ul>
+                            <li>GitHub: Version control, branching & collaborative dev</li>
+                            <li>Photoshop: Textures, UI assets & sprite sheets</li>
+                            <li>Figma, Visual Studio, Xcode, Blender</li>
                         </ul>
-                    </article>
-
-                    <!-- GitHub -->
-                    <article class="skill-card glass-card wow animate__fadeInUp" data-wow-delay="0.80s">
-                        <div class="skill-header">
-                            <i class="fa-brands fa-github skill-icon"></i>
-                            <h3>GitHub</h3>
-                        </div>
-                        <ul class="proof-points">
-                            <li>Version control for group projects including Ghost Defiant, Bookshelf Adventures, and Finance Simulator.</li>
-                            <li>Managed pull requests, branching workflows, and collaborative development across Unity, Unreal, and web projects.</li>
-                        </ul>
-                    </article>
+                    </div>
                 </div>
-
-                <!-- Highlights box -->
-                <div class="skills-proof glass-card wow animate__fadeInUp"
-                     data-wow-offset="80" data-wow-delay="0.10s">
-                    <h3 class="wow animate__fadeInDown" data-wow-delay="0.12s">Recent Highlights</h3>
-
-                    <ul class="highlights-list">
-                        <li class="wow animate__fadeInUp" data-wow-delay="0.18s">
-                            Unity (C#): Ghost Defiant - MR Capstone (Unity 6, Meta AIO SDK v72) featuring custom debris physics, spatial audio, fog particle systems, and Quest 3 optimization achieving stable 72 FPS.
-                        </li>
-                        <li class="wow animate__fadeInUp" data-wow-delay="0.24s">
-                            Unreal (C++/BP): 2D Fighter Game with AI combat logic and C++ attack combos; Target Practice MP with multiplayer replication; currently developing advanced parkour system.
-                        </li>
-                        <li class="wow animate__fadeInUp" data-wow-delay="0.30s">
-                            iOS (SwiftUI): Bookshelf Adventures - Co-developed AR iOS app with SwiftUI and ARKit for MSU special needs department, featuring real-time book scanning and 3D model placement.
-                        </li>
-                        <li class="wow animate__fadeInUp" data-wow-delay="0.36s">
-                            Web: Finance Simulator (lead UI/UX), Halo SpeedRuns Analysis (D3.js/MySQL), Halo Maps Database (full-stack CRUD), and this portfolio with jQuery, Owl Carousel & Formspree.
-                        </li>
-                        <li class="wow animate__fadeInUp" data-wow-delay="0.42s">
-                            UI/UX: Designed custom VR/MR HUDs for Ghost Defiant, accessible interfaces for Bookshelf Adventures, and intuitive budgeting tools for Finance Simulator.
-                        </li>
-                    </ul>
-                </div>
-
-
             </div>
 
         </div>
     </section>
     <!-- END ABOUT SECTION -->
 
-    <!-- FEATURED PROJECTS SECTION (Tabbed) -->
-    <section id="showcase" class="feature-section">
+    <!-- RECENT HIGHLIGHTS SECTION -->
+    <section id="highlights" class="wow animate__fadeIn" data-wow-offset="80">
         <div class="container">
-            <h1 class="sub-title">Featured Projects</h1>
+            <h2 class="sub-title wow animate__fadeInDown" data-wow-delay="0.05s">Recent Highlights</h2>
+            <p class="section-subtitle wow animate__fadeInDown" data-wow-delay="0.08s">
+                Key projects and accomplishments from my recent work.
+            </p>
+
+            <div class="highlights-card glass-card wow animate__fadeInUp" data-wow-delay="0.10s">
+                <ul class="highlights-list">
+                    <li class="wow animate__fadeInUp" data-wow-delay="0.15s">
+                        <strong>Unity (C#):</strong> Ghost Defiant - MR Capstone with custom debris physics, spatial audio, fog particles, and Quest 3 optimization at stable 72 FPS.
+                    </li>
+                    <li class="wow animate__fadeInUp" data-wow-delay="0.20s">
+                        <strong>Unreal (C++/BP):</strong> 2D Fighter with AI combat & C++ combos; Target Practice MP with multiplayer replication; parkour system in development.
+                    </li>
+                    <li class="wow animate__fadeInUp" data-wow-delay="0.25s">
+                        <strong>iOS (SwiftUI):</strong> Bookshelf Adventures - AR iOS app for MSU special needs department with real-time book scanning & 3D model placement.
+                    </li>
+                    <li class="wow animate__fadeInUp" data-wow-delay="0.30s">
+                        <strong>Web:</strong> Finance Simulator (lead UI/UX), Halo SpeedRuns Analysis (D3.js/MySQL), Halo Maps Database (full-stack CRUD).
+                    </li>
+                    <li class="wow animate__fadeInUp" data-wow-delay="0.35s">
+                        <strong>UI/UX:</strong> Custom VR/MR HUDs, accessible interfaces for Bookshelf Adventures, intuitive budgeting tools for Finance Simulator.
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+    <!-- END HIGHLIGHTS SECTION -->
+
+    <!-- FEATURED PROJECTS SECTION (Tabbed) -->
+    <section id="showcase" class="feature-section wow animate__fadeIn" data-wow-offset="80">
+        <div class="container">
+            <h2 class="sub-title wow animate__fadeInDown" data-wow-delay="0.05s">Featured Projects</h2>
+            <p class="section-subtitle wow animate__fadeInDown" data-wow-delay="0.08s">
+                In-depth case studies of my most significant work.
+            </p>
 
             <!-- Tab Buttons -->
             <div class="featured-tabs">
@@ -388,13 +372,12 @@
     </section>
     <!-- END FEATURED PROJECTS SECTION -->
 
-    <!-- PORTFOLIO / PLAYGROUND SECTION -->
-    <section id="portfolio" class="portfolio-section">
+    <!-- PORTFOLIO / TECHNICAL PROTOTYPES SECTION -->
+    <section id="portfolio" class="portfolio-section wow animate__fadeIn" data-wow-offset="80">
         <div class="container">
-            <h2 class="sub-title">Technical Prototypes</h2>
-            <p class="portfolio-intro">
-                A collection of my favorite interactive experiments, spanning Unreal Engine, Unity, and front-end prototypes.
-                Each clip highlights a different layer of my design, programming, or system optimization work.
+            <h2 class="sub-title wow animate__fadeInDown" data-wow-delay="0.05s">Technical Prototypes</h2>
+            <p class="section-subtitle wow animate__fadeInDown" data-wow-delay="0.08s">
+                A collection of interactive experiments spanning Unreal Engine, Unity, and front-end development.
             </p>
 
             <div class="owl-carousel owl-theme video-section glass-card">
@@ -467,12 +450,16 @@
     <!-- END PORTFOLIO SECTION -->
 
     <!-- EXPERIENCE SECTION -->
-    <section id="experience" class="with-sidebar wow animate__fadeIn" data-wow-offset="100">
+    <section id="experience" class="wow animate__fadeIn" data-wow-offset="100">
         <div class="container">
-            <h1 class="sub-title" id="experience-heading">Experience</h1>
+            <h2 class="sub-title wow animate__fadeInDown" data-wow-delay="0.05s">Experience</h2>
+            <p class="section-subtitle wow animate__fadeInDown" data-wow-delay="0.08s">
+                Professional projects and collaborative work.
+            </p>
 
-            <article class="experience-container glass-card" aria-labelledby="finance-sim-title">
+            <article class="experience-container glass-card wow animate__fadeInUp" data-wow-delay="0.12s" aria-labelledby="finance-sim-title">
                 <header>
+                    <span class="experience-badge"><i class="fas fa-briefcase"></i> Lead UI/UX Designer</span>
                     <h3 class="experience-title" id="finance-sim-title">Finance Simulator Tool Website</h3>
                 </header>
 
@@ -520,7 +507,10 @@
     <!-- SERVICES SECTION -->
     <section id="services" class="wow animate__fadeIn" data-wow-offset="80">
         <div class="container">
-            <h1 class="sub-title wow animate__fadeInDown" data-wow-delay="0.05s">What I Can Do</h1>
+            <h2 class="sub-title wow animate__fadeInDown" data-wow-delay="0.05s">What I Can Do</h2>
+            <p class="section-subtitle wow animate__fadeInDown" data-wow-delay="0.08s">
+                Services and specializations I bring to every project.
+            </p>
 
             <div class="services-list">
                 <!-- Web Design -->
@@ -564,7 +554,8 @@
 
                 <!-- LEFT: Info -->
                 <div class="contact-left">
-                    <h1 class="sub-title">Contact Me</h1>
+                    <h2 class="sub-title">Contact Me</h2>
+                    <p class="section-subtitle">Let's discuss your next project or opportunity.</p>
                     <p><i class="fas fa-paper-plane"></i> <a href="mailto:jrusso03@icloud.com">jrusso03@icloud.com</a></p>
                     <p><i class="fas fa-phone-square-alt"></i> <a href="tel:+19493970464">(949) 397-0464</a></p>
 
