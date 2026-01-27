@@ -64,7 +64,7 @@
                 <!-- Primary Links -->
                 <ul id="primary-links" class="nav-links">
                     <li><a href="#about">About</a></li>
-                    <li><a href="#showcase">Featured Project</a></li>
+                    <li><a href="#showcase">Featured Projects</a></li>
                     <li><a href="#portfolio">Technical Prototypes</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#services">Services</a></li>
@@ -119,12 +119,12 @@
                         <a href="img/Current Resume.pdf" download class="btn dark" role="button">Download Resume</a>
                     </div>
 
-                    <ul class="tech-chips" aria-label="Key tools">
+                    <!--<ul class="tech-chips" aria-label="Key tools">
                         <li>Unity 6</li>
                         <li>Unreal 5</li>
                         <li>Meta AIO SDK</li>
                         <li>SwiftUI</li>
-                    </ul>
+                    </ul>-->
                 </div>
 
                 <!-- RIGHT: device reel / hero media -->
@@ -279,55 +279,108 @@
     </section>
     <!-- END ABOUT SECTION -->
 
-    <!-- GHOST DEFIANT FEATURED PROJECT SECTION -->
+    <!-- FEATURED PROJECTS SECTION (Tabbed) -->
     <section id="showcase" class="feature-section">
         <div class="container">
-            <h1 class="sub-title">Featured Project: Ghost Defiant</h1>
-            
-            <div class="ghost-defiant-intro-wrapper">
-                <div class="ghost-defiant-left-column">
-                    <p class="portfolio-intro">
-                        My Boise State University capstone project, a Mixed Reality ghost-hunting shooter built with Unity 6 and Meta AIO SDK v72 for Quest 3. 
-                        I designed and developed every aspect of the game, from core gameplay logic and optimized physics systems to custom UI/UX design.
-                        This project represents the culmination of my degree and demonstrates my skills in Unity development, VR/MR systems, and immersive media.
-                    </p>
+            <h1 class="sub-title">Featured Projects</h1>
 
-                    <!-- YouTube Showcase Video -->
-                    <div class="ghost-defiant-media glass-card">
-                        <div class="showcase-video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/u791dbHvJEo?si=Ld0VGts93JEVYRc-"
-                                    title="Ghost Defiant - Senior Showcase Video"
-                                    frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    referrerpolicy="strict-origin-when-cross-origin"
-                                    allowfullscreen></iframe>
+            <!-- Tab Buttons -->
+            <div class="featured-tabs">
+                <button class="featured-tab active" data-tab="ghost-defiant">
+                    <i class="fa-solid fa-ghost" style="margin-right: 6px;"></i> Ghost Defiant
+                </button>
+                <button class="featured-tab" data-tab="bookshelf-adventures">
+                    <i class="fa-solid fa-book-open" style="margin-right: 6px;"></i> Bookshelf Adventures
+                </button>
+            </div>
+
+            <!-- TAB PANEL: Ghost Defiant -->
+            <div class="featured-panel active" id="panel-ghost-defiant">
+                <div class="ghost-defiant-intro-wrapper">
+                    <div class="ghost-defiant-left-column">
+                        <p class="portfolio-intro">
+                            My Boise State University capstone project, a Mixed Reality ghost-hunting shooter built with Unity 6 and Meta AIO SDK v72 for Quest 3.
+                            I designed and developed every aspect of the game, from core gameplay logic and optimized physics systems to custom UI/UX design.
+                            This project represents the culmination of my degree and demonstrates my skills in Unity development, VR/MR systems, and immersive media.
+                        </p>
+
+                        <!-- YouTube Showcase Video -->
+                        <div class="ghost-defiant-media glass-card">
+                            <div class="showcase-video-wrapper">
+                                <iframe src="https://www.youtube.com/embed/u791dbHvJEo?si=Ld0VGts93JEVYRc-"
+                                        title="Ghost Defiant - Senior Showcase Video"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin"
+                                        allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Key Features & Details -->
+                    <div class="ghost-defiant-details">
+                        <h3 class="showcase-title">Key Features</h3>
+                        <ul class="ghost-defiant-highlights">
+                            <li><strong>Implemented custom debris physics</strong> using Unity 6's physics system for interactive environment destruction</li>
+                            <li><strong>Engineered spatial audio and fog particle systems</strong> for immersive atmosphere and gameplay feedback</li>
+                            <li><strong>Optimized for Meta Quest 3</strong> achieving stable 72 FPS with hand tracking, passthrough integration, and spatial awareness</li>
+                            <li><strong>Designed custom UI/UX</strong> with ghost-hunter aesthetic HUD optimized for VR/MR comfort and accessibility</li>
+                            <li><strong>Tech Stack:</strong> Unity 6, Meta AIO SDK v72, Quest 3, Hand Tracking, Passthrough API, Spatial Audio</li>
+                        </ul>
+                        <div class="ghost-defiant-actions">
+                            <a class="btn" href="https://github.com/jamesrusso12/Ghost-Defiant" target="_blank" rel="noreferrer">
+                                <i class="fab fa-github"></i> View Code on GitHub
+                            </a>
+                            <a class="btn dark" href="img/GameDevelopment (3).MP4" target="_blank" rel="noreferrer">
+                                <i class="fas fa-video"></i> Watch Full Playthrough
+                            </a>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Key Features & Details -->
-                <div class="ghost-defiant-details">
-                    <h3 class="showcase-title">Key Features</h3>
-                    <ul class="ghost-defiant-highlights">
-                        <li><strong>Implemented custom debris physics</strong> using Unity 6's physics system for interactive environment destruction</li>
-                        <li><strong>Engineered spatial audio and fog particle systems</strong> for immersive atmosphere and gameplay feedback</li>
-                        <li><strong>Optimized for Meta Quest 3</strong> achieving stable 72 FPS with hand tracking, passthrough integration, and spatial awareness</li>
-                        <li><strong>Designed custom UI/UX</strong> with ghost-hunter aesthetic HUD optimized for VR/MR comfort and accessibility</li>
-                        <li><strong>Tech Stack:</strong> Unity 6, Meta AIO SDK v72, Quest 3, Hand Tracking, Passthrough API, Spatial Audio</li>
-                    </ul>
-                    <div class="ghost-defiant-actions">
-                        <a class="btn" href="https://github.com/jamesrusso12/Ghost-Defiant" target="_blank" rel="noreferrer">
-                            <i class="fab fa-github"></i> View Code on GitHub
-                        </a>
-                        <a class="btn dark" href="img/GameDevelopment (3).MP4" target="_blank" rel="noreferrer">
-                            <i class="fas fa-video"></i> Watch Full Playthrough
-                        </a>
+            <!-- TAB PANEL: Bookshelf Adventures -->
+            <div class="featured-panel" id="panel-bookshelf-adventures">
+                <div class="ghost-defiant-intro-wrapper">
+                    <div class="ghost-defiant-left-column">
+                        <p class="portfolio-intro">
+                            A senior capstone project developed in collaboration with the Mississippi State University special needs department.
+                            Our team co-developed an iOS application using SwiftUI and ARKit that brings children's books to life through augmented reality,
+                            helping students with special needs engage with reading through interactive 3D models and text-to-speech functionality.
+                        </p>
+
+                        <!-- Bookshelf Adventures Video -->
+                        <div class="ghost-defiant-media glass-card">
+                            <div class="showcase-video-wrapper">
+                                <video controls preload="metadata" style="width:100%; height:100%; position:absolute; top:0; left:0; object-fit:contain;">
+                                    <source src="img/Videos/App Screen Recordings/BookShelf Adventures Video Portfolio.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Key Features & Details -->
+                    <div class="ghost-defiant-details">
+                        <h3 class="showcase-title">Key Features</h3>
+                        <ul class="ghost-defiant-highlights">
+                            <li><strong>Served as AR Specialist</strong> using ARKit to bring book illustrations to life with interactive 3D models overlaid on physical pages</li>
+                            <li><strong>Collaborated with MSU special needs department</strong> to design accessible UI/UX based on their research with students</li>
+                            <li><strong>Developed AR scene rendering pipeline</strong> for real-time book scanning, image recognition, and 3D model placement</li>
+                            <li><strong>Co-designed the overall application UI</strong> ensuring an intuitive, accessible experience for students with special needs</li>
+                            <li><strong>Tech Stack:</strong> SwiftUI, ARKit, Xcode, Figma, 3D Modeling</li>
+                        </ul>
+                        <div class="ghost-defiant-actions">
+                            <a class="btn dark" href="uiux-design.html">
+                                <i class="fas fa-images"></i> View Screenshots & Videos
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
-    <!-- END GHOST DEFIANT FEATURED PROJECT SECTION -->
+    <!-- END FEATURED PROJECTS SECTION -->
 
     <!-- PORTFOLIO / PLAYGROUND SECTION -->
     <section id="portfolio" class="portfolio-section">
@@ -570,6 +623,24 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             if (window.Plyr) new Plyr('#exp-finance-video', { ratio: '16:9' });
+        });
+    </script>
+
+    <!-- Featured Projects Tab Switching -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var tabs = document.querySelectorAll('.featured-tab');
+            var panels = document.querySelectorAll('.featured-panel');
+
+            tabs.forEach(function (tab) {
+                tab.addEventListener('click', function () {
+                    tabs.forEach(function (t) { t.classList.remove('active'); });
+                    panels.forEach(function (p) { p.classList.remove('active'); });
+
+                    tab.classList.add('active');
+                    document.getElementById('panel-' + tab.getAttribute('data-tab')).classList.add('active');
+                });
+            });
         });
     </script>
 
