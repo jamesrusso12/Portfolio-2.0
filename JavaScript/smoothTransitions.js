@@ -74,9 +74,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Prevent FOUC (Flash of Unstyled Content) for theme
 (function() {
-    const theme = localStorage.getItem('theme') ||
-                  (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    if (theme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-    }
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+    
+    // Always set the theme attribute to ensure consistent state
+    document.documentElement.setAttribute('data-theme', theme);
 })();

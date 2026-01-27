@@ -9,11 +9,12 @@
     --color-surface-border: rgba(255, 255, 255, .30);
     --color-text: #222831;
     --color-text-secondary: #4A4A4A;
-    --color-accent: #00CED1;
-    --color-accent-alt: #26547C;
-    --color-highlight: #00BFA5;
+    --color-accent: #1E3A5F;
+    --color-accent-alt: #0A2540;
+    --color-highlight: #2C5282;
     --shadow-glass: 0 8px 24px rgba(0, 0, 0, .15);
     --blur-glass: blur(15px);
+    --color-cyan-glow: #00E5FF;
 }
 
 :root,
@@ -271,6 +272,11 @@ img, video, iframe {
 .hero-mask {
     position: absolute;
     inset: 0;
+    background: linear-gradient(120deg, rgba(224, 247, 250, .85) 0%, rgba(224, 247, 250, .75) 35%, rgba(224, 247, 250, .65) 60%, rgba(224, 247, 250, .75) 100%);
+}
+
+/* Dark mode hero mask */
+[data-theme="dark"] .hero-mask {
     background: linear-gradient(120deg, rgba(0, 0, 0, .55) 0%, rgba(0, 0, 0, .35) 35%, rgba(0, 0, 0, .25) 60%, rgba(0, 0, 0, .35) 100%);
 }
 
@@ -297,8 +303,14 @@ img, video, iframe {
     border-radius: 50%;
     object-fit: cover;
     border: 1.5px solid var(--color-accent);
-    box-shadow: 0 0 8px rgba(0, 207, 255, 0.25);
+    box-shadow: none;
     display: block;
+}
+
+/* Dark mode: add cyan glow to profile image */
+[data-theme="dark"] .hero-copy .profile-image {
+    border-color: #00CED1;
+    box-shadow: 0 0 12px rgba(0, 207, 255, 0.4);
 }
 
 /* Tablet */
@@ -332,7 +344,12 @@ img, video, iframe {
     margin: 0.4rem 0 1.2rem;
     letter-spacing: 0.5px;
     text-transform: none;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    animation: none;
+}
+
+/* Dark mode: enable pulsing glow on tagline */
+[data-theme="dark"] .tagline {
     animation: accentPulse 6s ease-in-out infinite;
 }
 
@@ -714,17 +731,29 @@ img, video, iframe {
         flex-direction: column;
         align-items: flex-start;
         gap: 8px;
-        background: var(--color-surface);
+        background: rgba(30, 30, 30, 0.92);
         border-bottom: 1px solid var(--color-surface-border);
-        backdrop-filter: var(--blur-glass);
-        -webkit-backdrop-filter: var(--blur-glass);
-        box-shadow: var(--shadow-glass);
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
         max-height: 0;
         overflow: hidden;
         opacity: 0;
         visibility: hidden;
         transform: translateY(-8px);
         transition: max-height .35s ease, opacity .25s ease, transform .25s ease, visibility 0s linear .35s;
+    }
+
+    /* Light mode mobile menu - darker background for readability */
+    :root .topnav .nav-links {
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Dark mode mobile menu */
+    [data-theme="dark"] .topnav .nav-links {
+        background: rgba(30, 30, 30, 0.95);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
     }
 
     /* JS toggles .open on the UL */
@@ -1648,6 +1677,18 @@ button:hover {
     padding: 0 20px;
 }
 
+/* Mobile: center portfolio section title */
+@media (max-width: 600px) {
+    #portfolio .container {
+        align-items: center;
+    }
+    
+    #portfolio .sub-title {
+        text-align: center;
+        width: 100%;
+    }
+}
+
 #portfolio .sub-title {
     margin-bottom: 1rem;
 }
@@ -1817,6 +1858,16 @@ button:hover {
 
 .ghost-defiant-left-column .ghost-defiant-media {
     width: 100%;
+}
+
+/* Remove top margin on video wrapper inside featured project cards */
+.ghost-defiant-media .showcase-video-wrapper {
+    margin-top: 0;
+}
+
+/* Buttons under videos in left column */
+.ghost-defiant-left-column .ghost-defiant-actions {
+    margin-top: 1rem;
 }
 
 .ghost-defiant-media video {

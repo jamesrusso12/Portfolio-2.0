@@ -43,17 +43,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!toggleBtn || !icon) return; // safeguard if not found
 
-    // Load saved preference
+    // Determine the current theme: check localStorage first, then system preference
     const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) {
-        document.documentElement.setAttribute("data-theme", savedTheme);
-        icon.textContent = savedTheme === "dark" ? "light_mode" : "dark_mode";
-    }
+    const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const currentTheme = savedTheme || (systemPrefersDark ? "dark" : "light");
+
+    // Apply theme and sync icon immediately on page load
+    document.documentElement.setAttribute("data-theme", currentTheme);
+    icon.textContent = currentTheme === "dark" ? "light_mode" : "dark_mode";
 
     // Toggle on click
     toggleBtn.addEventListener("click", () => {
-        const currentTheme = document.documentElement.getAttribute("data-theme");
-        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        const activeTheme = document.documentElement.getAttribute("data-theme");
+        const newTheme = activeTheme === "dark" ? "light" : "dark";
         document.documentElement.setAttribute("data-theme", newTheme);
         localStorage.setItem("theme", newTheme);
         icon.textContent = newTheme === "dark" ? "light_mode" : "dark_mode";
