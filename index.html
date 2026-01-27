@@ -80,7 +80,7 @@
         <header id="header" role="banner" aria-labelledby="site-title">
             <div class="hero-bg">
                 <!-- Optional ambient video on desktop -->
-                <video class="hero-video" autoplay muted loop playsinline poster="img/hero-poster.jpg">
+                <video class="hero-video" autoplay muted loop playsinline>
                     <source src="img/hero-ambient.mp4" type="video/mp4" />
                     <!-- Fallback handled by CSS bg-image -->
                 </video>
@@ -584,10 +584,10 @@
                           onsubmit="return showMessage(event)"
                           class="glass-form">
                         <label for="name">Name</label>
-                        <input id="name" type="text" name="name" placeholder="Your Name" required />
+                        <input id="name" type="text" name="name" placeholder="Your Name" required autocomplete="name" />
 
                         <label for="email">Email</label>
-                        <input id="email" type="email" name="email" placeholder="Your Email" required />
+                        <input id="email" type="email" name="email" placeholder="Your Email" required autocomplete="email" />
 
                         <label for="message">Message</label>
                         <textarea id="message" name="message" rows="6" placeholder="Your Message"></textarea>
@@ -621,6 +621,7 @@
     <script src="JavaScript/autoYear.js" defer></script>
     <script src="JavaScript/heroRotation.js" defer></script>
     <script src="JavaScript/featuredTabs.js" defer></script>
+    <script src="JavaScript/aboutAccordion.js" defer></script>
 
     <!-- Optional WOW -->
     <script src="JavaScript/wow.min.js" defer></script>

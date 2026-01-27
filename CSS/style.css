@@ -879,6 +879,188 @@ button:hover {
     animation-delay: .15s;
 }
 
+/* Mobile: Collapsible skill cards */
+@media (max-width: 768px) {
+    /* Reduce overall section padding */
+    #about {
+        padding: 30px 0 20px 0;
+    }
+
+    #about .container {
+        padding: 0 16px;
+    }
+
+    /* Reduce WOW animation offset on mobile for faster reveal */
+    #about[data-wow-offset] {
+        --wow-offset: 40px;
+    }
+
+    #about .skill-card {
+        position: relative;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    #about .skill-card::after {
+        content: "+";
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        font-size: 1.5rem;
+        font-weight: 300;
+        color: var(--color-accent);
+        transition: transform 0.3s ease;
+        line-height: 1;
+    }
+
+    #about .skill-card.expanded::after {
+        content: "−";
+        transform: rotate(0deg);
+    }
+
+    #about .skill-card .proof-points {
+        max-height: 0;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        opacity: 0;
+        transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease, padding 0.3s ease;
+    }
+
+    #about .skill-card.expanded .proof-points {
+        max-height: 1000px;
+        margin: 8px 0 0 20px;
+        padding: 0;
+        opacity: 1;
+    }
+
+    /* Reduce padding on mobile */
+    #about .skill-card.glass-card {
+        padding: 12px 14px;
+    }
+
+    #about .skill-header {
+        margin-bottom: 0;
+        padding-right: 32px; /* Make room for expand/collapse icon */
+    }
+
+    #about .skill-header h3 {
+        font-size: 1.1rem;
+        margin: 0;
+    }
+
+    #about .skill-icon {
+        font-size: 1.2rem;
+    }
+
+    #about .proof-points {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    /* Compact highlights section */
+    #about .skills-proof.glass-card {
+        padding: 14px 16px;
+        margin-top: 12px;
+    }
+
+    #about .skills-proof h3 {
+        font-size: 1.1rem;
+        margin-bottom: 6px;
+        cursor: pointer;
+        position: relative;
+        padding-right: 24px;
+        user-select: none;
+    }
+
+    #about .skills-proof h3::after {
+        content: "+";
+        position: absolute;
+        right: 0;
+        font-size: 1.3rem;
+        font-weight: 300;
+        color: var(--color-accent);
+        transition: transform 0.3s ease;
+        line-height: 1;
+    }
+
+    #about .skills-proof.expanded h3::after {
+        content: "−";
+    }
+
+    #about .skills-proof .highlights-list {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.4s ease, opacity 0.3s ease;
+        margin: 0;
+        padding: 0;
+    }
+
+    #about .skills-proof.expanded .highlights-list {
+        max-height: 2000px;
+        opacity: 1;
+        margin: 0;
+        padding-left: 1.2rem;
+    }
+
+    #about .skills-proof ul {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    #about .skills-proof li {
+        margin: 0.25rem 0;
+    }
+
+    /* Reduce grid gap */
+    #about .skills-grid {
+        gap: 10px;
+        margin-top: 12px;
+    }
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+    #about {
+        padding: 24px 0;
+    }
+
+    #about .container {
+        padding: 0 12px;
+    }
+
+    #about .skill-card.glass-card {
+        padding: 10px 12px;
+    }
+
+    #about .skill-header h3 {
+        font-size: 1rem;
+    }
+
+    #about .proof-points {
+        font-size: 0.9rem;
+    }
+
+    #about .skills-proof.glass-card {
+        padding: 12px 14px;
+    }
+
+    #about .skills-proof ul {
+        font-size: 0.9rem;
+    }
+
+    #about .skills-grid {
+        gap: 8px;
+    }
+
+    #about .skill-card::after {
+        top: 10px;
+        right: 10px;
+        font-size: 1.3rem;
+    }
+}
+
 /* -------------------------------------------------------------------------- */
 /* EXPERIENCE SECTION (Glass Layout + Full-Width Video, Plyr-safe)            */
 /* -------------------------------------------------------------------------- */
