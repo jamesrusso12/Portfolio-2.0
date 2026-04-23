@@ -1,11 +1,23 @@
 function showMessage(event) {
-    event.preventDefault(); // Prevent default form submission
+    event.preventDefault();
     const form = event.target;
     const formData = new FormData(form);
     const msg = document.getElementById("msg");
+    if (!msg) return false;
 
-    // Reset message and add transition
     msg.style.opacity = 0;
+    msg.classList.remove("form-msg--success", "form-msg--error");
+
+    const setMessage = (text, state) => {
+        msg.textContent = text;
+        msg.classList.add(state === "success" ? "form-msg--success" : "form-msg--error");
+        msg.style.opacity = 1;
+        setTimeout(() => {
+            msg.style.opacity = 0;
+            msg.textContent = "";
+            msg.classList.remove("form-msg--success", "form-msg--error");
+        }, 5000);
+    };
 
     fetch(form.action, {
         method: "POST",
@@ -14,30 +26,14 @@ function showMessage(event) {
     })
         .then(response => {
             if (response.ok) {
-                msg.innerHTML = "Message sent successfully!";
-                msg.style.color = "#61b752";
+                setMessage("Message sent successfully!", "success");
                 form.reset();
             } else {
-                msg.innerHTML = "Failed to send message. Please try again.";
-                msg.style.color = "#ff4d4d";
+                setMessage("Failed to send message. Please try again.", "error");
             }
-            msg.style.opacity = 1;
-
-            // Smooth fade-out after delay
-            setTimeout(() => {
-                msg.style.opacity = 0;
-                msg.innerHTML = "";
-            }, 5000);
         })
         .catch(() => {
-            msg.innerHTML = " Network error. Please try again later.";
-            msg.style.color = "#ff4d4d";
-            msg.style.opacity = 1;
-
-            setTimeout(() => {
-                msg.style.opacity = 0;
-                msg.innerHTML = "";
-            }, 5000);
+            setMessage("Network error. Please try again later.", "error");
         });
 
     return false;

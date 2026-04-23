@@ -1,98 +1,133 @@
 document.addEventListener("DOMContentLoaded", () => {
-
-    // ===== MODAL HANDLING =====
-    let slideIndex = 1;
     const modal = document.getElementById("myModal");
+    if (!modal) return;
+
     const modalSlides = document.getElementById("modal-slides");
     const captionText = document.getElementById("caption");
+    const closeBtn = modal.querySelector(".close");
+    const prevBtn = modal.querySelector(".prev");
+    const nextBtn = modal.querySelector(".next");
 
-    window.openModal = function (section) {
-        modal.style.display = "block";
-        modal.setAttribute("aria-hidden", "false");
-        document.body.style.overflow = "hidden"; // prevent background scroll
+    let slideIndex = 1;
+    let lastFocused = null;
 
-        // Generate slides dynamically from the selected gallery section
+    function openModal(section, startIndex) {
         const slides = document.querySelectorAll(`#${section} .image-grid img`);
+        if (!slides.length) return;
+
+        lastFocused = document.activeElement;
         modalSlides.innerHTML = "";
 
-        slides.forEach((img, index) => {
+        slides.forEach((img, i) => {
             const slide = document.createElement("div");
             slide.className = "mySlides fade";
             slide.innerHTML = `
-        <div class="numbertext">${index + 1} / ${slides.length}</div>
-        <img src="${img.src}" alt="${img.alt}" class="modal-image">
-      `;
+                <div class="numbertext">${i + 1} / ${slides.length}</div>
+                <img src="${img.src}" alt="${img.alt}" class="modal-image">
+            `;
             modalSlides.appendChild(slide);
         });
 
-        showSlides(slideIndex = 1);
-    };
+        modal.style.display = "block";
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+        showSlides(slideIndex = startIndex || 1);
 
-    window.closeModal = function () {
+        if (closeBtn) closeBtn.focus();
+    }
+
+    function closeModal() {
         modal.style.display = "none";
         modal.setAttribute("aria-hidden", "true");
-        document.body.style.overflow = "auto";
-    };
+        document.body.style.overflow = "";
+        if (lastFocused && typeof lastFocused.focus === "function") {
+            lastFocused.focus();
+        }
+    }
 
-    // ===== SLIDE NAVIGATION =====
-    window.plusSlides = function (n) { showSlides(slideIndex += n); };
-    window.currentSlide = function (n) { showSlides(slideIndex = n); };
+    function plusSlides(n) { showSlides(slideIndex += n); }
 
     function showSlides(n) {
-        const slides = document.getElementsByClassName("mySlides");
+        const slides = modalSlides.getElementsByClassName("mySlides");
         if (!slides.length) return;
 
         if (n > slides.length) slideIndex = 1;
         if (n < 1) slideIndex = slides.length;
 
-        // Hide all slides
         [...slides].forEach(s => {
             s.style.display = "none";
             s.classList.remove("active");
         });
-        
-        // Show current slide
+
         slides[slideIndex - 1].style.display = "block";
         slides[slideIndex - 1].classList.add("active");
-        captionText.innerHTML = `Image ${slideIndex} of ${slides.length}`;
+        if (captionText) captionText.textContent = `Image ${slideIndex} of ${slides.length}`;
     }
 
-    // ===== KEYBOARD NAVIGATION =====
-    document.addEventListener("keydown", e => {
-        if (modal.style.display === "block") {
-            if (e.key === "ArrowLeft") plusSlides(-1);
-            if (e.key === "ArrowRight") plusSlides(1);
-            if (e.key === "Escape") closeModal();
-        }
-    });
+    // Event delegation: any image inside an .image-grid opens its parent gallery
+    document.querySelectorAll(".image-grid").forEach(grid => {
+        const gallery = grid.closest(".gallery-content");
+        if (!gallery || !gallery.id) return;
 
-    // ===== GALLERY SECTION SWITCHING (Optional) =====
-    const buttons = document.querySelectorAll(".gallery-navigation .btn");
-    const sections = document.querySelectorAll(".gallery-content");
+        const images = [...grid.querySelectorAll("img")];
 
-    // Only set up gallery switching if navigation buttons exist
-    if (buttons.length > 0) {
-        function showGallerySection(sectionId) {
-            sections.forEach(s => s.classList.remove("active"));
-            buttons.forEach(b => b.classList.remove("active"));
-            const targetSection = document.getElementById(sectionId);
-            const targetButton = document.querySelector(`[data-section="${sectionId}"]`);
+        images.forEach((img, i) => {
+            img.setAttribute("role", "button");
+            img.setAttribute("aria-label", `Open ${img.alt || "image"} in gallery viewer`);
 
-            if (targetSection) targetSection.classList.add("active");
-            if (targetButton) targetButton.classList.add("active");
-        }
-
-        buttons.forEach(button => {
-            button.addEventListener("click", () => {
-                const sectionId = button.getAttribute("data-section");
-                showGallerySection(sectionId);
+            img.addEventListener("click", () => openModal(gallery.id, i + 1));
+            img.addEventListener("keydown", e => {
+                if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    openModal(gallery.id, i + 1);
+                }
             });
         });
+    });
 
-        // Set first gallery active by default only if buttons exist
-        if (buttons[0]) {
-            const firstSectionId = buttons[0].getAttribute("data-section");
-            if (firstSectionId) showGallerySection(firstSectionId);
+    // Modal controls
+    if (closeBtn) closeBtn.addEventListener("click", closeModal);
+    if (prevBtn) prevBtn.addEventListener("click", () => plusSlides(-1));
+    if (nextBtn) nextBtn.addEventListener("click", () => plusSlides(1));
+
+    // Click outside modal content to close
+    modal.addEventListener("click", e => {
+        if (e.target === modal) closeModal();
+    });
+
+    // Keyboard navigation
+    document.addEventListener("keydown", e => {
+        if (modal.style.display !== "block") return;
+        if (e.key === "ArrowLeft") plusSlides(-1);
+        else if (e.key === "ArrowRight") plusSlides(1);
+        else if (e.key === "Escape") closeModal();
+    });
+
+    // Legacy global fallbacks (kept minimal in case older inline handlers remain)
+    window.openModal = openModal;
+    window.closeModal = closeModal;
+    window.plusSlides = plusSlides;
+    window.currentSlide = n => showSlides(slideIndex = n);
+
+    // Optional gallery section switching
+    const buttons = document.querySelectorAll(".gallery-navigation .btn");
+    const sections = document.querySelectorAll(".gallery-content");
+    if (buttons.length) {
+        function showGallerySection(id) {
+            sections.forEach(s => s.classList.remove("active"));
+            buttons.forEach(b => b.classList.remove("active"));
+            const target = document.getElementById(id);
+            const btn = document.querySelector(`[data-section="${id}"]`);
+            if (target) target.classList.add("active");
+            if (btn) btn.classList.add("active");
         }
+        buttons.forEach(button => {
+            button.addEventListener("click", () => {
+                const id = button.getAttribute("data-section");
+                if (id) showGallerySection(id);
+            });
+        });
+        const firstId = buttons[0].getAttribute("data-section");
+        if (firstId) showGallerySection(firstId);
     }
 });
