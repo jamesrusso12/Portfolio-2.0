@@ -3067,13 +3067,20 @@ button:hover {
 }
 
 .contact-meta {
+    /* Override the .contact-left p flex rule — render as a normal paragraph */
+    display: block !important;
     margin-top: 1.25rem;
     padding-top: 1rem;
     border-top: 1px solid var(--color-surface-border);
     font-size: .88rem;
+    line-height: 1.6;
     color: var(--color-text-secondary);
 }
-.contact-meta a { color: var(--color-accent); font-weight: 600; }
+.contact-meta a {
+    color: var(--color-accent);
+    font-weight: 600;
+    white-space: nowrap;  /* keep phone number on one line */
+}
 
 .contact-form-title {
     font-size: 1rem;
@@ -3430,11 +3437,25 @@ img, video, iframe, lite-youtube { max-width: 100%; }
     .hero-ctas .btn.ghost {
         grid-column: auto;
     }
-    .spec-block { grid-template-columns: 1fr; }
+    /* Spec block stays 2-column (Role/Engine, Platform/Team, Duration/Status) so
+       case studies don't become an endless vertical list on small phones. */
+    .spec-block {
+        grid-template-columns: 1fr 1fr;
+        gap: .5rem 1rem;
+        padding: .85rem 1rem;
+    }
+    .spec-block dt { font-size: .6rem; }
+    .spec-block dd { font-size: .82rem; }
+
     .image-grid {
         grid-template-columns: 1fr !important;
     }
     .case-study-actions .btn { flex: 1 1 100%; }
+
+    /* Contact section: trim padding so the contact card sits closer to the footer */
+    .contact-section { padding: 2rem 0 0 !important; }
+    .contact-section .container { padding-bottom: 1.25rem; }
+    .site-footer { margin-top: 1.5rem; padding-top: 1.75rem; }
 
     /* Ensure long words / URLs don't blow the layout */
     h1, h2, h3, p, li { word-break: break-word; overflow-wrap: anywhere; }
