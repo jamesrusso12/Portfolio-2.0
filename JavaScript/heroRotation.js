@@ -1,52 +1,47 @@
 /**
  * Hero Video Rotation
- * Rotates the hero clip video source every hour based on the current hour.
- * Each hour displays a different technical prototype video.
+ * Cycles the hero clip based on the current hour so the site feels alive for
+ * returning visitors. The <video> element AND the visible caption both update
+ * so the label always matches what's playing.
  */
 (function () {
     'use strict';
 
     var prototypes = [
-        { src: 'img/GameDevelopment (4).mp4', caption: 'Unreal Engine gameplay clip running in a device frame.' },
-        { src: 'img/GameDevelopment (1).mp4', caption: 'Game development prototype running in a device frame.' },
-        { src: 'img/GameDevelopment (2).mp4', caption: 'Game development prototype running in a device frame.' },
-        { src: 'img/GameDevelopment (3).MP4', caption: 'Ghost Defiant VR gameplay running in a device frame.' },
-        { src: 'img/AppDevelopment.mp4', caption: 'App development prototype running in a device frame.' },
-        { src: 'img/AppDevelopment (1).mp4', caption: 'App development prototype running in a device frame.' },
-        { src: 'img/WebDevelopment (1).mp4', caption: 'Web development prototype running in a device frame.' },
-        { src: 'img/WebDevelopment (2).mp4', caption: 'Web development prototype running in a device frame.' },
-        { src: 'img/WebDevelopment (3).mp4', caption: 'Web development prototype running in a device frame.' },
-        { src: 'img/WebDevelopment (4).mp4', caption: 'Web development prototype running in a device frame.' },
-        { src: 'img/AlexaIntentBox.mp4', caption: 'Alexa Intent Box prototype running in a device frame.' },
-        { src: 'img/Videos/App Screen Recordings/BookShelf Adventures 3D Models.mp4', caption: 'Bookshelf Adventures AR 3D models running in a device frame.' },
-        { src: 'img/Videos/App Screen Recordings/Bookshelf Adventures Figma.mp4', caption: 'Bookshelf Adventures Figma prototype running in a device frame.' },
-        { src: 'img/Videos/App Screen Recordings/BookShelf Adverntures Documents.mp4', caption: 'Bookshelf Adventures project documents running in a device frame.' },
-        { src: 'img/Videos/App Screen Recordings/Teacher login page.mp4', caption: 'Bookshelf Adventures teacher login page running in a device frame.' }
+        { src: 'img/ghost-defiant-hero-loop.mp4',     caption: 'Ghost Defiant — MR Quest 3 gameplay (Unity 6)' },
+        { src: 'img/GameDevelopment (4).mp4',         caption: '2D Fighter — Unreal Engine 5' },
+        { src: 'img/GameDevelopment (1).mp4',         caption: 'Unity gameplay prototype' },
+        { src: 'img/GameDevelopment (2).mp4',         caption: 'Unity gameplay prototype' },
+        { src: 'img/AppDevelopment.mp4',              caption: 'OnRamp AR — Unity + ARKit' },
+        { src: 'img/AppDevelopment (1).mp4',          caption: 'iOS app development prototype' },
+        { src: 'img/WebDevelopment (1).mp4',          caption: 'Finance Simulator — web application' },
+        { src: 'img/WebDevelopment (2).mp4',          caption: 'Halo Maps Database — full-stack web' },
+        { src: 'img/WebDevelopment (3).mp4',          caption: 'Halo SpeedRuns — D3.js dashboard' },
+        { src: 'img/WebDevelopment (4).mp4',          caption: 'Web interaction prototype' },
+        { src: 'img/AlexaIntentBox.mp4',              caption: 'Alexa Intent Box — voice UX prototype' }
     ];
 
     function setHeroVideo() {
         var video = document.querySelector('.hero-clip');
-        var figcaption = video ? video.closest('figure').querySelector('figcaption') : null;
         if (!video) return;
 
-        var hour = new Date().getHours();
-        var index = hour % prototypes.length;
+        var figure = video.closest('figure');
+        var caption = figure ? figure.querySelector('.hero-caption, figcaption') : null;
+
+        var index = new Date().getHours() % prototypes.length;
         var chosen = prototypes[index];
 
         if (video.getAttribute('src') !== chosen.src) {
             video.setAttribute('src', chosen.src);
             video.load();
-            video.play().catch(function () {});
+            video.play().catch(function () {}); // autoplay may be blocked pre-interaction
+            video.setAttribute('aria-label', chosen.caption);
         }
 
-        if (figcaption) {
-            figcaption.textContent = chosen.caption;
-        }
+        if (caption) caption.textContent = chosen.caption;
     }
 
-    // Set on page load
     document.addEventListener('DOMContentLoaded', setHeroVideo);
-
-    // Check every minute in case the hour rolls over while the page is open
-    setInterval(setHeroVideo, 60000);
+    // Re-check each minute in case the hour rolls over while the tab is open.
+    setInterval(setHeroVideo, 60 * 1000);
 })();

@@ -1,5 +1,26 @@
-*.psd filter=lfs diff=lfs merge=lfs -text
-*.fbx filter=lfs diff=lfs merge=lfs -text
-# Large videos only - these will be YouTube embeds
-img/GameDevelopment[[:space:]](2).mp4 filter=lfs diff=lfs merge=lfs -text
-img/Videos/App[[:space:]]Screen[[:space:]]Recordings/BookShelf[[:space:]]Adventures[[:space:]]Video[[:space:]]Portfolio.mp4 filter=lfs diff=lfs merge=lfs -text
+# Normalize line endings for text files across platforms
+* text=auto eol=lf
+
+# Source files are text
+*.html  text
+*.css   text
+*.js    text
+*.md    text
+*.json  text
+*.sh    text eol=lf
+
+# Known binary assets — prevent line-ending munging
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.webp  binary
+*.mp4   binary
+*.mov   binary
+*.pdf   binary
+*.woff  binary
+*.woff2 binary
+*.ttf   binary
+*.otf   binary
+*.psd   binary
+*.fbx   binary
