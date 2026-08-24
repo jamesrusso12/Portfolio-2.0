@@ -9,15 +9,15 @@
 
     var prototypes = [
         { src: 'img/ghost-defiant-hero-loop.mp4',     caption: 'Ghost Defiant — MR Quest 3 gameplay (Unity 6)' },
-        { src: 'img/GameDevelopment (4).mp4',         caption: '2D Fighter — Unreal Engine 5' },
-        { src: 'img/GameDevelopment (1).mp4',         caption: 'Unity gameplay prototype' },
-        { src: 'img/GameDevelopment (2).mp4',         caption: 'Unity gameplay prototype' },
+        { src: 'img/game-development-4.mp4',         caption: '2D Fighter — Unreal Engine 5' },
+        { src: 'img/game-development-1.mp4',         caption: 'Unity gameplay prototype' },
+        { src: 'img/game-development-2.mp4',         caption: 'Unity gameplay prototype' },
         { src: 'img/AppDevelopment.mp4',              caption: 'OnRamp AR — Unity + ARKit' },
-        { src: 'img/AppDevelopment (1).mp4',          caption: 'iOS app development prototype' },
-        { src: 'img/WebDevelopment (1).mp4',          caption: 'Finance Simulator — web application' },
-        { src: 'img/WebDevelopment (2).mp4',          caption: 'Halo Maps Database — full-stack web' },
-        { src: 'img/WebDevelopment (3).mp4',          caption: 'Halo SpeedRuns — D3.js dashboard' },
-        { src: 'img/WebDevelopment (4).mp4',          caption: 'Web interaction prototype' },
+        { src: 'img/app-development-1.mp4',          caption: 'iOS app development prototype' },
+        { src: 'img/web-development-1.mp4',          caption: 'Finance Simulator — web application' },
+        { src: 'img/web-development-2.mp4',          caption: 'Halo Maps Database — full-stack web' },
+        { src: 'img/web-development-3.mp4',          caption: 'Halo SpeedRuns — D3.js dashboard' },
+        { src: 'img/web-development-4.mp4',          caption: 'Web interaction prototype' },
         { src: 'img/AlexaIntentBox.mp4',              caption: 'Alexa Intent Box — voice UX prototype' }
     ];
 

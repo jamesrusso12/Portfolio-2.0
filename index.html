@@ -5,13 +5,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>James Russo Portfolio</title>
+    <title>James Russo — Gameplay & XR Developer (Unity, Unreal)</title>
 
-    <meta name="description" content="James Russo — Unity Developer & UI/UX Designer. C#, VR/MR, and interactive systems.">
+    <meta name="description" content="James Russo — Gameplay & XR Developer (Unity, Unreal). Boise State graduate looking for junior game studio roles.">
     <meta name="theme-color" content="#1F1F1F" media="(prefers-color-scheme: dark)">
     <meta name="theme-color" content="#E0F7FA" media="(prefers-color-scheme: light)">
-    <meta property="og:title" content="James Russo — Unity Developer & UI/UX Designer">
-    <meta property="og:description" content="Interactive systems, VR/MR, UI/UX. Playable demos & case studies.">
+    <meta property="og:title" content="James Russo — Gameplay & XR Developer (Unity, Unreal)">
+    <meta property="og:description" content="Junior gameplay developer · Unity 6, Unreal 5, Meta Quest 3, Apple Vision Pro. Boise State B.S. in Games, Interactive Media & Mobile Technologies.">
     <meta property="og:image" content="img/IMG_1850.JPG">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
@@ -83,7 +83,7 @@
                     <li><a href="#showcase">Featured Projects</a></li>
                     <li><a href="#portfolio">Technical Prototypes</a></li>
                     <li><a href="#experience">Experience</a></li>
-                    <li><a href="#services">Services</a></li>
+                    <li><a href="#education">Education</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
 
@@ -102,7 +102,7 @@
         <header id="header" role="banner" aria-labelledby="site-title">
             <div class="hero-bg">
                 <!-- Optional ambient video on desktop -->
-                <video class="hero-video" autoplay muted loop playsinline>
+                <video class="hero-video" autoplay muted loop playsinline aria-hidden="true" tabindex="-1">
                     <source src="img/hero-ambient.mp4" type="video/mp4" />
                     <!-- Fallback handled by CSS bg-image -->
                 </video>
@@ -113,43 +113,54 @@
             <div class="container hero-inner">
                 <!-- LEFT: intro -->
                 <div class="hero-copy wow animate__fadeInDown" data-wow-delay="0.1s">
-                    <!-- Availability pill -->
-                    <p class="availability-pill" aria-label="Employment status">
-                        <span class="status-dot" aria-hidden="true"></span>
-                        Open to full-time roles — Game, XR &amp; Interactive
-                    </p>
-
-                    <!-- Profile Image -->
+                    <!-- Profile Image (click to expand) -->
                     <div class="profile-image-wrapper wow animate__fadeInDown" data-wow-delay="0.1s">
-                        <img src="img/IMG_1850.JPG" alt="Portrait of James Russo" class="profile-image" />
+                        <button type="button"
+                                class="profile-image-trigger"
+                                id="profile-image-trigger"
+                                aria-label="Expand profile photo">
+                            <img src="img/IMG_1850.JPG" alt="Portrait of James Russo" class="profile-image" />
+                            <span class="profile-image-zoom" aria-hidden="true">
+                                <i class="fa-solid fa-magnifying-glass-plus"></i>
+                            </span>
+                        </button>
                     </div>
+
+                    <!-- Availability pill -->
+                    <p class="availability-pill">
+                        <span class="status-dot" aria-hidden="true"></span>
+                        <span class="sr-only">Employment status:</span>
+                        Looking for junior &amp; entry-level game studio roles
+                    </p>
 
                     <h1 id="site-title">James Russo</h1>
 
                     <p class="tagline">
-                        Unity &amp; XR Developer — Gameplay, VR/MR, and Interactive UX
+                        Gameplay &amp; XR Developer — Unity, Unreal, Quest&nbsp;3 &amp; Vision&nbsp;Pro
                     </p>
 
                     <p class="subtitle">
-                        I ship playable, polished interactive systems. Most recently: a Mixed-Reality Quest&nbsp;3 shooter
-                        built in Unity&nbsp;6 (72&nbsp;FPS) and an ARKit iOS app co-built with the MSU special-needs department.
+                        I make games. Recently: <strong>Ghost Defiant</strong>, a solo-shipped Mixed-Reality Quest&nbsp;3
+                        shooter in Unity&nbsp;6 (72&nbsp;FPS), and <strong>Bookshelf Adventures</strong>, an ARKit iOS reader
+                        co-built with Mississippi State's special-needs program. Looking for a junior role at a studio
+                        where I can keep shipping.
                     </p>
 
                     <div class="hero-ctas" aria-label="Primary actions">
                         <a href="#showcase" class="btn">View Featured Work</a>
                         <a href="mailto:jrusso03@icloud.com?subject=Opportunity%20for%20James" class="btn dark">Email Me</a>
-                        <a href="img/Current Resume.pdf" download class="btn ghost" role="button">
+                        <a href="img/current-resume.pdf" download class="btn ghost" role="button">
                             <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i> Resume (PDF)
                         </a>
                     </div>
 
                     <ul class="tech-chips" aria-label="Core stack">
-                        <li>Unity 6</li>
-                        <li>Unreal 5</li>
-                        <li>C# / C++</li>
-                        <li>Meta SDK v72</li>
-                        <li>ARKit / SwiftUI</li>
-                        <li>Figma</li>
+                        <li>Unity 6 · C#</li>
+                        <li>Unreal 5 · Blueprints</li>
+                        <li>Meta Quest 3</li>
+                        <li>Apple Vision Pro</li>
+                        <li>ARKit · SwiftUI</li>
+                        <li>Figma · Git</li>
                     </ul>
                 </div>
 
@@ -178,94 +189,93 @@
     <!-- ABOUT SECTION -->
     <section id="about" class="wow animate__fadeIn" data-wow-offset="80">
         <div class="container">
-            <h2 class="sub-title wow animate__fadeInDown" data-wow-delay="0.05s">About Me</h2>
-            <p class="section-subtitle wow animate__fadeInDown" data-wow-delay="0.08s">
-                Building interactive experiences across Unity, Unreal Engine, and immersive VR/MR platforms.
+            <h2 class="sub-title wow animate__fadeInDown" data-wow-delay="0.05s">About</h2>
+
+            <!-- Status chip -->
+            <p class="about-status wow animate__fadeInUp" data-wow-delay="0.06s">
+                <span class="status-dot" aria-hidden="true"></span>
+                Graduated Dec&nbsp;2025 · open to junior gameplay / XR roles · Boise, ID — open to relocate
             </p>
 
-            <div class="about-card glass-card wow animate__fadeInUp" data-wow-delay="0.10s">
-                <p class="about-intro">
-                    I'm a Unity &amp; XR developer and UI/UX designer. I specialize in shipping tight, readable
-                    interactive systems — gameplay feel, VR/MR comfort tuning, and the small polish that
-                    makes software feel <em>made</em>, not assembled. Recent work spans a Mixed-Reality Quest&nbsp;3
-                    shooter, a published ARKit iOS app for students with special needs, and a live student
-                    finance tool at Boise State. I care equally about code quality and user experience, and
-                    I'm happiest on small, iterative teams where craft matters.
-                </p>
+            <div class="about-grid">
+                <!-- LEFT: bio + inspirations -->
+                <div class="about-bio wow animate__fadeInUp" data-wow-delay="0.10s">
+                    <p class="about-intro">
+                        Gameplay &amp; XR developer with a <strong>B.S. in Games, Interactive Media &amp; Mobile Technologies</strong>
+                        from Boise State. Solo-shipped <strong>Ghost Defiant</strong>, a Mixed-Reality Quest&nbsp;3 shooter, as my senior capstone.
+                        I care about gameplay feel and the small polish players notice — the kind of detail that separates a shipped game from a prototype.
+                    </p>
 
-                <div class="skills-compact">
-                    <!-- Unity & C# -->
-                    <div class="skill-item">
-                        <h4><i class="fa-brands fa-unity"></i> Unity & C#</h4>
-                        <ul>
-                            <li>Ghost Defiant: MR Capstone with Unity 6, Meta SDK, custom physics & spatial audio</li>
-                            <li>OnRamp AR: Image tracking & 3D overlays for educational AR</li>
-                            <li>Quest 3 optimization: 72 FPS with hand tracking & passthrough</li>
-                        </ul>
-                    </div>
+                    <details class="about-more">
+                        <summary>More about how I work</summary>
+                        <p>
+                            Four years of Unity, Unreal, C#, gameplay systems, and shipping things end-to-end.
+                            Comfortable on Meta Quest&nbsp;3 and Apple Vision&nbsp;Pro for immersive work, and on iOS / SwiftUI
+                            via my work on Bookshelf Adventures with Mississippi State's special-needs program. Currently at
+                            Apple Retail in Boise, where reading users and explaining technical concepts simply is the daily reps.
+                        </p>
+                    </details>
 
-                    <!-- Unreal & C++ -->
-                    <div class="skill-item">
-                        <h4><i class="fa-solid fa-cubes"></i> Unreal & C++</h4>
-                        <ul>
-                            <li>2D Fighter: AI combat, animation blueprints, C++ combo systems</li>
-                            <li>Target Practice MP: Networked scoring & replication system</li>
-                            <li>Advanced parkour system with mantle, vault & wall run</li>
-                        </ul>
-                    </div>
-
-                    <!-- VR / AR -->
-                    <div class="skill-item">
-                        <h4><i class="fa-solid fa-vr-cardboard"></i> VR / AR Development</h4>
-                        <ul>
-                            <li>Mixed Reality: Hand tracking, passthrough, spatial awareness</li>
-                            <li>Comfort tuning: Grab thresholds, spatial SFX, hit feedback</li>
-                            <li>ARKit/ARCore: Image recognition & 3D model placement</li>
-                        </ul>
-                    </div>
-
-                    <!-- Front-End -->
-                    <div class="skill-item">
-                        <h4><i class="fa-solid fa-code"></i> Front-End Development</h4>
-                        <ul>
-                            <li>Finance Simulator: Lead UI/UX for Boise State budgeting tool</li>
-                            <li>Halo SpeedRuns: D3.js/MySQL data visualization dashboard</li>
-                            <li>Full-stack web apps with CRUD, REST APIs & responsive design</li>
-                        </ul>
-                    </div>
-
-                    <!-- UI/UX -->
-                    <div class="skill-item">
-                        <h4><i class="fa-solid fa-palette"></i> UI / UX Design</h4>
-                        <ul>
-                            <li>VR/MR HUDs optimized for comfort and accessibility</li>
-                            <li>Figma wireframes & accessible AR interaction patterns</li>
-                            <li>User-centered design for games, apps & web</li>
-                        </ul>
-                    </div>
-
-                    <!-- iOS -->
-                    <div class="skill-item">
-                        <h4><i class="fa-brands fa-apple"></i> iOS & SwiftUI</h4>
-                        <ul>
-                            <li>Bookshelf Adventures: AR iOS app with SwiftUI & ARKit</li>
-                            <li>Real-time book scanning & 3D model placement</li>
-                            <li>Accessible UI for MSU special needs department</li>
-                        </ul>
-                    </div>
-
-                    <!-- Tools -->
-                    <div class="skill-item">
-                        <h4><i class="fa-solid fa-toolbox"></i> Tools & Workflow</h4>
-                        <ul>
-                            <li>GitHub: Version control, branching & collaborative dev</li>
-                            <li>Photoshop: Textures, UI assets & sprite sheets</li>
-                            <li>Figma, Visual Studio, Xcode, Blender</li>
+                    <!-- "What I steal from" inspirations -->
+                    <div class="inspirations" aria-labelledby="inspirations-title">
+                        <h3 id="inspirations-title" class="inspirations-title">
+                            <i class="fa-solid fa-gamepad" aria-hidden="true"></i> What I steal from
+                        </h3>
+                        <ul class="inspirations-list">
+                            <li><strong>Halo</strong> — encounter pacing as the level designer's real medium.</li>
+                            <li><strong>Minecraft</strong> — systems-driven design beats scripted spectacle.</li>
+                            <li><strong>Titanfall&nbsp;2</strong> — movement &amp; gunplay as a single readable verb.</li>
+                            <li><strong>Elden Ring</strong> — environmental storytelling &amp; encounter design as craft.</li>
                         </ul>
                     </div>
                 </div>
+
+                <!-- RIGHT: tiered skills -->
+                <aside class="about-skills wow animate__fadeInUp" data-wow-delay="0.15s" aria-labelledby="skills-title">
+                    <h3 id="skills-title" class="skills-section-title">Stack</h3>
+
+                    <div class="skill-tier">
+                        <p class="skill-tier-label">Primary</p>
+                        <ul class="skill-list">
+                            <li>
+                                <span class="skill-name"><i class="fa-brands fa-unity"></i> Unity 6 · C#</span>
+                                <span class="skill-meta">Ghost Defiant · OnRamp AR · Quest 3 (72 FPS)</span>
+                            </li>
+                            <li>
+                                <span class="skill-name"><i class="fa-solid fa-cubes"></i> Unreal 5 · Blueprints</span>
+                                <span class="skill-meta">2D Fighter · Target Practice MP · parkour</span>
+                            </li>
+                            <li>
+                                <span class="skill-name"><i class="fa-solid fa-vr-cardboard"></i> XR · MR · VR</span>
+                                <span class="skill-meta">Meta Quest 3 · Apple Vision Pro · ARKit</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-tier skill-tier--secondary">
+                        <p class="skill-tier-label">Also fluent in</p>
+                        <ul class="skill-tags">
+                            <li>HTML / CSS</li>
+                            <li>JavaScript</li>
+                            <li>SwiftUI <small>(foundational)</small></li>
+                            <li>Figma</li>
+                            <li>Photoshop</li>
+                            <li>Premiere</li>
+                            <li>Blender</li>
+                            <li>Git / GitHub</li>
+                        </ul>
+                    </div>
+                </aside>
             </div>
 
+            <!-- Credibility strip -->
+            <ul class="credibility-strip wow animate__fadeInUp" data-wow-delay="0.20s" aria-label="Engines and platforms">
+                <li><i class="fa-brands fa-unity" aria-hidden="true"></i> Unity 6</li>
+                <li><i class="fa-solid fa-cubes" aria-hidden="true"></i> Unreal 5</li>
+                <li><i class="fa-solid fa-vr-cardboard" aria-hidden="true"></i> Meta Quest 3</li>
+                <li><i class="fa-brands fa-apple" aria-hidden="true"></i> Apple Vision Pro</li>
+                <li><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> Boise State · GIMM</li>
+            </ul>
         </div>
     </section>
     <!-- END ABOUT SECTION -->
@@ -275,29 +285,43 @@
         <div class="container">
             <h2 class="sub-title wow animate__fadeInDown" data-wow-delay="0.05s">Recent Highlights</h2>
             <p class="section-subtitle wow animate__fadeInDown" data-wow-delay="0.08s">
-                Key projects and accomplishments from my recent work.
+                What I've shipped in the last twelve months — three projects worth scrolling for.
             </p>
 
-            <div class="highlights-card glass-card wow animate__fadeInUp" data-wow-delay="0.10s">
-                <ul class="highlights-list">
-                    <li class="wow animate__fadeInUp" data-wow-delay="0.15s">
-                        <strong>Unity (C#):</strong> Ghost Defiant - MR Capstone with custom debris physics, spatial audio, fog particles, and Quest 3 optimization at stable 72 FPS.
-                    </li>
-                    <li class="wow animate__fadeInUp" data-wow-delay="0.20s">
-                        <strong>Unreal (C++/BP):</strong> 2D Fighter with AI combat & C++ combos; Target Practice MP with multiplayer replication; parkour system in development.
-                    </li>
-                    <li class="wow animate__fadeInUp" data-wow-delay="0.25s">
-                        <strong>iOS (SwiftUI):</strong> Bookshelf Adventures - AR iOS app for MSU special needs department with real-time book scanning & 3D model placement.
-                    </li>
-                    <li class="wow animate__fadeInUp" data-wow-delay="0.30s">
-                        <strong>Web:</strong> Finance Simulator (lead UI/UX), Halo SpeedRuns Analysis (D3.js/MySQL), Halo Maps Database (full-stack CRUD).
-                    </li>
-                    <li class="wow animate__fadeInUp" data-wow-delay="0.35s">
-                        <strong>UI/UX:</strong> Custom VR/MR HUDs, accessible interfaces for Bookshelf Adventures, intuitive budgeting tools for Finance Simulator.
-                    </li>
-                </ul>
-            </div>
+            <div class="highlight-tiles">
+                <!-- Ghost Defiant -->
+                <a href="#panel-ghost-defiant" class="highlight-tile glass-card wow animate__fadeInUp" data-wow-delay="0.10s">
+                    <span class="highlight-tile-tag">Unity 6 · MR · Solo</span>
+                    <h3 class="highlight-tile-title">Ghost Defiant</h3>
+                    <p class="highlight-tile-desc">
+                        Solo-shipped Mixed-Reality Quest&nbsp;3 shooter — custom debris physics, spatial audio, fog VFX.
+                    </p>
+                    <p class="highlight-tile-metric"><strong>72 FPS</strong> stable · hand-tracking + passthrough</p>
+                    <span class="highlight-tile-cta">Case study <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+                </a>
 
+                <!-- Bookshelf Adventures -->
+                <a href="#panel-bookshelf-adventures" class="highlight-tile glass-card wow animate__fadeInUp" data-wow-delay="0.18s">
+                    <span class="highlight-tile-tag">iOS · ARKit · SwiftUI</span>
+                    <h3 class="highlight-tile-title">Bookshelf Adventures</h3>
+                    <p class="highlight-tile-desc">
+                        ARKit iOS reader co-built with Mississippi State's special-needs program — real-time book scanning &amp; 3D overlays.
+                    </p>
+                    <p class="highlight-tile-metric"><strong>Delivered</strong> to partner program · accessible UI</p>
+                    <span class="highlight-tile-cta">Case study <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+                </a>
+
+                <!-- 2D Fighter / Unreal -->
+                <a href="game-development.html" class="highlight-tile glass-card wow animate__fadeInUp" data-wow-delay="0.26s">
+                    <span class="highlight-tile-tag">Unreal 5 · Blueprints</span>
+                    <h3 class="highlight-tile-title">Unreal Prototypes</h3>
+                    <p class="highlight-tile-desc">
+                        2D Fighter (AI combat, animation Blueprints) · Target Practice MP (replicated scoring) · parkour mantle/vault/wall-run.
+                    </p>
+                    <p class="highlight-tile-metric"><strong>3 prototypes</strong> · Unreal University &amp; Epic Games certs</p>
+                    <span class="highlight-tile-cta">View gallery <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+                </a>
+            </div>
         </div>
     </section>
     <!-- END HIGHLIGHTS SECTION -->
@@ -344,7 +368,7 @@
                                 <a class="btn" href="https://github.com/jamesrusso12/Ghost-Defiant" target="_blank" rel="noopener noreferrer">
                                     <i class="fab fa-github" aria-hidden="true"></i> Source on GitHub
                                 </a>
-                                <a class="btn dark" href="img/GameDevelopment (3).MP4" target="_blank" rel="noopener noreferrer">
+                                <a class="btn dark" href="img/game-development-3.mp4" target="_blank" rel="noopener noreferrer">
                                     <i class="fas fa-video" aria-hidden="true"></i> Full playthrough
                                 </a>
                             </div>
@@ -446,9 +470,9 @@
             <div class="owl-carousel owl-theme video-section glass-card">
                 <!-- Unreal Fighter -->
                 <div class="item">
-                    <video src="img/GameDevelopment (4).mp4" preload="metadata" controls muted playsinline loading="lazy"></video>
+                    <video src="img/game-development-4.mp4" preload="metadata" controls muted playsinline loading="lazy"></video>
                     <h3 class="video-title">2D Fighter Game <span>- Unreal Engine 5</span></h3>
-                    <p class="video-desc">A prototype showcasing AI combat logic, animation blueprints, and C++ attack combo systems built for Unreal Engine 5.</p>
+                    <p class="video-desc">A prototype showcasing AI combat logic, animation Blueprints, and Blueprint-driven attack combo systems built in Unreal Engine 5.</p>
                 </div>
 
                 <!-- Target Practice MP -->
@@ -462,7 +486,7 @@
 
                 <!-- Finance Simulator -->
                 <div class="item">
-                    <video src="img/WebDevelopment (1).mp4" preload="metadata" controls muted playsinline loading="lazy"></video>
+                    <video src="img/web-development-1.mp4" preload="metadata" controls muted playsinline loading="lazy"></video>
                     <h3 class="video-title">Finance Simulator <span>- Web Application</span></h3>
                     <p class="video-desc">Lead UI/UX designer for a Boise State-hosted student finance site using HTML, CSS, and JS — helping students visualize budgeting over time.</p>
                 </div>
@@ -476,7 +500,7 @@
 
                 <!-- Halo Analysis -->
                 <div class="item">
-                    <video src="img/WebDevelopment (3).mp4" preload="metadata" controls muted playsinline loading="lazy"></video>
+                    <video src="img/web-development-3.mp4" preload="metadata" controls muted playsinline loading="lazy"></video>
                     <h3 class="video-title">Halo SpeedRuns Analysis <span>- Data Visualization</span></h3>
                     <p class="video-desc">A D3.js and MySQL dashboard visualizing player speedrun statistics and performance trends across Halo map archives.</p>
                 </div>
@@ -490,14 +514,14 @@
 
                 <!-- Halo Maps -->
                 <div class="item">
-                    <video src="img/WebDevelopment (2).mp4" preload="metadata" controls muted playsinline loading="lazy"></video>
+                    <video src="img/web-development-2.mp4" preload="metadata" controls muted playsinline loading="lazy"></video>
                     <h3 class="video-title">Halo Maps Database <span>- Web Application</span></h3>
                     <p class="video-desc">Full-stack web application with CRUD operations for managing Halo map data using MySQL database and REST API.</p>
                 </div>
 
                 <!-- Unity Showcase -->
                 <div class="item">
-                    <video src="img/GameDevelopment (3).MP4" preload="metadata" controls muted playsinline loading="lazy"></video>
+                    <video src="img/game-development-3.mp4" preload="metadata" controls muted playsinline loading="lazy"></video>
                     <h3 class="video-title">Unity Showcase <span>- Engine Overview</span></h3>
                     <p class="video-desc">A compilation reel of Unity systems I've designed — from interaction logic to custom shaders and material blending.</p>
                 </div>
@@ -511,103 +535,252 @@
         <div class="container">
             <h2 class="sub-title wow animate__fadeInDown" data-wow-delay="0.05s">Experience</h2>
             <p class="section-subtitle wow animate__fadeInDown" data-wow-delay="0.08s">
-                Professional projects and collaborative work.
+                Where I've shipped, supported, and shown up.
             </p>
 
-            <article class="experience-container glass-card wow animate__fadeInUp" data-wow-delay="0.12s" aria-labelledby="finance-sim-title">
-                <header>
-                    <span class="experience-badge"> Lead Interaction Designer </span>
-                    <h3 class="experience-title" id="finance-sim-title">Finance Simulator Tool Website</h3>
-                </header>
+            <ol class="experience-timeline">
+                <!-- Apple -->
+                <li class="experience-entry glass-card wow animate__fadeInUp" data-wow-delay="0.10s" aria-labelledby="exp-apple-title">
+                    <div class="experience-head">
+                        <span class="experience-badge"><i class="fa-brands fa-apple" aria-hidden="true"></i> Apple Retail Specialist</span>
+                        <span class="experience-dates">Aug&nbsp;2025 — Present</span>
+                    </div>
+                    <h3 class="experience-title" id="exp-apple-title">Apple Inc. — Boise, ID</h3>
+                    <ul class="experience-bullets">
+                        <li>Translate user needs into tailored technical solutions through hands-on demos and guided onboarding.</li>
+                        <li>Diagnose and resolve hardware and software issues, clearly communicating root cause and resolution.</li>
+                        <li>Day-to-day practice in reading users, explaining technical concepts simply, and shipping a great experience under pressure — habits that carry directly into game-team work.</li>
+                    </ul>
+                </li>
 
-                <p>
-                    As the Lead Interaction Designer and tester for a Boise State University–hosted project, I spearheaded the
-                    design and development of a website aimed at helping students manage their finances throughout college.
-                </p>
-                <p>
-                    Collaborating with two team members, I focused on creating an intuitive, user-friendly interface
-                    that meets the unique needs of students. I also contributed to front-end development and worked closely
-                    with Boise State Financial staff to deliver an effective and accessible financial management tool for the student body.
-                </p>
+                <!-- Finance Simulator -->
+                <li class="experience-entry glass-card wow animate__fadeInUp" data-wow-delay="0.18s" aria-labelledby="finance-sim-title">
+                    <div class="experience-head">
+                        <span class="experience-badge"><i class="fa-solid fa-chart-line" aria-hidden="true"></i> Lead Interaction Designer</span>
+                        <span class="experience-dates">Feb&nbsp;2022 — Aug&nbsp;2023</span>
+                    </div>
+                    <h3 class="experience-title" id="finance-sim-title">Finance Simulator — Boise State University</h3>
+                    <ul class="experience-bullets">
+                        <li>Led interaction design end-to-end for a student-facing personal-finance tracker hosted by Boise State.</li>
+                        <li>Created user flows, wireframes, and high-fidelity UI focused on clarity, accessibility, and ease of use.</li>
+                        <li>Contributed to front-end build and partnered with Boise State Financial staff to ship the live tool.</li>
+                    </ul>
 
-                <p>
-                    <a href="https://jordanralba.github.io/BSU-personal-finances/"
-                       class="btn"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       aria-label="Visit Student Finance Simulator (opens in a new tab)">
-                        Visit Student Finance Simulator
-                    </a>
-                </p>
+                    <div class="experience-actions">
+                        <a href="https://jordanralba.github.io/BSU-personal-finances/"
+                           class="btn"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Visit the live tool
+                        </a>
+                    </div>
 
-                <figure class="experienceimg">
-                    <!-- Add a poster image if you have one: poster="img/finance-sim-poster.jpg" -->
-                    <video id="exp-finance-video"
-                           class="experiencevideo"
-                           controls
-                           preload="metadata"
-                           playsinline
-                           controlslist="nodownload">
-                        <source src="img/WebDevelopment (1).mp4" type="video/mp4" />
-                        <!-- Optional captions track (recommended)
-                        <track kind="captions" src="captions/finance-sim-en.vtt" srclang="en" label="English" default />
-                        -->
-                        Your browser does not support the video tag.
-                    </video>
-                    <figcaption class="sr-only">Demo of the Student Finance Simulator website.</figcaption>
-                </figure>
-            </article>
+                    <figure class="experienceimg">
+                        <video id="exp-finance-video"
+                               class="experiencevideo"
+                               controls
+                               preload="metadata"
+                               playsinline
+                               controlslist="nodownload">
+                            <source src="img/web-development-1.mp4" type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                        <figcaption class="sr-only">Demo of the Student Finance Simulator website.</figcaption>
+                    </figure>
+                </li>
+            </ol>
         </div>
     </section>
     <!-- END EXPERIENCE SECTION -->
 
-    <!-- SERVICES SECTION -->
-    <section id="services" class="wow animate__fadeIn" data-wow-offset="80">
+    <!-- EDUCATION & CERTIFICATIONS -->
+    <section id="education" class="wow animate__fadeIn" data-wow-offset="80">
         <div class="container">
-            <h2 class="sub-title wow animate__fadeInDown" data-wow-delay="0.05s">What I Can Do</h2>
+            <h2 class="sub-title wow animate__fadeInDown" data-wow-delay="0.05s">Education &amp; Certifications</h2>
             <p class="section-subtitle wow animate__fadeInDown" data-wow-delay="0.08s">
-                Services and specializations I bring to every project.
+                Formal training in games &amp; XR — and the certificates that back the projects.
             </p>
 
-            <div class="services-list">
-                <!-- Web Design -->
-                <article class="service-item glass-card wow animate__fadeInUp" data-wow-delay="0.10s">
-                    <span class="service-icon"><i class="fa-solid fa-code"></i></span>
-                    <h2>Web Design & Front-End Development</h2>
-                    <p>
-                        Responsive, accessible front-end builds from static marketing pages to interactive
-                        dashboards. I lead with semantic HTML, clean CSS architecture, and a ruthless focus
-                        on performance, keyboard navigation, and WCAG AA contrast.
+            <div class="edu-grid">
+                <!-- Degree -->
+                <article class="edu-card edu-card--degree glass-card wow animate__fadeInUp" data-wow-delay="0.10s">
+                    <span class="edu-badge"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> Degree</span>
+                    <h3 class="edu-title">B.S. Games, Interactive Media &amp; Mobile Technologies</h3>
+                    <p class="edu-meta">Boise State University · December&nbsp;2025</p>
+                    <p class="edu-desc">
+                        Four years of Unity, Unreal, C#, gameplay systems, interactive design, and shipping
+                        from prototype to delivery. Senior capstone: <strong>Ghost Defiant</strong> —
+                        solo-shipped Mixed-Reality Quest&nbsp;3 shooter.
                     </p>
-                    <a href="web-development.html" class="btn read-more">Learn More</a>
                 </article>
 
-                <!-- Unity -->
-                <article class="service-item glass-card wow animate__fadeInUp" data-wow-delay="0.20s">
-                    <span class="service-icon"><i class="fa-brands fa-unity"></i></span>
-                    <h2>Unity &amp; Unreal — Gameplay &amp; XR</h2>
-                    <p>
-                        Shipping work in Unity&nbsp;6 and Unreal&nbsp;5 — gameplay systems, VR/MR prototypes,
-                        AI-driven combat, and networked multiplayer. Comfortable owning a feature end-to-end
-                        or embedding into an existing codebase.
+                <!-- Certifications -->
+                <article class="edu-card glass-card wow animate__fadeInUp" data-wow-delay="0.18s">
+                    <span class="edu-badge"><i class="fa-solid fa-vr-cardboard" aria-hidden="true"></i> XR Developer</span>
+                    <h3 class="edu-title">XR Developer Program Certificate</h3>
+                    <p class="edu-meta">Boise State University · GIMM · May&nbsp;2025</p>
+                    <p class="edu-desc">
+                        Program certificate covering Meta Quest development, hand tracking, passthrough,
+                        and spatial UI — the foundation behind Ghost Defiant.
                     </p>
-                    <a href="game-development.html" class="btn read-more">Learn More</a>
                 </article>
 
-                <!-- Application -->
-                <article class="service-item glass-card wow animate__fadeInUp" data-wow-delay="0.30s">
-                    <span class="service-icon"><i class="fa-brands fa-app-store"></i></span>
-                    <h2>iOS &amp; UI/UX Design</h2>
-                    <p>
-                        SwiftUI and Figma — intuitive, accessible interfaces for iOS, VR HUDs, and web apps.
-                        Dual background in design and engineering means the UI I spec is the UI I can build.
+                <article class="edu-card glass-card wow animate__fadeInUp" data-wow-delay="0.22s">
+                    <span class="edu-badge"><i class="fa-solid fa-gamepad" aria-hidden="true"></i> Epic Games</span>
+                    <h3 class="edu-title">Unreal Engine Fundamentals</h3>
+                    <p class="edu-meta">Epic Games · April&nbsp;2026</p>
+                    <p class="edu-desc">
+                        Epic Games' official Unreal certification — engine fundamentals, Blueprints,
+                        and the production pipeline I lean on for every Unreal project.
                     </p>
-                    <a href="uiux-design.html" class="btn read-more">Learn More</a>
+                </article>
+
+                <article class="edu-card glass-card wow animate__fadeInUp" data-wow-delay="0.26s">
+                    <span class="edu-badge"><i class="fa-solid fa-gamepad" aria-hidden="true"></i> Epic Games</span>
+                    <h3 class="edu-title">Introduction to Game Design</h3>
+                    <p class="edu-meta">Epic Games · January&nbsp;2026</p>
+                    <p class="edu-desc">
+                        Epic Games' game-design certificate — level design, systems design, and
+                        player-experience fundamentals.
+                    </p>
+                </article>
+
+                <article class="edu-card glass-card wow animate__fadeInUp" data-wow-delay="0.30s">
+                    <span class="edu-badge"><i class="fa-solid fa-cubes"></i> Unreal University</span>
+                    <h3 class="edu-title">Build a Fighting Game in Unreal Engine</h3>
+                    <p class="edu-meta">Unreal University · Aug&nbsp;2024 — Nov&nbsp;2024</p>
+                    <p class="edu-desc">
+                        Multi-month course on combat systems, animation Blueprints, and Blueprint scripting fundamentals
+                        — the basis for my 2D Fighter prototype.
+                    </p>
                 </article>
             </div>
         </div>
     </section>
-    <!-- END SERVICES SECTION -->
+    <!-- END EDUCATION SECTION -->
+
+    <!-- WHAT I WORK ON — filterable mini-grid -->
+    <section id="services" class="wow animate__fadeIn" data-wow-offset="80">
+        <div class="container">
+            <h2 class="sub-title wow animate__fadeInDown" data-wow-delay="0.05s">What I Work On</h2>
+            <p class="section-subtitle wow animate__fadeInDown" data-wow-delay="0.08s">
+                Filter by discipline — tiles link out to the full gallery for each.
+            </p>
+
+            <!-- Filter chips -->
+            <div class="filter-chips wow animate__fadeInUp" data-wow-delay="0.10s" role="group" aria-label="Filter projects by discipline">
+                <button class="filter-chip active" data-filter="all" type="button" aria-pressed="true">All</button>
+                <button class="filter-chip" data-filter="game" type="button" aria-pressed="false">Games · Unity / Unreal</button>
+                <button class="filter-chip" data-filter="xr" type="button" aria-pressed="false">XR · VR / MR</button>
+                <button class="filter-chip" data-filter="ios" type="button" aria-pressed="false">iOS · AR</button>
+                <button class="filter-chip" data-filter="web" type="button" aria-pressed="false">Web</button>
+                <button class="filter-chip" data-filter="uiux" type="button" aria-pressed="false">UI / UX</button>
+            </div>
+
+            <!-- Mini project grid -->
+            <div class="project-grid wow animate__fadeInUp" data-wow-delay="0.15s">
+
+                <!-- Ghost Defiant -->
+                <a href="game-development.html" class="project-tile glass-card" data-categories="game xr">
+                    <div class="project-tile-tags">
+                        <span class="ptag">Unity 6</span>
+                        <span class="ptag">MR · Quest 3</span>
+                    </div>
+                    <h3 class="project-tile-title">Ghost Defiant</h3>
+                    <p class="project-tile-outcome">Solo-shipped MR shooter, 72 FPS on Quest 3.</p>
+                </a>
+
+                <!-- 2D Fighter -->
+                <a href="game-development.html" class="project-tile glass-card" data-categories="game">
+                    <div class="project-tile-tags">
+                        <span class="ptag">Unreal 5</span>
+                        <span class="ptag">Blueprints</span>
+                    </div>
+                    <h3 class="project-tile-title">2D Fighter</h3>
+                    <p class="project-tile-outcome">AI combat states &amp; animation blueprints in UE5.</p>
+                </a>
+
+                <!-- Target Practice MP -->
+                <a href="game-development.html" class="project-tile glass-card" data-categories="game">
+                    <div class="project-tile-tags">
+                        <span class="ptag">Unreal 5</span>
+                        <span class="ptag">Multiplayer</span>
+                    </div>
+                    <h3 class="project-tile-title">Target Practice MP</h3>
+                    <p class="project-tile-outcome">Networked scoring &amp; replication, replicated spawns.</p>
+                </a>
+
+                <!-- Bookshelf Adventures -->
+                <a href="uiux-design.html" class="project-tile glass-card" data-categories="ios xr uiux">
+                    <div class="project-tile-tags">
+                        <span class="ptag">iOS</span>
+                        <span class="ptag">ARKit</span>
+                        <span class="ptag">SwiftUI</span>
+                    </div>
+                    <h3 class="project-tile-title">Bookshelf Adventures</h3>
+                    <p class="project-tile-outcome">AR reader for MSU's special-needs program.</p>
+                </a>
+
+                <!-- Finance Simulator -->
+                <a href="web-development.html" class="project-tile glass-card" data-categories="web uiux">
+                    <div class="project-tile-tags">
+                        <span class="ptag">Web</span>
+                        <span class="ptag">UI/UX Lead</span>
+                    </div>
+                    <h3 class="project-tile-title">Finance Simulator</h3>
+                    <p class="project-tile-outcome">BSU-hosted budgeting tool — live.</p>
+                </a>
+
+                <!-- Halo Maps -->
+                <a href="web-development.html" class="project-tile glass-card" data-categories="web">
+                    <div class="project-tile-tags">
+                        <span class="ptag">Web</span>
+                        <span class="ptag">Full-stack</span>
+                    </div>
+                    <h3 class="project-tile-title">Halo Maps DB</h3>
+                    <p class="project-tile-outcome">CRUD app · MySQL · REST API.</p>
+                </a>
+
+                <!-- Halo SpeedRuns -->
+                <a href="web-development.html" class="project-tile glass-card" data-categories="web">
+                    <div class="project-tile-tags">
+                        <span class="ptag">Data-vis</span>
+                        <span class="ptag">D3.js</span>
+                    </div>
+                    <h3 class="project-tile-title">Halo SpeedRuns</h3>
+                    <p class="project-tile-outcome">D3 + MySQL dashboard.</p>
+                </a>
+
+                <!-- OnRamp AR -->
+                <a href="game-development.html" class="project-tile glass-card" data-categories="game xr">
+                    <div class="project-tile-tags">
+                        <span class="ptag">Unity</span>
+                        <span class="ptag">AR</span>
+                    </div>
+                    <h3 class="project-tile-title">OnRamp AR</h3>
+                    <p class="project-tile-outcome">Image tracking &amp; 3D overlays for education.</p>
+                </a>
+
+                <!-- Alexa Intent Box -->
+                <a href="uiux-design.html" class="project-tile glass-card" data-categories="uiux">
+                    <div class="project-tile-tags">
+                        <span class="ptag">Voice UX</span>
+                        <span class="ptag">Alexa SDK</span>
+                    </div>
+                    <h3 class="project-tile-title">Alexa Intent Box</h3>
+                    <p class="project-tile-outcome">Voice-driven storytelling prototype.</p>
+                </a>
+            </div>
+
+            <!-- Deep links -->
+            <div class="discipline-links wow animate__fadeInUp" data-wow-delay="0.20s">
+                <a href="game-development.html"><i class="fa-brands fa-unity" aria-hidden="true"></i> Full game gallery</a>
+                <a href="uiux-design.html"><i class="fa-brands fa-apple" aria-hidden="true"></i> iOS / UI-UX gallery</a>
+                <a href="web-development.html"><i class="fa-solid fa-code" aria-hidden="true"></i> Web gallery</a>
+            </div>
+        </div>
+    </section>
+    <!-- END WHAT I WORK ON -->
 
     <!-- CONTACT SECTION -->
     <section id="contact" class="contact-section">
@@ -651,7 +824,7 @@
                             </a>
                         </li>
                         <li>
-                            <a class="contact-method" href="img/Current Resume.pdf" download>
+                            <a class="contact-method" href="img/current-resume.pdf" download>
                                 <i class="fas fa-file-arrow-down" aria-hidden="true"></i>
                                 <span>
                                     <strong>Resume (PDF)</strong>
@@ -663,7 +836,6 @@
 
                     <p class="contact-meta">
                         Based in Boise, ID — open to remote or relocation.
-                        Phone: <a href="tel:+19493970464">(949)&nbsp;397-0464</a>
                     </p>
                 </div>
 
@@ -707,8 +879,10 @@
             <nav class="footer-nav" aria-label="Footer">
                 <a href="#about">About</a>
                 <a href="#showcase">Projects</a>
+                <a href="#experience">Experience</a>
+                <a href="#education">Education</a>
                 <a href="#contact">Contact</a>
-                <a href="img/Current Resume.pdf" download>Resume</a>
+                <a href="img/current-resume.pdf" download>Resume</a>
             </nav>
             <div class="footer-social" aria-label="Social">
                 <a href="mailto:jrusso03@icloud.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
@@ -720,6 +894,30 @@
         <p class="copyright">&copy; <span id="year"></span> James Russo. Built in hand-written HTML, CSS &amp; JavaScript.</p>
     </footer>
     <!-- End Footer -->
+
+    <!-- Profile image lightbox -->
+    <div id="profile-lightbox" class="profile-lightbox" aria-hidden="true" role="dialog" aria-label="Expanded profile photo" hidden>
+        <button type="button" class="profile-lightbox-close" aria-label="Close expanded photo">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <img src="img/IMG_1850.JPG" alt="James Russo — full portrait" class="profile-lightbox-img" />
+    </div>
+
+    <!-- Sticky mobile action bar — always-visible primary actions -->
+    <nav class="mobile-action-bar" aria-label="Quick actions">
+        <a href="#showcase" class="mab-item" aria-label="View featured work">
+            <i class="fa-solid fa-folder-open" aria-hidden="true"></i>
+            <span>Work</span>
+        </a>
+        <a href="mailto:jrusso03@icloud.com?subject=Opportunity%20for%20James" class="mab-item mab-item--primary" aria-label="Email James">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            <span>Email</span>
+        </a>
+        <a href="img/current-resume.pdf" download class="mab-item" aria-label="Download resume">
+            <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
+            <span>Resume</span>
+        </a>
+    </nav>
 
     <!-- jQuery + Owl -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
@@ -737,6 +935,8 @@
     <script src="JavaScript/autoYear.js" defer></script>
     <script src="JavaScript/heroRotation.js" defer></script>
     <script src="JavaScript/featuredTabs.js" defer></script>
+    <script src="JavaScript/projectFilter.js" defer></script>
+    <script src="JavaScript/profileLightbox.js" defer></script>
 
     <!-- Scroll reveal (vanilla IntersectionObserver) -->
     <script src="JavaScript/wow-init.js" defer></script>

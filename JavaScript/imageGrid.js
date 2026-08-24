@@ -11,6 +11,29 @@ document.addEventListener("DOMContentLoaded", () => {
     let slideIndex = 1;
     let lastFocused = null;
 
+    // Keep Tab inside the overlay while it is open, otherwise focus walks off
+    // into the page behind it and the dialog is effectively unusable by keyboard.
+    function trapFocus(container, e) {
+        if (e.key !== "Tab") return;
+        var focusable = container.querySelectorAll(
+            'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+        var visible = [];
+        for (var i = 0; i < focusable.length; i++) {
+            if (focusable[i].offsetParent !== null) visible.push(focusable[i]);
+        }
+        if (!visible.length) return;
+        var first = visible[0];
+        var last = visible[visible.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+        }
+    }
+
     function openModal(section, startIndex) {
         const slides = document.querySelectorAll(`#${section} .image-grid img`);
         if (!slides.length) return;
@@ -101,6 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (e.key === "ArrowLeft") plusSlides(-1);
         else if (e.key === "ArrowRight") plusSlides(1);
         else if (e.key === "Escape") closeModal();
+        else trapFocus(modal, e);
     });
 
     // Legacy global fallbacks (kept minimal in case older inline handlers remain)
