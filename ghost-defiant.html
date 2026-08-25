@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ghost Defiant | James Russo</title>
+    <meta name="description" content="Solo-shipped Mixed-Reality ghost-hunting shooter for Meta Quest 3, built in Unity 6 at a stable 72 FPS." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" />
+    <link rel="stylesheet" href="CSS/cathode.css" />
+</head>
+
+<body class="ct">
+    <a class="ct-btn ct-btn--sm ct-sr" href="#main">Skip to main content</a>
+
+    <nav class="ct-nav" aria-label="Primary">
+        <div class="ct-wrap ct-nav-in">
+            <a class="ct-mark" href="index.html" aria-label="James Russo, home">JR</a>
+            <span class="ct-brand">James Russo</span>
+
+            <button class="ct-burger" type="button"
+                    data-nav-toggle aria-expanded="false" aria-controls="nav-links">
+                <span class="material-symbols-rounded" aria-hidden="true">menu</span>
+                <span class="ct-sr">Toggle menu</span>
+            </button>
+
+            <ul class="ct-nav-links" id="nav-links" data-nav-links>
+                <li><a href="index.html#work">Work</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="work.html">Full detail</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+
+            <button class="ct-burger" type="button" data-theme-toggle aria-label="Switch to light mode">
+                <span class="material-symbols-rounded" data-theme-icon aria-hidden="true">light_mode</span>
+            </button>
+
+            <a class="ct-btn ct-btn--sm ct-btn--cta" href="index.html#contact">Hire Me</a>
+        </div>
+    </nav>
+
+    <main id="main">
+        <header class="ct-case-hero">
+            <div class="ct-wrap ct-inner">
+                <a class="ct-back" href="index.html#work">&larr; All work</a>
+                <span class="ct-bubble">Unity 6 &middot; Mixed Reality &middot; Solo</span>
+                <h1>Ghost Defiant</h1>
+                <p class="ct-lede">A Mixed-Reality ghost-hunting shooter for Quest&nbsp;3, built solo over roughly eight months as my Boise State senior capstone.</p>
+            </div>
+        </header>
+
+        <section class="ct-sec">
+            <div class="ct-wrap" style="display:flex;flex-direction:column;gap:var(--ct-s4)">
+                <dl class="ct-spec" aria-label="Project specifications">
+                    <div><dt>Role</dt><dd>Solo developer &amp; designer</dd></div>
+                    <div><dt>Engine</dt><dd>Unity&nbsp;6</dd></div>
+                    <div><dt>Platform</dt><dd>Meta Quest&nbsp;3 (MR)</dd></div>
+                    <div><dt>Team</dt><dd>1 (senior capstone)</dd></div>
+                    <div><dt>Duration</dt><dd>~8 months</dd></div>
+                    <div><dt>Status</dt><dd>Shipped, BSU senior showcase</dd></div>
+                </dl>
+
+                <div class="ct-actions">
+                    <a class="ct-btn" href="https://github.com/jamesrusso12/Ghost-Defiant" target="_blank" rel="noopener noreferrer">Source on GitHub</a>
+                    <a class="ct-btn ct-btn--ghost" href="img/game-development-3.mp4" target="_blank" rel="noopener noreferrer">Full playthrough</a>
+                </div>
+
+
+                <div class="ct-prose">
+                    <h2>The challenge</h2>
+                    <p>Design a Mixed-Reality ghost-hunting shooter that feels good on Quest&nbsp;3 hand-tracking, with a readable HUD, tight shoot feel and stable performance, in a semester, solo.</p>
+                    <h2>What I built</h2>
+                    <ul>
+                        <li><b>Custom debris and impact physics</b> on Unity&nbsp;6's physics system for destructible environments.</li>
+                        <li><b>Spatial audio and fog VFX pipeline</b> tuned for MR passthrough, so threats are legible by sound alone.</li>
+                        <li><b>Hand-tracking-first interaction model</b>, with grab thresholds, haptics and a spatial reticle tuned against playtest data.</li>
+                        <li><b>Diegetic HUD</b> designed for MR comfort: no eye-attached text, high-contrast glyphs.</li>
+                    </ul>
+                    <h2>Outcome</h2>
+                    <ul>
+                        <li><b>72 FPS</b> stable on Quest&nbsp;3 with full hand-tracking and passthrough.</li>
+                        <li><b>Solo-shipped</b> core loop, level, VFX, audio and UI.</li>
+                        <li>Selected for the Boise State senior showcase.</li>
+                    </ul>
+                </div>
+
+                <p class="ct-stack"><b>Stack:</b> Unity&nbsp;6 &middot; C# &middot; Meta AIO SDK&nbsp;v72 &middot; Hand Tracking &middot; Passthrough API &middot; Spatial Audio &middot; Blender</p>
+
+
+                <div class="ct-next">
+                    <a class="ct-btn ct-btn--ghost" href="bookshelf-adventures.html">Bookshelf Adventures</a>
+                    <a class="ct-btn ct-btn--ghost" href="unreal-prototypes.html">Unreal Prototypes</a>
+                    <a class="ct-btn ct-btn--ghost" href="index.html#work">All work</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="ct-footer">
+        <div class="ct-wrap">
+            <div class="ct-footer-in">
+                <span class="ct-mark" aria-hidden="true">JR</span>
+                <nav aria-label="Footer">
+                    <a href="index.html#work">Work</a>
+                    <a href="index.html#about">About</a>
+                    <a href="work.html">Full detail</a>
+                    <a href="index.html#contact">Contact</a>
+                </nav>
+                <span class="ct-social">
+                    <a href="mailto:jrusso03@icloud.com">Email</a>
+                    <a href="https://www.linkedin.com/in/jamesjrusso/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com/jamesrusso12" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </span>
+            </div>
+            <p class="ct-colophon">
+                &copy; <span data-year>2026</span> James Russo. Hand-written HTML, CSS and JavaScript.
+            </p>
+        </div>
+    </footer>
+
+    <script src="JavaScript/cathodeNav.js" defer></script>
+</body>
+</html>

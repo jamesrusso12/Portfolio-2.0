@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookshelf Adventures | James Russo</title>
+    <meta name="description" content="iOS ARKit reader co-built with Mississippi State's special-needs program, delivered to the partner program." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" />
+    <link rel="stylesheet" href="CSS/cathode.css" />
+</head>
+
+<body class="ct">
+    <a class="ct-btn ct-btn--sm ct-sr" href="#main">Skip to main content</a>
+
+    <nav class="ct-nav" aria-label="Primary">
+        <div class="ct-wrap ct-nav-in">
+            <a class="ct-mark" href="index.html" aria-label="James Russo, home">JR</a>
+            <span class="ct-brand">James Russo</span>
+
+            <button class="ct-burger" type="button"
+                    data-nav-toggle aria-expanded="false" aria-controls="nav-links">
+                <span class="material-symbols-rounded" aria-hidden="true">menu</span>
+                <span class="ct-sr">Toggle menu</span>
+            </button>
+
+            <ul class="ct-nav-links" id="nav-links" data-nav-links>
+                <li><a href="index.html#work">Work</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="work.html">Full detail</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+
+            <button class="ct-burger" type="button" data-theme-toggle aria-label="Switch to light mode">
+                <span class="material-symbols-rounded" data-theme-icon aria-hidden="true">light_mode</span>
+            </button>
+
+            <a class="ct-btn ct-btn--sm ct-btn--cta" href="index.html#contact">Hire Me</a>
+        </div>
+    </nav>
+
+    <main id="main">
+        <header class="ct-case-hero">
+            <div class="ct-wrap ct-inner">
+                <a class="ct-back" href="index.html#work">&larr; All work</a>
+                <span class="ct-bubble">iOS &middot; ARKit &middot; SwiftUI</span>
+                <h1>Bookshelf Adventures</h1>
+                <p class="ct-lede">An iOS augmented-reality reader built with Mississippi State's special-needs department, designed to be usable by children with cognitive and motor differences.</p>
+            </div>
+        </header>
+
+        <section class="ct-sec">
+            <div class="ct-wrap" style="display:flex;flex-direction:column;gap:var(--ct-s4)">
+                <dl class="ct-spec" aria-label="Project specifications">
+                    <div><dt>Role</dt><dd>AR Specialist &amp; co-UI designer</dd></div>
+                    <div><dt>Platform</dt><dd>iOS (iPad / iPhone)</dd></div>
+                    <div><dt>Stack</dt><dd>SwiftUI &middot; ARKit</dd></div>
+                    <div><dt>Team</dt><dd>Student team + MSU special-needs dept.</dd></div>
+                    <div><dt>Duration</dt><dd>Senior capstone (one semester)</dd></div>
+                    <div><dt>Status</dt><dd>Delivered to partner program</dd></div>
+                </dl>
+
+                <div class="ct-actions">
+                    <a class="ct-btn" href="uiux-design.html">Screens &amp; prototypes</a>
+                </div>
+
+
+                <div class="ct-prose">
+                    <h2>The challenge</h2>
+                    <p>Partner with Mississippi State's special-needs department to build an iOS AR reader that makes children's books come alive, accessible enough for kids with cognitive and motor differences, and stable on common classroom iPads.</p>
+                    <h2>What I owned</h2>
+                    <ul>
+                        <li><b>ARKit pipeline</b>: image recognition, 3D model placement and real-time tracking against physical book pages.</li>
+                        <li><b>Co-designed the UI</b> with the MSU research team, translating their accessibility research into SwiftUI components.</li>
+                        <li><b>AR scene rendering</b>: loading and positioning book-specific assets at runtime.</li>
+                    </ul>
+                    <h2>Outcome</h2>
+                    <ul>
+                        <li>Delivered to the MSU partner program for student use.</li>
+                        <li>Co-built with practicing accessibility researchers.</li>
+                        <li>Informed my approach to accessible XR ever since.</li>
+                    </ul>
+                </div>
+
+                <p class="ct-stack"><b>Stack:</b> SwiftUI &middot; ARKit &middot; Xcode &middot; Figma &middot; 3D modeling</p>
+
+                <div class="ct-shots">
+                    <figure>
+                        <img src="img/screenshots-and-photos/bookshelf-adventures-cover.png" alt="Bookshelf Adventures cover screen showing the app title over an illustrated bookshelf" loading="lazy" />
+                        <figcaption>Cover screen</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="img/screenshots-and-photos/bookshelf-adventures-augment-model.png" alt="A 3D character model overlaid on a physical book page through the device camera" loading="lazy" />
+                        <figcaption>AR model overlaid on a real page</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="img/screenshots-and-photos/bookshelf-adventures-classroom-login.png" alt="Classroom login screen with large, high-contrast entry fields" loading="lazy" />
+                        <figcaption>Classroom login, built for shared iPads</figcaption>
+                    </figure>
+                </div>
+
+
+                <div class="ct-next">
+                    <a class="ct-btn ct-btn--ghost" href="ghost-defiant.html">Ghost Defiant</a>
+                    <a class="ct-btn ct-btn--ghost" href="unreal-prototypes.html">Unreal Prototypes</a>
+                    <a class="ct-btn ct-btn--ghost" href="index.html#work">All work</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="ct-footer">
+        <div class="ct-wrap">
+            <div class="ct-footer-in">
+                <span class="ct-mark" aria-hidden="true">JR</span>
+                <nav aria-label="Footer">
+                    <a href="index.html#work">Work</a>
+                    <a href="index.html#about">About</a>
+                    <a href="work.html">Full detail</a>
+                    <a href="index.html#contact">Contact</a>
+                </nav>
+                <span class="ct-social">
+                    <a href="mailto:jrusso03@icloud.com">Email</a>
+                    <a href="https://www.linkedin.com/in/jamesjrusso/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com/jamesrusso12" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </span>
+            </div>
+            <p class="ct-colophon">
+                &copy; <span data-year>2026</span> James Russo. Hand-written HTML, CSS and JavaScript.
+            </p>
+        </div>
+    </footer>
+
+    <script src="JavaScript/cathodeNav.js" defer></script>
+</body>
+</html>

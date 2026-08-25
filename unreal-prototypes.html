@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unreal Prototypes | James Russo</title>
+    <meta name="description" content="Three Unreal Engine 5 prototypes built in Blueprints: a 2D fighter, a replicated multiplayer target range, and a parkour movement system." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" />
+    <link rel="stylesheet" href="CSS/cathode.css" />
+</head>
+
+<body class="ct">
+    <a class="ct-btn ct-btn--sm ct-sr" href="#main">Skip to main content</a>
+
+    <nav class="ct-nav" aria-label="Primary">
+        <div class="ct-wrap ct-nav-in">
+            <a class="ct-mark" href="index.html" aria-label="James Russo, home">JR</a>
+            <span class="ct-brand">James Russo</span>
+
+            <button class="ct-burger" type="button"
+                    data-nav-toggle aria-expanded="false" aria-controls="nav-links">
+                <span class="material-symbols-rounded" aria-hidden="true">menu</span>
+                <span class="ct-sr">Toggle menu</span>
+            </button>
+
+            <ul class="ct-nav-links" id="nav-links" data-nav-links>
+                <li><a href="index.html#work">Work</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="work.html">Full detail</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+
+            <button class="ct-burger" type="button" data-theme-toggle aria-label="Switch to light mode">
+                <span class="material-symbols-rounded" data-theme-icon aria-hidden="true">light_mode</span>
+            </button>
+
+            <a class="ct-btn ct-btn--sm ct-btn--cta" href="index.html#contact">Hire Me</a>
+        </div>
+    </nav>
+
+    <main id="main">
+        <header class="ct-case-hero">
+            <div class="ct-wrap ct-inner">
+                <a class="ct-back" href="index.html#work">&larr; All work</a>
+                <span class="ct-bubble">Unreal 5 &middot; Blueprints</span>
+                <h1>Unreal Prototypes</h1>
+                <p class="ct-lede">Three prototypes built in Unreal Engine&nbsp;5, entirely in Blueprints: a 2D fighter, a replicated multiplayer target range, and a parkour movement system.</p>
+            </div>
+        </header>
+
+        <section class="ct-sec">
+            <div class="ct-wrap" style="display:flex;flex-direction:column;gap:var(--ct-s4)">
+                <dl class="ct-spec" aria-label="Project specifications">
+                    <div><dt>Role</dt><dd>Solo developer</dd></div>
+                    <div><dt>Engine</dt><dd>Unreal Engine&nbsp;5</dd></div>
+                    <div><dt>Scripting</dt><dd>Blueprints</dd></div>
+                    <div><dt>Focus</dt><dd>Combat, replication, movement</dd></div>
+                    <div><dt>Duration</dt><dd>2024 to 2025</dd></div>
+                    <div><dt>Certification</dt><dd>Epic Games &amp; Unreal University</dd></div>
+                </dl>
+
+                <div class="ct-actions">
+                    <a class="ct-btn" href="game-development.html">Blueprint gallery</a>
+                </div>
+
+
+                <div class="ct-prose">
+                    <h2>2D Fighter</h2>
+                    <p>A fighting-game prototype showcasing AI combat logic, animation Blueprints and Blueprint-driven attack combo systems. Built out of the Unreal University course &ldquo;Build a Fighting Game in Unreal Engine&rdquo;.</p>
+                    <ul>
+                        <li><b>Attack system</b> routing Enhanced Input actions through a blocking check into separate air and ground attack branches.</li>
+                        <li><b>Block system</b> that sets an is-blocking flag and drops max walk speed to zero, restoring it on release.</li>
+                        <li><b>Damage handling</b> that subtracts from player health, updates the health bar, then branches to a death animation or a timed damage stun.</li>
+                        <li><b>Two-player input routing</b> through casts to the player character for move, jump, attack and block.</li>
+                    </ul>
+                    <h2>Target Practice MP</h2>
+                    <p>A multiplayer target range powered by Unreal's replication system, with networked scoring, dynamic spawns and hit detection. This is the prototype the demo on my landing page is built from.</p>
+                    <ul>
+                        <li><b>Target spawner</b> feeding a random index from an array of level target points into SpawnActor on a repeating timer.</li>
+                        <li><b>Hit resolution</b> that spawns an explosion emitter, increments the replicated score, plays a sound and destroys the target.</li>
+                        <li><b>Round handling</b> for targets that are never hit.</li>
+                    </ul>
+                    <h2>Parkour movement</h2>
+                    <p>A traversal system covering mantle, vault and wall-run, built on Unreal's character movement component.</p>
+                </div>
+
+                <p class="ct-stack"><b>Stack:</b> Unreal Engine&nbsp;5 &middot; Blueprints &middot; Enhanced Input &middot; Paper ZD &middot; Replication &middot; Behaviour Trees</p>
+
+                <div class="ct-shots">
+                    <figure>
+                        <img src="img/game-development-3.png" alt="Unreal Blueprint attack system: an Enhanced Input attack action checks the blocking state, locks walk speed, and routes into separate air attack and ground attack animation branches" loading="lazy" />
+                        <figcaption>Attack system Blueprint</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="img/game-development-11.png" alt="Unreal Blueprint for taking damage: incoming damage is subtracted from player health, the health bar updates, and the graph branches to a death animation or a timed damage stun" loading="lazy" />
+                        <figcaption>Damage and death branching</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="img/game-development-10.png" alt="Unreal Blueprint target spawner: an array of level target points feeds a random index into SpawnActor on a repeating one-second timer" loading="lazy" />
+                        <figcaption>Target Practice MP spawner</figcaption>
+                    </figure>
+                </div>
+
+
+                <div class="ct-next">
+                    <a class="ct-btn ct-btn--ghost" href="ghost-defiant.html">Ghost Defiant</a>
+                    <a class="ct-btn ct-btn--ghost" href="bookshelf-adventures.html">Bookshelf Adventures</a>
+                    <a class="ct-btn ct-btn--ghost" href="index.html#work">All work</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="ct-footer">
+        <div class="ct-wrap">
+            <div class="ct-footer-in">
+                <span class="ct-mark" aria-hidden="true">JR</span>
+                <nav aria-label="Footer">
+                    <a href="index.html#work">Work</a>
+                    <a href="index.html#about">About</a>
+                    <a href="work.html">Full detail</a>
+                    <a href="index.html#contact">Contact</a>
+                </nav>
+                <span class="ct-social">
+                    <a href="mailto:jrusso03@icloud.com">Email</a>
+                    <a href="https://www.linkedin.com/in/jamesjrusso/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com/jamesrusso12" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </span>
+            </div>
+            <p class="ct-colophon">
+                &copy; <span data-year>2026</span> James Russo. Hand-written HTML, CSS and JavaScript.
+            </p>
+        </div>
+    </footer>
+
+    <script src="JavaScript/cathodeNav.js" defer></script>
+</body>
+</html>

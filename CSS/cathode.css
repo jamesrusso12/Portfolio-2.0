@@ -510,3 +510,117 @@ a.ct-card:focus-visible {
         transition-duration: .01ms;
     }
 }
+
+/* ========================= case study pages =============================
+   Shared by ghost-defiant.html, bookshelf-adventures.html and
+   unreal-prototypes.html. Same token set, same bubble language.
+   ====================================================================== */
+.ct-case-hero { padding-block: var(--ct-s5) var(--ct-s4); }
+.ct-case-hero .ct-inner { display: flex; flex-direction: column; align-items: flex-start; gap: var(--ct-s2); }
+.ct-case-hero h1 {
+    font-size: clamp(2.1rem, 5.5vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.02;
+}
+.ct-case-hero .ct-lede {
+    color: var(--ct-muted);
+    font-size: clamp(1rem, 1.7vw, 1.1rem);
+    max-width: 60ch;
+}
+
+.ct-back {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--ct-s1);
+    font-size: .85rem;
+    color: var(--ct-muted);
+    margin-bottom: var(--ct-s2);
+}
+.ct-back:hover { color: var(--ct-accent); }
+
+/* Spec grid. 1px gaps over a border-coloured backing gives hairline rules
+   without per-cell border maths. */
+/* Fixed 3 columns rather than auto-fit: every spec block has exactly six
+   entries, so 3x2 always fills. auto-fit stranded the sixth cell in a row of
+   its own with the grid backing showing through as dead space. */
+.ct-spec {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--ct-border);
+    border: 1px solid var(--ct-border);
+    border-radius: var(--ct-radius);
+    overflow: hidden;
+    margin: 0;
+    width: 100%;
+}
+.ct-spec > div { background: var(--ct-surface); padding: 13px 15px; }
+.ct-spec dt {
+    font-family: var(--ct-font-mono);
+    font-size: .64rem;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--ct-muted);
+    margin: 0 0 4px;
+}
+.ct-spec dd { margin: 0; font-size: .9rem; font-weight: 600; line-height: 1.4; }
+
+.ct-prose { display: flex; flex-direction: column; gap: var(--ct-s3); max-width: 68ch; }
+.ct-prose h2 { font-size: clamp(1.25rem, 2.4vw, 1.55rem); font-weight: 700; }
+.ct-prose h3 { font-size: 1.02rem; font-weight: 700; }
+.ct-prose p { color: var(--ct-muted); }
+.ct-prose ul { display: flex; flex-direction: column; gap: var(--ct-s1); }
+.ct-prose li {
+    position: relative;
+    padding-left: 20px;
+    color: var(--ct-muted);
+    font-size: .93rem;
+}
+.ct-prose li::before {
+    content: "";
+    position: absolute;
+    left: 2px; top: .62em;
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    border: 2px solid var(--ct-accent);
+}
+.ct-prose li b, .ct-prose li strong { color: var(--ct-text); font-weight: 600; }
+
+.ct-stack {
+    font-family: var(--ct-font-mono);
+    font-size: .8rem;
+    color: var(--ct-muted);
+    background: var(--ct-surface);
+    border: 1px solid var(--ct-border);
+    border-radius: var(--ct-radius);
+    padding: 13px 15px;
+    line-height: 1.7;
+}
+.ct-stack b { color: var(--ct-text); }
+
+.ct-shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--ct-s2); }
+.ct-shots figure { margin: 0; display: flex; flex-direction: column; gap: var(--ct-s1); }
+.ct-shots img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid var(--ct-border);
+    border-radius: var(--ct-radius);
+    background: var(--ct-surface);
+}
+.ct-shots figcaption { font-size: .78rem; color: var(--ct-muted); }
+
+.ct-next {
+    display: flex;
+    gap: var(--ct-s2);
+    flex-wrap: wrap;
+    padding-top: var(--ct-s3);
+    border-top: 1px solid var(--ct-border);
+}
+
+@media (max-width: 760px) {
+    .ct-spec { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 460px) {
+    .ct-spec { grid-template-columns: 1fr; }
+}
