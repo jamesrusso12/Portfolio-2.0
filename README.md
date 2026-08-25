@@ -49,26 +49,53 @@ reel, OnRamp AR).
 
 ```
 Portfolio-2.0/
-├── index.html              # main page — hero, about, featured, contact
-├── game-development.html   # Unity/Unreal gallery
-├── web-development.html    # front-end gallery
-├── uiux-design.html        # iOS/UX gallery + screen recordings
-├── CSS/
-│   └── style.css           # single stylesheet (themed, tokenized)
-├── JavaScript/
-│   ├── smoothTransitions.js  # smooth-scroll + section reveal
-│   ├── navMenu.js            # nav + theme toggle
-│   ├── portfolio.js          # Owl Carousel init for prototypes reel
-│   ├── imageGrid.js          # accessible lightbox for galleries
-│   ├── formSpree.js          # contact form submission
-│   ├── featuredTabs.js       # case-study tab switching
-│   ├── wow-init.js           # IntersectionObserver-based scroll reveal
-│   └── autoYear.js           # footer year stamp
-├── img/                    # images & compressed videos
-├── fonts/                  # webfonts
+│
+├── index.html                    # landing: hero + playable target demo
+│
+├── ghost-defiant.html            # case studies
+├── bookshelf-adventures.html
+├── unreal-prototypes.html
+│
+├── game-development.html         # galleries
+├── uiux-design.html
+├── web-development.html
+├── work.html                     # legacy long-form page (pre-redesign)
+│
+├── assets/
+│   ├── css/
+│   │   ├── cathode.css           # design tokens + redesign styles
+│   │   └── style.css             # legacy stylesheet (galleries, work.html)
+│   ├── js/
+│   │   ├── targetDemo.js         # hero game-feel demo
+│   │   ├── cathodeNav.js         # nav + theme for the redesign
+│   │   ├── navMenu.js            # nav + theme for legacy pages
+│   │   ├── imageGrid.js          # accessible gallery lightbox
+│   │   ├── projectFilter.js      # project filter chips
+│   │   ├── profileLightbox.js    # hero avatar lightbox
+│   │   ├── heroRotation.js       # hero media rotator
+│   │   ├── featuredTabs.js       # case-study tab switching
+│   │   ├── formSpree.js          # contact form submission
+│   │   ├── smoothTransitions.js  # smooth scroll + reveal
+│   │   ├── portfolio.js          # Owl Carousel init
+│   │   ├── wow-init.js           # scroll reveal
+│   │   └── autoYear.js           # footer year stamp
+│   ├── img/                      # stills actually used by a page
+│   ├── video/                    # compressed video actually used by a page
+│   └── docs/
+│       └── current-resume.pdf
+│
+├── archive/                      # kept, but not referenced by any page
+│   ├── media/                    # old banners, drafts, superseded resumes
+│   └── fonts/                    # local webfonts, superseded by CDN
+│
+├── img/_originals/               # uncompressed video masters (gitignored)
+│
 └── scripts/
-    └── compress-videos.sh  # one-shot ffmpeg batch for heavy media
+    └── compress-videos.sh        # ffmpeg batch for heavy media
 ```
+
+Rule of thumb: if a page references it, it lives under `assets/`. If nothing
+references it but it is worth keeping, it lives under `archive/`.
 
 ---
 
@@ -89,7 +116,7 @@ a few features (iframe-based YouTube embeds, fetch-based form posts) may not.
 
 ## Re-compressing videos
 
-If you drop new raw footage into `img/`, run:
+If you drop new raw footage into `assets/video/`, run:
 
 ```sh
 brew install ffmpeg      # if you haven't already
@@ -107,7 +134,7 @@ brew install ffmpeg      # if you haven't already
 - **Email:** [jrusso03@icloud.com](mailto:jrusso03@icloud.com)
 - **LinkedIn:** [linkedin.com/in/jamesjrusso](https://www.linkedin.com/in/jamesjrusso/)
 - **GitHub:** [github.com/jamesrusso12](https://github.com/jamesrusso12)
-- **Resume:** [img/Current Resume.pdf](img/Current%20Resume.pdf)
+- **Resume:** [assets/docs/current-resume.pdf](assets/docs/current-resume.pdf)
 
 ---
 

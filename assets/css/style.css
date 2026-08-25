@@ -265,7 +265,7 @@ img, video, iframe {
     display: grid;
     align-items: center;
     overflow: hidden;
-    background-image: url("img/hero-poster.jpg");
+    background-image: url("assets/img/hero-poster.jpg");
     background-size: cover;
     background-position: center;
     animation: heroKenBurns 18s ease-in-out infinite alternate;

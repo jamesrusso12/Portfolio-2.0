@@ -8,17 +8,17 @@
     'use strict';
 
     var prototypes = [
-        { src: 'img/ghost-defiant-hero-loop.mp4',     caption: 'Ghost Defiant — MR Quest 3 gameplay (Unity 6)' },
-        { src: 'img/game-development-4.mp4',         caption: '2D Fighter — Unreal Engine 5' },
-        { src: 'img/game-development-1.mp4',         caption: 'Unity gameplay prototype' },
-        { src: 'img/game-development-2.mp4',         caption: 'Unity gameplay prototype' },
-        { src: 'img/AppDevelopment.mp4',              caption: 'OnRamp AR — Unity + ARKit' },
-        { src: 'img/app-development-1.mp4',          caption: 'iOS app development prototype' },
-        { src: 'img/web-development-1.mp4',          caption: 'Finance Simulator — web application' },
-        { src: 'img/web-development-2.mp4',          caption: 'Halo Maps Database — full-stack web' },
-        { src: 'img/web-development-3.mp4',          caption: 'Halo SpeedRuns — D3.js dashboard' },
-        { src: 'img/web-development-4.mp4',          caption: 'Web interaction prototype' },
-        { src: 'img/AlexaIntentBox.mp4',              caption: 'Alexa Intent Box — voice UX prototype' }
+        { src: 'assets/video/ghost-defiant-hero-loop.mp4',     caption: 'Ghost Defiant — MR Quest 3 gameplay (Unity 6)' },
+        { src: 'assets/video/game-development-4.mp4',         caption: '2D Fighter — Unreal Engine 5' },
+        { src: 'assets/video/game-development-1.mp4',         caption: 'Unity gameplay prototype' },
+        { src: 'assets/video/game-development-2.mp4',         caption: 'Unity gameplay prototype' },
+        { src: 'assets/video/appdevelopment.mp4',              caption: 'OnRamp AR — Unity + ARKit' },
+        { src: 'assets/video/app-development-1.mp4',          caption: 'iOS app development prototype' },
+        { src: 'assets/video/web-development-1.mp4',          caption: 'Finance Simulator — web application' },
+        { src: 'assets/video/web-development-2.mp4',          caption: 'Halo Maps Database — full-stack web' },
+        { src: 'assets/video/web-development-3.mp4',          caption: 'Halo SpeedRuns — D3.js dashboard' },
+        { src: 'assets/video/web-development-4.mp4',          caption: 'Web interaction prototype' },
+        { src: 'assets/video/alexaintentbox.mp4',              caption: 'Alexa Intent Box — voice UX prototype' }
     ];
 
     function setHeroVideo() {
