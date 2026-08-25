@@ -47,10 +47,14 @@
     </nav>
 
     <main id="main">
-        <header class="ct-hero" id="top">
+        <header class="ct-hero" id="top" data-blade-section>
             <div class="ct-wrap ct-hero-grid">
                 <div class="ct-hero-copy">
-                    <span class="ct-bubble ct-bubble--live">Open to junior gameplay roles</span>
+                    <span class="ct-blade" data-blade>
+                        <span class="ct-blade-orb" aria-hidden="true"></span>
+                        <span class="ct-blade-wire" aria-hidden="true"></span>
+                        <span class="ct-blade-bar">Open to junior gameplay roles</span>
+                    </span>
 
                     <h1>James Russo</h1>
                     <p class="ct-role">Gameplay &amp; XR Developer</p>
@@ -78,7 +82,7 @@
                 <!-- Optional game-feel demo. Nothing on this page depends on it. -->
                 <div class="ct-demo" data-target-demo>
                     <div class="ct-demo-bar">
-                        <span class="ct-bubble ct-bubble--quiet">Target Practice</span>
+                        <span class="ct-tag">Target Practice</span>
                         <span class="ct-hud">
                             <span><span class="lab">Score</span>
                                   <span class="val" data-demo-score>0</span></span>
@@ -117,7 +121,11 @@
         <section class="ct-sec" id="work">
             <div class="ct-wrap">
                 <div class="ct-sec-head">
-                    <span class="ct-bubble">Selected work</span>
+                    <span class="ct-blade" data-blade>
+                        <span class="ct-blade-orb" aria-hidden="true"></span>
+                        <span class="ct-blade-wire" aria-hidden="true"></span>
+                        <span class="ct-blade-bar">Selected work</span>
+                    </span>
                     <h2>Three things worth your time</h2>
                     <p>
                         Short landing, deeper pages. Each of these opens the full write-up rather
@@ -127,7 +135,7 @@
 
                 <div class="ct-grid">
                     <a class="ct-card ct-work" href="ghost-defiant.html">
-                        <span class="ct-bubble ct-bubble--quiet">Unity 6 · MR · Solo</span>
+                        <span class="ct-tag">Unity 6 · MR · Solo</span>
                         <h3>Ghost Defiant</h3>
                         <p>
                             Solo-shipped Mixed-Reality Quest&nbsp;3 shooter. Custom debris physics,
@@ -137,7 +145,7 @@
                     </a>
 
                     <a class="ct-card ct-work" href="bookshelf-adventures.html">
-                        <span class="ct-bubble ct-bubble--quiet">iOS · ARKit · SwiftUI</span>
+                        <span class="ct-tag">iOS · ARKit · SwiftUI</span>
                         <h3>Bookshelf Adventures</h3>
                         <p>
                             ARKit reader co-built with Mississippi State's special-needs program.
@@ -147,7 +155,7 @@
                     </a>
 
                     <a class="ct-card ct-work" href="unreal-prototypes.html">
-                        <span class="ct-bubble ct-bubble--quiet">Unreal 5 · Blueprints</span>
+                        <span class="ct-tag">Unreal 5 · Blueprints</span>
                         <h3>Unreal Prototypes</h3>
                         <p>
                             2D Fighter with AI combat and animation Blueprints, Target Practice MP
@@ -162,7 +170,11 @@
         <section class="ct-sec" id="about">
             <div class="ct-wrap">
                 <div class="ct-sec-head">
-                    <span class="ct-bubble">About</span>
+                    <span class="ct-blade" data-blade>
+                        <span class="ct-blade-orb" aria-hidden="true"></span>
+                        <span class="ct-blade-wire" aria-hidden="true"></span>
+                        <span class="ct-blade-bar">About</span>
+                    </span>
                     <h2>Four years of shipping things end to end</h2>
                     <p>
                         Boise State B.S. in Games, Interactive Media &amp; Mobile Technologies. Comfortable
@@ -174,17 +186,17 @@
 
                 <div class="ct-grid">
                     <div class="ct-card ct-work">
-                        <span class="ct-bubble ct-bubble--quiet">Engines</span>
+                        <span class="ct-tag">Engines</span>
                         <h3>Unity 6 &amp; Unreal 5</h3>
                         <p>C# gameplay systems in Unity. Blueprints in Unreal, including AI combat, replication and animation state machines.</p>
                     </div>
                     <div class="ct-card ct-work">
-                        <span class="ct-bubble ct-bubble--quiet">Certifications</span>
+                        <span class="ct-tag">Certifications</span>
                         <h3>Epic Games certified</h3>
                         <p>Unreal Engine Fundamentals and Introduction to Game Design from Epic, plus a Boise State XR Developer certificate.</p>
                     </div>
                     <div class="ct-card ct-work">
-                        <span class="ct-bubble ct-bubble--quiet">What I care about</span>
+                        <span class="ct-tag">What I care about</span>
                         <h3>How it feels</h3>
                         <p>Encounter pacing, readable movement, and the small polish players notice. The demo above is that argument in miniature.</p>
                     </div>
@@ -195,7 +207,11 @@
         <section class="ct-sec" id="contact">
             <div class="ct-wrap">
                 <div class="ct-sec-head">
-                    <span class="ct-bubble">Contact</span>
+                    <span class="ct-blade" data-blade>
+                        <span class="ct-blade-orb" aria-hidden="true"></span>
+                        <span class="ct-blade-wire" aria-hidden="true"></span>
+                        <span class="ct-blade-bar">Contact</span>
+                    </span>
                     <h2>Let's talk</h2>
                     <p>
                         Actively looking for full-time gameplay, XR, or interactive roles.
@@ -237,5 +253,6 @@
 
     <script src="assets/js/cathodeNav.js" defer></script>
     <script src="assets/js/targetDemo.js" defer></script>
+    <script src="assets/js/sectionBlades.js" defer></script>
 </body>
 </html>
