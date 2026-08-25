@@ -55,7 +55,7 @@
         var score = 0, combo = 0, bestCombo = 0;
         var shake = 0, hitStop = 0, flash = 0, flashColor = PALETTE.glow;
         var timeLeft = ROUND_SECONDS, spawnIn = 0;
-        var lastFrame = 0, rafId = 0, onScreen = true;
+        var lastFrame = 0, rafId = 0, onScreen = true, errorStreak = 0;
 
         function rand(a, b) { return a + Math.random() * (b - a); }
 
@@ -89,6 +89,9 @@
         }
 
         function drawTargetRing(x, y, r, alpha) {
+            // Canvas throws IndexSizeError on a negative arc radius, which would
+            // take the whole round down. Nothing to draw at or below zero anyway.
+            if (!(r > 0)) return;
             ctx.globalAlpha = alpha;
             ctx.strokeStyle = PALETTE.accent;
             ctx.lineWidth = 2.4;
@@ -132,8 +135,9 @@
             for (i = 0; i < targets.length; i++) {
                 t = targets[i];
                 if (t.hit) {
-                    var e = 1 - Math.pow(1 - t.pop, 3);
-                    ctx.globalAlpha = 1 - e;
+                    var pop = Math.min(1, Math.max(0, t.pop));
+                    var e = 1 - Math.pow(1 - pop, 3);
+                    ctx.globalAlpha = Math.max(0, 1 - e);
                     ctx.strokeStyle = PALETTE.glow;
                     ctx.lineWidth = 3;
                     ctx.beginPath();
@@ -142,10 +146,14 @@
                     ctx.globalAlpha = 1;
                     continue;
                 }
-                var age = (now - t.born) / t.life;
+                // Clamped at zero: rAF hands us the timestamp of the frame's
+                // start, which is earlier than the performance.now() a target was
+                // stamped with when it spawned during this same frame. That made
+                // age negative, inverted the ease, and produced a negative radius.
+                var age = Math.max(0, (now - t.born) / t.life);
                 var grow = age < 0.14 ? 1 - Math.pow(1 - age / 0.14, 3) : 1;
                 var alpha = age > 0.78 ? Math.max(0, 1 - (age - 0.78) / 0.22) : 1;
-                drawTargetRing(t.x, t.y, t.r * grow, alpha);
+                drawTargetRing(t.x, t.y, Math.max(0, t.r * grow), alpha);
             }
 
             for (i = 0; i < particles.length; i++) {
@@ -179,13 +187,15 @@
         }
 
         // ---- simulation --------------------------------------------------
-        function spawn() {
+        function spawn(now) {
             var r = rand(19, 34);
             var pad = r + 14;
             targets.push({
                 x: rand(pad, Math.max(pad + 1, W - pad)),
                 y: rand(pad, Math.max(pad + 1, H - pad)),
-                r: r, born: performance.now(), life: rand(1500, 2400),
+                r: r,
+                born: now,          // frame clock, so age is never negative
+                life: rand(1500, 2400),
                 hit: false, pop: 0
             });
         }
@@ -218,7 +228,7 @@
             var live = 0, i;
             for (i = 0; i < targets.length; i++) if (!targets[i].hit) live++;
             var allowed = Math.min(4, 1 + Math.floor((ROUND_SECONDS - timeLeft) / 9));
-            if (spawnIn <= 0 && live < allowed) { spawn(); spawnIn = rand(0.34, 0.72); }
+            if (spawnIn <= 0 && live < allowed) { spawn(now); spawnIn = rand(0.34, 0.72); }
 
             for (i = targets.length - 1; i >= 0; i--) {
                 var t = targets[i];
@@ -247,17 +257,21 @@
         function frame(now) {
             rafId = 0;
             if (phase !== 'playing') return;
-            var dt = Math.min((now - lastFrame) / 1000, 0.05);
+            // Never negative: a resumed tab or an out-of-order timestamp would
+            // otherwise run the simulation backwards.
+            var dt = Math.max(0, Math.min((now - lastFrame) / 1000, 0.05));
             lastFrame = now;
             try {
                 if (!step(dt, now)) return;
                 renderPlaying(now);
             } catch (err) {
-                // Never leave a dead loop behind a blank box.
+                // A single bad frame should cost a frame, not the round. Only
+                // bail out if we are failing repeatedly, so we never spin.
+                errorStreak++;
                 if (window.console) console.error('targetDemo:', err);
-                finish();
-                return;
+                if (errorStreak >= 10) { finish(); return; }
             }
+            errorStreak = 0;
             schedule();
         }
 
@@ -302,10 +316,11 @@
             if (scoreEl) scoreEl.textContent = '0';
 
             phase = 'playing';
+            errorStreak = 0;
             overlay.classList.add('is-hidden');
             overlay.setAttribute('aria-hidden', 'true');
             lastFrame = performance.now();
-            spawn();                       // guarantee something on frame one
+            spawn(lastFrame);              // guarantee something on frame one
             renderPlaying(lastFrame);      // paint synchronously, don't wait for rAF
             schedule();
         }
