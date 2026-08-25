@@ -49,26 +49,31 @@ reel, OnRamp AR).
 
 ```
 Portfolio-2.0/
-├── index.html              # main page — hero, about, featured, contact
-├── game-development.html   # Unity/Unreal gallery
-├── web-development.html    # front-end gallery
-├── uiux-design.html        # iOS/UX gallery + screen recordings
-├── CSS/
-│   └── style.css           # single stylesheet (themed, tokenized)
-├── JavaScript/
-│   ├── smoothTransitions.js  # smooth-scroll + section reveal
-│   ├── navMenu.js            # nav + theme toggle
-│   ├── portfolio.js          # Owl Carousel init for prototypes reel
-│   ├── imageGrid.js          # accessible lightbox for galleries
-│   ├── formSpree.js          # contact form submission
-│   ├── featuredTabs.js       # case-study tab switching
-│   ├── wow-init.js           # IntersectionObserver-based scroll reveal
-│   └── autoYear.js           # footer year stamp
-├── img/                    # images & compressed videos
-├── fonts/                  # webfonts
-└── scripts/
-    └── compress-videos.sh  # one-shot ffmpeg batch for heavy media
+│
+├── index.html                    # main page
+├── game-development.html         # Unity / Unreal gallery
+├── uiux-design.html              # iOS / UX gallery + screen recordings
+├── web-development.html          # front-end gallery
+│
+├── assets/
+│   ├── css/style.css             # single themed stylesheet
+│   ├── js/                       # nav, galleries, form, reveals
+│   ├── img/                      # stills a page references
+│   ├── video/                    # compressed video a page references
+│   └── docs/current-resume.pdf
+│
+├── archive/                      # kept, but referenced by no page
+│   ├── media/                    # old banners, drafts, superseded resumes
+│   ├── fonts/                    # local webfonts, superseded by CDN
+│   └── bootstrap-js/
+│
+├── img/_originals/               # uncompressed video masters (gitignored)
+│
+└── scripts/compress-videos.sh    # ffmpeg batch for heavy media
 ```
+
+Rule of thumb: if a page references it, it lives under `assets/`. If nothing
+references it but it is worth keeping, it lives under `archive/`.
 
 ---
 
@@ -89,7 +94,7 @@ a few features (iframe-based YouTube embeds, fetch-based form posts) may not.
 
 ## Re-compressing videos
 
-If you drop new raw footage into `img/`, run:
+If you drop new raw footage into `assets/video/`, run:
 
 ```sh
 brew install ffmpeg      # if you haven't already
@@ -107,7 +112,7 @@ brew install ffmpeg      # if you haven't already
 - **Email:** [jrusso03@icloud.com](mailto:jrusso03@icloud.com)
 - **LinkedIn:** [linkedin.com/in/jamesjrusso](https://www.linkedin.com/in/jamesjrusso/)
 - **GitHub:** [github.com/jamesrusso12](https://github.com/jamesrusso12)
-- **Resume:** [img/Current Resume.pdf](img/Current%20Resume.pdf)
+- **Resume:** [assets/docs/current-resume.pdf](assets/docs/current-resume.pdf)
 
 ---
 
