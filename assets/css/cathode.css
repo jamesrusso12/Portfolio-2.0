@@ -955,3 +955,50 @@ a.ct-card:focus-visible {
     .modal .next { right: 0; }
     .modal-image { max-height: 62vh; }
 }
+
+/* ======================= large displays ================================
+   At 2560px the 1120px shell used 43.8% of the screen, leaving 720px dead on
+   each side: more margin than content.
+
+   The fix scales the whole design rather than only stretching the column.
+   Bumping the root font size lifts every rem-based size and every spacing
+   token together, so proportions hold and the page does not turn into a wide
+   strip of small text. The shell widens alongside it.
+
+   Line length is safe because prose already caps itself in ch (.ct-blurb 46,
+   .ct-sec-head p 58, .ct-lede 60, .ct-prose 68), so the extra width goes to
+   the grids, the hero and the demo panel, which is where it is wanted.
+   ====================================================================== */
+/* 1400 catches the very common 1440 and 1512 laptop widths, which sat at 78%
+   of the screen before this step existed. */
+@media (min-width: 1400px) {
+    :root { --ct-maxw: 1240px; }
+}
+
+@media (min-width: 1600px) {
+    html { font-size: 17px; }
+    :root { --ct-maxw: 1320px; }
+    .ct-gallery { grid-auto-rows: 180px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+}
+
+@media (min-width: 2000px) {
+    html { font-size: 18px; }
+    :root { --ct-maxw: 1480px; }
+    .ct-gallery { grid-auto-rows: 200px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+    .ct-hero { padding-block: calc(var(--ct-s6) * 1.15) var(--ct-s6); }
+}
+
+@media (min-width: 2400px) {
+    html { font-size: 19px; }
+    :root { --ct-maxw: 1620px; }
+    .ct-gallery { grid-auto-rows: 225px; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); }
+}
+
+/* Ultrawide. Past this the shell stops growing on purpose: a longer measure
+   stops helping and the eye has to travel too far between the nav and the
+   content. */
+@media (min-width: 3000px) {
+    html { font-size: 20px; }
+    :root { --ct-maxw: 1840px; }
+    .ct-gallery { grid-auto-rows: 250px; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+}
