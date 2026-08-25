@@ -34,7 +34,6 @@
     --ct-on-accent:   var(--ct-ground);
 
     --ct-radius:      14px;
-    --ct-radius-pill: 999px;
     --ct-maxw:        1120px;
 
     --ct-shadow: 0 24px 60px -30px rgba(0, 0, 0, .9);
@@ -288,7 +287,7 @@ a.ct-card:focus-visible {
     flex: none;
     display: grid;
     place-items: center;
-    border-radius: 9px;
+    border-radius: 4px;
     background: var(--ct-accent);
     color: var(--ct-on-accent);
     font-family: var(--ct-font-display);
@@ -306,7 +305,17 @@ a.ct-card:focus-visible {
 .ct-nav-links a { color: inherit; }
 .ct-nav-links a:hover { color: var(--ct-accent); }
 
+/* Buttons carry the same silhouette as a blade bar: angled top-left corner,
+   slanted right end.
+
+   The shape lives on a pseudo-element rather than on the button itself, and
+   that is deliberate. clip-path clips a focus ring along with everything else,
+   so clipping the button directly would leave keyboard users with no visible
+   focus at all. The button stays an unclipped box, the ::before carries the
+   fill, and the outline renders outside it as normal. */
 .ct-btn {
+    position: relative;
+    isolation: isolate;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -314,23 +323,48 @@ a.ct-card:focus-visible {
     font-family: var(--ct-font-body);
     font-size: .9rem;
     font-weight: 700;
-    padding: 11px 20px;
-    border-radius: var(--ct-radius-pill);
-    background: var(--ct-accent);
-    color: var(--ct-on-accent);
-    border: 1px solid var(--ct-accent);
-    cursor: pointer;
-    transition: filter .14s ease, transform .12s ease;
-}
-.ct-btn:hover { filter: brightness(1.08); }
-.ct-btn:active { transform: scale(.97); }
-.ct-btn--sm { font-size: .85rem; padding: 8px 16px; }
-.ct-btn--ghost {
+    padding: 11px 22px 11px 18px;
     background: transparent;
-    color: var(--ct-text);
-    border-color: var(--ct-border-lit);
+    border: 0;
+    color: var(--ct-on-accent);
+    cursor: pointer;
+    transition: color .16s ease, transform .12s ease;
 }
-.ct-btn--ghost:hover { border-color: var(--ct-accent); color: var(--ct-accent); filter: none; }
+.ct-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--ct-accent);
+    clip-path: polygon(8px 0, 100% 0, calc(100% - 10px) 100%, 0 100%, 0 8px);
+    transition: background .16s ease, filter .16s ease;
+}
+.ct-btn:hover::before { filter: brightness(1.08); }
+.ct-btn:active { transform: scale(.97); }
+.ct-btn--sm { font-size: .85rem; padding: 8px 18px 8px 14px; }
+
+/* Ghost variant. Two stacked layers give a 1px stroke that follows the angle:
+   the outer one is the stroke colour, the inner one insets by 1px and paints
+   the ground back over it. A plain border cannot do this, because clip-path
+   would cut the border off along the diagonal. */
+.ct-btn--ghost { color: var(--ct-text); }
+.ct-btn--ghost::before { background: var(--ct-border-lit); }
+.ct-btn--ghost::after {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    z-index: -1;
+    background: var(--ct-ground);
+    clip-path: polygon(8px 0, 100% 0, calc(100% - 10px) 100%, 0 100%, 0 8px);
+    transition: background .16s ease;
+}
+.ct-btn--ghost:hover { color: var(--ct-accent); }
+.ct-btn--ghost:hover::before { background: var(--ct-accent); filter: none; }
+
+/* On a surface rather than the page ground, the ghost fill has to match the
+   surface or the cut-out reads as a hole. */
+.ct-card .ct-btn--ghost::after,
+.ct-demo .ct-btn--ghost::after { background: var(--ct-surface); }
 
 .ct-burger {
     display: none;
@@ -385,12 +419,17 @@ a.ct-card:focus-visible {
 .ct-blurb { color: var(--ct-muted); font-size: clamp(.95rem, 1.5vw, 1.02rem); max-width: 46ch; }
 .ct-blurb b { color: var(--ct-text); font-weight: 600; }
 .ct-chips { display: flex; flex-wrap: wrap; gap: 7px; }
+/* Chips match the card tags: squared off, mono caps, no pill anywhere. */
 .ct-chips li {
-    font-size: .75rem; font-weight: 600;
-    padding: 5px 11px;
-    border-radius: var(--ct-radius-pill);
-    background: var(--ct-surface);
-    border: 1px solid var(--ct-border);
+    font-family: var(--ct-font-mono);
+    font-size: .68rem;
+    font-weight: 500;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 3px;
+    background: transparent;
+    border: 1px solid var(--ct-border-lit);
     color: var(--ct-muted);
 }
 .ct-actions { display: flex; gap: var(--ct-s1); flex-wrap: wrap; }
