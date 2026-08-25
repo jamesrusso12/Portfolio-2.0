@@ -1,194 +1,159 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Game Development | James Russo</title>
-
-    <meta name="description" content="James Russo — Unity & Unreal Engine Game Development Portfolio">
-    <meta property="og:title" content="Game Development | James Russo">
-    <meta property="og:description" content="VR/MR experiences and interactive game systems">
-    <meta property="og:type" content="website">
-
-    <!-- Theme init (prevents FOUC on page load) -->
-    <script>
-        (function () {
-            try {
-                var saved = localStorage.getItem('theme');
-                var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                document.documentElement.setAttribute('data-theme', saved || (prefersDark ? 'dark' : 'light'));
-            } catch (e) { }
-        })();
-    </script>
-
-    <!-- Animate.css for WOW.js scroll animations -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <!-- Google Material Symbols for icons -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/bc56acafc1.js" crossorigin="anonymous" defer></script>
+    <meta name="description" content="Unity and Unreal Engine work by James Russo: gameplay prototypes, Blueprint systems and engine screenshots." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" />
+    <link rel="stylesheet" href="assets/css/cathode.css" />
 </head>
 
-<body>
-    <!-- Skip to main content (accessibility) -->
-    <a class="skip-link" href="#main">Skip to main content</a>
+<body class="ct">
+    <a class="ct-btn ct-btn--sm ct-sr" href="#main">Skip to main content</a>
 
-    <!-- TOP NAVIGATION BAR -->
-    <nav class="topnav glass-card" role="navigation" aria-label="Primary">
-        <div class="nav-inner container">
-            <!-- Brand / Logo -->
-            <a class="brand" href="index.html" aria-label="Go to home">
-                <span class="brand-mark">JR</span>
-                <span class="brand-name">James Russo</span>
-            </a>
+    <nav class="ct-nav" aria-label="Primary">
+        <div class="ct-wrap ct-nav-in">
+            <a class="ct-mark" href="index.html" aria-label="James Russo, home">JR</a>
+            <span class="ct-brand">James Russo</span>
 
-            <!-- Hamburger for mobile -->
-            <button class="hamburger" aria-expanded="false" aria-controls="primary-links">
+            <button class="ct-burger" type="button"
+                    data-nav-toggle aria-expanded="false" aria-controls="nav-links">
                 <span class="material-symbols-rounded" aria-hidden="true">menu</span>
-                <span class="sr-only">Toggle menu</span>
+                <span class="ct-sr">Toggle menu</span>
             </button>
 
-            <!-- Primary Links -->
-            <ul id="primary-links" class="nav-links">
+            <ul class="ct-nav-links" id="nav-links" data-nav-links>
+                <li><a href="index.html#work">Work</a></li>
+                <li><a href="prototypes.html">Prototypes</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="index.html#work">Featured Projects</a></li>
-                <li><a href="prototypes.html">Technical Prototypes</a></li>
-                <li><a href="about.html#experience">Experience</a></li>
-                <li><a href="index.html#work">Services</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
 
-            <!-- CTA button -->
-            <a href="index.html#contact" class="btn small cta">Hire Me</a>
-
-            <!-- Theme toggle button -->
-            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
-                <span class="material-symbols-rounded" id="theme-icon">dark_mode</span>
+            <button class="ct-burger" type="button" data-theme-toggle aria-label="Switch to light mode">
+                <span class="material-symbols-rounded" data-theme-icon aria-hidden="true">light_mode</span>
             </button>
+
+            <a class="ct-btn ct-btn--sm ct-btn--cta" href="index.html#contact">Hire Me</a>
         </div>
     </nav>
-    <!-- END TOP NAV -->
 
-    <main id="main" role="main">
-
-    <!-- PAGE HEADER -->
-    <section id="home" style="min-height: auto; padding: 100px 0 60px;">
-        <div class="container">
-            <h1 class="sub-title wow animate__fadeInDown" data-wow-delay="0.1s" style="margin-bottom: 1rem;">
-                <i class="fa-brands fa-unity" style="color: var(--color-accent); margin-right: 10px;"></i>
-                Unity and Unreal Engine Game Design & Development
-            </h1>
-            <p class="portfolio-intro wow animate__fadeInUp" data-wow-delay="0.2s">
-                I've developed a range of Unity and Unreal Engine projects including 2D platformers, VR experiences, and Mixed Reality
-                applications. In one of my early projects, I created a fully functional 2D platformer with AI-driven enemies, player health
-                systems, wall-running mechanics, and comprehensive gameplay systems.
-            </p>
-            <p class="portfolio-intro wow animate__fadeInUp" data-wow-delay="0.25s">
-                My final capstone project, <strong>Ghost Defiant</strong>, is a 3D Mixed Reality ghost-hunting shooter built with Unity 6
-                and Meta's AIO SDK v72 for Quest 3, featuring hand tracking, passthrough integration, spatial audio, optimized physics systems
-                with debris interaction, fog particle effects, and custom UI/UX design.
-            </p>
-            <a href="index.html#work" class="btn dark wow animate__fadeInUp" data-wow-delay="0.3s">
-                <i class="fa-solid fa-arrow-left" style="margin-right: 8px;"></i>
-                Back to Services
-            </a>
-        </div>
-    </section>
-
-    <!-- IMAGE GALLERY SECTION -->
-    <section id="photo-gallery" class="photo-gallery">
-        <div class="container">
-            <!-- Unity Gallery -->
-            <div id="unity-gallery" class="gallery-content active glass-card wow animate__fadeInUp" data-wow-delay="0.2s" style="margin-bottom: 40px;">
-                <h2 class="gallery-title">Unity Projects</h2>
-                <div class="image-grid">
-                    <img src="assets/img/game-development-1.jpg" alt="Unity Editor on the Prototype 2 scene: a yellow ramp with red and green box obstacles over low-poly terrain, shown in both Scene and Game views" class="wide hover-shadow" loading="lazy" tabindex="0">
-                    <img src="assets/img/game-development-2.jpg" alt="Unity Editor on the Prototype 1 scene: a red pickup driving a road lined with obstacles, with Rigidbody and Player Controller settings open in the Inspector" class="hover-shadow" loading="lazy" tabindex="0">
-                    <img src="assets/img/game-development-3.jpg" alt="Unity Editor on the Challenge 1 scene: a propeller plane threading dark obstacle walls above low-poly mountains, with the mountain skybox selected" class="tall hover-shadow" loading="lazy" tabindex="0">
-                    <img src="assets/img/game-development-4.jpg" alt="Unity Editor on the Prototype 3 side-scroller: a farmer character on a city street backdrop, with the SpawnManager C# script open and a compile error in the console" class="tall hover-shadow" loading="lazy" tabindex="0">
-                    <img src="assets/img/game-development-5.jpg" alt="Unity Editor on the Prototype 3 side-scroller with a purple nebula sprite swapped in as the background, Sprite Renderer settings shown in the Inspector" class="wide hover-shadow" loading="lazy" tabindex="0">
-                    <img src="assets/img/game-development-6.jpg" alt="Unity Editor on the Prototype 1 scene: the player truck approaching hay-bale obstacles, with Rigidbody mass and collision settings in the Inspector" class="tall hover-shadow" loading="lazy" tabindex="0">
-                    <img src="assets/img/game-development-7.jpg" alt="Unity Editor on a first-person game design prototype: a grey block-out city with the NavMesh AI navigation overlay enabled and gameplay scripts for enemies, health, shooting, and spawning in the project panel" class="wide hover-shadow" loading="lazy" tabindex="0">
-                    <img src="assets/img/game-development-8.jpg" alt="Unity Editor on the Prototype 4 scene: a checkered sphere player and orange cone enemies on a hexagonal island, with the Enemy prefab's Rigidbody and collider settings open" class="tall hover-shadow" loading="lazy" tabindex="0">
-                    <img src="assets/img/game-development-9.jpg" alt="Visual Studio showing PlayerMovement.cs from the 2D platformer, with wall-jump logic, animator parameters, and the Jump method visible" class="wide hover-shadow" loading="lazy" tabindex="0">
-                </div>
+    <main id="main">
+        <header class="ct-case-hero" data-blade-section>
+            <div class="ct-wrap ct-inner">
+                <a class="ct-back" href="index.html">&larr; Home</a>
+                <span class="ct-blade is-active" data-blade>
+                        <span class="ct-blade-orb" aria-hidden="true"></span>
+                        <span class="ct-blade-wire" aria-hidden="true"></span>
+                        <span class="ct-blade-bar">Game development</span>
+                    </span>
+                <h1>Unity and Unreal Engine</h1>
+                <p class="ct-lede">
+                    Engine screenshots and Blueprint graphs from the projects behind my prototypes:
+                    2D platformers, VR and Mixed Reality experiences, and the Unreal fighting-game
+                    and multiplayer systems built entirely in Blueprints.
+                </p>
             </div>
+        </header>
 
-            <!-- Unreal Gallery -->
-            <div id="unreal-gallery" class="gallery-content active glass-card wow animate__fadeInUp" data-wow-delay="0.3s">
-                <h2 class="gallery-title">Unreal Engine Projects</h2>
-                <div class="image-grid">
-                    <img src="assets/img/game-development-1.png" alt="Unreal Blueprint graph for an air attack: a custom event collects actors overlapping the air attack box, loops through them, and applies damage to each" class="wide hover-shadow" loading="lazy" tabindex="0">
-                    <img src="assets/img/game-development-2.png" alt="Unreal Blueprint graph for a ground attack: the attack box's overlapping actors are looped through and dealt damage" class="hover-shadow" loading="lazy" tabindex="0">
-                    <img src="assets/img/game-development-3.png" alt="Unreal Blueprint attack system: an Enhanced Input attack action checks the blocking state, locks walk speed, and routes into separate air attack and ground attack animation branches" class="tall hover-shadow" loading="lazy" tabindex="0">
-                    <img src="assets/img/game-development-4.png" alt="Unreal Blueprint block system: the block input sets an is-blocking flag and drops max walk speed to zero, restoring the player's speed on release" class="hover-shadow" loading="lazy" tabindex="0">
-                    <img src="assets/img/game-development-5.png" alt="Unreal Blueprint character setup: on BeginPlay the graph casts to the player controller, adds the fighting input mapping context, then sets player speed and max health" class="hover-shadow" loading="lazy" tabindex="0">
-                    <img src="assets/img/game-development-6.png" alt="Unreal Blueprint for movement and jumping: the jump input checks whether the player is blocking before calling Jump or Stop Jumping" class="hover-shadow" loading="lazy" tabindex="0">
-                    <img src="assets/img/game-development-7.png" alt="Wide view of the player two input Blueprint, routing move, jump, attack, and block actions through casts to the player character" class="hover-shadow" loading="lazy" tabindex="0">
-                    <img src="assets/img/game-development-8.png" alt="Unreal Blueprint for enemy AI: pawn sensing flags the player on the blackboard, an attack montage plays, and an axe is spawned and attached to the hand socket" class="hover-shadow" loading="lazy" tabindex="0">
-                    <img src="assets/img/game-development-9.png" alt="Unreal Blueprint for the pause menu: the pause input creates the menu widget, adds it to the viewport, switches to Game and UI input mode, and pauses the game" class="hover-shadow" loading="lazy" tabindex="0">
-                    <img src="assets/img/game-development-10.png" alt="Unreal Blueprint target spawner: an array of level target points feeds a random index into SpawnActor on a repeating one-second timer" class="hover-shadow" loading="lazy" tabindex="0">
-                    <img src="assets/img/game-development-11.png" alt="Unreal Blueprint for taking damage: incoming damage is subtracted from player health, the health bar updates, and the graph branches to a death animation or a timed damage stun" class="hover-shadow" loading="lazy" tabindex="0">
-                    <img src="assets/img/game-development-12.png" alt="Unreal Blueprint for a target being hit: the overlap spawns an explosion emitter, increments the score, plays a sound, and destroys the target" class="hover-shadow" loading="lazy" tabindex="0">
-                    <img src="assets/img/game-development-13.png" alt="Unreal Blueprint for targets that are never hit: after a five second delay a sound plays, the actor is destroyed, and the game quits" class="hover-shadow" loading="lazy" tabindex="0">
+        <section class="ct-sec" id="sec-unity-gallery" data-blade-section>
+            <div class="ct-wrap">
+                <div class="ct-sec-head">
+                    <span class="ct-blade" data-blade>
+                        <span class="ct-blade-orb" aria-hidden="true"></span>
+                        <span class="ct-blade-wire" aria-hidden="true"></span>
+                        <span class="ct-blade-bar">Unity</span>
+                    </span>
+                    <h2>Unity Projects</h2>
+                    <p>Editor captures from the Unity Learn prototype series and my own game-design prototype.</p>
                 </div>
-            </div>
-
-            <!-- The Modal (Hidden Initially) -->
-            <div id="myModal" class="modal" aria-hidden="true" role="dialog" aria-label="Image gallery">
-                <button type="button" class="close cursor" aria-label="Close gallery">&times;</button>
-                <div class="modal-content">
-                    <div id="modal-slides"></div>
-
-                    <!-- Next/Previous Controls -->
-                    <button type="button" class="prev" aria-label="Previous image">&#10094;</button>
-                    <button type="button" class="next" aria-label="Next image">&#10095;</button>
-
-                    <!-- Caption Text -->
-                    <div class="caption-container">
-                        <p id="caption"></p>
+                <div id="unity-gallery" class="gallery-content">
+                    <div class="image-grid ct-gallery">
+                        <img src="assets/img/game-development-1.jpg" alt="Unity Editor on the Prototype 2 scene: a yellow ramp with red and green box obstacles over low-poly terrain, shown in both Scene and Game views" class="wide" loading="lazy" tabindex="0" />
+                        <img src="assets/img/game-development-2.jpg" alt="Unity Editor on the Prototype 1 scene: a red pickup driving a road lined with obstacles, with Rigidbody and Player Controller settings open in the Inspector" loading="lazy" tabindex="0" />
+                        <img src="assets/img/game-development-3.jpg" alt="Unity Editor on the Challenge 1 scene: a propeller plane threading dark obstacle walls above low-poly mountains, with the mountain skybox selected" class="tall" loading="lazy" tabindex="0" />
+                        <img src="assets/img/game-development-4.jpg" alt="Unity Editor on the Prototype 3 side-scroller: a farmer character on a city street backdrop, with the SpawnManager C# script open and a compile error in the console" class="tall" loading="lazy" tabindex="0" />
+                        <img src="assets/img/game-development-5.jpg" alt="Unity Editor on the Prototype 3 side-scroller with a purple nebula sprite swapped in as the background, Sprite Renderer settings shown in the Inspector" class="wide" loading="lazy" tabindex="0" />
+                        <img src="assets/img/game-development-6.jpg" alt="Unity Editor on the Prototype 1 scene: the player truck approaching hay-bale obstacles, with Rigidbody mass and collision settings in the Inspector" class="tall" loading="lazy" tabindex="0" />
+                        <img src="assets/img/game-development-7.jpg" alt="Unity Editor on a first-person game design prototype: a grey block-out city with the NavMesh AI navigation overlay enabled and gameplay scripts for enemies, health, shooting, and spawning in the project panel" class="wide" loading="lazy" tabindex="0" />
+                        <img src="assets/img/game-development-8.jpg" alt="Unity Editor on the Prototype 4 scene: a checkered sphere player and orange cone enemies on a hexagonal island, with the Enemy prefab's Rigidbody and collider settings open" class="tall" loading="lazy" tabindex="0" />
+                        <img src="assets/img/game-development-9.jpg" alt="Visual Studio showing PlayerMovement.cs from the 2D platformer, with wall-jump logic, animator parameters, and the Jump method visible" class="wide" loading="lazy" tabindex="0" />
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
+        <section class="ct-sec" id="sec-unreal-gallery" data-blade-section>
+            <div class="ct-wrap">
+                <div class="ct-sec-head">
+                    <span class="ct-blade" data-blade>
+                        <span class="ct-blade-orb" aria-hidden="true"></span>
+                        <span class="ct-blade-wire" aria-hidden="true"></span>
+                        <span class="ct-blade-bar">Unreal</span>
+                    </span>
+                    <h2>Unreal Engine Projects</h2>
+                    <p>Blueprint graphs from the 2D fighter, the multiplayer target range and the enemy AI.</p>
+                </div>
+                <div id="unreal-gallery" class="gallery-content">
+                    <div class="image-grid ct-gallery">
+                        <img src="assets/img/game-development-1.png" alt="Unreal Blueprint graph for an air attack: a custom event collects actors overlapping the air attack box, loops through them, and applies damage to each" class="wide" loading="lazy" tabindex="0" />
+                        <img src="assets/img/game-development-2.png" alt="Unreal Blueprint graph for a ground attack: the attack box's overlapping actors are looped through and dealt damage" loading="lazy" tabindex="0" />
+                        <img src="assets/img/game-development-3.png" alt="Unreal Blueprint attack system: an Enhanced Input attack action checks the blocking state, locks walk speed, and routes into separate air attack and ground attack animation branches" class="tall" loading="lazy" tabindex="0" />
+                        <img src="assets/img/game-development-4.png" alt="Unreal Blueprint block system: the block input sets an is-blocking flag and drops max walk speed to zero, restoring the player's speed on release" loading="lazy" tabindex="0" />
+                        <img src="assets/img/game-development-5.png" alt="Unreal Blueprint character setup: on BeginPlay the graph casts to the player controller, adds the fighting input mapping context, then sets player speed and max health" loading="lazy" tabindex="0" />
+                        <img src="assets/img/game-development-6.png" alt="Unreal Blueprint for movement and jumping: the jump input checks whether the player is blocking before calling Jump or Stop Jumping" loading="lazy" tabindex="0" />
+                        <img src="assets/img/game-development-7.png" alt="Wide view of the player two input Blueprint, routing move, jump, attack, and block actions through casts to the player character" loading="lazy" tabindex="0" />
+                        <img src="assets/img/game-development-8.png" alt="Unreal Blueprint for enemy AI: pawn sensing flags the player on the blackboard, an attack montage plays, and an axe is spawned and attached to the hand socket" loading="lazy" tabindex="0" />
+                        <img src="assets/img/game-development-9.png" alt="Unreal Blueprint for the pause menu: the pause input creates the menu widget, adds it to the viewport, switches to Game and UI input mode, and pauses the game" loading="lazy" tabindex="0" />
+                        <img src="assets/img/game-development-10.png" alt="Unreal Blueprint target spawner: an array of level target points feeds a random index into SpawnActor on a repeating one-second timer" loading="lazy" tabindex="0" />
+                        <img src="assets/img/game-development-11.png" alt="Unreal Blueprint for taking damage: incoming damage is subtracted from player health, the health bar updates, and the graph branches to a death animation or a timed damage stun" loading="lazy" tabindex="0" />
+                        <img src="assets/img/game-development-12.png" alt="Unreal Blueprint for a target being hit: the overlap spawns an explosion emitter, increments the score, plays a sound, and destroys the target" loading="lazy" tabindex="0" />
+                        <img src="assets/img/game-development-13.png" alt="Unreal Blueprint for targets that are never hit: after a five second delay a sound plays, the actor is destroyed, and the game quits" loading="lazy" tabindex="0" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+                <div id="myModal" class="modal" aria-hidden="true" role="dialog" aria-label="Image gallery">
+                    <button type="button" class="close cursor" aria-label="Close gallery">&times;</button>
+                    <div class="modal-content">
+                        <div id="modal-slides"></div>
+                        <button type="button" class="prev" aria-label="Previous image">&#10094;</button>
+                        <button type="button" class="next" aria-label="Next image">&#10095;</button>
+                        <div class="caption-container">
+                            <p id="caption"></p>
+                        </div>
+                    </div>
+                </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="site-footer" role="contentinfo">
-        <div class="container footer-inner">
-            <div class="footer-brand">
-                <span class="brand-mark">JR</span>
-                <span>James Russo</span>
+    <footer class="ct-footer">
+        <div class="ct-wrap">
+            <div class="ct-footer-in">
+                <span class="ct-mark" aria-hidden="true">JR</span>
+                <nav aria-label="Footer">
+                    <a href="index.html#work">Work</a>
+                    <a href="prototypes.html">Prototypes</a>
+                    <a href="about.html">About</a>
+                    <a href="index.html#contact">Contact</a>
+                </nav>
+                <span class="ct-social">
+                    <a href="mailto:jrusso03@icloud.com">Email</a>
+                    <a href="https://www.linkedin.com/in/jamesjrusso/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com/jamesrusso12" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </span>
             </div>
-            <nav class="footer-nav" aria-label="Footer">
-                <a href="about.html">About</a>
-                <a href="index.html#work">Projects</a>
-                <a href="index.html#contact">Contact</a>
-                <a href="assets/docs/current-resume.pdf" download>Resume</a>
-            </nav>
-            <div class="footer-social" aria-label="Social">
-                <a href="mailto:jrusso03@icloud.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
-                <a href="https://www.linkedin.com/in/jamesjrusso/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-                <a href="https://github.com/jamesrusso12" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
-            </div>
+            <p class="ct-colophon">
+                &copy; <span data-year>2026</span> James Russo. Hand-written HTML, CSS and JavaScript.
+            </p>
         </div>
-        <p class="copyright">&copy; <span id="year"></span> James Russo.</p>
     </footer>
-    <!-- End Footer -->
 
-    <!-- JS -->
-    <script src="assets/js/smoothTransitions.js"></script>
-    <script src="assets/js/navMenu.js" defer></script>
+    <script src="assets/js/cathodeNav.js" defer></script>
+    <script src="assets/js/sectionBlades.js" defer></script>
     <script src="assets/js/imageGrid.js" defer></script>
-    <script src="assets/js/autoYear.js" defer></script>
-
-    <!-- Scroll reveal (vanilla IntersectionObserver) -->
-    <script src="assets/js/wow-init.js" defer></script>
 </body>
-
 </html>

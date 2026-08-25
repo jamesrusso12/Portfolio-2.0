@@ -809,3 +809,149 @@ a.ct-card:focus-visible {
 @media (max-width: 640px) {
     .ct-entry-dates { margin-left: 0; }
 }
+
+/* ========================== gallery pages ==============================
+   The class names .image-grid, .gallery-content, .modal, .mySlides,
+   .modal-image, .numbertext, .close, .prev and .next are the contract
+   imageGrid.js already relies on, including the role="button" and keyboard
+   handling it attaches. They are kept exactly and restyled here, rather than
+   renamed, so the accessible lightbox keeps working untouched.
+   ====================================================================== */
+.ct-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    grid-auto-rows: 150px;
+    grid-auto-flow: dense;
+    gap: var(--ct-s1);
+}
+.ct-gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border: 1px solid var(--ct-border);
+    border-radius: 10px;
+    background: var(--ct-surface);
+    cursor: zoom-in;
+    transition: border-color .18s ease, transform .18s ease, filter .18s ease;
+}
+.ct-gallery img:hover,
+.ct-gallery img:focus-visible {
+    border-color: var(--ct-accent);
+    transform: translateY(-2px);
+    filter: brightness(1.06);
+}
+.ct-gallery img.wide { grid-column: span 2; }
+.ct-gallery img.tall { grid-row: span 2; }
+
+@media (max-width: 560px) {
+    .ct-gallery { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); grid-auto-rows: 110px; }
+    .ct-gallery img.wide { grid-column: span 2; }
+}
+
+/* --- video stack (the Bookshelf column on the UI/UX page) ------------- */
+.ct-vstack { display: flex; flex-direction: column; gap: var(--ct-s3); }
+.ct-vitem { display: flex; flex-direction: column; gap: var(--ct-s1); }
+.ct-vitem h3 { font-size: .95rem; font-weight: 700; }
+.ct-vframe {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border: 1px solid var(--ct-border);
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--ct-ground);
+}
+.ct-vframe > video,
+.ct-vframe > iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+.ct-split { display: grid; grid-template-columns: 1.25fr .75fr; gap: var(--ct-s4); align-items: start; }
+@media (max-width: 900px) { .ct-split { grid-template-columns: 1fr; } }
+
+/* --- lightbox --------------------------------------------------------- */
+.modal {
+    display: none;                       /* imageGrid.js flips this to block */
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: color-mix(in srgb, var(--ct-ground) 94%, transparent);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    padding: clamp(16px, 4vw, 48px);
+}
+.modal-content {
+    position: relative;
+    max-width: 1100px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--ct-s2);
+}
+.mySlides { display: none; }
+.mySlides.active { display: block; }
+.modal-image {
+    width: 100%;
+    max-height: 76vh;
+    object-fit: contain;
+    display: block;
+    border: 1px solid var(--ct-border);
+    border-radius: var(--ct-radius);
+    background: var(--ct-surface);
+}
+.numbertext {
+    font-family: var(--ct-font-mono);
+    font-size: .7rem;
+    letter-spacing: .12em;
+    color: var(--ct-muted);
+    margin-bottom: 6px;
+}
+.caption-container { text-align: center; }
+.caption-container p {
+    font-family: var(--ct-font-mono);
+    font-size: .72rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ct-muted);
+}
+
+.modal .close,
+.modal .prev,
+.modal .next {
+    position: absolute;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--ct-surface);
+    border: 1px solid var(--ct-border-lit);
+    color: var(--ct-text);
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background .18s ease, color .18s ease, border-color .18s ease;
+}
+.modal .close:hover,
+.modal .prev:hover,
+.modal .next:hover {
+    background: var(--ct-accent);
+    color: var(--ct-on-accent);
+    border-color: var(--ct-accent);
+}
+.modal .close { top: 0; right: 0; }
+.modal .prev { left: 0;  top: 50%; transform: translateY(-50%); }
+.modal .next { right: 0; top: 50%; transform: translateY(-50%); }
+
+@media (max-width: 560px) {
+    .modal .prev { left: 0; }
+    .modal .next { right: 0; }
+    .modal-image { max-height: 62vh; }
+}
