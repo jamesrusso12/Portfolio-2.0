@@ -101,9 +101,10 @@ brew install ffmpeg      # if you haven't already
 ./scripts/compress-videos.sh
 ```
 
-- Only files larger than 5 MB are touched
-- Originals are moved to `img/_originals/` (gitignored)
-- Output: H.264, CRF 28, 1280 wide max, `+faststart` for streaming
+- Pristine copies are kept in `img/_originals/pre-crf20/` (gitignored)
+- Output: H.264, CRF 20, native resolution, `+faststart` for streaming
+- A result is only kept if it is smaller than what was there, so already
+  well-compressed gameplay footage is left alone instead of being degraded
 
 ---
 
