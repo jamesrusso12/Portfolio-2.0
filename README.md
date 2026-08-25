@@ -51,47 +51,31 @@ reel, OnRamp AR).
 Portfolio-2.0/
 │
 ├── index.html                    # landing: hero + playable target demo
+├── about.html                    # experience, education, stack, influences
+├── prototypes.html               # eight smaller technical prototypes
 │
 ├── ghost-defiant.html            # case studies
 ├── bookshelf-adventures.html
 ├── unreal-prototypes.html
 │
-├── game-development.html         # galleries
+├── game-development.html         # image galleries
 ├── uiux-design.html
 ├── web-development.html
-├── work.html                     # legacy long-form page (pre-redesign)
 │
 ├── assets/
-│   ├── css/
-│   │   ├── cathode.css           # design tokens + redesign styles
-│   │   └── style.css             # legacy stylesheet (galleries, work.html)
-│   ├── js/
-│   │   ├── targetDemo.js         # hero game-feel demo
-│   │   ├── cathodeNav.js         # nav + theme for the redesign
-│   │   ├── navMenu.js            # nav + theme for legacy pages
-│   │   ├── imageGrid.js          # accessible gallery lightbox
-│   │   ├── projectFilter.js      # project filter chips
-│   │   ├── profileLightbox.js    # hero avatar lightbox
-│   │   ├── heroRotation.js       # hero media rotator
-│   │   ├── featuredTabs.js       # case-study tab switching
-│   │   ├── formSpree.js          # contact form submission
-│   │   ├── smoothTransitions.js  # smooth scroll + reveal
-│   │   ├── portfolio.js          # Owl Carousel init
-│   │   ├── wow-init.js           # scroll reveal
-│   │   └── autoYear.js           # footer year stamp
-│   ├── img/                      # stills actually used by a page
-│   ├── video/                    # compressed video actually used by a page
-│   └── docs/
-│       └── current-resume.pdf
+│   ├── css/cathode.css           # design tokens + all redesign styles
+│   ├── css/style.css             # legacy stylesheet (galleries)
+│   ├── js/                       # nav, blades, target demo, galleries
+│   ├── img/                      # stills a page references
+│   ├── video/                    # compressed video a page references
+│   └── docs/current-resume.pdf
 │
-├── archive/                      # kept, but not referenced by any page
-│   ├── media/                    # old banners, drafts, superseded resumes
-│   └── fonts/                    # local webfonts, superseded by CDN
+├── archive/                      # kept, but referenced by no page
+│   ├── media/  fonts/  bootstrap-js/
 │
 ├── img/_originals/               # uncompressed video masters (gitignored)
 │
-└── scripts/
-    └── compress-videos.sh        # ffmpeg batch for heavy media
+└── scripts/compress-videos.sh
 ```
 
 Rule of thumb: if a page references it, it lives under `assets/`. If nothing

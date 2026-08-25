@@ -715,3 +715,97 @@ a.ct-card:focus-visible {
 @media (max-width: 460px) {
     .ct-spec { grid-template-columns: 1fr; }
 }
+
+/* ===================== about + prototypes pages ========================= */
+
+/* Experience timeline. The rail is a pseudo-element on the list so the entries
+   stay plain cards and nothing depends on their count. */
+.ct-timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--ct-s2);
+    counter-reset: none;
+}
+.ct-entry { padding: var(--ct-s3); display: flex; flex-direction: column; gap: var(--ct-s2); }
+.ct-entry-head {
+    display: flex;
+    align-items: center;
+    gap: var(--ct-s2);
+    flex-wrap: wrap;
+}
+.ct-entry-dates {
+    margin-left: auto;
+    font-family: var(--ct-font-mono);
+    font-size: .72rem;
+    color: var(--ct-muted);
+}
+.ct-entry h3 { font-size: 1.08rem; font-weight: 700; }
+
+.ct-bullets { display: flex; flex-direction: column; gap: var(--ct-s1); }
+.ct-bullets li {
+    position: relative;
+    padding-left: 20px;
+    font-size: .9rem;
+    color: var(--ct-muted);
+    line-height: 1.55;
+}
+.ct-bullets li::before {
+    content: "";
+    position: absolute;
+    left: 2px; top: .6em;
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    border: 2px solid var(--ct-accent);
+}
+
+.ct-meta-line { font-family: var(--ct-font-mono); font-size: .72rem; color: var(--ct-muted); }
+
+.ct-skills { display: flex; flex-direction: column; gap: var(--ct-s2); }
+.ct-skills li { display: flex; flex-direction: column; gap: 2px; }
+.ct-skills b { font-size: .92rem; font-weight: 600; color: var(--ct-text); }
+.ct-skills span { font-size: .8rem; color: var(--ct-muted); }
+
+/* Prototype grid. Media sits above the copy so the cards stay scannable at
+   any width, and every embed keeps a 16:9 box whether it is a <video> or a
+   lite-youtube element. */
+.ct-proto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--ct-s2);
+}
+.ct-proto { display: flex; flex-direction: column; overflow: hidden; }
+.ct-proto-media {
+    aspect-ratio: 16 / 9;
+    background: var(--ct-ground);
+    border-bottom: 1px solid var(--ct-border);
+}
+.ct-proto-media video,
+.ct-proto-media lite-youtube {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+.ct-proto-body {
+    padding: var(--ct-s3);
+    display: flex;
+    flex-direction: column;
+    gap: var(--ct-s1);
+}
+.ct-proto-body h3 { font-size: 1.05rem; font-weight: 700; }
+.ct-proto-body h3 span {
+    display: block;
+    font-family: var(--ct-font-mono);
+    font-size: .7rem;
+    font-weight: 500;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ct-muted);
+    margin-top: 3px;
+}
+.ct-proto-body p { font-size: .86rem; color: var(--ct-muted); line-height: 1.55; }
+
+@media (max-width: 640px) {
+    .ct-entry-dates { margin-left: 0; }
+}
