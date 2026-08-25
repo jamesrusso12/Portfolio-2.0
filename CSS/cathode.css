@@ -1,0 +1,512 @@
+/* ============================================================================
+   CATHODE — design tokens and landing styles for Portfolio 3.0
+   ----------------------------------------------------------------------------
+   Palette is tuned to the original Xbox / Xbox 360 era rather than terminal
+   lime. The accent is #9BC848 (10.05:1 on the dark ground). Note that the
+   MODERN Xbox brand green, #107C10, fails AA on a dark ground at 3.66:1, so it
+   is deliberately not used.
+
+   Every value below is a token. Components read tokens only, never literals,
+   so both themes resolve as a complete set. Dark is the primary world; the
+   light variant exists so the existing theme toggle keeps working, and its
+   colours are solved to clear AA on paper rather than naively inverted.
+
+   No !important in this file. If something needs to win, fix the specificity.
+   ========================================================================= */
+
+/* ---- Dark: the primary world ------------------------------------------- */
+:root {
+    --ct-ground:      #0A0C0A;
+    --ct-surface:     #141A13;
+    --ct-surface-2:   #1B231A;
+    --ct-border:      #26301F;
+    --ct-border-lit:  #3A4A2E;
+
+    --ct-text:        #EAF3E4;   /* 17.23:1 */
+    --ct-muted:       #9CAF93;   /*  8.38:1 */
+
+    --ct-accent:      #9BC848;   /* 10.05:1  Xbox-era green */
+    --ct-glow:        #C6F06A;   /* ring-of-light bloom      */
+    --ct-crit:        #FFB020;   /* 10.73:1  combo / critical */
+    --ct-miss:        #FF7A6B;
+
+    --ct-accent-wash: rgba(155, 200, 72, .12);
+    --ct-accent-line: rgba(155, 200, 72, .32);
+    --ct-on-accent:   var(--ct-ground);
+
+    --ct-radius:      14px;
+    --ct-radius-pill: 999px;
+    --ct-maxw:        1120px;
+
+    --ct-shadow: 0 24px 60px -30px rgba(0, 0, 0, .9);
+
+    --ct-font-display: "Chakra Petch", "Archivo", system-ui, sans-serif;
+    --ct-font-body:    "Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --ct-font-mono:    "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+    /* Spacing scale. Section rhythm comes from here, never ad-hoc margins. */
+    --ct-s1: .5rem;
+    --ct-s2: .875rem;
+    --ct-s3: 1.25rem;
+    --ct-s4: 2rem;
+    --ct-s5: 3rem;
+    --ct-s6: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+/* ---- Light: solved for AA, not inverted -------------------------------- */
+[data-theme="light"] {
+    --ct-ground:      #F3F5EF;
+    --ct-surface:     #FFFFFF;
+    --ct-surface-2:   #E9EDE4;
+    --ct-border:      #D6DDCE;
+    --ct-border-lit:  #B9C4AE;
+
+    --ct-text:        #171C15;   /* 15.76:1 */
+    --ct-muted:       #607456;   /*  4.63:1 */
+
+    /* Solved against the composited bubble wash (#E4E8DB), not plain paper:
+       the accent sits on a 10% tint of itself in every .ct-bubble, which is
+       darker than the page ground and was dragging it to 4.08:1. */
+    --ct-accent:      #536F21;   /*  4.60:1 on wash, 5.22:1 on paper */
+    --ct-glow:        #6E9330;
+    --ct-crit:        #996300;   /*  4.62:1 */
+    --ct-miss:        #DB1600;   /*  4.63:1 */
+
+    --ct-accent-wash: rgba(83, 111, 33, .10);
+    --ct-accent-line: rgba(83, 111, 33, .30);
+    --ct-on-accent:   #FFFFFF;
+
+    --ct-shadow: 0 20px 44px -28px rgba(23, 28, 21, .5);
+}
+
+/* ============================ base ====================================== */
+html { background: var(--ct-ground); }
+
+.ct {
+    /* The UA default is body { margin: 8px }. Left in place it rings the whole
+       page in the browser's own background and reads as a gap under the
+       footer, which is exactly the spacing complaint on the old layout. */
+    margin: 0;
+    min-height: 100vh;
+    background: var(--ct-ground);
+    color: var(--ct-text);
+    font-family: var(--ct-font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+.ct *,
+.ct *::before,
+.ct *::after { box-sizing: border-box; }
+
+.ct-wrap {
+    max-width: var(--ct-maxw);
+    margin-inline: auto;
+    padding-inline: clamp(18px, 4vw, 36px);
+}
+
+.ct h1, .ct h2, .ct h3, .ct h4 {
+    font-family: var(--ct-font-display);
+    margin: 0;
+    text-wrap: balance;
+    letter-spacing: -.02em;
+}
+.ct p { margin: 0; }
+.ct ul { margin: 0; padding: 0; list-style: none; }
+
+/* Anchor reset. Deliberately scoped to links that carry no component class:
+   a blanket `.ct a { color: inherit }` is specificity (0,1,1) and silently
+   beats every (0,1,0) component rule, which is how the filled buttons ended
+   up inheriting body text instead of their own token. */
+.ct a { text-decoration: none; }
+.ct a:not([class]) { color: inherit; }
+
+.ct :focus-visible {
+    outline: 3px solid var(--ct-glow);
+    outline-offset: 3px;
+    border-radius: 6px;
+}
+
+.ct-sr {
+    position: absolute; width: 1px; height: 1px;
+    padding: 0; margin: -1px; overflow: hidden;
+    clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+/* ======================= the bubble system ==============================
+   One shape language across the site: a pill for every label, a rounded
+   card for every container. Headings stay plain type so the bubbles mark
+   structure instead of competing with it.
+   ====================================================================== */
+.ct-bubble {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--ct-s1);
+    font-family: var(--ct-font-mono);
+    font-size: .68rem;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: var(--ct-radius-pill);
+    background: var(--ct-accent-wash);
+    border: 1px solid var(--ct-accent-line);
+    color: var(--ct-accent);
+}
+.ct-bubble--quiet {
+    background: var(--ct-surface);
+    border-color: var(--ct-border);
+    color: var(--ct-muted);
+}
+.ct-bubble--live::before {
+    content: "";
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--ct-accent);
+}
+
+.ct-card {
+    background: var(--ct-surface);
+    border: 1px solid var(--ct-border);
+    border-radius: var(--ct-radius);
+    transition: border-color .18s ease, transform .18s ease;
+}
+a.ct-card:hover,
+a.ct-card:focus-visible {
+    border-color: var(--ct-border-lit);
+    transform: translateY(-2px);
+}
+
+/* ============================== nav ===================================== */
+.ct-nav {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: color-mix(in srgb, var(--ct-ground) 86%, transparent);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--ct-border);
+}
+.ct-nav-in {
+    display: flex;
+    align-items: center;
+    gap: var(--ct-s2);
+    height: 60px;
+}
+.ct-mark {
+    width: 32px; height: 32px;
+    flex: none;
+    display: grid;
+    place-items: center;
+    border-radius: 9px;
+    background: var(--ct-accent);
+    color: var(--ct-on-accent);
+    font-family: var(--ct-font-display);
+    font-weight: 700;
+    font-size: .78rem;
+}
+.ct-brand { font-weight: 700; font-size: .95rem; }
+.ct-nav-links {
+    margin-left: auto;
+    display: flex;
+    gap: var(--ct-s3);
+    font-size: .88rem;
+    color: var(--ct-muted);
+}
+.ct-nav-links a { color: inherit; }
+.ct-nav-links a:hover { color: var(--ct-accent); }
+
+.ct-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--ct-s1);
+    font-family: var(--ct-font-body);
+    font-size: .9rem;
+    font-weight: 700;
+    padding: 11px 20px;
+    border-radius: var(--ct-radius-pill);
+    background: var(--ct-accent);
+    color: var(--ct-on-accent);
+    border: 1px solid var(--ct-accent);
+    cursor: pointer;
+    transition: filter .14s ease, transform .12s ease;
+}
+.ct-btn:hover { filter: brightness(1.08); }
+.ct-btn:active { transform: scale(.97); }
+.ct-btn--sm { font-size: .85rem; padding: 8px 16px; }
+.ct-btn--ghost {
+    background: transparent;
+    color: var(--ct-text);
+    border-color: var(--ct-border-lit);
+}
+.ct-btn--ghost:hover { border-color: var(--ct-accent); color: var(--ct-accent); filter: none; }
+
+.ct-burger {
+    display: none;
+    width: 42px; height: 42px;
+    align-items: center; justify-content: center;
+    background: transparent;
+    border: 1px solid var(--ct-border-lit);
+    border-radius: 10px;
+    color: var(--ct-text);
+    cursor: pointer;
+}
+
+@media (max-width: 760px) {
+    .ct-nav-links {
+        position: fixed;
+        inset: 60px 0 auto 0;
+        flex-direction: column;
+        gap: var(--ct-s1);
+        padding: var(--ct-s3);
+        background: var(--ct-ground);
+        border-bottom: 1px solid var(--ct-border);
+        visibility: hidden;
+        transform: translateY(-110%);
+        transition: transform .28s ease, visibility 0s linear .28s;
+    }
+    .ct-nav-links.is-open {
+        visibility: visible;
+        transform: translateY(0);
+        transition: transform .28s ease, visibility 0s;
+    }
+    .ct-nav-links a { padding: 10px 2px; font-size: 1rem; }
+    .ct-burger { display: inline-flex; }
+    .ct-nav .ct-btn--cta { display: none; }
+}
+
+/* ============================== hero ==================================== */
+.ct-hero { padding-block: var(--ct-s6) var(--ct-s5); }
+.ct-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.02fr);
+    gap: clamp(26px, 4vw, 48px);
+    align-items: center;
+}
+.ct-hero-copy { display: flex; flex-direction: column; gap: var(--ct-s3); align-items: flex-start; }
+.ct-hero h1 {
+    font-size: clamp(2.6rem, 7vw, 4.1rem);
+    font-weight: 700;
+    line-height: .98;
+    letter-spacing: -.03em;
+}
+.ct-role { font-size: clamp(1rem, 2vw, 1.18rem); font-weight: 600; color: var(--ct-accent); }
+.ct-blurb { color: var(--ct-muted); font-size: clamp(.95rem, 1.5vw, 1.02rem); max-width: 46ch; }
+.ct-blurb b { color: var(--ct-text); font-weight: 600; }
+.ct-chips { display: flex; flex-wrap: wrap; gap: 7px; }
+.ct-chips li {
+    font-size: .75rem; font-weight: 600;
+    padding: 5px 11px;
+    border-radius: var(--ct-radius-pill);
+    background: var(--ct-surface);
+    border: 1px solid var(--ct-border);
+    color: var(--ct-muted);
+}
+.ct-actions { display: flex; gap: var(--ct-s1); flex-wrap: wrap; }
+
+@media (max-width: 900px) {
+    .ct-hero-grid { grid-template-columns: 1fr; }
+}
+
+/* ========================== the demo panel ============================== */
+.ct-demo {
+    position: relative;
+    border: 1px solid var(--ct-border);
+    border-radius: var(--ct-radius);
+    background:
+        radial-gradient(120% 90% at 50% 0%,
+            color-mix(in srgb, var(--ct-surface) 70%, var(--ct-accent) 4%) 0%,
+            var(--ct-surface) 55%,
+            var(--ct-ground) 100%);
+    overflow: hidden;
+    box-shadow: var(--ct-shadow);
+}
+.ct-demo-bar,
+.ct-demo-foot {
+    display: flex;
+    align-items: center;
+    gap: var(--ct-s2);
+    padding: 9px 13px;
+    background: color-mix(in srgb, var(--ct-ground) 50%, transparent);
+}
+.ct-demo-bar { border-bottom: 1px solid var(--ct-border); }
+.ct-demo-foot {
+    border-top: 1px solid var(--ct-border);
+    flex-wrap: wrap;
+    font-size: .72rem;
+    color: var(--ct-muted);
+}
+.ct-demo-foot .ct-why { margin-left: auto; text-align: right; }
+
+.ct-hud {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: var(--ct-s2);
+    font-family: var(--ct-font-mono);
+    font-size: .74rem;
+}
+.ct-hud .lab {
+    font-size: .62rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ct-muted);
+}
+.ct-hud .val {
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    min-width: 3ch;
+    display: inline-block;
+    color: var(--ct-text);
+}
+.ct-hud .val.is-hot { color: var(--ct-crit); }
+
+.ct-stage { position: relative; aspect-ratio: 16 / 11; display: block; touch-action: manipulation; }
+.ct-stage canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: crosshair;
+}
+
+.ct-demo-overlay {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: var(--ct-s3);
+    background: linear-gradient(180deg,
+        color-mix(in srgb, var(--ct-ground) 42%, transparent),
+        color-mix(in srgb, var(--ct-ground) 82%, transparent));
+    transition: opacity .28s ease;
+}
+.ct-demo-overlay.is-hidden { opacity: 0; pointer-events: none; }
+.ct-demo-overlay > div { display: flex; flex-direction: column; gap: var(--ct-s1); align-items: center; }
+
+/* Ring of light, drawn rather than imaged. No Xbox artwork is used. */
+.ct-ring {
+    width: 74px; height: 74px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    margin-bottom: var(--ct-s1);
+}
+.ct-ring::before,
+.ct-ring::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    opacity: .9;
+}
+.ct-ring::before { border-top-color: var(--ct-accent); border-right-color: var(--ct-accent); }
+.ct-ring::after {
+    border-bottom-color: var(--ct-accent);
+    border-left-color: var(--ct-accent);
+    animation: ct-spin 5.5s linear infinite;
+}
+.ct-ring i {
+    width: 13px; height: 13px;
+    border-radius: 50%;
+    background: var(--ct-glow);
+    box-shadow: 0 0 16px 3px var(--ct-accent-line);
+}
+@keyframes ct-spin { to { transform: rotate(360deg); } }
+
+.ct-demo-title { font-size: 1.18rem; font-weight: 700; }
+.ct-demo-sub { font-size: .85rem; color: var(--ct-muted); max-width: 34ch; }
+.ct-demo-btns { display: flex; gap: var(--ct-s1); flex-wrap: wrap; justify-content: center; margin-top: 4px; }
+
+.ct-kbd {
+    font-family: var(--ct-font-mono);
+    font-size: .68rem;
+    padding: 1px 6px;
+    border-radius: 5px;
+    background: var(--ct-surface-2);
+    border: 1px solid var(--ct-border-lit);
+    color: var(--ct-text);
+}
+
+/* ============================ sections ================================== */
+.ct-sec { padding-block: var(--ct-s6); border-top: 1px solid var(--ct-border); }
+/* align-items matters here: a column flex container stretches its children by
+   default, which pulls the pill to full container width instead of hugging
+   its text. */
+.ct-sec-head {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--ct-s2);
+    margin-bottom: var(--ct-s4);
+}
+.ct-sec-head h2 { font-size: clamp(1.5rem, 3vw, 2.05rem); font-weight: 700; }
+.ct-sec-head p { color: var(--ct-muted); font-size: .95rem; max-width: 58ch; }
+
+.ct-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(248px, 1fr));
+    gap: var(--ct-s2);
+}
+.ct-card { color: var(--ct-text); }
+.ct-work { padding: var(--ct-s3); display: flex; flex-direction: column; gap: var(--ct-s1); }
+.ct-work h3 { font-size: 1.12rem; font-weight: 700; }
+.ct-work p { font-size: .86rem; color: var(--ct-muted); line-height: 1.55; }
+.ct-work .ct-metric {
+    margin-top: auto;
+    padding-top: var(--ct-s2);
+    border-top: 1px solid var(--ct-border);
+    font-family: var(--ct-font-mono);
+    font-size: .76rem;
+    color: var(--ct-muted);
+}
+.ct-work .ct-metric b { color: var(--ct-crit); font-weight: 600; }
+
+.ct-contact { display: flex; flex-wrap: wrap; gap: var(--ct-s2); }
+
+/* ============================= footer ===================================
+   The old footer stacked `margin-top: 4rem` on top of the last section's
+   padding, then added another 2rem + 1.5rem before the copyright, which read
+   as a hole above the footer. Spacing now comes from the section rhythm and
+   the footer's own padding only. No margin-top.
+   ====================================================================== */
+.ct-footer {
+    border-top: 1px solid var(--ct-border);
+    padding-block: var(--ct-s4);
+    background: color-mix(in srgb, var(--ct-ground) 92%, var(--ct-surface));
+}
+.ct-footer-in {
+    display: flex;
+    align-items: center;
+    gap: var(--ct-s3);
+    flex-wrap: wrap;
+    font-size: .82rem;
+    color: var(--ct-muted);
+}
+.ct-footer-in nav { display: flex; gap: var(--ct-s3); flex-wrap: wrap; }
+.ct-footer-in a { color: inherit; }
+.ct-footer-in a:hover { color: var(--ct-accent); }
+.ct-footer-in .ct-social { margin-left: auto; display: flex; gap: var(--ct-s3); }
+.ct-colophon {
+    margin-top: var(--ct-s3);
+    padding-top: var(--ct-s2);
+    border-top: 1px solid var(--ct-border);
+    font-size: .76rem;
+    color: var(--ct-muted);
+}
+
+@media (max-width: 640px) {
+    .ct-footer-in { flex-direction: column; align-items: flex-start; gap: var(--ct-s2); }
+    .ct-footer-in .ct-social { margin-left: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ct-ring::after { animation: none; }
+    .ct *, .ct *::before, .ct *::after {
+        animation-duration: .01ms;
+        transition-duration: .01ms;
+    }
+}
