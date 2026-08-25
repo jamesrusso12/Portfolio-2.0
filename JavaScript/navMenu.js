@@ -19,6 +19,24 @@ document.addEventListener("DOMContentLoaded", () => {
                 burger.setAttribute("aria-expanded", "false");
             });
         });
+
+        // Escape closes the menu and returns focus to the toggle
+        document.addEventListener("keydown", e => {
+            if (e.key === "Escape" && links.classList.contains("open")) {
+                links.classList.remove("open");
+                burger.setAttribute("aria-expanded", "false");
+                burger.focus();
+            }
+        });
+
+        // Clicking outside the nav closes it
+        document.addEventListener("click", e => {
+            if (!links.classList.contains("open")) return;
+            if (nav && !nav.contains(e.target)) {
+                links.classList.remove("open");
+                burger.setAttribute("aria-expanded", "false");
+            }
+        });
     }
 
     // Auto hide on scroll down, show on scroll up
@@ -48,9 +66,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     const currentTheme = savedTheme || (systemPrefersDark ? "dark" : "light");
 
-    // Apply theme and sync icon immediately on page load
+    // Apply theme and sync icon + accessible name immediately on page load
+    function syncToggle(theme) {
+        icon.textContent = theme === "dark" ? "light_mode" : "dark_mode";
+        toggleBtn.setAttribute(
+            "aria-label",
+            theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+        );
+    }
+
     document.documentElement.setAttribute("data-theme", currentTheme);
-    icon.textContent = currentTheme === "dark" ? "light_mode" : "dark_mode";
+    syncToggle(currentTheme);
 
     // Toggle on click
     toggleBtn.addEventListener("click", () => {
@@ -58,6 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const newTheme = activeTheme === "dark" ? "light" : "dark";
         document.documentElement.setAttribute("data-theme", newTheme);
         localStorage.setItem("theme", newTheme);
-        icon.textContent = newTheme === "dark" ? "light_mode" : "dark_mode";
+        syncToggle(newTheme);
     });
 });
