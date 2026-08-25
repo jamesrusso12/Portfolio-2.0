@@ -123,10 +123,55 @@ html { background: var(--ct-ground); }
     border-radius: 6px;
 }
 
+/* Visually hidden, still announced. clip-path is included alongside the old
+   clip because clip only takes effect on absolutely positioned elements: if
+   anything ever overrides position on an element carrying this class, clip
+   silently stops hiding it while clip-path keeps working. That exact failure
+   put a visible green sliver in the top-left corner once already. */
 .ct-sr {
-    position: absolute; width: 1px; height: 1px;
-    padding: 0; margin: -1px; overflow: hidden;
-    clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Skip link. A dedicated component rather than .ct-btn composed with .ct-sr:
+   that combination fought itself, and a skip link is supposed to become
+   visible on focus, which .ct-sr can never do. Off-canvas until focused,
+   then it slides in wearing the same blade silhouette as every other button. */
+.ct-skip {
+    position: absolute;
+    top: var(--ct-s1);
+    left: var(--ct-s1);
+    z-index: 100;
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--ct-font-body);
+    font-size: .85rem;
+    font-weight: 700;
+    padding: 9px 20px 9px 16px;
+    color: var(--ct-on-accent);
+    background: transparent;
+    border: 0;
+    transform: translateY(calc(-100% - var(--ct-s3)));
+    transition: transform .18s ease;
+}
+.ct-skip::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--ct-accent);
+    clip-path: polygon(8px 0, 100% 0, calc(100% - 10px) 100%, 0 100%, 0 8px);
+}
+.ct-skip:focus { transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+    .ct-skip { transition: none; }
 }
 
 /* ====================== the blade system ===============================
