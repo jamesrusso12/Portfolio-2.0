@@ -47,8 +47,10 @@
 
         var saved = null;
         try { saved = localStorage.getItem('theme'); } catch (e) { /* private mode */ }
-        var prefersDark = !window.matchMedia('(prefers-color-scheme: light)').matches;
-        var theme = saved || (prefersDark ? 'dark' : 'light');
+        // Dark is the primary world, so it is the default for everyone,
+        // whatever the OS appearance. Light only appears when a visitor picks
+        // it with the toggle, and that choice is remembered.
+        var theme = saved === 'light' ? 'light' : 'dark';
 
         function apply(next) {
             document.documentElement.setAttribute('data-theme', next);

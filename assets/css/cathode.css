@@ -340,8 +340,10 @@ a.ct-card:focus-visible {
     font-size: .78rem;
 }
 .ct-brand { font-weight: 700; font-size: .95rem; }
+/* The margin needs (0,2,0): as a plain .ct-nav-links rule it lost to the
+   (0,1,1) `.ct ul { margin: 0 }` reset, and the whole nav packed to the left. */
+.ct-nav .ct-nav-links { margin-left: auto; }
 .ct-nav-links {
-    margin-left: auto;
     display: flex;
     gap: var(--ct-s3);
     font-size: .88rem;
@@ -421,6 +423,11 @@ a.ct-card:focus-visible {
     color: var(--ct-text);
     cursor: pointer;
 }
+/* The theme switch borrows the burger's look but not its visibility: the menu
+   button only exists on phones, the switch exists at every width. It is
+   (0,2,0) so the phone-only display rule below can never hide it again. */
+.ct-burger[data-theme-toggle] { display: inline-flex; }
+.ct-burger:hover { border-color: var(--ct-accent); color: var(--ct-accent); }
 
 @media (max-width: 760px) {
     .ct-nav-links {
@@ -849,6 +856,80 @@ a.ct-card:focus-visible {
 .ct-skills li { display: flex; flex-direction: column; gap: 2px; }
 .ct-skills b { font-size: .92rem; font-weight: 600; color: var(--ct-text); }
 .ct-skills span { font-size: .8rem; color: var(--ct-muted); }
+
+/* Credential cards. The seal is the ring motif again: an accent ring around
+   a check, so a certificate reads as earned rather than as another tag. What
+   each credential covers sits in flat chips, never pills, and the footer
+   points at the project that puts it to work. */
+.ct-cred-head {
+    display: flex;
+    align-items: center;
+    gap: var(--ct-s1);
+    flex-wrap: wrap;
+}
+.ct-cred-seal {
+    width: 30px; height: 30px;
+    flex: none;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    border: 2px solid var(--ct-accent);
+    color: var(--ct-accent);
+    font-size: 17px;
+}
+.ct-cred h3 { margin-top: var(--ct-s1); }
+.ct-cred-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding-top: 2px;
+}
+.ct-cred-skills li {
+    font-family: var(--ct-font-mono);
+    font-size: .68rem;
+    padding: 2px 8px;
+    border-radius: 3px;
+    /* Ground, not surface-2: muted text on surface-2 is only 4.29:1 in the
+       light theme. On ground it clears AA in both. */
+    background: var(--ct-ground);
+    color: var(--ct-muted);
+}
+/* Entry dates drop to the left on phones because timeline headers wrap. A
+   credential header is short enough to keep its date on the right. */
+.ct-cred-head .ct-entry-dates { margin-left: auto; }
+/* Beats the (0,2,1) anchor reset, which would otherwise mute these links to
+   the surrounding grey. The underline keeps them readable as links without
+   relying on colour alone. */
+.ct-work .ct-metric a {
+    color: var(--ct-accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.ct-cred > .ct-btn { align-self: flex-start; }
+
+/* In-progress credentials. Same card, but the ring is dashed and unlit so an
+   earned credential and a pursued one can never be mistaken for each other. */
+.ct-cred-group {
+    margin: var(--ct-s5) 0 var(--ct-s2);
+    font-family: var(--ct-font-mono);
+    font-size: .74rem;
+    font-weight: 500;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--ct-muted);
+    scroll-margin-top: 80px;
+}
+.ct-cred--pending .ct-cred-seal {
+    border-style: dashed;
+    border-color: var(--ct-border-lit);
+    color: var(--ct-muted);
+}
+.ct-cred--pending .ct-metric b { color: var(--ct-muted); }
+.ct-sec-head .ct-inline-link {
+    color: var(--ct-accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
 
 /* Prototype grid. Media sits above the copy so the cards stay scannable at
    any width, and every embed keeps a 16:9 box whether it is a <video> or a
